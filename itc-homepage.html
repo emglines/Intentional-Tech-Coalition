@@ -424,14 +424,13 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
         <span class="eyebrow one">Stay connected</span>
         <h2 style="margin-top:14px;">Join the coalition</h2>
         <p>Add your name to stay in the loop on gatherings, workshops, and what we are learning together.</p>
-        <div class="field">
-          <input type="text" placeholder="First name" aria-label="First name">
-          <input type="text" placeholder="Last name" aria-label="Last name">
-          <input type="email" placeholder="you@email.com" aria-label="Email address">
-          <button class="btn" type="button">Keep me in the loop</button>
-        </div>
+        <form class="field" action="https://formspree.io/f/meewbkvy" method="POST">
+          <input type="text" name="first_name" placeholder="First name" aria-label="First name" required>
+          <input type="text" name="last_name" placeholder="Last name" aria-label="Last name" required>
+          <input type="email" name="email" placeholder="you@email.com" aria-label="Email address" required>
+          <button class="btn" type="submit">Keep me in the loop</button>
+        </form>
         <p style="font-size:12px;color:var(--forest-2);margin-top:10px;">One or two emails a month.</p>
-        <p style="font-size:12px;color:var(--forest-2);margin-top:4px;">Placeholder, to be connected in Squarespace.</p>
         <p style="font-size:13px;margin-top:18px;opacity:.75;">Next gathering: <strong>September 2026</strong>, date &amp; location TBC.</p>
       </div>
       <div class="pledge-join">
