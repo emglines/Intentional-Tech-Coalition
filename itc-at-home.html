@@ -74,6 +74,8 @@ footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-trans
 footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.85;}
 .fineprint{margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;opacity:.55;}
 @media(max-width:760px){.promise .grid,.gather-grid,.q-item{grid-template-columns:1fr;}.q-item{gap:8px;}}
+.nav-toggle{display:none;}.hamburger{display:none;}
+@media(max-width:760px){header{position:relative;}.hamburger{display:flex;align-items:center;font-size:22px;line-height:1;cursor:pointer;color:var(--forest);padding:4px 8px;user-select:none;}.menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(192,202,191,.97);flex-direction:column;padding:14px 24px 20px;gap:0;border-bottom:1px solid var(--line);z-index:100;}.menu a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}.menu .btn{display:block;text-align:center;margin-top:14px;border-bottom:none;padding:11px 22px;}.nav-toggle:checked~.menu{display:flex;}}
 </style>
 </head>
 <body>
@@ -86,6 +88,8 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       <span class="main">Intentional<br>Tech Coalition</span>
       <span class="rule-row"><span>CONCORD</span></span>
     </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger" aria-label="Open menu">&#9776;</label>
     <nav class="menu">
       <a href="itc-at-school.html">At School</a>
       <a href="itc-at-home.html" aria-current="page">At Home</a>
