@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!-- itc-at-school, v8, June 17, 2026. Stable filename: version tracked here, not in the filename. Copy comb: MA legislation language updated (both chambers passed bell-to-bell bans, final bill expected, 2026-27 timing); methodnote "Concord public school" capitalized to "Concord Public Schools". -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>At School | The Intentional Tech Coalition</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..600;1,9..144,200..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#C0CABF;--sage-dk:#A9B6A6;--forest:#3F5138;--forest-2:#5F6D57;--plum:#463347;--plum-dk:#382839;--ink:#242321;--cream:#E5E0DA;--paper:#F4F1EC;--white:#FBFAF7;--line:rgba(63,81,56,.22);--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--r:18px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.08;}
+a{color:inherit;text-decoration:none;}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--forest-2);}
+.eyebrow::before{content:"";height:1px;width:22px;background:var(--forest-2);opacity:.55;}
+.eyebrow.one::after{display:none;}
+.draftnote{background:var(--plum-dk);color:var(--sage);text-align:center;font-size:12px;padding:8px 16px;letter-spacing:.02em;}
+.btn{display:inline-block;border:none;cursor:pointer;font-family:var(--sans);font-weight:600;font-size:13px;border-radius:999px;padding:10px 22px;background:var(--plum);color:var(--paper);text-decoration:none;}
+.btn.ghost{background:transparent;color:var(--forest);border:1.5px solid var(--forest);}
+.btn.light{background:var(--sage);color:var(--forest);}
+.btn.outline{background:transparent;border:1.5px solid rgba(255,255,255,.35);color:var(--white);}
+.wm{display:inline-flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;}
+.wm .the{font-family:var(--serif);font-weight:300;font-size:11px;color:var(--forest-2);line-height:1;letter-spacing:.06em;margin-bottom:1px;}
+.wm .main{font-family:var(--serif);font-weight:400;font-size:17px;color:var(--forest);line-height:1.04;letter-spacing:-.01em;}
+.wm .rule-row{display:flex;align-items:center;gap:7px;margin-top:4px;}
+.wm .rule-row span{font-family:var(--sans);font-size:7.5px;font-weight:600;letter-spacing:.38em;color:var(--forest-2);}
+.wm .rule-row::before,.wm .rule-row::after{content:"";height:1px;width:20px;background:var(--forest-2);opacity:.5;}
+footer .wm .the{color:var(--sage);opacity:.65;}
+footer .wm .main{color:var(--sage);}
+footer .wm .rule-row span{color:var(--sage);opacity:.7;}
+footer .wm .rule-row::before,footer .wm .rule-row::after{background:var(--sage);opacity:.4;}
+header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:960px;margin:0 auto;}
+.menu{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:500;}
+.menu a{color:var(--ink);opacity:.8;}
+.menu a[aria-current]{opacity:1;font-weight:700;color:var(--forest);border-bottom:2px solid var(--forest);padding-bottom:2px;}
+.menu .btn{padding:8px 18px;opacity:1;color:var(--paper);}
+.pagehead{background:var(--sage);padding:56px 0 60px;}
+.pagehead h1{font-size:clamp(30px,5vw,52px);color:var(--plum);margin:16px 0 16px;max-width:640px;}
+.pagehead p.lede{font-size:clamp(15px,2vw,18px);max-width:620px;color:var(--ink);opacity:.9;}
+.whynow{background:var(--paper);padding:52px 0 56px;border-bottom:1px solid var(--line);}
+.whynow .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;position:relative;}
+.whynow .grid::before{content:"";position:absolute;top:7px;left:0;right:0;height:1px;background:var(--line);}
+.why-tile{position:relative;padding-top:26px;}
+.why-tile::before{content:"";position:absolute;top:0;left:0;width:14px;height:14px;border-radius:50%;background:var(--sage);border:2px solid var(--forest-2);}
+.why-tile h3{font-size:17px;color:var(--forest);margin-bottom:8px;}
+.why-tile p{font-size:13.5px;opacity:.8;line-height:1.55;}
+.voices{background:var(--forest);color:var(--paper);padding:64px 0;}
+.voices h2{font-size:clamp(26px,4vw,38px);color:var(--white);margin:14px 0 10px;}
+.voices .eyebrow{color:var(--sage);}
+.voices .eyebrow::before{background:var(--sage);}
+.voices .sec-head p{color:var(--paper);opacity:.8;}
+.bar-group{margin-top:34px;display:grid;gap:26px;max-width:720px;}
+.bar-q{font-family:var(--serif);font-size:17px;color:var(--white);margin-bottom:10px;}
+.bar-track{display:flex;height:30px;border-radius:8px;overflow:hidden;background:rgba(255,255,255,.08);}
+.bar-seg{display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;white-space:nowrap;}
+.bar-seg.s1{background:var(--sage);color:var(--forest);}
+.bar-seg.s2{background:rgba(192,202,191,.45);color:var(--white);}
+.bar-seg.s3{background:rgba(192,202,191,.16);color:rgba(255,255,255,.75);}
+.bar-cap{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;font-size:12px;opacity:.85;}
+.bar-cap span{display:inline-flex;align-items:center;gap:7px;}
+.bar-cap i{width:11px;height:11px;border-radius:3px;display:inline-block;flex:none;}
+.bar-cap .k1{background:var(--sage);}
+.bar-cap .k2{background:rgba(192,202,191,.45);}
+.bar-cap .k3{background:rgba(192,202,191,.16);border:1px solid rgba(255,255,255,.25);}
+.methodnote{margin-top:30px;font-size:12px;opacity:.65;max-width:640px;line-height:1.55;}
+.ring-chip{margin-top:auto;display:flex;align-items:center;gap:16px;background:var(--cream);border-radius:14px;padding:14px 18px;}
+.ring-chip svg{flex:none;}
+.ring-chip .l{font-size:12.5px;color:var(--forest-2);line-height:1.45;}
+.ring-chip .ring-n{font-family:var(--serif);font-size:17px;fill:var(--plum);}
+.block{padding:64px 0;}
+.sec-head{max-width:600px;margin-bottom:36px;}
+.sec-head h2{font-size:clamp(26px,4vw,38px);color:var(--forest);margin:14px 0 10px;}
+.sec-head p{font-size:15px;opacity:.85;}
+.asks{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.ask{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:34px 32px;display:flex;flex-direction:column;}
+.ask .tag{font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--plum);}
+.ask h3{font-size:24px;color:var(--forest);margin:10px 0 10px;}
+.ask p{font-size:14px;opacity:.85;line-height:1.6;margin-bottom:14px;}
+.report{background:var(--cream);}
+.report-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.report-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:26px 26px;}
+.report-card h3{font-size:18px;color:var(--forest);margin-bottom:8px;}
+.report-card p{font-size:13.5px;opacity:.85;line-height:1.55;}
+.tac{background:var(--paper);}
+.tac-card{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:40px;max-width:680px;}
+.kw{font-weight:700;color:var(--plum);}
+.tac-card h3{font-family:var(--serif);font-size:20px;color:var(--forest);margin-bottom:14px;}
+.tac-list{list-style:none;}
+.tac-list li{display:flex;gap:12px;font-size:13.5px;line-height:1.5;padding:8px 0;border-bottom:1px solid var(--line);align-items:flex-start;}
+.tac-list li:last-child{border-bottom:none;}
+.tac-list li::before{content:"";min-width:6px;height:6px;border-radius:50%;background:var(--sage-dk);margin-top:8px;}
+.cta-band{background:var(--plum);color:var(--paper);}
+.cta-band .inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;}
+.cta-band h2{font-size:clamp(22px,3vw,30px);color:var(--white);max-width:480px;}
+.cta-band p{font-size:14px;opacity:.85;max-width:480px;margin-top:8px;}
+.cta-band .btn.cream{background:var(--cream);color:var(--plum);}
+footer{background:var(--ink);color:#cfd3cb;padding:48px 0 32px;}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;}
+footer p{font-size:13px;line-height:1.6;opacity:.8;margin-top:12px;max-width:36ch;}
+footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9aa392;margin-bottom:10px;}
+footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.85;}
+.fineprint{margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;opacity:.55;}
+.ydata .ystat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.ystat{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px 28px;}
+.ystat .n{font-family:var(--serif);font-weight:400;font-size:42px;line-height:1;color:var(--plum);letter-spacing:-.02em;}
+.ystat p{font-size:13.5px;opacity:.85;line-height:1.55;margin-top:12px;}
+.commit{background:var(--sage);}
+.commit-card{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:40px;max-width:740px;}
+.commit-card blockquote{font-family:var(--serif);font-size:clamp(19px,2.6vw,25px);line-height:1.32;color:var(--forest);}
+.commit-attr{font-size:12.5px;color:var(--forest-2);margin-top:16px;line-height:1.5;}
+.commit-resp{font-size:14px;opacity:.9;line-height:1.62;margin-top:22px;}
+.commit-card .btn{margin-top:20px;}
+@media(max-width:760px){.whynow .grid,.asks,.report-grid,.ydata .ystat-grid{grid-template-columns:1fr;}.whynow .grid::before{display:none;}.bar-seg{font-size:10px;}}
+</style>
+</head>
+<body>
+
+<div class="draftnote">Rough draft · Legislation status and report details to be confirmed before publishing · Links are placeholders</div>
+
+<header>
+  <div class="nav">
+    <a href="itc-homepage.html" class="wm">
+      <span class="the">The</span>
+      <span class="main">Intentional<br>Tech Coalition</span>
+      <span class="rule-row"><span>CONCORD</span></span>
+    </a>
+    <nav class="menu">
+      <a href="itc-at-school.html" aria-current="page">At School</a>
+      <a href="itc-at-home.html">At Home</a>
+      <a href="itc-take-action.html">Take Action</a>
+      <a href="itc-survey.html">Concord's Data</a>
+      <a href="itc-resources.html">Resources</a>
+      <a href="itc-join.html" class="btn">Join us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="eyebrow one">At School</span>
+    <h1>Partners in our schools' technology choices</h1>
+    <p class="lede">We believe in thoughtful, well-vetted technology that meaningfully supports learning. We also believe families deserve a seat at the table when those choices get made. Our role is to be a supportive partner to Concord's schools: gathering research, listening to families, and helping the district build the policies this fast-moving landscape demands.</p>
+  </div>
+</section>
+
+<section class="whynow">
+  <div class="wrap">
+    <div class="grid">
+      <div class="why-tile"><h3>Technology is already here</h3><p>1:1 devices, digital learning tools, and AI are part of students' daily school experience, from elementary classrooms through CCHS.</p></div>
+      <div class="why-tile"><h3>Policies haven't caught up</h3><p>Few written policies and vetting procedures currently guide how digital tools are chosen, used, and reviewed across our schools.</p></div>
+      <div class="why-tile"><h3>The moment is now</h3><p>The Massachusetts House and Senate have each passed bell-to-bell school phone bans, and a final, combined bill is expected. Districts are likely to need policies in place as early as the 2026-27 school year, and many nationwide are already setting intentional screen-time guidelines.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow one">What we're advocating for</span>
+      <h2>Two asks, one goal: intentional choices</h2>
+      <p>Everything we advocate for at the district level comes down to two requests, both designed to support, not burden, our educators and administrators.</p>
+    </div>
+    <div class="asks">
+      <div class="ask">
+        <span class="tag">Ask one</span>
+        <h3>A phone-free school day, consistently enforced</h3>
+        <p>Implement and consistently enforce a bell-to-bell, off-and-away personal device policy in every school, with effective storage so the policy works in practice, not just on paper.</p>
+        <p>With both the House and Senate having passed bell-to-bell bans and a final bill expected, Concord has a chance to lead on thoughtful implementation rather than scramble to comply.</p>
+        <div class="ring-chip">
+          <svg width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="77 percent">
+            <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(70,51,71,.15)" stroke-width="7"/>
+            <circle cx="32" cy="32" r="26" fill="none" stroke="var(--plum)" stroke-width="7" stroke-linecap="round" stroke-dasharray="125.8 37.6" transform="rotate(-90 32 32)"/>
+            <text x="32" y="38" text-anchor="middle" class="ring-n">77%</text>
+          </svg>
+          <span class="l">of surveyed Concord public-school families lack a clear understanding of how the current device policy is enforced</span>
+        </div>
+      </div>
+      <div class="ask">
+        <span class="tag">Ask two</span>
+        <h3>A Technology Advisory Committee</h3>
+        <p>Form a one-year advisory committee of school committee members, educators, students, parents, and expert advisors, charged with creating recommendations for the district around policies, procedures, reporting practices, and ongoing oversight of EdTech and AI.</p>
+        <p>Decision-making around EdTech and AI is becoming more complex every year. A TAC shares that load, streamlines decisions, and protects the district from gaps in oversight.</p>
+        <div class="ring-chip">
+          <svg width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="82 percent">
+            <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(70,51,71,.15)" stroke-width="7"/>
+            <circle cx="32" cy="32" r="26" fill="none" stroke="var(--plum)" stroke-width="7" stroke-linecap="round" stroke-dasharray="134 29.4" transform="rotate(-90 32 32)"/>
+            <text x="32" y="38" text-anchor="middle" class="ring-n">82%</text>
+          </svg>
+          <span class="l">of surveyed Concord public-school families say a K-8 Technology Advisory Committee would be "extremely valuable"</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:22px;background:var(--plum);border-radius:var(--r);padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;color:var(--paper);">
+      <div style="max-width:560px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;">For parents of Concord Middle School students</div>
+        <h3 style="font-family:var(--serif);font-size:22px;color:var(--white);margin-bottom:8px;">Families have a part to play</h3>
+        <p style="font-size:13.5px;opacity:.85;line-height:1.55;">We're asking our schools to make intentional choices, and the CMS parent pledge is one of the ways families hold up our end: keeping personal devices home, routing school-day communication through the office, and backing educators as they keep the school day focused.</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="https://docs.google.com/document/d/12Paw6ntlZyAAbSnaHCNCUIj5k02FL_KE80x48p5ON_8/edit?tab=t.0" class="btn" style="background:var(--cream);color:var(--plum);" target="_blank">Read the pledge</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScg3ufVW7tq8G-fKrdv3LXkvI2f0A65VjYRbcBgdlyEHEaMRQ/viewform?usp=header" class="btn light" target="_blank">Sign the pledge</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="voices">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow one">What Concord families told us</span>
+      <h2>Families want a clearer picture</h2>
+      <p>Beyond specific concerns, our community survey asked how informed and heard families feel about technology decisions in our schools. The pattern is consistent: families want more visibility and a real channel for input.</p>
+    </div>
+    <div class="bar-group">
+      <div>
+        <div class="bar-q">How confident are you that family input is considered in technology decisions?</div>
+        <div class="bar-track">
+          <div class="bar-seg s1" style="width:56%;">56%</div>
+          <div class="bar-seg s2" style="width:39%;">39%</div>
+          <div class="bar-seg s3" style="width:5%;"></div>
+        </div>
+        <div class="bar-cap">
+          <span><i class="k1"></i>Not confident (56%)</span>
+          <span><i class="k2"></i>Somewhat confident (39%)</span>
+          <span><i class="k3"></i>Very confident (1%) · Other or unsure (3%)</span>
+        </div>
+      </div>
+      <div>
+        <div class="bar-q">How well does the district communicate about technology use?</div>
+        <div class="bar-track">
+          <div class="bar-seg s1" style="width:68%;">68%</div>
+          <div class="bar-seg s2" style="width:25%;">25%</div>
+          <div class="bar-seg s3" style="width:7%;"></div>
+        </div>
+        <div class="bar-cap">
+          <span><i class="k1"></i>Not well (68%)</span>
+          <span><i class="k2"></i>Somewhat well (25%)</span>
+          <span><i class="k3"></i>Very well (3%) · Other or unsure (4%)</span>
+        </div>
+      </div>
+      <div>
+        <div class="bar-q">How familiar are you with the current personal device policy?</div>
+        <div class="bar-track">
+          <div class="bar-seg s1" style="width:20%;">20%</div>
+          <div class="bar-seg s2" style="width:44%;">44%</div>
+          <div class="bar-seg s3" style="width:36%;">37%</div>
+        </div>
+        <div class="bar-cap">
+          <span><i class="k1"></i>Not familiar (20%)</span>
+          <span><i class="k2"></i>A little familiar (44%)</span>
+          <span><i class="k3"></i>Very familiar (37%)</span>
+        </div>
+      </div>
+    </div>
+    <p class="methodnote">From the coalition's community survey, April to May 2026: a self-selected community snapshot, not a scientific poll. Figures reflect the 71 of 78 respondents from Concord Public Schools and CCHS families. Percentages may not total 100 due to rounding. Descriptive associations, not causal claims.</p>
+  </div>
+</section>
+
+<section class="block ydata">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow one">The student picture</span>
+      <h2>Our students are noticing it, too</h2>
+      <p>Every two years, Concord-Carlisle students answer their own near-census survey, the Emerson Youth Risk Behavior Survey. Set beside what families told us, their answers point the same way: phones are hard to set down, and harder as students get older. We share these as a community snapshot, not as proof of cause.</p>
+    </div>
+    <div class="ystat-grid">
+      <div class="ystat">
+        <div class="n">46%</div>
+        <p>of Concord-Carlisle students feel they spend too much time on their phones, with the same share saying so about social media. That feeling climbs with age, reaching 60% by twelfth grade.</p>
+      </div>
+      <div class="ystat">
+        <div class="n">42%</div>
+        <p>of high schoolers say they lose focus in class at least occasionally because they are checking their phone, up from 15% in sixth grade.</p>
+      </div>
+      <div class="ystat">
+        <div class="n">81%</div>
+        <p>of Concord-Carlisle high schoolers keep a phone in the bedroom at night, and across all grades 7% of students wake at least once a night to a device.</p>
+      </div>
+      <div class="ystat">
+        <div class="n">31%</div>
+        <p>of high schoolers have a parent who monitors their phone use, down from 70% in sixth grade, just as independent access grows.</p>
+      </div>
+    </div>
+    <p class="methodnote">From the 2024 Emerson Youth Risk Behavior Survey, Concord-Carlisle Regional School District, conducted in spring 2024 by Market Street Research. 79% of the district's 1,677 enrolled students responded, making it a near-census look at our own students. Figures are for Concord-Carlisle students, by grade or district-wide as noted. Descriptive associations, not causal claims.</p>
+  </div>
+</section>
+
+<section class="block report">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow one">The technology report</span>
+      <h2>Four questions every family deserves answers to</h2>
+      <p>We've encouraged the district to include the following in its forthcoming technology report. Good decisions start with a clear picture of where things stand.</p>
+    </div>
+    <div class="report-grid">
+      <div class="report-card"><h3>How much screen time?</h3><p>By grade and subject, how much time do students spend on school-issued devices, on which tools, and how is that time monitored and managed?</p></div>
+      <div class="report-card"><h3>What are the written policies?</h3><p>By school and grade, what written policies guide digital technology use, and what instruction on digital health, digital hygiene, and mental well-being is part of the current curriculum?</p></div>
+      <div class="report-card"><h3>Which tools, and why?</h3><p>An inventory of the digital learning and AI tools used at each grade level: their educational purpose, what student data they collect, and what they cost.</p></div>
+      <div class="report-card"><h3>What are students watching?</h3><p>How YouTube and web access on school devices is used and managed, and how inappropriate or harmful content is identified and addressed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block commit">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow one">A shared commitment</span>
+      <h2>The district has already said it wants this partnership</h2>
+      <p>In its districtwide Continuous Improvement plan, presented to the School Committee in January 2025, the district named family partnership on student technology as a goal, in its own words.</p>
+    </div>
+    <div class="commit-card">
+      <blockquote>"Partner with parents and community members to identify and engage with best practices for student technology, including social media use."</blockquote>
+      <p class="commit-attr">Concord Public Schools and Concord-Carlisle Regional School District, districtwide Continuous Improvement plan, presented to the School Committee, January 2025.</p>
+      <p class="commit-resp">We could not agree more, and families are ready to be that partner. The structure to make it real already has a name: a Technology Advisory Committee. We will keep showing up, sharing research, and offering to help, so this becomes everyday practice rather than a line in a plan.</p>
+      <a href="#tac" class="btn">See what a committee would do</a>
+    </div>
+  </div>
+</section>
+
+<section class="block tac" id="tac">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow one">A closer look</span>
+      <h2>What a Technology Advisory Committee would do</h2>
+      <p>A TAC is a supportive partner to the district: a one-year committee of school committee members, educators, students, parents, and expert advisors that does the research and produces recommendations on EdTech and AI, so that decisions rest on evidence rather than urgency.</p>
+    </div>
+    <div class="tac-card">
+      <h3>What it delivers</h3>
+      <ul class="tac-list">
+        <li><span class="t">A district-wide technology <span class="kw">resolution</span>, modeled on districts like LA Unified</span></li>
+        <li><span class="t">School-level EdTech and AI <span class="kw">policy</span> recommendations</span></li>
+        <li><span class="t">Clear criteria and <span class="kw">procedures</span> for how, by whom, and when technology decisions are made</span></li>
+        <li><span class="t"><span class="kw">Reporting</span> practices, so families stay informed as things change</span></li>
+        <li><span class="t">Advice on long-term <span class="kw">oversight</span> and budgeting for EdTech and AI</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block cta-band">
+  <div class="wrap">
+    <div class="inner">
+      <div>
+        <h2>This works best when families and schools pull together</h2>
+        <p>Come to a meeting, read the community survey, or add your voice at a school committee meeting. Every bit of constructive engagement helps.</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="itc-take-action.html" class="btn cream" style="background:var(--cream);color:var(--plum);">Take action</a>
+        <a href="itc-survey.html" class="btn outline">See Concord's Data</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a href="itc-homepage.html" class="wm">
+          <span class="the">The</span>
+          <span class="main">Intentional<br>Tech Coalition</span>
+          <span class="rule-row"><span>CONCORD</span></span>
+        </a>
+        <p>Led by Emily Lines, a Concord parent, working in partnership with local families, educators, and schools on intentional, research-informed technology choices.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="itc-at-school.html">At School</a>
+        <a href="itc-at-home.html">At Home</a>
+        <a href="itc-take-action.html">Take Action</a>
+        <a href="itc-survey.html">Concord's Data</a>
+        <a href="itc-resources.html">Resources</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScg3ufVW7tq8G-fKrdv3LXkvI2f0A65VjYRbcBgdlyEHEaMRQ/viewform?usp=header" target="_blank">Sign the CMS pledge</a>
+        <a href="itc-join.html">Join the coalition</a>
+        <a href="itc-take-action.html#speak">Speak at a meeting</a>
+        <a href="mailto:concordschoolcommittee@concordps.org">Email the school committee</a>
+        <a href="mailto:emily@intentionaltechcoalition.org">Contact us</a>
+      </div>
+    </div>
+    <div class="fineprint">Survey conducted April to May 2026 in Concord, MA. Figures reflect the 71 of 78 respondents from Concord Public Schools and CCHS families. Descriptive associations, not causal claims. © 2026 The Intentional Tech Coalition.</div>
+  </div>
+</footer>
+
+</body>
+</html>

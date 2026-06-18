@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- itc-join, v5, June 17, 2026. Stable filename: version tracked here, not in the filename. Signup card now collects first name, last name, and email, mirroring the homepage join card (rule 29); lead aligned to "Add your name". -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Us | The Intentional Tech Coalition</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..600;1,9..144,200..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#C0CABF;--sage-dk:#A9B6A6;--forest:#3F5138;--forest-2:#5F6D57;--plum:#463347;--plum-dk:#382839;--ink:#242321;--cream:#E5E0DA;--paper:#F4F1EC;--white:#FBFAF7;--line:rgba(63,81,56,.22);--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--r:18px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.08;}
+a{color:inherit;text-decoration:none;}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--forest-2);}
+.eyebrow::before{content:"";height:1px;width:22px;background:var(--forest-2);opacity:.55;}
+.eyebrow.one::after{display:none;}
+.draftnote{background:var(--plum-dk);color:var(--sage);text-align:center;font-size:12px;padding:8px 16px;letter-spacing:.02em;}
+.btn{display:inline-block;border:none;cursor:pointer;font-family:var(--sans);font-weight:600;font-size:13px;border-radius:999px;padding:10px 22px;background:var(--plum);color:var(--paper);text-decoration:none;}
+.btn.ghost{background:transparent;color:var(--forest);border:1.5px solid var(--forest);}
+.wm{display:inline-flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;}
+.wm .the{font-family:var(--serif);font-weight:300;font-size:11px;color:var(--forest-2);line-height:1;letter-spacing:.06em;margin-bottom:1px;}
+.wm .main{font-family:var(--serif);font-weight:400;font-size:17px;color:var(--forest);line-height:1.04;letter-spacing:-.01em;}
+.wm .rule-row{display:flex;align-items:center;gap:7px;margin-top:4px;}
+.wm .rule-row span{font-family:var(--sans);font-size:7.5px;font-weight:600;letter-spacing:.38em;color:var(--forest-2);}
+.wm .rule-row::before,.wm .rule-row::after{content:"";height:1px;width:20px;background:var(--forest-2);opacity:.5;}
+footer .wm .the{color:var(--sage);opacity:.65;}
+footer .wm .main{color:var(--sage);}
+footer .wm .rule-row span{color:var(--sage);opacity:.7;}
+footer .wm .rule-row::before,footer .wm .rule-row::after{background:var(--sage);opacity:.4;}
+header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:960px;margin:0 auto;}
+.menu{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:500;}
+.menu a{color:var(--ink);opacity:.8;}
+.menu a[aria-current]{opacity:1;font-weight:700;color:var(--forest);border-bottom:2px solid var(--forest);padding-bottom:2px;}
+.menu .btn{padding:8px 18px;opacity:1;color:var(--paper);}
+.pagehead{background:var(--sage);padding:56px 0 60px;}
+.pagehead h1{font-size:clamp(30px,5vw,52px);color:var(--plum);margin:16px 0 16px;max-width:640px;}
+.pagehead p.lede{font-size:clamp(15px,2vw,18px);max-width:620px;color:var(--ink);opacity:.9;}
+.block{padding:64px 0;}
+.join-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start;}
+.signup-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:34px 32px;}
+.signup-card h2{font-size:clamp(24px,3.5vw,32px);color:var(--forest);margin-bottom:10px;}
+.signup-card p{font-size:14px;opacity:.85;}
+.field{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
+.field input{flex:1;min-width:200px;font-family:var(--sans);font-size:14px;padding:11px 16px;border:1.5px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);}
+.field input:focus{outline:2px solid var(--forest-2);outline-offset:1px;}
+.placeholder-note{font-size:12px;color:var(--forest-2);margin-top:10px;}
+.expect h3{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--forest-2);font-weight:600;margin-bottom:4px;}
+.expect .row{padding:16px 0;border-top:1px solid var(--line);}
+.expect .row:first-of-type{border-top:none;padding-top:4px;}
+.expect .row h4{font-family:var(--serif);font-weight:400;font-size:18px;color:var(--plum);margin-bottom:4px;}
+.expect .row p{font-size:13.5px;opacity:.85;line-height:1.6;}
+.pledge-strip{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:44px 0;}
+.pledge-strip .inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;}
+.pledge-strip h2{font-size:clamp(22px,3vw,30px);color:var(--forest);max-width:460px;}
+.pledge-strip p{font-size:14px;opacity:.85;max-width:460px;margin-top:8px;}
+.contact h2{font-size:clamp(24px,3.5vw,32px);color:var(--forest);margin:14px 0 10px;}
+.contact p{font-size:15px;opacity:.85;max-width:560px;}
+.contact .email-line{margin-top:18px;font-size:15px;}
+.contact .email-line a{font-weight:600;color:var(--plum);text-decoration:underline;}
+footer{background:var(--ink);color:#cfd3cb;padding:48px 0 32px;}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;}
+footer p{font-size:13px;line-height:1.6;opacity:.8;margin-top:12px;max-width:36ch;}
+footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9aa392;margin-bottom:10px;}
+footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.85;}
+.fineprint{margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;opacity:.55;}
+@media(max-width:760px){.join-grid{grid-template-columns:1fr;gap:32px;}}
+</style>
+</head>
+<body>
+
+<div class="draftnote">Rough draft · The signup form is a visual placeholder until it is connected to the email list in Squarespace</div>
+
+<header>
+  <div class="nav">
+    <a href="itc-homepage.html" class="wm">
+      <span class="the">The</span>
+      <span class="main">Intentional<br>Tech Coalition</span>
+      <span class="rule-row"><span>CONCORD</span></span>
+    </a>
+    <nav class="menu">
+      <a href="itc-at-school.html">At School</a>
+      <a href="itc-at-home.html">At Home</a>
+      <a href="itc-take-action.html">Take Action</a>
+      <a href="itc-survey.html">Concord's Data</a>
+      <a href="itc-resources.html">Resources</a>
+      <a href="itc-join.html" class="btn">Join us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="eyebrow one">Join us</span>
+    <h1>You're welcome here</h1>
+    <p class="lede">Whatever choices your family has made so far, you're welcome here. We're all figuring this out as we go. Joining the coalition simply means staying connected: no dues, no obligations, just neighbors keeping each other in the loop. We respect your inbox and aim to send just one or two emails a month.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="join-grid">
+      <div class="signup-card">
+        <h2>Join the coalition</h2>
+        <p>Add your name to stay in the loop on gatherings, workshops, and what we are learning together.</p>
+        <div class="field">
+          <input type="text" placeholder="First name" aria-label="First name">
+          <input type="text" placeholder="Last name" aria-label="Last name">
+          <input type="email" placeholder="you@email.com" aria-label="Email address">
+          <button class="btn" type="button">Keep me in the loop</button>
+        </div>
+        <p class="placeholder-note">One or two emails a month.</p>
+        <p class="placeholder-note">Placeholder, to be connected in Squarespace.</p>
+      </div>
+      <div class="expect">
+        <h3>What you'll hear about</h3>
+        <div class="row">
+          <h4>Gatherings and workshops</h4>
+          <p>Community conversations, practical sessions, and speakers, with dates and locations as they're set.</p>
+        </div>
+        <div class="row">
+          <h4>What the community is saying</h4>
+          <p>Survey snapshots, what we're learning from research, and how other families are navigating the same choices.</p>
+        </div>
+        <div class="row">
+          <h4>Ways to take part</h4>
+          <p>Opportunities to be heard at school committee meetings, help plan events, or lend your expertise.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pledge-strip">
+  <div class="wrap">
+    <div class="inner">
+      <div>
+        <h2>Families have a part to play</h2>
+        <p>If your child attends or will attend Concord Middle School, signing the parent pledge is one of the ways families hold up our end: keeping the school day healthy and distraction-free, together.</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="https://docs.google.com/document/d/12Paw6ntlZyAAbSnaHCNCUIj5k02FL_KE80x48p5ON_8/edit?tab=t.0" class="btn ghost" target="_blank">Read the pledge</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScg3ufVW7tq8G-fKrdv3LXkvI2f0A65VjYRbcBgdlyEHEaMRQ/viewform?usp=header" class="btn" target="_blank">Sign the pledge</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block contact">
+  <div class="wrap">
+    <span class="eyebrow one">Contact us</span>
+    <h2>Prefer to reach a person?</h2>
+    <p>Questions, ideas, resource recommendations, or an offer to help.</p>
+    <p class="email-line">Email Emily at <a href="mailto:emily@intentionaltechcoalition.org">emily@intentionaltechcoalition.org</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a href="itc-homepage.html" class="wm">
+          <span class="the">The</span>
+          <span class="main">Intentional<br>Tech Coalition</span>
+          <span class="rule-row"><span>CONCORD</span></span>
+        </a>
+        <p>Led by Emily Lines, a Concord parent, working in partnership with local families, educators, and schools on intentional, research-informed technology choices.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="itc-at-school.html">At School</a>
+        <a href="itc-at-home.html">At Home</a>
+        <a href="itc-take-action.html">Take Action</a>
+        <a href="itc-survey.html">Concord's Data</a>
+        <a href="itc-resources.html">Resources</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScg3ufVW7tq8G-fKrdv3LXkvI2f0A65VjYRbcBgdlyEHEaMRQ/viewform?usp=header" target="_blank">Sign the CMS pledge</a>
+        <a href="itc-join.html">Join the coalition</a>
+        <a href="itc-take-action.html#speak">Speak at a meeting</a>
+        <a href="mailto:concordschoolcommittee@concordps.org">Email the school committee</a>
+        <a href="mailto:emily@intentionaltechcoalition.org">Contact us</a>
+      </div>
+    </div>
+    <div class="fineprint">© 2026 The Intentional Tech Coalition. A volunteer parent group in Concord, MA.</div>
+  </div>
+</footer>
+
+</body>
+</html>

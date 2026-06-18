@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!-- itc-resources, v11, June 18, 2026. Stable filename: version tracked here, not in the filename. Session arc: Start here featured block (single SBS Resource Library link); shelves flow into two packed columns; shelf order Websites, Books, Articles, Podcasts (placeholder), Events; events + podcasts are coming-soon slots. Websites, Articles, and Books all tightened to one-line descriptions; author/source meta removed from Articles only (Websites keep their short category label); compact evidence tags kept on three preliminary/contested items: "(Working paper.)", "(Preprint, small sample.)", "(Causal strength debated.)". -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources | The Intentional Tech Coalition</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..600;1,9..144,200..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#C0CABF;--sage-dk:#A9B6A6;--forest:#3F5138;--forest-2:#5F6D57;--plum:#463347;--plum-dk:#382839;--ink:#242321;--cream:#E5E0DA;--paper:#F4F1EC;--white:#FBFAF7;--line:rgba(63,81,56,.22);--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--r:18px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.08;}
+a{color:inherit;text-decoration:none;}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--forest-2);}
+.eyebrow::before{content:"";height:1px;width:22px;background:var(--forest-2);opacity:.55;}
+.eyebrow.one::after{display:none;}
+.draftnote{background:var(--plum-dk);color:var(--sage);text-align:center;font-size:12px;padding:8px 16px;letter-spacing:.02em;}
+.btn{display:inline-block;border:none;cursor:pointer;font-family:var(--sans);font-weight:600;font-size:13px;border-radius:999px;padding:10px 22px;background:var(--plum);color:var(--paper);text-decoration:none;}
+.btn.ghost{background:transparent;color:var(--forest);border:1.5px solid var(--forest);}
+.wm{display:inline-flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;}
+.wm .the{font-family:var(--serif);font-weight:300;font-size:11px;color:var(--forest-2);line-height:1;letter-spacing:.06em;margin-bottom:1px;}
+.wm .main{font-family:var(--serif);font-weight:400;font-size:17px;color:var(--forest);line-height:1.04;letter-spacing:-.01em;}
+.wm .rule-row{display:flex;align-items:center;gap:7px;margin-top:4px;}
+.wm .rule-row span{font-family:var(--sans);font-size:7.5px;font-weight:600;letter-spacing:.38em;color:var(--forest-2);}
+.wm .rule-row::before,.wm .rule-row::after{content:"";height:1px;width:20px;background:var(--forest-2);opacity:.5;}
+footer .wm .the{color:var(--sage);opacity:.65;}
+footer .wm .main{color:var(--sage);}
+footer .wm .rule-row span{color:var(--sage);opacity:.7;}
+footer .wm .rule-row::before,footer .wm .rule-row::after{background:var(--sage);opacity:.4;}
+header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:960px;margin:0 auto;}
+.menu{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:500;}
+.menu a{color:var(--ink);opacity:.8;}
+.menu a[aria-current]{opacity:1;font-weight:700;color:var(--forest);border-bottom:2px solid var(--forest);padding-bottom:2px;}
+.menu .btn{padding:8px 18px;opacity:1;color:var(--paper);}
+.pagehead{background:var(--sage);padding:56px 0 60px;}
+.pagehead h1{font-size:clamp(30px,4.5vw,46px);color:var(--plum);margin:16px 0 16px;max-width:680px;}
+.pagehead p.lede{font-size:clamp(15px,2vw,18px);max-width:640px;color:var(--ink);opacity:.9;}
+.criteria{background:var(--cream);border-bottom:1px solid var(--line);padding:36px 0;}
+.criteria .row{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.criteria h3{font-size:16px;color:var(--forest);margin-bottom:6px;}
+.criteria p{font-size:13px;opacity:.85;line-height:1.55;}
+.block{padding:64px 0;}
+.library{display:grid;grid-template-columns:180px 1fr;gap:48px;align-items:start;}
+.index{position:sticky;top:24px;}
+.index h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--forest-2);margin-bottom:12px;}
+.index a{display:block;font-size:13.5px;font-weight:600;color:var(--forest);padding:7px 0;border-bottom:1px solid var(--line);}
+.index a:last-child{border-bottom:none;}
+.shelf{margin-bottom:56px;scroll-margin-top:24px;}
+.shelf:last-child{margin-bottom:0;}
+.shelf h2{font-size:clamp(24px,3.5vw,32px);color:var(--forest);margin-bottom:6px;}
+.shelf .shelf-note{font-size:13.5px;opacity:.8;margin-bottom:20px;max-width:54ch;}
+.entries{columns:2;column-gap:34px;}
+.entry{padding:14px 0;border-top:1px solid var(--line);break-inside:avoid;-webkit-column-break-inside:avoid;}
+.entry .title{font-family:var(--serif);font-size:17px;color:var(--plum);line-height:1.2;}
+.entry .title a.tlink{color:var(--plum);text-decoration:none;border-bottom:1px solid rgba(70,51,71,.28);}
+.entry .title a.tlink:hover{border-bottom-color:var(--plum);}
+.entry .meta{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--forest-2);text-transform:uppercase;margin:3px 0 7px;}
+.entry .why{font-size:13px;opacity:.85;line-height:1.55;}
+.entry.slot{border:1px dashed rgba(63,81,56,.35);border-radius:var(--r);padding:18px 22px;margin-top:14px;background:var(--white);}
+.entry.slot .title{color:var(--forest-2);}
+.entry.slot .why{color:var(--forest-2);opacity:1;}
+.featured{margin-bottom:52px;scroll-margin-top:24px;}
+.featured h2{font-size:clamp(24px,3.5vw,32px);color:var(--forest);margin:10px 0 6px;}
+.featured .shelf-note{font-size:13.5px;opacity:.8;margin-bottom:20px;max-width:60ch;}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.feat-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;display:flex;flex-direction:column;transition:border-color .15s;}
+.feat-card:hover{border-color:var(--forest-2);}
+.feat-card .meta{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--forest-2);text-transform:uppercase;margin-bottom:8px;}
+.feat-card h3{font-family:var(--serif);font-size:20px;color:var(--plum);margin-bottom:8px;}
+.feat-card p{font-size:13px;opacity:.85;line-height:1.55;margin-bottom:14px;}
+.feat-card .go{margin-top:auto;font-size:13px;font-weight:700;color:var(--plum);border-bottom:1.5px solid var(--sage-dk);padding-bottom:1px;align-self:flex-start;}
+.suggest{background:var(--cream);}
+.suggest .inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;}
+.suggest h2{font-size:clamp(22px,3vw,30px);color:var(--forest);max-width:480px;}
+.suggest p{font-size:14px;opacity:.85;max-width:480px;margin-top:8px;}
+footer{background:var(--ink);color:#cfd3cb;padding:48px 0 32px;}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;}
+footer p{font-size:13px;line-height:1.6;opacity:.8;margin-top:12px;max-width:36ch;}
+footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9aa392;margin-bottom:10px;}
+footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.85;}
+.fineprint{margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;opacity:.55;}
+@media(max-width:760px){.criteria .row{grid-template-columns:1fr;}.feat-grid{grid-template-columns:1fr;}.entries{columns:1;}.library{grid-template-columns:1fr;gap:28px;}.index{position:static;display:flex;flex-wrap:wrap;gap:8px 18px;}.index h4{width:100%;margin-bottom:4px;}.index a{border-bottom:none;padding:2px 0;}}
+</style>
+</head>
+<body>
+
+<div class="draftnote">Rough draft · Books, websites, and research are curated · Event listings coming as the fall calendar fills in</div>
+
+<header>
+  <div class="nav">
+    <a href="itc-homepage.html" class="wm">
+      <span class="the">The</span>
+      <span class="main">Intentional<br>Tech Coalition</span>
+      <span class="rule-row"><span>CONCORD</span></span>
+    </a>
+    <nav class="menu">
+      <a href="itc-at-school.html">At School</a>
+      <a href="itc-at-home.html">At Home</a>
+      <a href="itc-take-action.html">Take Action</a>
+      <a href="itc-survey.html">Concord's Data</a>
+      <a href="itc-resources.html" aria-current="page">Resources</a>
+      <a href="itc-join.html" class="btn">Join us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="eyebrow one">Resources</span>
+    <h1>Recommended resources</h1>
+    <p class="lede">The books, websites, articles, and events that come up again and again at our gatherings. We keep this list short on purpose: everything here is something we've actually read, used, and would hand to a neighbor.</p>
+  </div>
+</section>
+
+<section class="criteria">
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <h3>Evidence-informed</h3>
+        <p>We favor work grounded in research, and we say so when something is one perspective among several rather than settled science.</p>
+      </div>
+      <div>
+        <h3>Practical for real families</h3>
+        <p>Ideas a busy household can actually use, without assuming any particular family circumstance, schedule, or budget.</p>
+      </div>
+      <div>
+        <h3>Judgment-free</h3>
+        <p>Nothing on this list shames families for the choices they've already made. We're all figuring this out as we go.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="library">
+      <nav class="index" aria-label="Resource categories">
+        <h4>On this page</h4>
+        <a href="#start">Start here</a>
+        <a href="#websites">Websites &amp; organizations</a>
+        <a href="#books">Books</a>
+        <a href="#articles">Articles &amp; research</a>
+        <a href="#podcasts">Podcasts</a>
+        <a href="#events">Upcoming events</a>
+      </nav>
+      <div>
+        <div class="featured" id="start">
+          <span class="eyebrow one">Start here</span>
+          <h2>The collection we point to most</h2>
+          <p class="shelf-note">From Schools Beyond Screens, a national coalition of parents and educators. It's theirs, kept current by their team, and a strong first stop.</p>
+          <div class="feat-grid">
+            <a class="feat-card" href="https://docs.google.com/document/d/1T1Gsgcen7ma4S3h-me_LN-HzQIckkq6BKyw_JKRskQA/edit?tab=t.0" target="_blank" rel="noopener">
+              <span class="meta">Schools Beyond Screens</span>
+              <h3>Resource Library</h3>
+              <p>Four tabs: Resources to Learn (articles, research, webinars, white papers, podcasts), Resources to Use (toolkits, email templates, public comments, presentations), Experiences Changing Course (stories of administrators and teachers taking a more intentional approach), and Educator Voices.</p>
+              <span class="go">Open the library</span>
+            </a>
+          </div>
+        </div>
+        <div class="shelf" id="websites">
+          <h2>Websites &amp; organizations</h2>
+          <p class="shelf-note">Groups doing wonderful work in this space. Rather than repeat what they do well, we point families their way.</p>
+          <div class="entries">
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://fairplayforkids.org/" target="_blank" rel="noopener">Fairplay</a></div>
+            <div class="meta">Nonprofit &middot; Children and families</div>
+            <p class="why">Campaigns, research, and the Screen Time Action Network, working to free childhood from Big Tech's harms.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://www.distractionfreeschools.com/" target="_blank" rel="noopener">Distraction-Free Schools Policy Project</a></div>
+            <div class="meta">Massachusetts-based coalition</div>
+            <p class="why">Model legislation and weekly advocacy calls on phones, social media, and school technology.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://www.schoolsbeyondscreens.com/" target="_blank" rel="noopener">Schools Beyond Screens</a></div>
+            <div class="meta">National coalition</div>
+            <p class="why">Evidence-based classroom-tech advocacy, with a deep resource library.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://smartphonefreechildhoodus.com/" target="_blank" rel="noopener">Smartphone Free Childhood US</a></div>
+            <div class="meta">Parent network</div>
+            <p class="why">Helps families delay smartphones and organize locally, with a parent-group locator.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://www.humanetech.com/" target="_blank" rel="noopener">Center for Humane Technology</a></div>
+            <div class="meta">Nonprofit</div>
+            <p class="why">The nonprofit behind The Social Dilemma, on how persuasive design competes for our attention.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://www.everyschool.org/" target="_blank" rel="noopener">Everyschool</a></div>
+            <div class="meta">Educator resources</div>
+            <p class="why">Digital-wellness tools for educators, including the EdTech Triangle for deciding when classroom tech helps.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://www.awayfortheday.org/" target="_blank" rel="noopener">Away for the Day</a></div>
+            <div class="meta">School toolkit</div>
+            <p class="why">Free tools to help middle schools keep phones away during the school day.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://www.phonefreeschoolsmovement.org/" target="_blank" rel="noopener">Phone-Free Schools Movement</a></div>
+            <div class="meta">Parent and admin resources</div>
+            <p class="why">Resources and a national community for families pursuing phone-free school days.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://pencilsoverpixels.org/" target="_blank" rel="noopener">Pencils over Pixels</a></div>
+            <div class="meta">Opt-out campaign</div>
+            <p class="why">A campaign for a clear opt-out from 1:1 school-issued devices, with supporting research.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://www.jeantwenge.com/" target="_blank" rel="noopener">Dr. Jean Twenge</a></div>
+            <div class="meta">Researcher</div>
+            <p class="why">The research hub of the psychologist whose work shapes much of this field.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://www.socialawakening.org/" target="_blank" rel="noopener">Social Awakening</a></div>
+            <div class="meta">Talks and education</div>
+            <p class="why">Max Stossel's organization: talks and guidance for schools and families on social media.</p>
+          </div>
+          </div>
+        </div>
+        <div class="shelf" id="books">
+          <h2>Books</h2>
+          <p class="shelf-note">Longer reads for when you want the full picture, from child development to how persuasive design works.</p>
+          <div class="entries">
+          <div class="entry">
+            <div class="title">10 Rules for Raising Kids in a High-Tech World</div>
+            <div class="meta">Jean M. Twenge &middot; 2025</div>
+            <p class="why">Ten practical, evidence-grounded family rules, from delaying social media to phone-free bedrooms and dinners.</p>
+          </div>
+          <div class="entry">
+            <div class="title">The Amazing Generation</div>
+            <div class="meta">Jonathan Haidt with Catherine Price &middot; 2026</div>
+            <p class="why">A companion handbook for tweens themselves, turning the research into encouraging, practical guidance.</p>
+          </div>
+          <div class="entry">
+            <div class="title">The Anxious Generation</div>
+            <div class="meta">Jonathan Haidt &middot; 2024</div>
+            <p class="why">The book that brought this conversation mainstream: a play-based childhood giving way to a phone-based one. (Causal strength debated.)</p>
+          </div>
+          <div class="entry">
+            <div class="title">The Digital Delusion</div>
+            <div class="meta">Jared Cooney Horvath &middot; 2026</div>
+            <p class="why">A neuroscientist on why classroom tech so often undermines learning, with practical steps for families and schools.</p>
+          </div>
+          <div class="entry">
+            <div class="title">Dopamine Kids</div>
+            <div class="meta">Michaeleen Doucleff &middot; 2026</div>
+            <p class="why">From the author of Hunt, Gather, Parent: a five-step approach to easing screens' pull on kids' attention and mood.</p>
+          </div>
+          <div class="entry">
+            <div class="title">Dopamine Nation</div>
+            <div class="meta">Anna Lembke &middot; 2021</div>
+            <p class="why">A Stanford psychiatrist on how constant digital stimulation reshapes the brain's reward system, and how to find balance.</p>
+          </div>
+          </div>
+        </div>
+        <div class="shelf" id="articles">
+          <h2>Articles &amp; research</h2>
+          <p class="shelf-note">Shorter reads and studies we cite often. Some links may sit behind a paywall.</p>
+          <div class="entries">
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://www.journals.uchicago.edu/doi/10.1086/691462" target="_blank" rel="noopener">Brain Drain: The Mere Presence of One's Own Smartphone Reduces Available Cognitive Capacity</a></div>
+            <p class="why">Across experiments, simply having a phone nearby, even powered off, left people with less available attention.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://journals.sagepub.com/doi/10.1177/2167702617723376" target="_blank" rel="noopener">Increases in Depressive Symptoms, Suicide-Related Outcomes, and Suicide Rates Among U.S. Adolescents</a></div>
+            <p class="why">In a large national sample, heavier screen time was associated with higher rates of anxiety, depression, and suicide-related outcomes.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4735240" target="_blank" rel="noopener">Smartphone Bans, Student Outcomes and Mental Health</a></div>
+            <p class="why">In Norwegian middle schools with strict phone bans, girls had fewer specialist mental-health visits and students reported less bullying. (Working paper.)</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://www.nytimes.com/2025/11/16/opinion/laptop-classroom-test-scores.html?unlocked_article_code=1.1k8.zru6.Wiwez_Hqc2X8&amp;smid=url-share" target="_blank" rel="noopener">The Screen That Ate Your Child's Education</a></div>
+            <p class="why">An accessible argument that school-issued devices are crowding out real learning.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://jamanetwork.com/journals/jamapediatrics/fullarticle/2829879" target="_blank" rel="noopener">Adolescent Smartphone Use During School Hours</a></div>
+            <p class="why">How much of the school day adolescents actually spend on their phones.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://penntoday.upenn.edu/news/angela-duckworth-over-20000-educators-share-insights-school-cell-phone-policies" target="_blank" rel="noopener">Over 20,000 Educators Share Insights on School Cellphone Policies</a></div>
+            <p class="why">What school phone policies look like in practice, and how well they are working.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://www.pewresearch.org/short-reads/2024/06/12/72-percent-of-us-high-school-teachers-say-cellphone-distraction-is-a-major-problem-in-the-classroom/" target="_blank" rel="noopener">72% of U.S. High School Teachers Say Cellphone Distraction Is a Major Problem</a></div>
+            <p class="why">How much teachers see phones disrupting the classroom.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://arxiv.org/abs/2506.08872v1" target="_blank" rel="noopener">Your Brain on ChatGPT: Accumulation of Cognitive Debt When Using an AI Assistant</a></div>
+            <p class="why">Students using an AI assistant to write essays showed weaker neural engagement. (Preprint, small sample.)</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://metasinternalresearch.org/" target="_blank" rel="noopener">Meta's Internal Research</a></div>
+            <p class="why">Meta's own internal studies on social media and youth mental health, in plain language, drawn from whistleblower and legal disclosures.</p>
+          </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://internetsafetylabs.org/wp-content/uploads/2022/12/2022-k12-edtech-safety-benchmark-national-findings-part-1.pdf" target="_blank" rel="noopener">2022 K-12 EdTech Safety Benchmark: National Findings</a></div>
+            <p class="why">The apps and EdTech used in schools, and how they handle student data privacy.</p>
+          </div>
+          </div>
+        </div>
+        <div class="shelf" id="podcasts">
+          <h2>Podcasts</h2>
+          <p class="shelf-note">Conversations worth a commute or a dog walk, the shows and episodes that come up at our gatherings.</p>
+          <div class="entry slot">
+            <p class="why">Recommendations coming soon. Have a show you keep sharing? <a class="tlink" href="mailto:emily@intentionaltechcoalition.org?subject=A%20podcast%20recommendation">Tell us.</a></p>
+          </div>
+        </div>
+        <div class="shelf" id="events">
+          <h2>Upcoming events</h2>
+          <p class="shelf-note">There are wonderful organizations near us hosting talks, screenings, and workshops for families. We share the ones we think are worth your evening; these events are theirs, not ours, and we're glad to point you to them.</p>
+          <div class="entry slot">
+            <p class="why">Details coming soon. We'll add event listings here as the fall calendar comes together.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block suggest">
+  <div class="wrap">
+    <div class="inner">
+      <div>
+        <h2>Read something we should know about?</h2>
+        <p>If a book, article, or other resource inspired you or changed how you think about tech, we'd love to hear about it.</p>
+      </div>
+      <a href="mailto:emily@intentionaltechcoalition.org?subject=A%20resource%20recommendation" class="btn">Send a recommendation</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a href="itc-homepage.html" class="wm">
+          <span class="the">The</span>
+          <span class="main">Intentional<br>Tech Coalition</span>
+          <span class="rule-row"><span>CONCORD</span></span>
+        </a>
+        <p>Led by Emily Lines, a Concord parent, working in partnership with local families, educators, and schools on intentional, research-informed technology choices.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="itc-at-school.html">At School</a>
+        <a href="itc-at-home.html">At Home</a>
+        <a href="itc-take-action.html">Take Action</a>
+        <a href="itc-survey.html">Concord's Data</a>
+        <a href="itc-resources.html">Resources</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScg3ufVW7tq8G-fKrdv3LXkvI2f0A65VjYRbcBgdlyEHEaMRQ/viewform?usp=header" target="_blank">Sign the CMS pledge</a>
+        <a href="itc-join.html">Join the coalition</a>
+        <a href="itc-take-action.html#speak">Speak at a meeting</a>
+        <a href="mailto:concordschoolcommittee@concordps.org">Email the school committee</a>
+        <a href="mailto:emily@intentionaltechcoalition.org">Contact us</a>
+      </div>
+    </div>
+    <div class="fineprint">© 2026 The Intentional Tech Coalition. A volunteer parent group in Concord, MA.</div>
+  </div>
+</footer>
+
+</body>
+</html>
