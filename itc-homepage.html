@@ -175,6 +175,16 @@ header{position:relative;}
 footer .grid{grid-template-columns:1fr;gap:24px;}
 .block{padding:44px 0;}.sec-head{margin-bottom:28px;}
 }
+.modal-backdrop{position:fixed;inset:0;background:rgba(36,35,33,.55);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;}
+.modal-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:40px 44px;max-width:520px;width:100%;position:relative;box-shadow:0 8px 32px rgba(36,35,33,.18);}
+.modal-card .eyebrow{margin-bottom:14px;}
+.modal-card h2{font-size:clamp(24px,4vw,32px);color:var(--forest);margin:12px 0 16px;}
+.modal-card p{font-size:14.5px;line-height:1.65;opacity:.85;margin-bottom:28px;}
+.modal-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.modal-dismiss{background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:13px;color:var(--forest-2);text-decoration:underline;padding:0;}
+.modal-close{position:absolute;top:14px;right:16px;background:none;border:none;cursor:pointer;font-size:22px;line-height:1;color:var(--ink);opacity:.4;padding:4px 8px;}
+.modal-close:hover{opacity:.7;}
+@media(max-width:760px){.modal-card{padding:32px 28px;}}
 </style>
 </head>
 <body>
@@ -480,6 +490,29 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
     <div class="fineprint">Survey conducted April to May 2026 in Concord, MA. Data partner attribution to be confirmed. Screen-time and well-being figures are descriptive associations, not causal claims. © 2026 The Intentional Tech Coalition.</div>
   </div>
 </footer>
+
+<div id="survey-modal" class="modal-backdrop">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    <span class="eyebrow one">Concord Community Survey</span>
+    <h2 id="modal-title">Help us plan for 2026-27</h2>
+    <p>We're gathering input from as many Concord families, caregivers, and educators as possible to shape the coalition's gatherings, workshops, and advocacy for the coming school year. This 5-minute survey tells us what to offer, what to focus our advocacy on, and what kind of involvement would work for you. Your answers are private and shared only with ITC leadership.</p>
+    <div class="modal-actions">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScHSgIEZOFOU3VFBzbT8IE-m5FFvplILXcrWwMlcAadOtxZsw/viewform?usp=header" class="btn" target="_blank">Take the survey &rarr;</a>
+      <button class="modal-dismiss" id="modal-dismiss">Not now</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var modal = document.getElementById('survey-modal');
+  var close = function(){ modal.style.display = 'none'; };
+  document.getElementById('modal-close').addEventListener('click', close);
+  document.getElementById('modal-dismiss').addEventListener('click', close);
+  modal.addEventListener('click', function(e){ if(e.target === this) close(); });
+})();
+</script>
 
 </body>
 </html>
