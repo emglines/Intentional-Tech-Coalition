@@ -41,6 +41,9 @@ header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
 .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;}
 .pledge-nudge{display:inline-flex;align-items:center;gap:10px;margin-top:28px;background:rgba(70,51,71,.12);border:1px solid rgba(70,51,71,.2);border-radius:999px;padding:8px 16px 8px 10px;font-size:13px;color:var(--plum);}
 .pledge-nudge .pip{background:var(--plum);color:var(--paper);font-size:10px;font-weight:700;letter-spacing:.06em;border-radius:999px;padding:3px 9px;white-space:nowrap;}
+.nudge-stack{display:flex;flex-direction:column;gap:8px;margin-top:28px;width:fit-content;}
+.nudge-pill{display:flex;align-items:center;gap:10px;background:rgba(63,81,56,.13);border:1px solid rgba(63,81,56,.26);border-radius:999px;padding:8px 16px 8px 10px;font-size:13px;color:var(--forest);text-decoration:none;}
+.nudge-pill .pip{background:var(--forest);color:var(--paper);font-size:10px;font-weight:700;letter-spacing:.06em;border-radius:999px;padding:3px 9px;white-space:nowrap;flex-shrink:0;}
 .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center;}
 .hero-evidence{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px 26px;box-shadow:0 1px 0 rgba(63,81,56,.04);}
 .hero-evidence .eb-head{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--forest-2);}
@@ -221,10 +224,16 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
           <a href="#arenas" class="btn">Learn what we do</a>
           <a href="#action" class="btn ghost">Take action</a>
         </div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScg3ufVW7tq8G-fKrdv3LXkvI2f0A65VjYRbcBgdlyEHEaMRQ/viewform?usp=header" class="pledge-nudge" target="_blank">
-          <span class="pip">For CMS families</span>
-          Sign the Concord Middle School parent pledge &rarr;
-        </a>
+        <div class="nudge-stack">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScg3ufVW7tq8G-fKrdv3LXkvI2f0A65VjYRbcBgdlyEHEaMRQ/viewform?usp=header" class="nudge-pill" target="_blank">
+            <span class="pip">For CMS families</span>
+            Sign the Concord Middle School parent pledge &rarr;
+          </a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScHSgIEZOFOU3VFBzbT8IE-m5FFvplILXcrWwMlcAadOtxZsw/viewform?usp=header" class="nudge-pill" target="_blank">
+            <span class="pip">Open to all</span>
+            Take our 5-minute community survey for 2026-27 &rarr;
+          </a>
+        </div>
       </div>
       <aside class="hero-evidence" aria-label="What the research shows">
         <div class="eb-head">What the research shows</div>
