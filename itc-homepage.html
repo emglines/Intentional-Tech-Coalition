@@ -121,6 +121,22 @@ header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
 .pledge-right{text-align:center;padding:28px 32px;background:rgba(255,255,255,.07);border-radius:14px;border:1px solid rgba(255,255,255,.12);min-width:180px;}
 .pledge-right .sig-count{font-family:var(--serif);font-size:52px;color:var(--sage);line-height:1;}
 .pledge-right .sig-label{font-size:12px;opacity:.75;margin-top:6px;line-height:1.4;}
+.feat-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:16px;align-items:stretch;}
+.feat-card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:var(--r);padding:36px;display:flex;flex-direction:column;}
+.feat-card .fc-tag{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:10px;}
+.feat-card h3{font-family:var(--serif);font-size:24px;color:var(--white);margin-bottom:10px;line-height:1.1;}
+.feat-card>p{font-size:13.5px;opacity:.82;line-height:1.55;margin-bottom:16px;}
+.feat-card .list-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage-dk);margin-bottom:8px;}
+.feat-card .item-list{list-style:none;display:flex;flex-direction:column;gap:6px;flex:1;margin-bottom:16px;}
+.feat-card .item-list li{display:flex;gap:12px;font-size:13.5px;opacity:.85;line-height:1.45;align-items:flex-start;}
+.feat-card .item-list li::before{content:"";min-width:6px;height:6px;border-radius:50%;background:var(--sage);margin-top:7px;flex-shrink:0;}
+.feat-card .card-foot{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.feat-card .time-chip{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(192,202,191,.7);background:rgba(255,255,255,.1);border-radius:999px;padding:4px 12px;}
+.survey-join{border:1.5px solid var(--line);border-radius:var(--r);padding:28px 30px;}
+.survey-join .sj-tag{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--forest-2);margin-bottom:10px;}
+.survey-join h3{font-family:var(--serif);font-size:22px;color:var(--forest);margin-bottom:8px;}
+.survey-join p{font-size:13.5px;opacity:.8;line-height:1.55;margin-bottom:12px;}
+.survey-join .time-note{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--forest-2);background:var(--cream);border-radius:999px;padding:4px 12px;margin-bottom:16px;}
 .action-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
 .action-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:28px;}
 .action-card .ac-tag{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:10px;}
@@ -171,7 +187,7 @@ header{position:relative;}
 .arenas{grid-template-columns:1fr;}.arena{padding:24px 20px;}
 .stat-row{grid-template-columns:1fr;gap:12px;}.panel{padding:20px 18px;}
 .survey-footer{flex-direction:column;gap:14px;align-items:flex-start;}.survey-footer p{display:none;}
-.pledge-card{grid-template-columns:1fr;padding:24px;}.pledge-right{display:none;}
+.pledge-card{grid-template-columns:1fr;padding:24px;}.pledge-right{display:none;}.feat-pair{grid-template-columns:1fr;}
 .action-grid{grid-template-columns:1fr;}.action-card{padding:22px;}
 .res-section{display:none;}
 .join-card{grid-template-columns:1fr;padding:28px 24px;gap:24px;}
@@ -359,25 +375,36 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
       <h2 style="margin-top:14px;">Take action</h2>
       <p>You don't have to do everything. Pick the one thing that feels most doable right now.</p>
     </div>
-    <div class="pledge-card">
-      <div>
-        <div class="ac-tag">For parents of Concord Middle School students</div>
+    <div class="feat-pair">
+      <div class="feat-card">
+        <div class="fc-tag">For parents of Concord Middle School students</div>
         <h3>Sign the CMS parent pledge</h3>
-        <p class="pledge-desc">If your child attends or will attend Concord Middle School, this pledge is for you. By signing, you're committing to work alongside the school, and your neighbors, to keep the school day healthy and distraction-free.</p>
-        <ul class="pledge-summary">
+        <p>If your child attends or will attend Concord Middle School, this pledge is for you. By signing, you're committing to work alongside the school, and your neighbors, to keep the school day healthy and distraction-free.</p>
+        <ul class="item-list">
           <li>Not send students to school with a personal device unless there is a clear family or medical need</li>
           <li>Not call or text students on personal devices during school hours</li>
           <li>Route all school-day communication through the school office</li>
           <li>Work in partnership with educators to build a focused, connected school culture</li>
         </ul>
-        <div class="btn-row">
-          <a href="https://docs.google.com/document/d/12Paw6ntlZyAAbSnaHCNCUIj5k02FL_KE80x48p5ON_8/edit?tab=t.0" class="btn cream" target="_blank">Read the full pledge</a>
+        <div class="card-foot">
+          <a href="https://docs.google.com/document/d/12Paw6ntlZyAAbSnaHCNCUIj5k02FL_KE80x48p5ON_8/edit?tab=t.0" class="btn sage" target="_blank">Read the full pledge</a>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLScg3ufVW7tq8G-fKrdv3LXkvI2f0A65VjYRbcBgdlyEHEaMRQ/viewform?usp=header" class="btn sage" target="_blank">Sign the pledge</a>
         </div>
       </div>
-      <div class="pledge-right">
-        <div class="sig-label" style="font-size:14px;opacity:.9;line-height:1.5;">CMS families are signing<br>and the list is growing.</div>
-        <div style="margin-top:10px;font-size:12px;opacity:.6;">Add your family's name.</div>
+      <div class="feat-card">
+        <div class="fc-tag">For all Concord families</div>
+        <h3>Take the Shape the Year Survey</h3>
+        <p>We're gathering input from as many Concord families, caregivers, and educators as possible to shape what we build for 2026-27. Your answers are private and shared only with ITC leadership.</p>
+        <div class="list-label">What you're helping shape</div>
+        <ul class="item-list">
+          <li>Gatherings and workshops for the coming school year</li>
+          <li>Coalition advocacy priorities for the school committee</li>
+          <li>Ways to stay involved that fit your life</li>
+        </ul>
+        <div class="card-foot">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScHSgIEZOFOU3VFBzbT8IE-m5FFvplILXcrWwMlcAadOtxZsw/viewform?usp=header" class="btn sage" target="_blank">Take the survey &rarr;</a>
+          <span class="time-chip">5 minutes</span>
+        </div>
       </div>
     </div>
     <div class="action-grid">
@@ -452,16 +479,13 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
         <p style="font-size:12px;color:var(--forest-2);margin-top:10px;">One or two emails a month.</p>
         <p style="font-size:13px;margin-top:18px;opacity:.75;">Next gathering: <strong>September 2026</strong>, date &amp; location TBC.</p>
       </div>
-      <div class="pledge-join">
-        <div class="pj-tag">For parents of Concord Middle School students</div>
-        <h3>Sign the CMS parent pledge</h3>
-        <p>If your child attends or will attend Concord Middle School, commit to keeping the school day healthy and distraction-free, together with your neighbors and the school.</p>
-        <div class="sig-strip">
-          <span class="l" style="font-size:13px;">CMS families are signing now. Add your family's name to a growing list.</span>
-        </div>
+      <div class="survey-join">
+        <div class="sj-tag">For all Concord families</div>
+        <h3>Shape what we build for 2026-27</h3>
+        <p>We're gathering input from families, caregivers, and educators across Concord to plan next year's gatherings, workshops, and advocacy priorities. Every answer helps us build something worth showing up for.</p>
+        <div class="time-note">5 minutes &middot; Private</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <a href="https://docs.google.com/document/d/12Paw6ntlZyAAbSnaHCNCUIj5k02FL_KE80x48p5ON_8/edit?tab=t.0" class="btn ghost" style="font-size:13px;padding:9px 18px;" target="_blank">Read the pledge</a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScg3ufVW7tq8G-fKrdv3LXkvI2f0A65VjYRbcBgdlyEHEaMRQ/viewform?usp=header" class="btn" style="font-size:13px;padding:9px 18px;" target="_blank">Sign the pledge</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScHSgIEZOFOU3VFBzbT8IE-m5FFvplILXcrWwMlcAadOtxZsw/viewform?usp=header" class="btn" style="font-size:13px;padding:9px 18px;" target="_blank">Take the Shape the Year Survey &rarr;</a>
         </div>
       </div>
     </div>
