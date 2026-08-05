@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!-- itc-public-comment-signup. Not linked from nav — accessible via direct URL only. Storage: Firebase Realtime Database REST API. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Public Comment Sign-Up | The Intentional Tech Coalition</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..600;1,9..144,200..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#C0CABF;--sage-dk:#A9B6A6;--forest:#3F5138;--forest-2:#5F6D57;--plum:#463347;--plum-dk:#382839;--ink:#242321;--cream:#E5E0DA;--paper:#F4F1EC;--white:#FBFAF7;--line:rgba(63,81,56,.22);--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--r:18px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.08;}
+a{color:inherit;text-decoration:none;}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--forest-2);}
+.eyebrow::before{content:"";height:1px;width:22px;background:var(--forest-2);opacity:.55;}
+.eyebrow.one::after{display:none;}
+.btn{display:inline-block;border:none;cursor:pointer;font-family:var(--sans);font-weight:600;font-size:13px;border-radius:999px;padding:10px 22px;background:var(--plum);color:var(--paper);text-decoration:none;}
+.btn.ghost{background:transparent;color:var(--forest);border:1.5px solid var(--forest);}
+.btn.sage{background:var(--sage);color:var(--forest);}
+.wm{display:inline-flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;}
+.wm .the{font-family:var(--serif);font-weight:300;font-size:11px;color:var(--forest-2);line-height:1;letter-spacing:.06em;margin-bottom:1px;}
+.wm .main{font-family:var(--serif);font-weight:400;font-size:17px;color:var(--forest);line-height:1.04;letter-spacing:-.01em;}
+.wm .rule-row{display:flex;align-items:center;gap:7px;margin-top:4px;}
+.wm .rule-row span{font-family:var(--sans);font-size:7.5px;font-weight:600;letter-spacing:.38em;color:var(--forest-2);}
+.wm .rule-row::before,.wm .rule-row::after{content:"";height:1px;width:20px;background:var(--forest-2);opacity:.5;}
+footer .wm .the{color:var(--sage);opacity:.65;}
+footer .wm .main{color:var(--sage);}
+footer .wm .rule-row span{color:var(--sage);opacity:.7;}
+footer .wm .rule-row::before,footer .wm .rule-row::after{background:var(--sage);opacity:.4;}
+header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:960px;margin:0 auto;}
+.menu{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:500;}
+.menu a{color:var(--ink);opacity:.8;}
+.menu .btn{padding:8px 18px;opacity:1;color:var(--paper);}
+.nav-toggle{display:none;}.hamburger{display:none;}
+@media(max-width:760px){header{position:relative;}.hamburger{display:flex;align-items:center;font-size:22px;line-height:1;cursor:pointer;color:var(--forest);padding:4px 8px;user-select:none;}.menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(192,202,191,.97);flex-direction:column;padding:14px 24px 20px;gap:0;border-bottom:1px solid var(--line);z-index:100;}.menu a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}.menu .btn{display:block;text-align:center;margin-top:14px;border-bottom:none;padding:11px 22px;}.nav-toggle:checked~.menu{display:flex;}}
+.pagehead{background:var(--sage);padding:56px 0 60px;}
+.pagehead h1{font-size:clamp(28px,4vw,46px);color:var(--plum);margin:16px 0 14px;max-width:640px;}
+.pagehead p.lede{font-size:clamp(15px,2vw,17px);max-width:600px;color:var(--ink);opacity:.9;line-height:1.65;}
+.block{padding:56px 0;}
+/* setup warning — only visible until FIREBASE_URL is filled in */
+.setup-warn{background:var(--cream);border:1.5px solid var(--sage-dk);border-radius:var(--r);padding:20px 24px;margin-bottom:32px;font-size:14px;line-height:1.6;}
+.setup-warn strong{color:var(--plum);}
+.setup-warn code{background:rgba(63,81,56,.1);border-radius:4px;padding:2px 6px;font-size:13px;font-family:monospace;}
+.setup-warn.hidden{display:none;}
+/* info bar */
+.info-bar{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin-bottom:28px;font-size:13.5px;line-height:1.6;color:var(--forest-2);}
+.info-bar a{color:var(--plum);font-weight:600;text-decoration:underline;}
+/* meeting cards */
+.meeting{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px 26px;margin-bottom:16px;}
+.meeting-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
+.meeting-meta{}
+.meeting-title{font-family:var(--serif);font-size:18px;color:var(--forest);margin-bottom:2px;}
+.meeting-loc{font-size:13px;color:var(--forest-2);}
+.count-badge{font-size:12px;font-weight:700;letter-spacing:.04em;padding:4px 12px;border-radius:999px;background:var(--cream);color:var(--plum);white-space:nowrap;flex-shrink:0;margin-top:3px;}
+.count-badge.full{background:rgba(63,81,56,.12);color:var(--forest);}
+.slots{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+.slot{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--paper);font-size:13.5px;}
+.slot-num{font-family:var(--serif);font-size:15px;color:var(--sage-dk);min-width:18px;}
+.slot-name{font-weight:600;color:var(--forest);}
+.slot-empty{color:var(--forest-2);opacity:.65;font-style:italic;}
+.form-row{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start;}
+.form-row input{flex:1;min-width:150px;border:1.5px solid var(--line);border-radius:999px;padding:10px 16px;font-family:var(--sans);font-size:14px;background:var(--paper);color:var(--ink);}
+.form-row input:focus{outline:none;border-color:var(--forest-2);}
+.form-row .btn{padding:10px 20px;white-space:nowrap;}
+.status{font-size:13px;margin-top:8px;min-height:18px;}
+.status.error{color:#8b2020;}
+.status.ok{color:var(--forest);}
+.loading-state{text-align:center;padding:48px 0;font-size:14px;color:var(--forest-2);font-style:italic;}
+footer{background:var(--ink);color:#cfd3cb;padding:48px 0 32px;}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;}
+footer p{font-size:13px;line-height:1.6;opacity:.8;margin-top:12px;max-width:36ch;}
+footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9aa392;margin-bottom:10px;}
+footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.85;}
+.fineprint{margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;opacity:.55;}
+@media(max-width:760px){footer .grid{grid-template-columns:1fr;gap:24px;}.block{padding:36px 0;}.form-row{flex-direction:column;}.form-row input,.form-row .btn{width:100%;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="itc-homepage.html" class="wm">
+      <span class="the">The</span>
+      <span class="main">Intentional<br>Tech Coalition</span>
+      <span class="rule-row"><span>CONCORD</span></span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger" aria-label="Open menu">&#9776;</label>
+    <nav class="menu">
+      <a href="itc-at-school.html">At School</a>
+      <a href="itc-at-home.html">At Home</a>
+      <a href="itc-take-action.html">Take Action</a>
+      <a href="itc-survey.html">Concord's Data</a>
+      <a href="itc-resources.html">Resources</a>
+      <a href="itc-join.html" class="btn">Join us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="eyebrow one">Take Action</span>
+    <h1>Sign up to speak at a school committee meeting</h1>
+    <p class="lede">Three speaker slots per meeting. Expertise is a bonus, not a requirement — just bring your voice. Speakers have 2–3 minutes and are welcome to read from a printed sheet. You can attend in person or via Zoom.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+
+    <!-- Shown until FIREBASE_URL is configured -->
+    <div class="setup-warn" id="setup-warn">
+      <strong>Setup needed before this page goes live.</strong> This page stores sign-up data in Firebase. To activate it:
+      <ol style="margin:10px 0 0 18px;display:flex;flex-direction:column;gap:6px;">
+        <li>Go to <strong>console.firebase.google.com</strong>, create a project, and add a <strong>Realtime Database</strong> (choose "Start in test mode").</li>
+        <li>Copy your database URL — it looks like <code>https://your-project-default-rtdb.firebaseio.com</code></li>
+        <li>Open this file and find the line near the top of the &lt;script&gt; that says <code>const FIREBASE_URL = "";</code> and paste your URL between the quotes.</li>
+        <li>Save and push the file. The warning disappears automatically once the URL is set.</li>
+      </ol>
+    </div>
+
+    <div class="info-bar">
+      Need ideas or a little encouragement? Visit the <a href="itc-take-action.html">Take Action page</a> — or reach out to <a href="mailto:emily@intentionaltechcoalition.org">emily@intentionaltechcoalition.org</a> if you'd like to talk it through first.
+    </div>
+
+    <div id="meetings"><div class="loading-state">Loading sign-up sheet…</div></div>
+
+    <p style="font-size:13px;color:var(--forest-2);margin-top:24px;">To modify or cancel your sign-up, email <a href="mailto:emily@intentionaltechcoalition.org" style="color:var(--plum);font-weight:600;text-decoration:underline;">emily@intentionaltechcoalition.org</a>.</p>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a href="itc-homepage.html" class="wm">
+          <span class="the">The</span>
+          <span class="main">Intentional<br>Tech Coalition</span>
+          <span class="rule-row"><span>CONCORD</span></span>
+        </a>
+        <p>Led by Emily Lines, a Concord parent, working in partnership with local families, educators, and schools on intentional, research-informed technology choices.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="itc-at-school.html">At School</a>
+        <a href="itc-at-home.html">At Home</a>
+        <a href="itc-take-action.html">Take Action</a>
+        <a href="itc-survey.html">Concord's Data</a>
+        <a href="itc-resources.html">Resources</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScHSgIEZOFOU3VFBzbT8IE-m5FFvplILXcrWwMlcAadOtxZsw/viewform?usp=header" target="_blank">Take the Shape the Year Survey</a>
+        <a href="itc-join.html">Join the coalition</a>
+        <a href="itc-take-action.html#speak">Speak at a meeting</a>
+        <a href="mailto:concordschoolcommittee@concordps.org">Email the school committee</a>
+        <a href="mailto:emily@intentionaltechcoalition.org">Contact us</a>
+      </div>
+    </div>
+    <div class="fineprint">© 2026 The Intentional Tech Coalition. A volunteer parent group in Concord, MA.</div>
+  </div>
+</footer>
+
+<script>
+// ─── CONFIGURATION ─────────────────────────────────────────────────────────
+// Paste your Firebase Realtime Database URL here (no trailing slash).
+// Example: "https://my-project-default-rtdb.firebaseio.com"
+const FIREBASE_URL = "https://itc-sc-meeting-sign-ups-default-rtdb.firebaseio.com/";
+// ───────────────────────────────────────────────────────────────────────────
+
+const MEETINGS = [
+  { id: "aug26", title: "Joint School Committee Meeting",    date: "Wed, Aug 26 · 6:00 pm", loc: "Ripley Conference Room 4" },
+  { id: "sep9",  title: "Joint School Committee Meeting",    date: "Wed, Sep 9 · 6:00 pm",  loc: "Ripley Conference Room 4" },
+  { id: "sep23", title: "Concord School Committee Meeting",  date: "Wed, Sep 23 · 6:00 pm", loc: "CMS Library" },
+  { id: "oct7",  title: "Joint School Committee Meeting",    date: "Wed, Oct 7 · 6:00 pm",  loc: "Ripley Conference Room 4" },
+  { id: "oct21", title: "Concord School Committee Meeting",  date: "Wed, Oct 21 · 6:00 pm", loc: "CMS Library" },
+  { id: "nov4",  title: "Joint School Committee Meeting",    date: "Wed, Nov 4 · 6:00 pm",  loc: "Ripley Conference Room 4" },
+  { id: "nov18", title: "Concord School Committee Meeting",  date: "Wed, Nov 18 · 6:00 pm", loc: "CMS Library" }
+];
+const SLOTS = 3;
+
+// Hide setup warning if URL is configured
+if (FIREBASE_URL) {
+  document.getElementById('setup-warn').classList.add('hidden');
+}
+
+async function fbGet(path) {
+  if (!FIREBASE_URL) return null;
+  const res = await fetch(`${FIREBASE_URL}/${path}.json`);
+  if (!res.ok) throw new Error("read failed");
+  return res.json();
+}
+
+async function fbPut(path, data) {
+  if (!FIREBASE_URL) throw new Error("Firebase not configured");
+  const res = await fetch(`${FIREBASE_URL}/${path}.json`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+  if (!res.ok) throw new Error("write failed");
+  return res.json();
+}
+
+async function loadAllSlots() {
+  const data = {};
+  await Promise.all(MEETINGS.map(async m => {
+    try {
+      const val = await fbGet(`signups/${m.id}`);
+      data[m.id] = Array.isArray(val) ? val : Array(SLOTS).fill(null);
+    } catch {
+      data[m.id] = Array(SLOTS).fill(null);
+    }
+  }));
+  return data;
+}
+
+function esc(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function isValidEmail(e) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+}
+
+let state = {};
+
+function setStatus(id, msg, isError) {
+  const el = document.getElementById(`status-${id}`);
+  if (el) { el.textContent = msg; el.className = 'status ' + (isError ? 'error' : 'ok'); }
+}
+
+async function claimSlot(meetingId, name, email) {
+  if (!name) { setStatus(meetingId, 'Please enter your name.', true); return; }
+  if (!email || !isValidEmail(email)) { setStatus(meetingId, 'Please enter a valid email address.', true); return; }
+  try {
+    // Re-read from Firebase immediately before writing to avoid races
+    const fresh = await fbGet(`signups/${meetingId}`);
+    const slots = Array.isArray(fresh) ? fresh : Array(SLOTS).fill(null);
+    if (slots.some(s => s && s.name.toLowerCase() === name.toLowerCase())) {
+      setStatus(meetingId, "You're already signed up for this meeting.", true); return;
+    }
+    const openIdx = slots.findIndex(s => !s);
+    if (openIdx === -1) {
+      setStatus(meetingId, 'Sorry, this meeting just filled up.', true);
+      state[meetingId] = slots; render(); return;
+    }
+    slots[openIdx] = { name, email };
+    await fbPut(`signups/${meetingId}`, slots);
+    state[meetingId] = slots;
+    render();
+    setStatus(meetingId, `Thanks, ${esc(name)}! You're confirmed for this meeting.`, false);
+  } catch {
+    setStatus(meetingId, 'Something went wrong. Please try again or email emily@intentionaltechcoalition.org.', true);
+  }
+}
+
+function render() {
+  const container = document.getElementById('meetings');
+  container.innerHTML = '';
+
+  MEETINGS.forEach(m => {
+    const slots = state[m.id] || Array(SLOTS).fill(null);
+    const filled = slots.filter(Boolean).length;
+    const isFull = filled >= SLOTS;
+
+    const card = document.createElement('div');
+    card.className = 'meeting';
+    card.innerHTML = `
+      <div class="meeting-header">
+        <div class="meeting-meta">
+          <div class="meeting-title">${m.title} &nbsp;·&nbsp; ${m.date}</div>
+          <div class="meeting-loc">${m.loc}</div>
+        </div>
+        <div class="count-badge ${isFull ? 'full' : ''}">${isFull ? 'Full' : `${SLOTS - filled} slot${SLOTS - filled === 1 ? '' : 's'} open`}</div>
+      </div>`;
+
+    const slotsDiv = document.createElement('div');
+    slotsDiv.className = 'slots';
+    slots.forEach((entry, i) => {
+      const row = document.createElement('div');
+      row.className = 'slot';
+      row.innerHTML = `<span class="slot-num">${i + 1}</span>` + (
+        entry
+          ? `<span class="slot-name">${esc(entry.name)}</span>`
+          : `<span class="slot-empty">Open</span>`
+      );
+      slotsDiv.appendChild(row);
+    });
+    card.appendChild(slotsDiv);
+
+    if (!isFull && FIREBASE_URL) {
+      const formRow = document.createElement('div');
+      formRow.className = 'form-row';
+      formRow.innerHTML = `
+        <input type="text"  id="name-${m.id}"  placeholder="Your name"  aria-label="Your name">
+        <input type="email" id="email-${m.id}" placeholder="your@email.com" aria-label="Your email">`;
+      const btn = document.createElement('button');
+      btn.className = 'btn sage';
+      btn.textContent = 'Sign up';
+      btn.onclick = () => claimSlot(
+        m.id,
+        document.getElementById(`name-${m.id}`).value.trim(),
+        document.getElementById(`email-${m.id}`).value.trim()
+      );
+      formRow.appendChild(btn);
+      card.appendChild(formRow);
+    }
+
+    const status = document.createElement('div');
+    status.className = 'status';
+    status.id = `status-${m.id}`;
+    card.appendChild(status);
+
+    container.appendChild(card);
+  });
+}
+
+(async () => {
+  if (FIREBASE_URL) {
+    state = await loadAllSlots();
+  } else {
+    // Preview mode: show empty slots so the layout is visible
+    MEETINGS.forEach(m => { state[m.id] = Array(SLOTS).fill(null); });
+  }
+  render();
+})();
+</script>
+</body>
+</html>
