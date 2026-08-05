@@ -120,7 +120,8 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 .tac-section-label:first-child{margin-top:0;}
 .tac-print-btn{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--forest-2);border:1.5px solid var(--line);border-radius:99px;padding:8px 18px;cursor:pointer;background:transparent;margin-top:24px;}
 .tac-print-btn:hover{border-color:var(--forest-2);}
-@media print{header,footer,.pagehead,.whynow,.voices,.tac-print-btn{display:none!important;}.block:not(.tac){display:none!important;}.tac{padding:20px 0!important;}*{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+.print-header{display:none;}
+@media print{header,footer,.pagehead,.whynow,.voices,.tac-print-btn{display:none!important;}.block:not(.tac){display:none!important;}.tac{padding:20px 0!important;}.print-header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:16px;border-bottom:1.5px solid var(--line);margin-bottom:28px;}.print-url{font-size:11px;color:var(--forest-2);text-align:right;line-height:1.7;}*{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
 </style>
 </head>
 <body>
@@ -217,10 +218,18 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 
 <section class="block tac" id="tac">
   <div class="wrap">
+    <div class="print-header">
+      <div class="wm">
+        <span class="the">The</span>
+        <span class="main">Intentional<br>Tech Coalition</span>
+        <span class="rule-row"><span>CONCORD</span></span>
+      </div>
+      <p class="print-url">intentionaltechcoalition.org<br>A proposal to the Concord, MA School Committee</p>
+    </div>
     <div class="sec-head">
       <span class="eyebrow one">A closer look</span>
       <h2>What a Technology Advisory Committee would do</h2>
-      <p>A TAC is a time-limited, advisory partner to the district — a one-year committee that reviews the evidence, gathers input from across the school community, and produces a formal report of recommendations on EdTech and AI policy and oversight. The School Committee makes all final policy decisions.</p>
+      <p>The Intentional Tech Coalition is calling on the Concord School Committee to form a Technology Advisory Committee — a time-limited, advisory partner to the district that reviews the evidence, gathers input from across the school community, and produces a formal report of recommendations on EdTech and AI policy and oversight. The School Committee makes all final policy decisions.</p>
     </div>
     <div class="tac-card tac-main">
       <p class="tac-section-label">When</p>
