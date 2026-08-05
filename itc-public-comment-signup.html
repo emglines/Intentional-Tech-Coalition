@@ -256,6 +256,20 @@ async function claimSlot(meetingId, name, email) {
     state[meetingId] = slots;
     render();
     setStatus(meetingId, `Thanks, ${esc(name)}! You're confirmed for this meeting.`, false);
+    // Notification email — fire and forget, won't affect the sign-up if it fails
+    const meeting = MEETINGS.find(m => m.id === meetingId);
+    fetch('https://formspree.io/f/meewbkvy', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: `New sign-up: ${meeting.title} (${meeting.date})`,
+        name: name,
+        email: email,
+        meeting: `${meeting.title} — ${meeting.date}`,
+        location: meeting.loc,
+        slot: openIdx + 1
+      })
+    }).catch(() => {});
   } catch {
     setStatus(meetingId, 'Something went wrong. Please try again or email emily@intentionaltechcoalition.org.', true);
   }
