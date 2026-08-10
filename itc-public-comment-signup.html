@@ -211,7 +211,8 @@ async function loadAllSlots() {
   await Promise.all(MEETINGS.map(async m => {
     try {
       const val = await fbGet(`signups/${m.id}`);
-      data[m.id] = Array.isArray(val) ? val : Array(SLOTS).fill(null);
+      const raw = Array.isArray(val) ? val : [];
+      data[m.id] = Array(SLOTS).fill(null).map((_, i) => raw[i] || null);
     } catch {
       data[m.id] = Array(SLOTS).fill(null);
     }
@@ -243,7 +244,8 @@ async function claimSlot(meetingId, firstName, lastName, email) {
   const fullName = firstName + ' ' + lastName;
   try {
     const fresh = await fbGet(`signups/${meetingId}`);
-    const slots = Array.isArray(fresh) ? fresh : Array(SLOTS).fill(null);
+    const raw = Array.isArray(fresh) ? fresh : [];
+    const slots = Array(SLOTS).fill(null).map((_, i) => raw[i] || null);
     if (slots.some(s => s && (s.firstName || s.name || '').toLowerCase() === firstName.toLowerCase() && (s.lastName || '').toLowerCase() === lastName.toLowerCase())) {
       setStatus(meetingId, "You're already signed up for this meeting.", true); return;
     }
