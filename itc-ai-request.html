@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<!-- itc-ai-request.html, v1, August 2026 -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign the Request | The Intentional Tech Coalition</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..600;1,9..144,200..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#C0CABF;--sage-dk:#A9B6A6;--forest:#3F5138;--forest-2:#5F6D57;--plum:#463347;--plum-dk:#382839;--ink:#242321;--cream:#E5E0DA;--paper:#F4F1EC;--white:#FBFAF7;--line:rgba(63,81,56,.22);--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--r:18px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.1;}
+a{color:inherit;text-decoration:none;}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--forest-2);}
+.eyebrow::before{content:"";height:1px;width:22px;background:var(--forest-2);opacity:.55;}
+.eyebrow.one::after{display:none;}
+.btn{display:inline-block;border:none;cursor:pointer;font-family:var(--sans);font-weight:600;font-size:13px;border-radius:999px;padding:11px 26px;background:var(--plum);color:var(--paper);text-decoration:none;}
+.btn:hover{background:var(--plum-dk);}
+.kw{font-weight:700;color:var(--plum);}
+
+/* Nav */
+header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:960px;margin:0 auto;}
+.wm{display:inline-flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;}
+.wm .the{font-family:var(--serif);font-weight:300;font-size:11px;color:var(--forest-2);line-height:1;letter-spacing:.06em;margin-bottom:1px;}
+.wm .main{font-family:var(--serif);font-weight:400;font-size:17px;color:var(--forest);line-height:1.04;letter-spacing:-.01em;}
+.wm .rule-row{display:flex;align-items:center;gap:7px;margin-top:4px;}
+.wm .rule-row span{font-family:var(--sans);font-size:7.5px;font-weight:600;letter-spacing:.38em;color:var(--forest-2);}
+.wm .rule-row::before,.wm .rule-row::after{content:"";height:1px;width:20px;background:var(--forest-2);opacity:.5;}
+footer .wm .the{color:var(--sage);opacity:.65;}
+footer .wm .main{color:var(--sage);}
+footer .wm .rule-row span{color:var(--sage);opacity:.7;}
+footer .wm .rule-row::before,footer .wm .rule-row::after{background:var(--sage);opacity:.4;}
+.menu{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:500;}
+.menu a{color:var(--ink);opacity:.8;}
+.menu a[aria-current]{opacity:1;font-weight:700;color:var(--forest);border-bottom:2px solid var(--forest);padding-bottom:2px;}
+.menu .btn{padding:8px 18px;opacity:1;color:var(--paper);}
+
+/* Pagehead */
+.pagehead{background:var(--sage);padding:52px 0 56px;}
+.pagehead h1{font-size:clamp(28px,5vw,48px);color:var(--plum);margin:14px 0 14px;}
+.pagehead .lede{font-size:clamp(15px,2vw,17px);color:var(--ink);opacity:.88;font-style:italic;white-space:nowrap;}
+.hero-count{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--white);border:1px solid var(--line);border-radius:99px;padding:8px 18px;}
+.hero-count-n{font-family:var(--serif);font-size:22px;color:var(--plum);line-height:1;}
+.hero-count-l{font-size:13px;color:var(--forest-2);}
+
+/* Urgency bar */
+.urgency-bar{background:var(--plum-dk);color:var(--paper);padding:13px 0;}
+.urgency-bar .wrap{font-size:13.5px;line-height:1.55;}
+.urgency-bar strong{color:var(--sage);}
+
+/* Block / sec-head */
+.block{padding:60px 0;}
+.sec-head{margin-bottom:32px;}
+.sec-head h2{font-size:clamp(24px,4vw,36px);color:var(--forest);margin:12px 0 10px;}
+.sec-head p{font-size:15px;opacity:.85;}
+
+/* Ask cards */
+.asks{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.ask{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:32px 30px;display:flex;flex-direction:column;gap:10px;}
+.ask .tag{font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--plum);}
+.ask h3{font-family:var(--serif);font-size:22px;color:var(--forest);line-height:1.12;}
+.ask p{font-size:14px;opacity:.85;line-height:1.6;}
+
+/* Petition expand */
+.petition-toggle-row{margin-top:28px;}
+.petition-toggle-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--forest);background:transparent;border:1.5px solid var(--forest);border-radius:99px;padding:9px 20px;cursor:pointer;}
+.petition-toggle-btn:hover{background:rgba(63,81,56,.06);}
+.petition-toggle-btn svg{transition:transform .25s;}
+.petition-toggle-btn.open svg{transform:rotate(180deg);}
+.petition-full{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+.petition-full.open{max-height:6000px;border-top:1px solid var(--line);margin-top:28px;}
+.petition-body{padding:40px 0 8px;max-width:720px;}
+.petition-body p{font-size:14px;line-height:1.7;margin-bottom:16px;}
+.petition-body h3{font-family:var(--serif);font-size:20px;color:var(--forest);margin:28px 0 10px;}
+.petition-list{margin:8px 0 16px;list-style:none;display:flex;flex-direction:column;gap:8px;}
+.petition-list li{display:flex;gap:10px;font-size:14px;line-height:1.6;}
+.petition-list li::before{content:"";min-width:5px;height:5px;border-radius:50%;background:var(--sage-dk);margin-top:9px;flex:none;}
+
+/* Sign section */
+.sign-section{background:var(--cream);}
+.sign-intro{margin-bottom:24px;}
+.sign-intro h2{font-size:clamp(22px,3vw,30px);color:var(--forest);margin-bottom:8px;}
+.sign-lede{font-size:14px;opacity:.8;}
+.sign-layout{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}
+.sign-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:32px;}
+.field-label{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--forest-2);margin-bottom:6px;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.field-full{margin-bottom:14px;}
+input[type="text"],input[type="email"]{width:100%;font-family:var(--sans);font-size:14px;padding:10px 16px;border:1.5px solid var(--line);border-radius:99px;background:var(--paper);color:var(--ink);}
+input[type="text"]:focus,input[type="email"]:focus{outline:2px solid var(--forest-2);outline-offset:1px;border-color:var(--forest-2);}
+.checkboxes{display:flex;flex-direction:column;gap:8px;margin-top:2px;}
+.cb-label{display:flex;align-items:center;gap:10px;font-size:14px;cursor:pointer;padding:4px 0;}
+.cb-label input[type="checkbox"]{appearance:none;-webkit-appearance:none;width:18px;height:18px;border:1.5px solid var(--sage-dk);border-radius:5px;background:var(--paper);cursor:pointer;flex:none;display:grid;place-items:center;}
+.cb-label input[type="checkbox"]:checked{background:var(--forest);border-color:var(--forest);}
+.cb-label input[type="checkbox"]:checked::after{content:"";width:5px;height:9px;border:2px solid var(--white);border-top:none;border-left:none;transform:rotate(45deg) translate(-1px,-1px);}
+.sign-status{font-size:13.5px;margin:12px 0 4px;min-height:20px;}
+.sign-status.ok{color:var(--forest);}
+.sign-status.err{color:#a33;}
+.sign-btn-row{margin-top:8px;}
+
+/* Signatures panel */
+.sig-panel{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px;}
+.sig-header-row{margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--line);}
+.sig-count-label{font-family:var(--serif);font-size:20px;color:var(--forest);}
+.sig-list{display:flex;flex-direction:column;max-height:340px;overflow-y:auto;}
+.sig-item{padding:8px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink);}
+.sig-item:last-child{border-bottom:none;}
+.sig-loading{font-size:13px;color:var(--forest-2);opacity:.7;padding:8px 0;}
+
+/* Footer */
+footer{background:var(--ink);color:#cfd3cb;padding:48px 0 32px;}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;}
+footer p{font-size:13px;line-height:1.6;opacity:.8;margin-top:12px;max-width:36ch;}
+footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9aa392;margin-bottom:10px;}
+footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.85;}
+.fineprint{margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;opacity:.55;}
+
+/* Mobile */
+.nav-toggle{display:none;}.hamburger{display:none;}
+@media(max-width:760px){
+  .asks,.sign-layout,.field-row{grid-template-columns:1fr;}
+  header{position:relative;}
+  .hamburger{display:flex;align-items:center;font-size:22px;line-height:1;cursor:pointer;color:var(--forest);padding:4px 8px;user-select:none;}
+  .menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(192,202,191,.97);flex-direction:column;padding:14px 24px 20px;gap:0;border-bottom:1px solid var(--line);z-index:100;}
+  .menu a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}
+  .menu .btn{display:block;text-align:center;margin-top:14px;border-bottom:none;padding:11px 22px;}
+  .nav-toggle:checked~.menu{display:flex;}
+  footer .grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="itc-homepage.html" class="wm">
+      <span class="the">The</span>
+      <span class="main">Intentional<br>Tech Coalition</span>
+      <span class="rule-row"><span>CONCORD</span></span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger" aria-label="Open menu">&#9776;</label>
+    <nav class="menu">
+      <a href="itc-at-school.html">At School</a>
+      <a href="itc-at-home.html">At Home</a>
+      <a href="itc-take-action.html" aria-current="page">Take Action</a>
+      <a href="itc-survey.html">Concord's Data</a>
+      <a href="itc-resources.html">Resources</a>
+      <a href="itc-join.html" class="btn">Join us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="eyebrow one">Take action</span>
+    <h1>A Two-Part Request on Generative AI in Concord Schools</h1>
+    <p class="lede">A thoughtful pause while the evidence is reviewed, and an ongoing opt-out for our students.</p>
+    <div class="hero-count">
+      <span class="hero-count-n" id="hero-count-n">—</span>
+      <span class="hero-count-l">Concord families have signed</span>
+    </div>
+  </div>
+</section>
+
+<div class="urgency-bar">
+  <div class="wrap">
+    <strong>Starting August 10, 2026:</strong> Google has begun expanding Gemini in Google Classroom to students of all ages by default — including on devices issued to Concord Middle School students. We're asking the district to pause and review before this moves further.
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow one">What we're asking</span>
+      <h2>Two requests, one goal: intentional sequencing</h2>
+      <p>We believe in effective, well-vetted tools that meaningfully support learning. These two requests give the district time and a clear path to weigh the evidence with care.</p>
+    </div>
+    <div class="asks">
+      <div class="ask">
+        <span class="tag">Request 1</span>
+        <h3>A temporary pause and a Technology Advisory Committee</h3>
+        <p>Pause new contracts and current use of student-facing generative AI while a Technology Advisory Committee reviews the evidence and brings recommendations to the School Committee within 9–12 months. As an immediate step: <strong>remove Google Gemini from Concord Middle School devices</strong> while this review is underway.</p>
+      </div>
+      <div class="ask">
+        <span class="tag">Request 2</span>
+        <h3>An ongoing opt-out for every family</h3>
+        <p>Once AI use resumes after the committee's review, maintain a simple, well-publicized opt-out so every family can choose an AI-free path for their student — no penalty to the student, and a comparable alternative to complete their work.</p>
+      </div>
+    </div>
+    <div class="petition-toggle-row">
+      <button class="petition-toggle-btn" id="petition-toggle" onclick="togglePetition()">
+        Read the full request
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="petition-full" id="petition-full">
+    <div class="wrap">
+      <div class="petition-body">
+        <p>To the leadership of Concord Public Schools and members of the Concord School Committee:</p>
+        <p>As Concord parents, caregivers, educators, and community members, we are writing with a request. We believe in effective, well-vetted tools that meaningfully support learning, and we want to be a supportive partner as the district navigates a fast-moving technology landscape. In that spirit, we respectfully bring forward two related requests regarding student-facing generative AI on school-issued devices. Our timing follows a concrete development: starting August 10, 2026, Google has begun expanding Gemini in Google Classroom to students of all ages by default, wherever Gemini access has already been granted, such as on devices like those issued to Concord Middle School students. Generative AI is moving into classrooms faster, not slower, which is exactly why we are asking the district to pause now.</p>
+        <p><strong>For clarity:</strong> this request concerns <strong>generative AI</strong> — tools such as chatbots and content generators (for example, Google Gemini, ChatGPT, and Microsoft Copilot) that use large language models to produce new text, images, or other content in response to open-ended prompts.</p>
+        <ul class="petition-list">
+          <li><strong>Includes:</strong> student-facing generative AI tools and features on school-issued devices.</li>
+          <li><strong>Does not include:</strong> AI functions already embedded in established, well-vetted EdTech tools, such as adaptive spell-check, text-to-speech, or accessibility supports, which serve a defined, limited purpose within platforms already in use.</li>
+          <li><strong>Does not include:</strong> any use necessary to fulfill legally mandated accommodations, including use in accordance with an IEP or 504 plan, or use a healthcare provider has put in writing as necessary to treat a student's health condition.</li>
+          <li><strong>Teacher- and staff-only tools:</strong> not affected by this request, unless used to process student data such as grades, behavior records, or health information.</li>
+        </ul>
+        <h3>What we are asking</h3>
+        <p><strong>1. A temporary pause, and a Technology Advisory Committee to lead the review</strong></p>
+        <p>We respectfully request that the district pause new contracts for student-facing generative AI products and curricula, and pause current student-facing generative AI use, while a Technology Advisory Committee is formed to weigh the existing research, develop clear and workable safeguards, and bring recommendations to the School Committee and school administrators within 9 to 12 months. This pause is intentionally bounded to the Committee's timeline, not open-ended. In our spring 2026 community survey of 71 Concord Public Schools and CCHS families, caregivers, and educators, 82% said such a committee would be "extremely valuable." As an immediate step, we specifically request the <strong>removal of Google Gemini, which is currently installed on all Concord Middle School-issued devices</strong>, while this review is underway. This is a request for intentional sequencing, not a rejection of technology, and it mirrors the cautious, evidence-first posture that a growing number of researchers, clinicians, and school systems now recommend.</p>
+        <p><strong>2. An ongoing opt-out from generative AI on school-issued devices</strong></p>
+        <p>As any student-facing AI use resumes after the committee's review, we ask that Concord Public Schools maintain a simple, well-publicized, and ongoing way for every family to opt their student out of generative AI tools on school-issued devices, with no penalty to the student and a comparable, AI-free path to complete their work. This honors the transparency and family-engagement commitments already named in the state guidance, and respects that families are in different places on these tools. It also supports our teachers: when generative AI can do the thinking for students, it can draw real learning out of the classroom, and a clear opt-out helps protect the learning our educators are working hard to build.</p>
+        <h3>Why we are asking now</h3>
+        <p>The research on generative AI in classrooms is young, and what exists gives us reason to move deliberately rather than quickly:</p>
+        <ul class="petition-list">
+          <li>After a yearlong global study it called a <em>premortem</em>, the Brookings Institution concluded that the risks of using generative AI in children's education overshadow its benefits at this stage of the technology's trajectory.</li>
+          <li>The National Education Policy Center, in a brief titled <em>Time for a Pause</em>, urges school leaders to hold off on adopting AI applications until policymakers have had adequate time to develop oversight and policy.</li>
+          <li>Common Sense Media rated Google Gemini's products for children and teens as <em>high risk</em>, finding that filters added to an adult product still expose young users to inappropriate content and unreliable mental-health responses.</li>
+          <li>In April 2026, a coalition of more than 250 experts and organizations led by Fairplay called for a five-year pause on student-facing generative AI in pre-K through grade 12 schools.</li>
+          <li>The evidence for learning gains remains thin and contested. RAND's work on AI in K-12 finds that whether these tools improve learning is not yet clear, and that any effect is likely modest and weakest for higher-order skills like critical thinking.</li>
+          <li>A growing body of research raises concerns about reduced cognition, critical thinking, memory, motivation, and original work, as well as real questions about student data privacy, racial bias, and academic dishonesty.</li>
+        </ul>
+        <h3>An opportunity to be proactive, not reactive</h3>
+        <p>Massachusetts is already moving thoughtfully on children and technology. The Legislature has advanced bell-to-bell phone-free school policies with strong support from the Governor and the Attorney General, and the state's own DESE guidance asks districts to vet tools carefully, protect student data, mitigate bias, and keep families informed. Concord can put those same principles into practice here at home: a careful, evidence-first review now, and an ongoing family opt-out as student-facing AI resumes.</p>
+        <h3>About the Technology Advisory Committee</h3>
+        <p>We envision the Technology Advisory Committee as a supportive partner to the district, not a second layer of bureaucracy. A one-year committee would give technology oversight a dedicated home: streamlining decisions, sharing expertise, protecting the district from unintended gaps in oversight, and keeping technology choices aligned with our educational values and the well-being of students. Its work would not presume that technology should be rejected or expanded — it would begin from a simple principle: the technology we use should be intentional, evidence-based, and transparent, with student health, safety, privacy, and learning at the center.</p>
+        <p>We make these requests as partners, not adversaries. We share the same goal our schools do: students who can focus, think for themselves, and thrive. The concrete next step is straightforward: pause student-facing generative AI now, and support the formation of a Technology Advisory Committee to lead this review.</p>
+        <p>With respect and appreciation,<br><strong>The Intentional Tech Coalition and the undersigned Concord Public Schools families</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block sign-section" id="sign">
+  <div class="wrap">
+    <div class="sign-intro">
+      <h2>Add your name</h2>
+      <p class="sign-lede">Your name will appear in the list of signers. Your email and school(s) are collected for our records only and will not be shown publicly.</p>
+    </div>
+    <div class="sign-layout">
+
+      <div>
+        <div class="sign-card">
+          <form id="sign-form" onsubmit="handleSign(event)">
+            <div class="field-row">
+              <div>
+                <label class="field-label" for="firstName">First name</label>
+                <input type="text" id="firstName" name="firstName" required autocomplete="given-name" placeholder="First">
+              </div>
+              <div>
+                <label class="field-label" for="lastName">Last name</label>
+                <input type="text" id="lastName" name="lastName" required autocomplete="family-name" placeholder="Last">
+              </div>
+            </div>
+            <div class="field-full">
+              <label class="field-label" for="email">Email address</label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
+            </div>
+            <div class="field-full">
+              <label class="field-label">Child's school(s)</label>
+              <div class="checkboxes">
+                <label class="cb-label"><input type="checkbox" name="schools" value="Willard"><span>Willard</span></label>
+                <label class="cb-label"><input type="checkbox" name="schools" value="Alcott"><span>Alcott</span></label>
+                <label class="cb-label"><input type="checkbox" name="schools" value="Thoreau"><span>Thoreau</span></label>
+                <label class="cb-label"><input type="checkbox" name="schools" value="CMS"><span>Concord Middle School</span></label>
+                <label class="cb-label"><input type="checkbox" name="schools" value="CCHS"><span>Concord-Carlisle High School</span></label>
+                <label class="cb-label"><input type="checkbox" name="schools" value="community"><span>Not listed / community member</span></label>
+              </div>
+            </div>
+            <div id="sign-status" class="sign-status"></div>
+            <div class="sign-btn-row">
+              <button type="submit" class="btn" id="sign-btn">Add my name</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div>
+        <div class="sig-panel">
+          <div class="sig-header-row">
+            <span class="sig-count-label" id="sig-count-label">Loading…</span>
+          </div>
+          <div class="sig-list" id="sig-list">
+            <div class="sig-loading">Loading signatures…</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a href="itc-homepage.html" class="wm">
+          <span class="the">The</span>
+          <span class="main">Intentional<br>Tech Coalition</span>
+          <span class="rule-row"><span>CONCORD</span></span>
+        </a>
+        <p>Led by Emily Lines, a Concord parent, working in partnership with local families, educators, and schools on intentional, research-informed technology choices.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="itc-at-school.html">At School</a>
+        <a href="itc-at-home.html">At Home</a>
+        <a href="itc-take-action.html">Take Action</a>
+        <a href="itc-survey.html">Concord's Data</a>
+        <a href="itc-resources.html">Resources</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScHSgIEZOFOU3VFBzbT8IE-m5FFvplILXcrWwMlcAadOtxZsw/viewform?usp=header" target="_blank">Take the Shape the Year Survey</a>
+        <a href="itc-join.html">Join the coalition</a>
+        <a href="itc-take-action.html#speak">Speak at a meeting</a>
+        <a href="mailto:concordschoolcommittee@concordps.org">Email the school committee</a>
+        <a href="mailto:emily@intentionaltechcoalition.org">Contact us</a>
+      </div>
+    </div>
+    <div class="fineprint">© 2026 The Intentional Tech Coalition. A volunteer parent group in Concord, MA.</div>
+  </div>
+</footer>
+
+<script>
+const FIREBASE_URL = "https://itc-sc-meeting-sign-ups-default-rtdb.firebaseio.com";
+const FORMSPREE_URL = "https://formspree.io/f/mljrjkjr";
+
+// ── Firebase helpers ────────────────────────────────────────────────────────
+
+async function fbGet(path) {
+  const res = await fetch(`${FIREBASE_URL}/${path}.json`);
+  if (!res.ok) throw new Error("read failed");
+  return res.json();
+}
+
+async function fbPush(path, data) {
+  const res = await fetch(`${FIREBASE_URL}/${path}.json`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+  if (!res.ok) throw new Error("write failed");
+  return res.json();
+}
+
+// ── Render signatures ───────────────────────────────────────────────────────
+
+function renderSigs(sigs) {
+  const list = document.getElementById("sig-list");
+  const label = document.getElementById("sig-count-label");
+  const heroN = document.getElementById("hero-count-n");
+
+  if (!sigs.length) {
+    list.innerHTML = '<div class="sig-loading">Be the first to sign.</div>';
+    label.textContent = "0 signatures";
+    heroN.textContent = "0";
+    return;
+  }
+
+  const sorted = [...sigs].sort((a, b) => (b.ts || 0) - (a.ts || 0));
+  list.innerHTML = sorted.map(s =>
+    `<div class="sig-item">${esc(s.firstName)} ${esc(s.lastInitial)}.</div>`
+  ).join("");
+
+  const n = sigs.length;
+  const word = n === 1 ? "signature" : "signatures";
+  label.innerHTML = `<strong>${n}</strong> ${word}`;
+  heroN.textContent = n;
+}
+
+function esc(str) {
+  return String(str || "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+// ── Load on page open ───────────────────────────────────────────────────────
+
+async function loadSigs() {
+  try {
+    const data = await fbGet("ai-request-sigs");
+    const sigs = data ? Object.values(data) : [];
+    renderSigs(sigs);
+  } catch (e) {
+    document.getElementById("sig-list").innerHTML =
+      '<div class="sig-loading">Could not load signatures.</div>';
+  }
+}
+
+loadSigs();
+
+// ── Handle form submit ──────────────────────────────────────────────────────
+
+async function handleSign(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn  = document.getElementById("sign-btn");
+  const status = document.getElementById("sign-status");
+
+  const firstName = form.firstName.value.trim();
+  const lastName  = form.lastName.value.trim();
+  const email     = form.email.value.trim();
+  const schools   = [...form.querySelectorAll("[name=schools]:checked")].map(c => c.value);
+  const lastInitial = lastName.charAt(0).toUpperCase();
+
+  // Prevent double-submit
+  if (localStorage.getItem("itc-ai-signed")) {
+    status.className = "sign-status err";
+    status.textContent = "It looks like you've already signed. Thank you!";
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = "Signing…";
+  status.className = "sign-status";
+  status.textContent = "";
+
+  try {
+    // 1. Store public display data in Firebase
+    await fbPush("ai-request-sigs", {
+      firstName,
+      lastInitial,
+      ts: Date.now()
+    });
+
+    // 2. Send full data + email notification via Formspree
+    await fetch(FORMSPREE_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        _subject: `New signature: ${firstName} ${lastName}`,
+        firstName,
+        lastName,
+        email,
+        schools: schools.length ? schools.join(", ") : "None selected"
+      })
+    });
+
+    // 3. Mark signed in localStorage
+    localStorage.setItem("itc-ai-signed", "1");
+
+    // 4. Update UI
+    status.className = "sign-status ok";
+    status.textContent = `Thank you, ${firstName}. Your name has been added.`;
+    btn.textContent = "Signed ✓";
+
+    // Reload sig list to show new entry
+    loadSigs();
+
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = "Add my name";
+    status.className = "sign-status err";
+    status.textContent = "Something went wrong. Please try again or email emily@intentionaltechcoalition.org.";
+  }
+}
+
+// ── Petition expand/collapse ────────────────────────────────────────────────
+
+function togglePetition() {
+  const pf  = document.getElementById("petition-full");
+  const btn = document.getElementById("petition-toggle");
+  const open = pf.classList.toggle("open");
+  btn.classList.toggle("open", open);
+  btn.childNodes[0].textContent = open ? "Hide the full request " : "Read the full request ";
+}
+</script>
+</body>
+</html>
