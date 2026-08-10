@@ -236,14 +236,15 @@ function setStatus(id, msg, isError) {
   if (el) { el.textContent = msg; el.className = 'status ' + (isError ? 'error' : 'ok'); }
 }
 
-async function claimSlot(meetingId, name, email) {
-  if (!name) { setStatus(meetingId, 'Please enter your name.', true); return; }
+async function claimSlot(meetingId, firstName, lastName, email) {
+  if (!firstName) { setStatus(meetingId, 'Please enter your first name.', true); return; }
+  if (!lastName)  { setStatus(meetingId, 'Please enter your last name.', true); return; }
   if (!email || !isValidEmail(email)) { setStatus(meetingId, 'Please enter a valid email address.', true); return; }
+  const fullName = firstName + ' ' + lastName;
   try {
-    // Re-read from Firebase immediately before writing to avoid races
     const fresh = await fbGet(`signups/${meetingId}`);
     const slots = Array.isArray(fresh) ? fresh : Array(SLOTS).fill(null);
-    if (slots.some(s => s && s.name.toLowerCase() === name.toLowerCase())) {
+    if (slots.some(s => s && (s.firstName || s.name || '').toLowerCase() === firstName.toLowerCase() && (s.lastName || '').toLowerCase() === lastName.toLowerCase())) {
       setStatus(meetingId, "You're already signed up for this meeting.", true); return;
     }
     const openIdx = slots.findIndex(s => !s);
@@ -251,19 +252,18 @@ async function claimSlot(meetingId, name, email) {
       setStatus(meetingId, 'Sorry, this meeting just filled up.', true);
       state[meetingId] = slots; render(); return;
     }
-    slots[openIdx] = { name, email };
+    slots[openIdx] = { firstName, lastName, email };
     await fbPut(`signups/${meetingId}`, slots);
     state[meetingId] = slots;
     render();
-    setStatus(meetingId, `Thanks, ${esc(name)}! You're confirmed for this meeting.`, false);
-    // Notification email — fire and forget, won't affect the sign-up if it fails
+    setStatus(meetingId, `Thanks, ${esc(firstName)}! You're confirmed for this meeting.`, false);
     const meeting = MEETINGS.find(m => m.id === meetingId);
     fetch('https://formspree.io/f/meewbkvy', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
         _subject: `New sign-up: ${meeting.title} (${meeting.date})`,
-        name: name,
+        name: fullName,
         email: email,
         meeting: `${meeting.title} — ${meeting.date}`,
         location: meeting.loc,
@@ -300,9 +300,14 @@ function render() {
     slots.forEach((entry, i) => {
       const row = document.createElement('div');
       row.className = 'slot';
+      const displayName = entry
+        ? entry.firstName
+          ? `${esc(entry.firstName)} ${esc(entry.lastName.charAt(0))}.`
+          : esc(entry.name)   // backward compat for old entries
+        : null;
       row.innerHTML = `<span class="slot-num">${i + 1}</span>` + (
-        entry
-          ? `<span class="slot-name">${esc(entry.name)}</span>`
+        displayName
+          ? `<span class="slot-name">${displayName}</span>`
           : `<span class="slot-empty">Open</span>`
       );
       slotsDiv.appendChild(row);
@@ -313,14 +318,16 @@ function render() {
       const formRow = document.createElement('div');
       formRow.className = 'form-row';
       formRow.innerHTML = `
-        <input type="text"  id="name-${m.id}"  placeholder="Your name"  aria-label="Your name">
+        <input type="text"  id="fname-${m.id}" placeholder="First name"    aria-label="First name">
+        <input type="text"  id="lname-${m.id}" placeholder="Last name"     aria-label="Last name">
         <input type="email" id="email-${m.id}" placeholder="your@email.com" aria-label="Your email">`;
       const btn = document.createElement('button');
       btn.className = 'btn sage';
       btn.textContent = 'Sign up';
       btn.onclick = () => claimSlot(
         m.id,
-        document.getElementById(`name-${m.id}`).value.trim(),
+        document.getElementById(`fname-${m.id}`).value.trim(),
+        document.getElementById(`lname-${m.id}`).value.trim(),
         document.getElementById(`email-${m.id}`).value.trim()
       );
       formRow.appendChild(btn);
