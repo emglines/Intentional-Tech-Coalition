@@ -76,8 +76,9 @@ footer .wm .rule-row::before,footer .wm .rule-row::after{background:var(--sage);
 .petition-body p{font-size:14px;line-height:1.7;margin-bottom:16px;}
 .petition-body h3{font-family:var(--serif);font-size:20px;color:var(--forest);margin:28px 0 10px;}
 .petition-list{margin:8px 0 16px;list-style:none;display:flex;flex-direction:column;gap:8px;}
-.petition-list li{display:flex;gap:10px;font-size:14px;line-height:1.6;}
-.petition-list li::before{content:"";min-width:5px;height:5px;border-radius:50%;background:var(--sage-dk);margin-top:9px;flex:none;}
+.petition-list li{display:flex;gap:10px;font-size:14px;line-height:1.6;align-items:flex-start;}
+.petition-list li::before{content:"";min-width:5px;height:5px;border-radius:50%;background:var(--sage-dk);margin-top:7px;flex:none;}
+.petition-list em{font-optical-sizing:none;}
 
 /* Sign section */
 .sign-section{background:var(--cream);}
@@ -109,6 +110,10 @@ input[type="text"]:focus,input[type="email"]:focus{outline:2px solid var(--fores
 .sig-item{padding:8px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink);}
 .sig-item:last-child{border-bottom:none;}
 .sig-loading{font-size:13px;color:var(--forest-2);opacity:.7;padding:8px 0;}
+.petition-clarity{background:rgba(192,202,191,.2);border-radius:10px;padding:14px 18px;margin-bottom:20px;}
+.petition-clarity p{margin-bottom:6px;}
+.petition-clarity .petition-list{margin-top:2px;margin-bottom:0;}
+.petition-body p+.petition-list{margin-top:2px;}
 
 /* Footer */
 footer{background:var(--ink);color:#cfd3cb;padding:48px 0 32px;}
@@ -204,13 +209,15 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       <div class="petition-body">
         <p>To the leadership of Concord Public Schools and members of the Concord School Committee:</p>
         <p>As Concord parents, caregivers, educators, and community members, we are writing with a request. We believe in effective, well-vetted tools that meaningfully support learning, and we want to be a supportive partner as the district navigates a fast-moving technology landscape. In that spirit, we respectfully bring forward two related requests regarding student-facing generative AI on school-issued devices. Our timing follows a concrete development: starting August 10, 2026, Google has begun expanding Gemini in Google Classroom to students of all ages by default, wherever Gemini access has already been granted, such as on devices like those issued to Concord Middle School students. Generative AI is moving into classrooms faster, not slower, which is exactly why we are asking the district to pause now.</p>
-        <p><strong>For clarity:</strong> this request concerns <strong>generative AI</strong> — tools such as chatbots and content generators (for example, Google Gemini, ChatGPT, and Microsoft Copilot) that use large language models to produce new text, images, or other content in response to open-ended prompts.</p>
-        <ul class="petition-list">
-          <li><strong>Includes:</strong> student-facing generative AI tools and features on school-issued devices.</li>
-          <li><strong>Does not include:</strong> AI functions already embedded in established, well-vetted EdTech tools, such as adaptive spell-check, text-to-speech, or accessibility supports, which serve a defined, limited purpose within platforms already in use.</li>
-          <li><strong>Does not include:</strong> any use necessary to fulfill legally mandated accommodations, including use in accordance with an IEP or 504 plan, or use a healthcare provider has put in writing as necessary to treat a student's health condition.</li>
-          <li><strong>Teacher- and staff-only tools:</strong> not affected by this request, unless used to process student data such as grades, behavior records, or health information.</li>
-        </ul>
+        <div class="petition-clarity">
+          <p><strong>For clarity:</strong> this request concerns <strong>generative AI</strong> — tools such as chatbots and content generators (for example, Google Gemini, ChatGPT, and Microsoft Copilot) that use large language models to produce new text, images, or other content in response to open-ended prompts.</p>
+          <ul class="petition-list">
+            <li><strong>Includes:</strong> student-facing generative AI tools and features on school-issued devices.</li>
+            <li><strong>Does not include:</strong> AI functions already embedded in established, well-vetted EdTech tools, such as adaptive spell-check, text-to-speech, or accessibility supports, which serve a defined, limited purpose within platforms already in use.</li>
+            <li><strong>Does not include:</strong> any use necessary to fulfill legally mandated accommodations, including use in accordance with an IEP or 504 plan, or use a healthcare provider has put in writing as necessary to treat a student's health condition.</li>
+            <li><strong>Teacher- and staff-only tools:</strong> not affected by this request, unless used to process student data such as grades, behavior records, or health information.</li>
+          </ul>
+        </div>
         <h3>What we are asking</h3>
         <p><strong>1. A temporary pause, and a Technology Advisory Committee to lead the review</strong></p>
         <p>We respectfully request that the district pause new contracts for student-facing generative AI products and curricula, and pause current student-facing generative AI use, while a Technology Advisory Committee is formed to weigh the existing research, develop clear and workable safeguards, and bring recommendations to the School Committee and school administrators within 9 to 12 months. This pause is intentionally bounded to the Committee's timeline, not open-ended. In our spring 2026 community survey of 71 Concord Public Schools and CCHS families, caregivers, and educators, 82% said such a committee would be "extremely valuable." As an immediate step, we specifically request the <strong>removal of Google Gemini, which is currently installed on all Concord Middle School-issued devices</strong>, while this review is underway. This is a request for intentional sequencing, not a rejection of technology, and it mirrors the cautious, evidence-first posture that a growing number of researchers, clinicians, and school systems now recommend.</p>
