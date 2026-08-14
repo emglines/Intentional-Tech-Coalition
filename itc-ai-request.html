@@ -406,8 +406,8 @@ async function handleSign(e) {
       ts: Date.now()
     });
 
-    // 2. Send full data + email notification via Formspree
-    await fetch(FORMSPREE_URL, {
+    // 2. Send full data + email notification via Formspree (fire-and-forget)
+    fetch(FORMSPREE_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
       body: JSON.stringify({
@@ -417,7 +417,7 @@ async function handleSign(e) {
         email,
         schools: schools.length ? schools.join(", ") : "None selected"
       })
-    });
+    }).catch(() => {});
 
     // 3. Mark signed in localStorage
     localStorage.setItem("itc-ai-signed", "1");
