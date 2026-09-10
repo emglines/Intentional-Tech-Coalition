@@ -173,12 +173,11 @@ const FIREBASE_URL = "https://itc-sc-meeting-sign-ups-default-rtdb.firebaseio.co
 // ───────────────────────────────────────────────────────────────────────────
 
 const MEETINGS = [
-  { id: "sep9",  title: "Joint School Committee Meeting",    date: "Wed, Sep 9 · 6:00 pm",  loc: "Ripley Conference Room 4" },
-  { id: "sep23", title: "Concord School Committee Meeting",  date: "Wed, Sep 23 · 6:00 pm", loc: "CMS Library" },
-  { id: "oct7",  title: "Joint School Committee Meeting",    date: "Wed, Oct 7 · 6:00 pm",  loc: "Ripley Conference Room 4" },
-  { id: "oct21", title: "Concord School Committee Meeting",  date: "Wed, Oct 21 · 6:00 pm", loc: "CMS Library" },
-  { id: "nov4",  title: "Joint School Committee Meeting",    date: "Wed, Nov 4 · 6:00 pm",  loc: "Ripley Conference Room 4" },
-  { id: "nov18", title: "Concord School Committee Meeting",  date: "Wed, Nov 18 · 6:00 pm", loc: "CMS Library" }
+  { id: "sep23", isoDate: "2026-09-23", title: "Concord School Committee Meeting",  date: "Wed, Sep 23 · 6:00 pm", loc: "CMS Library" },
+  { id: "oct7",  isoDate: "2026-10-07", title: "Joint School Committee Meeting",    date: "Wed, Oct 7 · 6:00 pm",  loc: "Ripley Conference Room 4" },
+  { id: "oct21", isoDate: "2026-10-21", title: "Concord School Committee Meeting",  date: "Wed, Oct 21 · 6:00 pm", loc: "CMS Library" },
+  { id: "nov4",  isoDate: "2026-11-04", title: "Joint School Committee Meeting",    date: "Wed, Nov 4 · 6:00 pm",  loc: "Ripley Conference Room 4" },
+  { id: "nov18", isoDate: "2026-11-18", title: "Concord School Committee Meeting",  date: "Wed, Nov 18 · 6:00 pm", loc: "CMS Library" }
 ];
 const SLOTS = 3;
 
@@ -280,7 +279,16 @@ function render() {
   const container = document.getElementById('meetings');
   container.innerHTML = '';
 
-  MEETINGS.forEach(m => {
+  // Only show meetings whose date hasn't passed yet (uses UTC date, which is close enough for ET evenings)
+  const today = new Date().toISOString().slice(0, 10);
+  const upcoming = MEETINGS.filter(m => m.isoDate >= today);
+
+  if (upcoming.length === 0) {
+    container.innerHTML = '<p style="color:var(--forest-2);font-style:italic;padding:24px 0;">No upcoming meetings scheduled at this time. Check back soon.</p>';
+    return;
+  }
+
+  upcoming.forEach(m => {
     const slots = state[m.id] || Array(SLOTS).fill(null);
     const filled = slots.filter(Boolean).length;
     const isFull = filled >= SLOTS;

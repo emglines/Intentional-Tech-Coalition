@@ -248,7 +248,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
           <div class="ract" id="speak">
             <h3>Speak at a school committee meeting</h3>
             <p>Public comment is one of the most direct ways to be heard, and ITC will coordinate so we show up together.</p>
-            <p class="date-line"><strong>Next: Sep 9</strong> · 6:00 pm · Ripley</p>
+            <p class="date-line" id="sc-next-date-line"><strong>Next: Sep 23</strong> · 6:00 pm · CMS Library</p>
             <div class="go-row">
               <a href="itc-public-comment-signup.html" class="go">Sign up to speak &rarr;</a>
               <a href="#tips" class="go secondary">First time? A few tips &darr;</a>
@@ -331,5 +331,27 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
   </div>
 </footer>
 
+<script>
+// Auto-update the next school committee meeting date
+(function(){
+  var meetings = [
+    { iso: "2026-09-23", label: "Sep 23", time: "6:00 pm", loc: "CMS Library" },
+    { iso: "2026-10-07", label: "Oct 7",  time: "6:00 pm", loc: "Ripley" },
+    { iso: "2026-10-21", label: "Oct 21", time: "6:00 pm", loc: "CMS Library" },
+    { iso: "2026-11-04", label: "Nov 4",  time: "6:00 pm", loc: "Ripley" },
+    { iso: "2026-11-18", label: "Nov 18", time: "6:00 pm", loc: "CMS Library" }
+  ];
+  var today = new Date().toISOString().slice(0, 10);
+  var next = meetings.find(function(m){ return m.iso >= today; });
+  var el = document.getElementById('sc-next-date-line');
+  if (el) {
+    if (next) {
+      el.innerHTML = '<strong>Next: ' + next.label + '</strong> \xb7 ' + next.time + ' \xb7 ' + next.loc;
+    } else {
+      el.innerHTML = '<strong>Dates TBC</strong> \xb7 Check back soon';
+    }
+  }
+})();
+</script>
 </body>
 </html>
