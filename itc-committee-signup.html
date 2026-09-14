@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<!-- itc-committee-signup. Not linked from nav — accessible via direct URL only. Storage: Firebase Realtime Database REST API. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITC Event Committees</title>
+<style>
+  :root {
+    --forest: #3F5138;
+    --plum: #463347;
+    --sage: #C2CAC0;
+    --cream: #F7F5EF;
+    --ink: #2B2B24;
+    --line: #D8D9CF;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.5;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  header {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 28px;
+    margin-bottom: 36px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 400;
+    margin: 0 0 8px;
+    color: var(--forest);
+    letter-spacing: 0.2px;
+  }
+
+  .sub {
+    font-size: 15px;
+    color: #5B5B4F;
+    margin: 0;
+    max-width: 46ch;
+  }
+
+  .event {
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--forest);
+    padding: 20px 22px;
+    margin-bottom: 18px;
+    background: #FFFFFF;
+  }
+
+  .event.plum { border-left-color: var(--plum); }
+
+  .event h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+
+  .event .meta {
+    font-size: 14px;
+    color: #5B5B4F;
+    margin: 0 0 10px;
+  }
+
+  .event p.desc {
+    font-size: 14.5px;
+    margin: 0 0 12px;
+  }
+
+  .status-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--forest);
+    border-top: 1px dashed var(--line);
+    padding-top: 10px;
+  }
+
+  .status-row .need {
+    color: #8A8A7D;
+  }
+
+  form {
+    margin-top: 40px;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 26px;
+  }
+
+  legend {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--forest);
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  .check-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+  }
+
+  .check-option:last-child { border-bottom: none; }
+
+  .check-option input {
+    margin-top: 4px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--forest);
+    flex-shrink: 0;
+  }
+
+  .check-option .label-main {
+    font-size: 15px;
+  }
+
+  .check-option .label-sub {
+    font-size: 13px;
+    color: #6B6B5E;
+    display: block;
+  }
+
+  label.field-label {
+    display: block;
+    font-size: 13px;
+    color: var(--forest);
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 15px;
+    padding: 10px 12px;
+    border: 1px solid #B9BAAE;
+    background: #FFFFFF;
+    color: var(--ink);
+    margin-bottom: 18px;
+    border-radius: 2px;
+  }
+
+  input:focus, textarea:focus {
+    outline: 2px solid var(--plum);
+    outline-offset: 1px;
+  }
+
+  textarea { resize: vertical; min-height: 64px; }
+
+  .required { color: var(--plum); }
+
+  button.submit {
+    width: 100%;
+    background: var(--forest);
+    color: #FFFFFF;
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 14px 0;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+  button.submit:hover { background: #334029; }
+  button.submit:disabled { background: #9AA294; cursor: default; }
+
+  .error-text {
+    color: var(--plum);
+    font-size: 13px;
+    margin: -12px 0 16px;
+  }
+
+  .confirm {
+    text-align: center;
+    padding: 40px 10px;
+  }
+
+  .confirm h2 {
+    color: var(--forest);
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .confirm p { font-size: 15px; color: #4A4A40; }
+
+  .admin-toggle {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 12.5px;
+  }
+
+  .admin-toggle a {
+    color: #8A8A7D;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .admin-panel {
+    margin-top: 20px;
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 8px 6px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  th { color: var(--forest); font-weight: 700; }
+
+  .pill {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 10px;
+    background: var(--sage);
+    color: var(--forest);
+    margin-right: 4px;
+  }
+
+  .empty-state {
+    font-size: 13px;
+    color: #8A8A7D;
+    padding: 20px 0;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>ITC Event Committees</h1>
+    <p class="sub">Two events are coming up this fall, and both need a planning team. Choose the committee, or committees, you would like to join below.</p>
+  </header>
+
+  <div class="event" id="event1-card">
+    <h2>Community Connection Event</h2>
+    <p class="meta">Thursday, October 15 &middot; 7:00 PM &middot; WCUC</p>
+    <p class="desc">Helping parents connect around intentional tech use at school and at home, with a how-to session on common parental control questions.</p>
+    <div class="status-row">
+      <span id="event1-status">Loading status…</span>
+      <span class="need">3 volunteers needed</span>
+    </div>
+  </div>
+
+  <div class="event plum" id="event2-card">
+    <h2>An Evening with Jared Cooney Horvath</h2>
+    <p class="meta">Tuesday, November 17 &middot; 7:00 PM &middot; CMS Auditorium</p>
+    <p class="desc">An evening with the neuroscientist and author of <em>The Digital Delusion</em>.</p>
+    <div class="status-row">
+      <span id="event2-status">Loading status…</span>
+      <span class="need">5 to 6 volunteers needed</span>
+    </div>
+  </div>
+
+  <form id="signup-form">
+    <fieldset>
+      <legend>Which committee would you like to join? <span class="required">*</span></legend>
+      <label class="check-option">
+        <input type="checkbox" name="event1" id="cb-event1">
+        <span>
+          <span class="label-main">Community Connection Event</span>
+          <span class="label-sub">Thursday, October 15, WCUC</span>
+        </span>
+      </label>
+      <label class="check-option">
+        <input type="checkbox" name="event2" id="cb-event2">
+        <span>
+          <span class="label-main">An Evening with Jared Cooney Horvath</span>
+          <span class="label-sub">Tuesday, November 17, CMS Auditorium</span>
+        </span>
+      </label>
+    </fieldset>
+    <div class="error-text" id="event-error" style="display:none;">Please select at least one committee.</div>
+
+    <label class="field-label" for="name">Name <span class="required">*</span></label>
+    <input type="text" id="name" required>
+
+    <label class="field-label" for="email">Email <span class="required">*</span></label>
+    <input type="email" id="email" required>
+
+    <label class="field-label" for="phone">Phone (optional)</label>
+    <input type="tel" id="phone">
+
+    <label class="field-label" for="notes">Anything we should know about your availability? (optional)</label>
+    <textarea id="notes"></textarea>
+
+    <button type="submit" class="submit" id="submit-btn">Join a committee</button>
+  </form>
+
+  <div class="confirm" id="confirm-panel" style="display:none;">
+    <h2>Thank you</h2>
+    <p>You are signed up. We will follow up soon to schedule a kick-off meeting.</p>
+  </div>
+
+  <div class="admin-toggle">
+    <a id="admin-link">View signups</a>
+  </div>
+
+  <div class="admin-panel" id="admin-panel" style="display:none;">
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Contact</th><th>Committees</th><th>Notes</th></tr>
+      </thead>
+      <tbody id="admin-rows"></tbody>
+    </table>
+    <div class="empty-state" id="admin-empty" style="display:none;">No signups yet.</div>
+  </div>
+
+</div>
+
+<script>
+const FIREBASE_URL = "https://itc-sc-meeting-sign-ups-default-rtdb.firebaseio.com";
+const FORMSPREE_URL = "https://formspree.io/f/meewbkvy";
+
+async function loadSignups() {
+  try {
+    const res = await fetch(`${FIREBASE_URL}/committee-signups.json`);
+    if (!res.ok) return [];
+    const data = await res.json();
+    if (!data) return [];
+    return Object.values(data);
+  } catch (e) {
+    console.error('Failed to load signups', e);
+    return [];
+  }
+}
+
+async function saveSignup(entry) {
+  const res = await fetch(`${FIREBASE_URL}/committee-signups.json`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(entry)
+  });
+  if (!res.ok) throw new Error('write failed');
+  return res.json();
+}
+
+function renderStatus(entries) {
+  const c1 = entries.filter(e => e.event1).length;
+  const c2 = entries.filter(e => e.event2).length;
+  document.getElementById('event1-status').textContent = c1 + (c1 === 1 ? ' volunteer signed up' : ' volunteers signed up');
+  document.getElementById('event2-status').textContent = c2 + (c2 === 1 ? ' volunteer signed up' : ' volunteers signed up');
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function renderAdmin(entries) {
+  const rows = document.getElementById('admin-rows');
+  const empty = document.getElementById('admin-empty');
+  rows.innerHTML = '';
+  if (entries.length === 0) {
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  entries
+    .sort((a, b) => (a.timestamp || '').localeCompare(b.timestamp || ''))
+    .forEach(e => {
+      const tr = document.createElement('tr');
+      const committees = [
+        e.event1 ? '<span class="pill">Community Connection</span>' : '',
+        e.event2 ? '<span class="pill">Horvath Evening</span>' : ''
+      ].join('');
+      tr.innerHTML =
+        '<td>' + escapeHtml(e.name || '') + '</td>' +
+        '<td>' + escapeHtml(e.email || '') + (e.phone ? '<br>' + escapeHtml(e.phone) : '') + '</td>' +
+        '<td>' + committees + '</td>' +
+        '<td>' + escapeHtml(e.notes || '') + '</td>';
+      rows.appendChild(tr);
+    });
+}
+
+async function refresh() {
+  const entries = await loadSignups();
+  renderStatus(entries);
+  renderAdmin(entries);
+  return entries;
+}
+
+document.getElementById('admin-link').addEventListener('click', () => {
+  const panel = document.getElementById('admin-panel');
+  const isHidden = panel.style.display === 'none';
+  panel.style.display = isHidden ? 'block' : 'none';
+  document.getElementById('admin-link').textContent = isHidden ? 'Hide signups' : 'View signups';
+});
+
+document.getElementById('signup-form').addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  const event1 = document.getElementById('cb-event1').checked;
+  const event2 = document.getElementById('cb-event2').checked;
+  const errorEl = document.getElementById('event-error');
+
+  if (!event1 && !event2) {
+    errorEl.style.display = 'block';
+    return;
+  }
+  errorEl.style.display = 'none';
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Submitting…';
+
+  const committees = [
+    event1 ? 'Community Connection Event (Oct 15)' : '',
+    event2 ? 'Evening with Jared Cooney Horvath (Nov 17)' : ''
+  ].filter(Boolean).join(', ');
+
+  const entry = {
+    name: document.getElementById('name').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    notes: document.getElementById('notes').value.trim(),
+    event1: event1,
+    event2: event2,
+    timestamp: new Date().toISOString()
+  };
+
+  try {
+    await saveSignup(entry);
+
+    // Fire-and-forget email notification
+    fetch(FORMSPREE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: 'New committee sign-up: ' + entry.name,
+        name: entry.name,
+        email: entry.email,
+        phone: entry.phone || '—',
+        committees: committees,
+        notes: entry.notes || '—'
+      })
+    }).catch(() => {});
+
+    document.getElementById('signup-form').style.display = 'none';
+    document.getElementById('confirm-panel').style.display = 'block';
+    await refresh();
+  } catch (e) {
+    console.error(e);
+    btn.disabled = false;
+    btn.textContent = 'Join a committee';
+    alert('Something went wrong saving your signup. Please try again.');
+  }
+});
+
+refresh();
+</script>
+</body>
+</html>
