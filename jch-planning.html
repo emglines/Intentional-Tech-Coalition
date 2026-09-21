@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!-- jch-planning. Not linked from nav — accessible via direct URL only.
      Collaborative storage: Firebase Realtime Database REST API.
-     AI editing: Anthropic Messages API (client-side, key embedded).
-     Fill in FIREBASE_URL and ANTHROPIC_KEY below before sharing. -->
+     AI editing: Anthropic Messages API (client-side).
+     The Anthropic API key is stored in each user's localStorage — never in this file. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -264,7 +264,7 @@ th { font-family:var(--sans); font-size:11.5px; font-weight:600; letter-spacing:
   <!-- Setup warning (hidden once both keys are filled) -->
   <div id="setup-warn" class="setup-warn" style="border-radius:0; border-left:none; border-right:none; border-top:none;">
     <strong>Setup required</strong>
-    Open this file and fill in <code>FIREBASE_URL</code> and <code>ANTHROPIC_KEY</code> near the top of the &lt;script&gt; block, then save and push.
+    Firebase URL is configured. To enable AI editing, click the ✦ AI Edit button and paste your Anthropic API key when prompted.
   </div>
 
   <!-- Page header -->
@@ -523,6 +523,21 @@ th { font-family:var(--sans); font-size:11.5px; font-weight:600; letter-spacing:
   </div><!-- /main-wrap -->
 </div><!-- /main -->
 
+<!-- API key setup modal -->
+<div id="key-modal" style="display:none; position:fixed; inset:0; z-index:180; background:rgba(0,0,0,.45); display:none; align-items:center; justify-content:center; padding:24px;">
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:32px 28px 26px; max-width:400px; width:100%; box-shadow:0 8px 32px rgba(0,0,0,.18);">
+    <h2 style="font-family:var(--sans); font-size:17px; font-weight:700; margin:0 0 8px;">Enable AI editing</h2>
+    <p style="font-family:var(--sans); font-size:13.5px; color:var(--text-soft); margin:0 0 18px; line-height:1.55;">Paste your Anthropic API key to activate the ✦ AI Edit assistant. The key is saved only in your browser — it never touches the internet or the repo.</p>
+    <input type="password" id="key-input" placeholder="sk-ant-api03-…" style="width:100%; font-family:monospace; font-size:13px; padding:9px 12px; border:1.5px solid var(--border); border-radius:6px; background:var(--surface-alt); color:var(--text); outline:none; margin-bottom:8px;">
+    <p style="font-family:var(--sans); font-size:12px; color:var(--text-muted); margin:0 0 18px;">Get a key at <strong>console.anthropic.com</strong> → API Keys.</p>
+    <div style="display:flex; gap:8px;">
+      <button class="btn btn-primary" onclick="submitKey()" style="flex:1;">Save key</button>
+      <button class="btn btn-ghost" onclick="dismissKey()">Skip for now</button>
+    </div>
+    <p id="key-error" style="font-family:var(--sans); font-size:12px; color:#9b2020; margin:10px 0 0; min-height:16px;"></p>
+  </div>
+</div>
+
 <!-- AI Floating button (shown only once unlocked) -->
 <button id="ai-fab" style="display:none;" onclick="toggleDrawer()">
   <span style="font-size:16px;">✦</span> AI Edit
@@ -566,14 +581,21 @@ th { font-family:var(--sans); font-size:11.5px; font-weight:600; letter-spacing:
 <script>
 // ─── Configuration ─────────────────────────────────────────────
 const FIREBASE_URL = "https://itc-sc-meeting-sign-ups-default-rtdb.firebaseio.com";
-const ANTHROPIC_KEY = ""; // paste your Anthropic API key here
 const BASE = "jch-visit";
 const CORRECT_PIN = '1117';
 
-// ─── Setup check ───────────────────────────────────────────────
-if (FIREBASE_URL && ANTHROPIC_KEY) {
-  document.getElementById('setup-warn').classList.add('hidden');
+// API key lives in localStorage, never in the repo
+let liveKey = "";
+function loadKey() {
+  try { liveKey = localStorage.getItem('jch_anthropic_key') || ''; } catch(e) { liveKey = ''; }
 }
+function saveKey(k) {
+  liveKey = k;
+  try { localStorage.setItem('jch_anthropic_key', k); } catch(e) {}
+}
+
+// ─── Setup check ───────────────────────────────────────────────
+document.getElementById('setup-warn').classList.add('hidden');
 
 // ─── PIN ───────────────────────────────────────────────────────
 const pinInputs = document.querySelectorAll('.pin-inputs input');
@@ -590,14 +612,20 @@ pinInputs.forEach((inp, i) => {
 });
 pinInputs[0].focus();
 
+function unlockPage() {
+  document.getElementById('pin-overlay').style.display = 'none';
+  document.getElementById('main').style.display = 'block';
+  document.getElementById('ai-fab').style.display = 'flex';
+  loadKey();
+  if (!liveKey) showKeyPrompt();
+  loadAll();
+}
+
 function checkPin() {
   const entered = Array.from(pinInputs).map(i => i.value).join('');
   if (entered === CORRECT_PIN) {
-    document.getElementById('pin-overlay').style.display = 'none';
-    document.getElementById('main').style.display = 'block';
-    document.getElementById('ai-fab').style.display = 'flex';
     try { sessionStorage.setItem('jch_unlocked', '1'); } catch(e) {}
-    loadAll();
+    unlockPage();
   } else {
     document.getElementById('pin-error').textContent = 'Incorrect PIN — try again.';
     document.getElementById('pin-inputs').classList.add('shake');
@@ -610,12 +638,7 @@ function checkPin() {
   }
 }
 try {
-  if (sessionStorage.getItem('jch_unlocked') === '1') {
-    document.getElementById('pin-overlay').style.display = 'none';
-    document.getElementById('main').style.display = 'block';
-    document.getElementById('ai-fab').style.display = 'flex';
-    loadAll();
-  }
+  if (sessionStorage.getItem('jch_unlocked') === '1') unlockPage();
 } catch(e) {}
 
 // ─── Firebase helpers ───────────────────────────────────────────
@@ -903,7 +926,7 @@ function dismissAI() {
 }
 
 async function sendAI() {
-  if (!ANTHROPIC_KEY) { showToast('Anthropic API key not configured.'); return; }
+  if (!liveKey) { showKeyPrompt(); return; }
   const text = document.getElementById('ai-textarea').value.trim();
   if (!text) return;
   dismissAI();
@@ -912,7 +935,7 @@ async function sendAI() {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
-        'x-api-key': ANTHROPIC_KEY,
+        'x-api-key': liveKey,
         'anthropic-version': '2023-06-01',
         'content-type': 'application/json',
         'anthropic-dangerous-direct-browser-access': 'true'
@@ -984,6 +1007,29 @@ function renderLog() {
 document.getElementById('ai-textarea').addEventListener('keydown', e => {
   if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) sendAI();
 });
+
+// ─── Key setup modal ───────────────────────────────────────────
+function showKeyPrompt() {
+  const m = document.getElementById('key-modal');
+  m.style.display = 'flex';
+  document.getElementById('key-input').value = '';
+  document.getElementById('key-error').textContent = '';
+  setTimeout(() => document.getElementById('key-input').focus(), 50);
+}
+function dismissKey() {
+  document.getElementById('key-modal').style.display = 'none';
+}
+function submitKey() {
+  const k = document.getElementById('key-input').value.trim();
+  if (!k.startsWith('sk-ant-')) {
+    document.getElementById('key-error').textContent = 'That doesn\'t look like an Anthropic key. It should start with sk-ant-.';
+    return;
+  }
+  saveKey(k);
+  dismissKey();
+  showToast('API key saved ✓');
+}
+document.getElementById('key-input').addEventListener('keydown', e => { if (e.key === 'Enter') submitKey(); });
 
 // ─── Toast ─────────────────────────────────────────────────────
 function showToast(msg) {
