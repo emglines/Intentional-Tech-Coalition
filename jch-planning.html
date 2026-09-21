@@ -190,10 +190,16 @@ th { font-family:var(--sans); font-size:11.5px; font-weight:600; letter-spacing:
 .check-item:hover .item-del { opacity:.6; }
 .check-item .item-del:hover { opacity:1; }
 .checklist-empty { font-family:var(--sans); font-size:13px; color:var(--text-muted); font-style:italic; padding:12px 14px; background:var(--surface); }
-.add-item-row { display:flex; gap:8px; margin-top:10px; }
-.add-item-row input { flex:1; font-family:var(--sans); font-size:13.5px; padding:7px 12px; border:1px solid var(--border); border-radius:5px; background:var(--surface); color:var(--text); outline:none; }
+.add-item-row { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+.add-item-row input { font-family:var(--sans); font-size:13.5px; padding:7px 12px; border:1px solid var(--border); border-radius:5px; background:var(--surface); color:var(--text); outline:none; }
 .add-item-row input:focus { border-color:var(--accent); }
 .add-item-row input::placeholder { color:var(--text-muted); font-style:italic; }
+.add-item-row #new-item { flex:2; min-width:160px; }
+.add-item-row #new-assignee { flex:1; min-width:110px; }
+.assignee-input { font-family:var(--sans); font-size:12px; color:var(--text-soft); background:transparent; border:none; border-bottom:1px dashed var(--border-strong); padding:2px 4px; outline:none; width:110px; flex-shrink:0; }
+.assignee-input:focus { border-bottom-color:var(--accent); color:var(--text); }
+.assignee-input::placeholder { color:var(--text-muted); font-style:italic; }
+.check-item.done .assignee-input { text-decoration:line-through; color:var(--text-muted); }
 
 /* Toast */
 #toast { position:fixed; bottom:24px; right:24px; background:var(--text); color:var(--bg); font-family:var(--sans); font-size:13px; font-weight:500; padding:10px 18px; border-radius:999px; z-index:300; opacity:0; transform:translateY(8px); transition:opacity .2s, transform .2s; pointer-events:none; }
@@ -471,6 +477,7 @@ th { font-family:var(--sans); font-size:11.5px; font-weight:600; letter-spacing:
       </div>
       <div class="add-item-row" style="margin-top:10px;">
         <input type="text" id="new-item" placeholder="Add an open item…">
+        <input type="text" id="new-assignee" placeholder="Assign to… (optional)">
         <button class="btn btn-primary" onclick="addOpenItem()">Add</button>
       </div>
     </div>
@@ -723,8 +730,12 @@ function renderOpenItems(data) {
       div.innerHTML = `
         <input type="checkbox" id="${id}"${item.done ? ' checked' : ''}>
         <label for="${id}">${esc(item.text)}</label>
+        <input type="text" class="assignee-input" value="${esc(item.assignee || '')}" placeholder="Assign to…" aria-label="Assignee">
         <button class="item-del" onclick="removeOpenItem('${key}')" aria-label="Remove">×</button>`;
-      div.querySelector('input').addEventListener('change', e => toggleOpenItem(key, e.target.checked, div));
+      div.querySelector('input[type="checkbox"]').addEventListener('change', e => toggleOpenItem(key, e.target.checked, div));
+      const assigneeInput = div.querySelector('.assignee-input');
+      assigneeInput.addEventListener('blur', () => saveAssignee(key, assigneeInput.value.trim()));
+      assigneeInput.addEventListener('keydown', e => { if (e.key === 'Enter') assigneeInput.blur(); });
       cl.insertBefore(div, empty);
     });
   }
@@ -735,13 +746,19 @@ async function toggleOpenItem(key, done, div) {
   try { await fbPatch(`open-items/${key}`, { done }); } catch(e) {}
 }
 
+async function saveAssignee(key, assignee) {
+  try { await fbPatch(`open-items/${key}`, { assignee }); } catch(e) {}
+}
+
 async function addOpenItem() {
   const inp = document.getElementById('new-item');
+  const asgn = document.getElementById('new-assignee');
   const text = inp.value.trim();
   if (!text) return;
-  inp.value = '';
+  const assignee = asgn.value.trim();
+  inp.value = ''; asgn.value = '';
   try {
-    await fbPost('open-items', { text, done: false, ts: Date.now() });
+    await fbPost('open-items', { text, done: false, assignee, ts: Date.now() });
     const items = await fbGet('open-items').catch(() => ({}));
     renderOpenItems(items || {});
   } catch(e) { showToast('Error saving item.'); }
@@ -756,6 +773,7 @@ async function removeOpenItem(key) {
 }
 
 document.getElementById('new-item').addEventListener('keydown', e => { if (e.key === 'Enter') addOpenItem(); });
+document.getElementById('new-assignee').addEventListener('keydown', e => { if (e.key === 'Enter') addOpenItem(); });
 
 // ─── Section nav highlight ─────────────────────────────────────
 const sections = ['itinerary', 'logistics', 'marketing', 'collateral', 'open-items'];
