@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<!-- jch-planning. Not linked from nav — accessible via direct URL only.
+     Collaborative storage: Firebase Realtime Database REST API.
+     AI editing: Anthropic Messages API (client-side, key embedded).
+     Fill in FIREBASE_URL and ANTHROPIC_KEY below before sharing. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JCH Visit Planning | Nov 2026</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap">
+<style>
+:root {
+  --bg: #faf9f6; --surface: #ffffff; --surface-alt: #f5f3ee;
+  --text: #1d1d19; --text-soft: #585852; --text-muted: #8e8e84;
+  --border: #dedad1; --border-strong: #c6c2b6;
+  --accent: #4a5d52; --accent-dk: #374840; --accent-soft: #edf1ed;
+  --locked-bg: #f3f1ec; --locked-border: #ccc9be;
+  --pending-bg: #f3eff8; --pending-border: #b79fcc;
+  --flag-bg: #fffaed; --flag-border: #e0ae4a;
+  --ok: #3a6b44; --ok-bg: #edf5ef;
+  --r: 7px;
+  --serif: 'Libre Baskerville', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --shadow: 0 1px 4px rgba(0,0,0,.07), 0 1px 2px rgba(0,0,0,.05);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1c19; --surface: #222420; --surface-alt: #2a2c28;
+    --text: #eceae6; --text-soft: #a2a099; --text-muted: #686660;
+    --border: #383a34; --border-strong: #4a4d45;
+    --accent: #89ad96; --accent-dk: #a0c4ae; --accent-soft: #283330;
+    --locked-bg: #242622; --locked-border: #3c3f38;
+    --pending-bg: #2c2838; --pending-border: #9070b8;
+    --flag-bg: #332e18; --flag-border: #b08840;
+    --ok: #6aad7a; --ok-bg: #1e3328;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1c19; --surface: #222420; --surface-alt: #2a2c28;
+  --text: #eceae6; --text-soft: #a2a099; --text-muted: #686660;
+  --border: #383a34; --border-strong: #4a4d45;
+  --accent: #89ad96; --accent-dk: #a0c4ae; --accent-soft: #283330;
+  --locked-bg: #242622; --locked-border: #3c3f38;
+  --pending-bg: #2c2838; --pending-border: #9070b8;
+  --flag-bg: #332e18; --flag-border: #b08840;
+  --ok: #6aad7a; --ok-bg: #1e3328;
+}
+*,*::before,*::after { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:var(--serif); font-size:15px; line-height:1.65; }
+
+/* PIN overlay */
+#pin-overlay { position:fixed; inset:0; z-index:200; background:var(--bg); display:flex; align-items:center; justify-content:center; padding:24px; }
+.pin-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:44px 40px 40px; max-width:360px; width:100%; text-align:center; box-shadow:var(--shadow); }
+.pin-card .pin-eye { font-size:28px; margin-bottom:16px; display:block; }
+.pin-card h1 { font-family:var(--serif); font-size:20px; font-weight:700; margin:0 0 6px; }
+.pin-card p { font-family:var(--sans); font-size:13.5px; color:var(--text-soft); margin:0 0 28px; }
+.pin-inputs { display:flex; gap:10px; justify-content:center; margin-bottom:20px; }
+.pin-inputs input { width:52px; height:56px; text-align:center; font-family:var(--sans); font-size:22px; font-weight:600; border:1.5px solid var(--border); border-radius:var(--r); background:var(--surface-alt); color:var(--text); outline:none; transition:border-color .15s; -webkit-text-security:disc; }
+.pin-inputs input:focus { border-color:var(--accent); }
+.pin-inputs.shake { animation:shake .35s ease; }
+@keyframes shake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-6px)} 40%{transform:translateX(6px)} 60%{transform:translateX(-4px)} 80%{transform:translateX(4px)} }
+#pin-error { font-family:var(--sans); font-size:13px; color:#9b2020; margin-bottom:16px; min-height:18px; }
+.pin-submit { width:100%; background:var(--accent); color:#fff; border:none; border-radius:var(--r); font-family:var(--sans); font-size:14px; font-weight:600; padding:11px 0; cursor:pointer; transition:background .15s; }
+.pin-submit:hover { background:var(--accent-dk); }
+
+/* Setup warning */
+.setup-warn { background:var(--flag-bg); border:1px solid var(--flag-border); border-radius:var(--r); padding:14px 18px; margin-bottom:0; font-family:var(--sans); font-size:13px; line-height:1.5; color:var(--text-soft); }
+.setup-warn strong { color:var(--text); display:block; margin-bottom:4px; }
+.setup-warn code { background:rgba(63,81,56,.1); border-radius:4px; padding:1px 5px; font-size:12px; font-family:monospace; }
+.setup-warn.hidden { display:none; }
+
+/* Page header */
+.page-header { background:var(--surface); border-bottom:1px solid var(--border); padding:20px 24px 0; }
+.page-header-inner { max-width:880px; margin:0 auto; }
+.page-header h1 { font-family:var(--serif); font-size:21px; font-weight:700; margin:0 0 3px; }
+.page-meta { font-family:var(--sans); font-size:12px; color:var(--text-muted); margin-bottom:16px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.badge { display:inline-block; font-family:var(--sans); font-size:10.5px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; padding:2px 8px; border-radius:999px; }
+.badge-draft { background:var(--flag-bg); color:#8a6010; border:1px solid var(--flag-border); }
+.badge-locked { background:var(--locked-bg); color:var(--text-soft); border:1px solid var(--locked-border); }
+.badge-pending { background:var(--pending-bg); color:#6040a0; border:1px solid var(--pending-border); }
+
+/* Refresh bar */
+.refresh-bar { font-family:var(--sans); font-size:11px; color:var(--text-muted); margin-left:auto; display:flex; align-items:center; gap:6px; }
+.refresh-btn { background:none; border:none; cursor:pointer; color:var(--accent); font-family:var(--sans); font-size:11px; font-weight:600; padding:0; text-decoration:underline; }
+
+/* Section nav */
+.section-nav { background:var(--surface); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:10; }
+.section-nav-inner { max-width:880px; margin:0 auto; padding:0 24px; display:flex; overflow-x:auto; scrollbar-width:none; }
+.section-nav-inner::-webkit-scrollbar { display:none; }
+.nav-link { font-family:var(--sans); font-size:12.5px; font-weight:500; color:var(--text-soft); text-decoration:none; padding:10px 14px; border-bottom:2px solid transparent; white-space:nowrap; transition:color .15s, border-color .15s; }
+.nav-link:hover { color:var(--accent); }
+.nav-link.active { color:var(--accent); border-bottom-color:var(--accent); }
+
+/* Main content */
+.main-wrap { max-width:880px; margin:0 auto; padding:36px 24px 120px; }
+.sec { margin-bottom:48px; }
+.sec-head { display:flex; align-items:center; gap:10px; border-bottom:1.5px solid var(--border); padding-bottom:10px; margin-bottom:20px; flex-wrap:wrap; }
+.sec-head h2 { font-family:var(--serif); font-size:17px; font-weight:700; margin:0; }
+.sec-note { font-family:var(--sans); font-size:12px; color:var(--text-muted); margin-left:auto; }
+
+/* Locked sections */
+.locked-section { background:var(--locked-bg); border:1px solid var(--locked-border); border-radius:var(--r); padding:22px 24px 18px; }
+.lock-notice { font-family:var(--sans); font-size:12px; color:var(--text-muted); background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:8px 14px; margin-bottom:18px; }
+
+/* Tables */
+.table-scroll { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; }
+th,td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--border); font-size:14px; vertical-align:top; }
+th { font-family:var(--sans); font-size:11.5px; font-weight:600; letter-spacing:.04em; color:var(--text-soft); text-transform:uppercase; background:var(--surface-alt); white-space:nowrap; }
+.day-cell { font-family:var(--sans); font-weight:600; white-space:nowrap; color:var(--accent); font-size:13px; }
+.aud-pill { display:inline-block; font-family:var(--sans); font-size:11px; padding:2px 7px; border-radius:999px; background:var(--accent-soft); color:var(--accent-dk); }
+.aud-pill.pub { background:#fff3e0; color:#8a4a00; }
+
+/* Pending block */
+.pending-block { background:var(--pending-bg); border:1px solid var(--pending-border); border-radius:var(--r); padding:18px 20px; }
+.pending-block p.sub { font-family:var(--sans); font-size:12.5px; color:var(--text-soft); margin:12px 0 0; }
+
+/* Logistics display (locked) */
+.logistics-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media (max-width:600px) { .logistics-grid { grid-template-columns:1fr; } }
+.log-card { background:var(--locked-bg); border:1px solid var(--locked-border); border-radius:var(--r); padding:18px 18px 14px; }
+.log-card h3 { font-family:var(--sans); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); margin:0 0 12px; }
+.log-display { margin-bottom:10px; }
+.log-display-label { font-family:var(--sans); font-size:11.5px; color:var(--text-muted); margin-bottom:2px; }
+.log-display-value { font-family:var(--sans); font-size:13.5px; color:var(--text); }
+.log-display-value.tbd { color:var(--text-muted); font-style:italic; }
+
+/* Editable fields */
+.log-field { margin-bottom:12px; }
+.log-field label { display:flex; align-items:center; gap:6px; font-family:var(--sans); font-size:11.5px; color:var(--text-muted); margin-bottom:3px; }
+.log-field input { width:100%; font-family:var(--sans); font-size:13.5px; color:var(--text); background:var(--surface-alt); border:1px solid var(--border); border-radius:5px; padding:7px 10px; outline:none; transition:border-color .15s; }
+.log-field input:focus { border-color:var(--accent); background:var(--surface); }
+.log-field input::placeholder { color:var(--text-muted); font-style:italic; }
+.field-status { font-size:10.5px; font-weight:600; font-family:var(--sans); }
+.field-status.ok { color:var(--ok); }
+.field-status.saving { color:var(--text-muted); }
+.field-status.err { color:#9b2020; }
+
+/* Marketing card */
+.mkt-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:16px 18px; margin-bottom:14px; }
+.mkt-card h3 { font-family:var(--sans); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--text-muted); margin:0 0 10px; }
+
+/* Event cards */
+.event-cards { display:flex; flex-direction:column; gap:12px; }
+.event-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:16px 18px; display:grid; grid-template-columns:1fr auto; gap:10px; align-items:start; }
+.event-card.pending-card { border-color:var(--pending-border); background:var(--pending-bg); }
+.event-card-info h4 { font-family:var(--sans); font-size:14px; font-weight:600; margin:0 0 3px; }
+.event-card-info .emeta { font-family:var(--sans); font-size:12px; color:var(--text-soft); margin-bottom:8px; }
+.rsvp-row { display:flex; align-items:center; gap:8px; font-family:var(--sans); font-size:12.5px; color:var(--text-soft); margin-bottom:8px; }
+.rsvp-row input[type="number"] { width:64px; font-family:var(--sans); font-size:18px; font-weight:700; color:var(--accent); background:var(--accent-soft); border:1px solid var(--border); border-radius:5px; padding:4px 8px; text-align:center; outline:none; }
+.rsvp-row input[type="number"]:focus { border-color:var(--accent); }
+.signup-link-row { display:flex; align-items:center; gap:6px; }
+.signup-link-row input { flex:1; font-family:var(--sans); font-size:12.5px; color:var(--text); background:var(--surface-alt); border:1px solid var(--border); border-radius:5px; padding:5px 9px; outline:none; }
+.signup-link-row input:focus { border-color:var(--accent); background:var(--surface); }
+.signup-link-row input::placeholder { color:var(--text-muted); font-style:italic; }
+
+/* Flag */
+.flag { background:var(--flag-bg); border:1px solid var(--flag-border); border-radius:var(--r); padding:13px 16px; font-family:var(--sans); font-size:13px; color:var(--text-soft); margin-bottom:18px; line-height:1.5; }
+.flag strong { color:var(--text); display:block; margin-bottom:3px; }
+
+/* Collateral */
+.collateral-list { display:flex; flex-direction:column; gap:8px; margin-bottom:14px; }
+.collateral-item { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:12px 16px; display:flex; align-items:center; gap:12px; }
+.collateral-icon { font-size:18px; flex-shrink:0; }
+.collateral-info { flex:1; min-width:0; }
+.collateral-info a { font-family:var(--sans); font-size:14px; font-weight:500; color:var(--accent); text-decoration:none; }
+.collateral-info a:hover { text-decoration:underline; }
+.collateral-cat { font-family:var(--sans); font-size:11px; color:var(--text-muted); margin-top:1px; }
+.collateral-del { background:none; border:none; cursor:pointer; font-size:16px; color:var(--text-muted); padding:4px; line-height:1; opacity:.6; transition:opacity .15s; }
+.collateral-del:hover { opacity:1; }
+.add-link-form { background:var(--surface-alt); border:1px dashed var(--border-strong); border-radius:var(--r); padding:16px; display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px; }
+@media (max-width:540px) { .add-link-form { grid-template-columns:1fr; } }
+.add-link-form input, .add-link-form select { font-family:var(--sans); font-size:13.5px; color:var(--text); background:var(--surface); border:1px solid var(--border); border-radius:5px; padding:7px 10px; outline:none; }
+.add-link-form input::placeholder { color:var(--text-muted); font-style:italic; }
+.add-link-form input:focus, .add-link-form select:focus { border-color:var(--accent); }
+.add-link-form .btn-row { grid-column:1/-1; display:flex; gap:8px; }
+.collateral-empty { font-family:var(--sans); font-size:13px; color:var(--text-muted); font-style:italic; padding:8px 0; }
+
+/* Buttons */
+.btn { font-family:var(--sans); font-size:13px; font-weight:600; border:none; border-radius:5px; padding:8px 16px; cursor:pointer; transition:background .15s; }
+.btn-primary { background:var(--accent); color:#fff; }
+.btn-primary:hover { background:var(--accent-dk); }
+.btn-ghost { background:var(--surface); color:var(--text-soft); border:1px solid var(--border); }
+.btn-ghost:hover { background:var(--surface-alt); }
+.btn-add { font-family:var(--sans); font-size:13px; font-weight:500; color:var(--accent); background:none; border:1px dashed var(--border-strong); border-radius:var(--r); padding:9px 16px; cursor:pointer; width:100%; text-align:left; }
+.btn-add:hover { background:var(--accent-soft); }
+
+/* Checklist */
+.checklist { display:flex; flex-direction:column; border:1px solid var(--border); border-radius:var(--r); overflow:hidden; }
+.check-item { display:flex; align-items:flex-start; gap:12px; padding:10px 14px; border-bottom:1px solid var(--border); background:var(--surface); }
+.check-item:last-child { border-bottom:none; }
+.check-item input[type="checkbox"] { margin-top:3px; width:15px; height:15px; accent-color:var(--accent); flex-shrink:0; cursor:pointer; }
+.check-item label { font-family:var(--sans); font-size:14px; color:var(--text); cursor:pointer; flex:1; }
+.check-item.done { background:var(--surface-alt); }
+.check-item.done label { text-decoration:line-through; color:var(--text-muted); }
+.check-item .item-del { background:none; border:none; cursor:pointer; font-size:14px; color:var(--text-muted); padding:2px 4px; opacity:0; transition:opacity .15s; flex-shrink:0; }
+.check-item:hover .item-del { opacity:.6; }
+.check-item .item-del:hover { opacity:1; }
+.checklist-empty { font-family:var(--sans); font-size:13px; color:var(--text-muted); font-style:italic; padding:12px 14px; background:var(--surface); }
+.add-item-row { display:flex; gap:8px; margin-top:10px; }
+.add-item-row input { flex:1; font-family:var(--sans); font-size:13.5px; padding:7px 12px; border:1px solid var(--border); border-radius:5px; background:var(--surface); color:var(--text); outline:none; }
+.add-item-row input:focus { border-color:var(--accent); }
+.add-item-row input::placeholder { color:var(--text-muted); font-style:italic; }
+
+/* AI FAB + Drawer */
+#ai-fab { position:fixed; bottom:28px; right:24px; z-index:100; background:var(--accent); color:#fff; border:none; border-radius:999px; padding:12px 20px 12px 16px; font-family:var(--sans); font-size:14px; font-weight:600; cursor:pointer; display:flex; align-items:center; gap:8px; box-shadow:0 4px 16px rgba(0,0,0,.18); transition:background .15s, transform .15s; }
+#ai-fab:hover { background:var(--accent-dk); transform:translateY(-1px); }
+#ai-drawer { position:fixed; top:0; right:0; bottom:0; width:340px; background:var(--surface); border-left:1px solid var(--border); z-index:150; display:flex; flex-direction:column; transform:translateX(100%); transition:transform .25s ease; box-shadow:-4px 0 24px rgba(0,0,0,.1); }
+#ai-drawer.open { transform:translateX(0); }
+@media (max-width:640px) { #ai-drawer { width:100%; top:auto; height:72%; border-left:none; border-top:1px solid var(--border); border-radius:14px 14px 0 0; transform:translateY(100%); } #ai-drawer.open { transform:translateY(0); } }
+.drawer-head { padding:18px 20px 14px; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
+.drawer-head h2 { font-family:var(--sans); font-size:15px; font-weight:700; margin:0; }
+.drawer-close { background:none; border:none; cursor:pointer; font-size:20px; color:var(--text-muted); padding:2px 6px; line-height:1; }
+.drawer-close:hover { color:var(--text); }
+.drawer-body { flex:1; overflow-y:auto; padding:18px 20px; display:flex; flex-direction:column; gap:14px; }
+.drawer-label { font-family:var(--sans); font-size:12px; color:var(--text-soft); margin-bottom:6px; }
+#ai-textarea { width:100%; font-family:var(--sans); font-size:14px; color:var(--text); background:var(--surface-alt); border:1.5px solid var(--border); border-radius:var(--r); padding:11px 13px; resize:none; height:90px; outline:none; transition:border-color .15s; }
+#ai-textarea:focus { border-color:var(--accent); background:var(--surface); }
+#ai-textarea::placeholder { color:var(--text-muted); }
+.ai-send-row { display:flex; justify-content:flex-end; gap:8px; margin-top:8px; }
+.ai-thinking { display:none; font-family:var(--sans); font-size:13px; color:var(--text-soft); align-items:center; gap:8px; }
+.ai-thinking.show { display:flex; }
+.spinner { width:16px; height:16px; border:2px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:spin .7s linear infinite; flex-shrink:0; }
+@keyframes spin { to { transform:rotate(360deg); } }
+.ai-response { display:none; background:var(--surface-alt); border:1px solid var(--border); border-radius:var(--r); padding:14px 16px; }
+.ai-response.show { display:block; }
+.ai-response .ai-label { font-family:var(--sans); font-size:11.5px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--accent); margin:0 0 10px; }
+.ai-diff { font-family:var(--sans); font-size:13px; color:var(--text); border-left:3px solid var(--accent); padding:8px 12px; background:var(--accent-soft); border-radius:0 5px 5px 0; margin-bottom:12px; line-height:1.55; }
+.ai-diff strong { display:block; font-size:11.5px; color:var(--text-soft); font-weight:400; margin-bottom:3px; }
+.ai-apply-row { display:flex; gap:8px; }
+.edit-log { display:flex; flex-direction:column; gap:6px; }
+.edit-log-item { font-family:var(--sans); font-size:12px; color:var(--text-soft); display:flex; gap:8px; padding:7px 10px; background:var(--surface-alt); border-radius:5px; border:1px solid var(--border); }
+.edit-log-item .log-dot { color:var(--ok); flex-shrink:0; }
+.edit-log-empty { font-family:var(--sans); font-size:12px; color:var(--text-muted); font-style:italic; }
+
+/* Toast */
+#toast { position:fixed; bottom:88px; right:24px; background:var(--text); color:var(--bg); font-family:var(--sans); font-size:13px; font-weight:500; padding:10px 18px; border-radius:999px; z-index:300; opacity:0; transform:translateY(8px); transition:opacity .2s, transform .2s; pointer-events:none; }
+#toast.show { opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- PIN overlay -->
+<div id="pin-overlay">
+  <div class="pin-card">
+    <span class="pin-eye">🔒</span>
+    <h1>JCH Visit — Nov 2026</h1>
+    <p>Enter the group PIN to access the planning page.</p>
+    <div class="pin-inputs" id="pin-inputs">
+      <input type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" autocomplete="off">
+      <input type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" autocomplete="off">
+      <input type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" autocomplete="off">
+      <input type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" autocomplete="off">
+    </div>
+    <div id="pin-error">&nbsp;</div>
+    <button class="pin-submit" onclick="checkPin()">Unlock →</button>
+  </div>
+</div>
+
+<!-- Main page -->
+<div id="main" style="display:none;">
+
+  <!-- Setup warning (hidden once both keys are filled) -->
+  <div id="setup-warn" class="setup-warn" style="border-radius:0; border-left:none; border-right:none; border-top:none;">
+    <strong>Setup required</strong>
+    Open this file and fill in <code>FIREBASE_URL</code> and <code>ANTHROPIC_KEY</code> near the top of the &lt;script&gt; block, then save and push.
+  </div>
+
+  <!-- Page header -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <h1>Jared Cooney Horvath — Community Visit</h1>
+      <div class="page-meta">
+        November 16–18, 2026
+        <span class="badge badge-draft">Working Draft</span>
+        <span class="refresh-bar">
+          Updated <span id="last-updated">just now</span>
+          <button class="refresh-btn" onclick="loadAll()">Refresh</button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section nav -->
+  <nav class="section-nav">
+    <div class="section-nav-inner">
+      <a href="#itinerary" class="nav-link active">Itinerary</a>
+      <a href="#logistics" class="nav-link">Logistics</a>
+      <a href="#marketing" class="nav-link">Marketing & RSVPs</a>
+      <a href="#collateral" class="nav-link">Collateral</a>
+      <a href="#open-items" class="nav-link">Open Items</a>
+    </div>
+  </nav>
+
+  <div class="main-wrap">
+
+    <!-- ITINERARY (locked) -->
+    <div class="sec" id="itinerary">
+      <div class="sec-head">
+        <h2>Confirmed Schedule</h2>
+        <span class="badge badge-locked">🔒 Locked</span>
+        <span class="sec-note">Contact Emily to request changes</span>
+      </div>
+      <div class="locked-section">
+        <div class="lock-notice">🔒 Managed by Emily. Message her directly to request any changes to the schedule.</div>
+        <div class="table-scroll">
+          <table>
+            <tr><th>Day</th><th>Time</th><th>Event</th><th>Location</th><th>Audience</th></tr>
+            <tr>
+              <td class="day-cell">Mon 11/16</td>
+              <td>3:30–4:30 PM</td>
+              <td>Meeting with humanities staff</td>
+              <td>Lexington</td>
+              <td><span class="aud-pill">Staff</span></td>
+            </tr>
+            <tr>
+              <td class="day-cell">Mon 11/16</td>
+              <td>7:00–9:00 PM</td>
+              <td>Parent event — Wellesley, Lexington &amp; surrounding districts</td>
+              <td>Wellesley</td>
+              <td><span class="aud-pill pub">Public</span></td>
+            </tr>
+            <tr>
+              <td class="day-cell">Tue 11/17</td>
+              <td>1:15–2:10 PM</td>
+              <td>Meeting with students, grades 9–12</td>
+              <td>Lexington High School</td>
+              <td><span class="aud-pill">Students</span></td>
+            </tr>
+            <tr>
+              <td class="day-cell">Tue 11/17</td>
+              <td>4:00–5:30 PM</td>
+              <td>Class taught via Zoom</td>
+              <td>Concord Free Public Library — private study room</td>
+              <td><span class="aud-pill">Students (remote)</span></td>
+            </tr>
+            <tr>
+              <td class="day-cell">Tue 11/17</td>
+              <td>7:00–9:00 PM</td>
+              <td>Parent event — Concord &amp; surrounding districts</td>
+              <td>Concord Middle School Auditorium</td>
+              <td><span class="aud-pill pub">Public</span></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div style="margin-top:20px;">
+        <div class="sec-head">
+          <h2>Pending — Wednesday 11/18</h2>
+          <span class="badge badge-pending">Awaiting Jared's confirmation</span>
+        </div>
+        <div class="pending-block">
+          <div class="table-scroll">
+            <table>
+              <tr><th>Time</th><th>Event</th><th>Location</th><th>Audience</th></tr>
+              <tr>
+                <td style="font-style:italic;color:var(--text-muted);">TBD</td>
+                <td>Public event in Winchester</td>
+                <td style="font-style:italic;color:var(--text-muted);">TBD</td>
+                <td><span class="aud-pill pub">Public</span></td>
+              </tr>
+              <tr>
+                <td style="font-style:italic;color:var(--text-muted);">TBD</td>
+                <td>Private session with local advocates</td>
+                <td style="font-style:italic;color:var(--text-muted);">TBD</td>
+                <td><span class="aud-pill">Advocates</span></td>
+              </tr>
+            </table>
+          </div>
+          <p class="sub">Winchester event and advocates session lock in once Jared confirms he can stay the extra night.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGISTICS (locked) -->
+    <div class="sec" id="logistics">
+      <div class="sec-head">
+        <h2>Travel &amp; Logistics</h2>
+        <span class="badge badge-locked">🔒 Locked</span>
+        <span class="sec-note">Contact Emily to request changes</span>
+      </div>
+      <div class="locked-section">
+        <div class="lock-notice">🔒 Managed by Emily. Message her directly to update any logistics details.</div>
+        <div class="logistics-grid">
+          <div class="log-card">
+            <h3>✈ Flights</h3>
+            <div class="log-display"><div class="log-display-label">Arrival flight</div><div class="log-display-value tbd" id="l-arrival">TBD</div></div>
+            <div class="log-display"><div class="log-display-label">Departure flight</div><div class="log-display-value tbd" id="l-departure">TBD — depends on 11/18 confirmation</div></div>
+          </div>
+          <div class="log-card">
+            <h3>🚗 Ground Transportation</h3>
+            <div class="log-display"><div class="log-display-label">Airport pickup / drop-off</div><div class="log-display-value tbd" id="l-airport">TBD</div></div>
+            <div class="log-display"><div class="log-display-label">Daily driving</div><div class="log-display-value tbd" id="l-driving">TBD — Lexington ↔ Wellesley ↔ Concord</div></div>
+          </div>
+          <div class="log-card">
+            <h3>🏨 Hotel</h3>
+            <div class="log-display"><div class="log-display-label">Property</div><div class="log-display-value tbd" id="l-hotel">TBD</div></div>
+            <div class="log-display"><div class="log-display-label">Nights</div><div class="log-display-value" id="l-nights">11/16, 11/17 (+ 11/18 if confirmed)</div></div>
+          </div>
+          <div class="log-card">
+            <h3>👤 Daily Liaisons</h3>
+            <div class="log-display"><div class="log-display-label">Monday 11/16</div><div class="log-display-value tbd" id="l-mon">TBD</div></div>
+            <div class="log-display"><div class="log-display-label">Tuesday 11/17</div><div class="log-display-value tbd" id="l-tue">TBD</div></div>
+            <div class="log-display"><div class="log-display-label">Wednesday 11/18 (if confirmed)</div><div class="log-display-value tbd" id="l-wed">TBD</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARKETING & RSVPs (editable) -->
+    <div class="sec" id="marketing">
+      <div class="sec-head">
+        <h2>Marketing &amp; RSVPs</h2>
+        <span class="sec-note">Editable by team · use ✦ AI Edit or type directly</span>
+      </div>
+
+      <div class="mkt-card">
+        <h3>Landing Page (TLO)</h3>
+        <div class="log-field" style="margin-bottom:0;">
+          <label>URL <span class="field-status" id="status-landing_url"></span></label>
+          <input type="text" id="f-landing_url" data-field="landing_url" placeholder="Paste link once live…">
+        </div>
+      </div>
+
+      <div class="flag">
+        <strong>FourNorms RSVPs</strong>
+        Update RSVP counts below after checking FourNorms. Paste each event's sign-up link in the field provided — we'll investigate whether FourNorms has an API for live pull.
+      </div>
+
+      <div class="event-cards">
+        <div class="event-card">
+          <div class="event-card-info">
+            <h4>Parent event — Wellesley</h4>
+            <div class="emeta">Mon, Nov 16 · 7:00–9:00 PM · Wellesley</div>
+            <div class="rsvp-row">
+              <input type="number" id="f-rsvp1" data-field="rsvp1" value="0" min="0">
+              RSVPs <span class="field-status" id="status-rsvp1"></span>
+            </div>
+            <div class="signup-link-row">
+              <input type="text" id="f-link1" data-field="link1" placeholder="FourNorms sign-up link…">
+              <span class="field-status" id="status-link1"></span>
+            </div>
+          </div>
+          <span class="aud-pill pub">Public</span>
+        </div>
+        <div class="event-card">
+          <div class="event-card-info">
+            <h4>Parent event — Concord</h4>
+            <div class="emeta">Tue, Nov 17 · 7:00–9:00 PM · CMS Auditorium</div>
+            <div class="rsvp-row">
+              <input type="number" id="f-rsvp2" data-field="rsvp2" value="0" min="0">
+              RSVPs <span class="field-status" id="status-rsvp2"></span>
+            </div>
+            <div class="signup-link-row">
+              <input type="text" id="f-link2" data-field="link2" placeholder="FourNorms sign-up link…">
+              <span class="field-status" id="status-link2"></span>
+            </div>
+          </div>
+          <span class="aud-pill pub">Public</span>
+        </div>
+        <div class="event-card pending-card">
+          <div class="event-card-info">
+            <h4>Public event — Winchester</h4>
+            <div class="emeta">Wed, Nov 18 · Time &amp; location TBD</div>
+            <div class="rsvp-row">
+              <input type="number" id="f-rsvp3" data-field="rsvp3" value="0" min="0">
+              RSVPs <span class="field-status" id="status-rsvp3"></span>
+            </div>
+            <div class="signup-link-row">
+              <input type="text" id="f-link3" data-field="link3" placeholder="Sign-up link once confirmed…">
+              <span class="field-status" id="status-link3"></span>
+            </div>
+          </div>
+          <span class="badge badge-pending">Pending</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLLATERAL (editable) -->
+    <div class="sec" id="collateral">
+      <div class="sec-head">
+        <h2>Collateral &amp; Links</h2>
+        <span class="sec-note">Add Google Drive links, drafts, templates</span>
+      </div>
+      <div class="collateral-list" id="collateral-list">
+        <div class="collateral-empty" id="collateral-empty" style="display:none;">No documents yet. Add the first one below.</div>
+      </div>
+      <div id="add-link-form" style="display:none;" class="add-link-form">
+        <input type="text" id="c-title" placeholder="Title (e.g. Flyer v2)">
+        <select id="c-cat">
+          <option value="Flyer">Flyer</option>
+          <option value="Email">Email</option>
+          <option value="Slides">Slides</option>
+          <option value="Doc">Doc</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="url" id="c-url" placeholder="Google Drive URL" style="grid-column:1/-1;">
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="addCollateral()">Add</button>
+          <button class="btn btn-ghost" onclick="cancelAddLink()">Cancel</button>
+        </div>
+      </div>
+      <button class="btn-add" id="show-add-link" onclick="showAddLink()">+ Add a document or link</button>
+    </div>
+
+    <!-- OPEN ITEMS (editable) -->
+    <div class="sec" id="open-items">
+      <div class="sec-head">
+        <h2>Open Items</h2>
+        <span class="sec-note">Check off as resolved · anyone can add</span>
+      </div>
+      <div class="checklist" id="checklist">
+        <div class="checklist-empty" id="checklist-empty" style="display:none;">No open items. Add one below.</div>
+      </div>
+      <div class="add-item-row" style="margin-top:10px;">
+        <input type="text" id="new-item" placeholder="Add an open item…">
+        <button class="btn btn-primary" onclick="addOpenItem()">Add</button>
+      </div>
+    </div>
+
+  </div><!-- /main-wrap -->
+</div><!-- /main -->
+
+<!-- AI Floating button (shown only once unlocked) -->
+<button id="ai-fab" style="display:none;" onclick="toggleDrawer()">
+  <span style="font-size:16px;">✦</span> AI Edit
+</button>
+
+<!-- AI Drawer -->
+<div id="ai-drawer">
+  <div class="drawer-head">
+    <h2>✦ AI Edit</h2>
+    <button class="drawer-close" onclick="toggleDrawer()">×</button>
+  </div>
+  <div class="drawer-body">
+    <div>
+      <div class="drawer-label">Describe the change you'd like to make. The itinerary and logistics are locked — for those, message Emily directly.</div>
+      <textarea id="ai-textarea" placeholder="e.g. "Wellesley RSVPs are now 34" or "The Concord sign-up link is https://…""></textarea>
+      <div class="ai-send-row">
+        <button class="btn btn-ghost" onclick="clearAI()">Clear</button>
+        <button class="btn btn-primary" onclick="sendAI()">Send →</button>
+      </div>
+    </div>
+    <div class="ai-thinking" id="ai-thinking"><div class="spinner"></div>Thinking…</div>
+    <div class="ai-response" id="ai-response">
+      <p class="ai-label">Proposed change</p>
+      <div class="ai-diff" id="ai-diff-content"></div>
+      <div class="ai-apply-row">
+        <button class="btn btn-primary" onclick="applyAI()">Apply changes</button>
+        <button class="btn btn-ghost" onclick="dismissAI()">Cancel</button>
+      </div>
+    </div>
+    <div>
+      <div class="drawer-label" style="margin-bottom:8px;">Recent edits (this session)</div>
+      <div class="edit-log" id="edit-log">
+        <div class="edit-log-empty" id="log-empty">No edits yet this session.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ─── Configuration ─────────────────────────────────────────────
+const FIREBASE_URL = "https://itc-sc-meeting-sign-ups-default-rtdb.firebaseio.com";
+const ANTHROPIC_KEY = ""; // paste your Anthropic API key here
+const BASE = "jch-visit";
+const CORRECT_PIN = '1117';
+
+// ─── Setup check ───────────────────────────────────────────────
+if (FIREBASE_URL && ANTHROPIC_KEY) {
+  document.getElementById('setup-warn').classList.add('hidden');
+}
+
+// ─── PIN ───────────────────────────────────────────────────────
+const pinInputs = document.querySelectorAll('.pin-inputs input');
+pinInputs.forEach((inp, i) => {
+  inp.addEventListener('input', () => {
+    inp.value = inp.value.replace(/[^0-9]/g, '').slice(-1);
+    if (inp.value && i < pinInputs.length - 1) pinInputs[i + 1].focus();
+    if (i === pinInputs.length - 1 && inp.value) setTimeout(checkPin, 80);
+  });
+  inp.addEventListener('keydown', e => {
+    if (e.key === 'Backspace' && !inp.value && i > 0) pinInputs[i - 1].focus();
+    if (e.key === 'Enter') checkPin();
+  });
+});
+pinInputs[0].focus();
+
+function checkPin() {
+  const entered = Array.from(pinInputs).map(i => i.value).join('');
+  if (entered === CORRECT_PIN) {
+    document.getElementById('pin-overlay').style.display = 'none';
+    document.getElementById('main').style.display = 'block';
+    document.getElementById('ai-fab').style.display = 'flex';
+    try { sessionStorage.setItem('jch_unlocked', '1'); } catch(e) {}
+    loadAll();
+  } else {
+    document.getElementById('pin-error').textContent = 'Incorrect PIN — try again.';
+    document.getElementById('pin-inputs').classList.add('shake');
+    setTimeout(() => {
+      document.getElementById('pin-inputs').classList.remove('shake');
+      pinInputs.forEach(i => i.value = '');
+      pinInputs[0].focus();
+      document.getElementById('pin-error').innerHTML = '&nbsp;';
+    }, 500);
+  }
+}
+try {
+  if (sessionStorage.getItem('jch_unlocked') === '1') {
+    document.getElementById('pin-overlay').style.display = 'none';
+    document.getElementById('main').style.display = 'block';
+    document.getElementById('ai-fab').style.display = 'flex';
+    loadAll();
+  }
+} catch(e) {}
+
+// ─── Firebase helpers ───────────────────────────────────────────
+async function fbGet(path) {
+  const res = await fetch(`${FIREBASE_URL}/${BASE}/${path}.json`);
+  if (!res.ok) throw new Error('read failed');
+  return res.json();
+}
+async function fbPatch(path, data) {
+  const res = await fetch(`${FIREBASE_URL}/${BASE}/${path}.json`, {
+    method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data)
+  });
+  if (!res.ok) throw new Error('patch failed');
+  return res.json();
+}
+async function fbPost(path, data) {
+  const res = await fetch(`${FIREBASE_URL}/${BASE}/${path}.json`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data)
+  });
+  if (!res.ok) throw new Error('post failed');
+  return res.json();
+}
+async function fbDelete(path) {
+  await fetch(`${FIREBASE_URL}/${BASE}/${path}.json`, { method: 'DELETE' });
+}
+
+// ─── Load all data ─────────────────────────────────────────────
+const DEFAULT_MARKETING = { landing_url: '', rsvp1: 0, rsvp2: 0, rsvp3: 0, link1: '', link2: '', link3: '' };
+const DEFAULT_OPEN_ITEMS = [
+  'Confirm 11/17 vs. 11/18 date question',
+  'Get yes/no from Jared on Winchester + advocates session',
+  'Book flights',
+  'Book hotel',
+  'Ground transportation plan and daily liaison assignments',
+  'Confirm flyer format — visual print piece vs. content draft first',
+  'Set up FourNorms event pages',
+  'TLO landing page copy and build',
+];
+
+async function loadAll() {
+  if (!FIREBASE_URL) return;
+  try {
+    const [mkt, coll, items] = await Promise.all([
+      fbGet('marketing').catch(() => null),
+      fbGet('collateral').catch(() => null),
+      fbGet('open-items').catch(() => null),
+    ]);
+
+    // Marketing
+    const marketing = mkt || DEFAULT_MARKETING;
+    if (!mkt) await fbPatch('marketing', DEFAULT_MARKETING);
+    renderMarketing(marketing);
+
+    // Collateral
+    renderCollateral(coll || {});
+
+    // Open items — seed defaults if first load
+    let openItems = items;
+    if (!openItems) {
+      openItems = {};
+      for (const text of DEFAULT_OPEN_ITEMS) {
+        const r = await fbPost('open-items', { text, done: false, ts: Date.now() });
+        openItems[r.name] = { text, done: false };
+      }
+    }
+    renderOpenItems(openItems);
+
+    document.getElementById('last-updated').textContent = 'just now';
+  } catch(e) {
+    console.error('Load error:', e);
+  }
+}
+
+// ─── Marketing rendering ───────────────────────────────────────
+function renderMarketing(data) {
+  const fields = ['landing_url', 'rsvp1', 'rsvp2', 'rsvp3', 'link1', 'link2', 'link3'];
+  fields.forEach(f => {
+    const el = document.getElementById('f-' + f);
+    if (el && document.activeElement !== el) {
+      el.value = data[f] ?? '';
+    }
+  });
+}
+
+// ─── Auto-save marketing fields ────────────────────────────────
+function debounce(fn, ms) {
+  let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
+}
+
+async function saveField(field, value) {
+  if (!FIREBASE_URL) return;
+  setFieldStatus(field, 'Saving…', 'saving');
+  try {
+    await fbPatch('marketing', { [field]: value });
+    setFieldStatus(field, 'Saved', 'ok');
+  } catch(e) {
+    setFieldStatus(field, 'Error', 'err');
+  }
+}
+
+function setFieldStatus(field, msg, cls) {
+  const el = document.getElementById('status-' + field);
+  if (!el) return;
+  el.textContent = msg; el.className = 'field-status ' + cls;
+  if (cls === 'ok') setTimeout(() => { el.textContent = ''; }, 2000);
+}
+
+const debouncedSave = debounce(async (field, value) => { await saveField(field, value); }, 900);
+
+document.querySelectorAll('[data-field]').forEach(input => {
+  input.addEventListener('input', () => {
+    const field = input.dataset.field;
+    const value = input.type === 'number' ? (parseInt(input.value) || 0) : input.value;
+    debouncedSave(field, value);
+  });
+});
+
+// ─── Collateral ────────────────────────────────────────────────
+const CAT_ICONS = { Flyer: '📄', Email: '✉️', Slides: '📊', Doc: '📝', Other: '🔗' };
+
+function renderCollateral(data) {
+  const list = document.getElementById('collateral-list');
+  const empty = document.getElementById('collateral-empty');
+  const keys = Object.keys(data);
+  // Clear existing items (keep empty notice)
+  Array.from(list.querySelectorAll('.collateral-item')).forEach(el => el.remove());
+  if (keys.length === 0) {
+    empty.style.display = 'block';
+  } else {
+    empty.style.display = 'none';
+    keys.sort((a, b) => (data[a].ts || 0) - (data[b].ts || 0)).forEach(key => {
+      const item = data[key];
+      const div = document.createElement('div');
+      div.className = 'collateral-item';
+      div.innerHTML = `
+        <span class="collateral-icon">${CAT_ICONS[item.cat] || '🔗'}</span>
+        <div class="collateral-info">
+          <a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>
+          <div class="collateral-cat">${esc(item.cat)}${item.by ? ' · Added by ' + esc(item.by) : ''}</div>
+        </div>
+        <button class="collateral-del" onclick="removeCollateral('${key}')" aria-label="Remove">×</button>`;
+      list.insertBefore(div, empty);
+    });
+  }
+}
+
+function showAddLink() {
+  document.getElementById('add-link-form').style.display = 'grid';
+  document.getElementById('show-add-link').style.display = 'none';
+  document.getElementById('c-title').focus();
+}
+function cancelAddLink() {
+  document.getElementById('add-link-form').style.display = 'none';
+  document.getElementById('show-add-link').style.display = 'block';
+  document.getElementById('c-title').value = '';
+  document.getElementById('c-url').value = '';
+}
+async function addCollateral() {
+  const title = document.getElementById('c-title').value.trim();
+  const url = document.getElementById('c-url').value.trim();
+  const cat = document.getElementById('c-cat').value;
+  if (!title || !url) { showToast('Please fill in both title and URL.'); return; }
+  try {
+    const entry = { title, url, cat, ts: Date.now() };
+    await fbPost('collateral', entry);
+    cancelAddLink();
+    const coll = await fbGet('collateral').catch(() => ({}));
+    renderCollateral(coll || {});
+    showToast('Link added.');
+  } catch(e) { showToast('Error saving link. Please try again.'); }
+}
+async function removeCollateral(key) {
+  if (!confirm('Remove this link?')) return;
+  try {
+    await fbDelete(`collateral/${key}`);
+    const coll = await fbGet('collateral').catch(() => ({}));
+    renderCollateral(coll || {});
+  } catch(e) { showToast('Error removing link.'); }
+}
+
+// ─── Open items ────────────────────────────────────────────────
+function renderOpenItems(data) {
+  const cl = document.getElementById('checklist');
+  const empty = document.getElementById('checklist-empty');
+  const keys = Object.keys(data);
+  Array.from(cl.querySelectorAll('.check-item')).forEach(el => el.remove());
+  if (keys.length === 0) {
+    empty.style.display = 'block';
+  } else {
+    empty.style.display = 'none';
+    keys.sort((a, b) => (data[a].ts || 0) - (data[b].ts || 0)).forEach(key => {
+      const item = data[key];
+      const div = document.createElement('div');
+      div.className = 'check-item' + (item.done ? ' done' : '');
+      const id = 'oi-' + key;
+      div.innerHTML = `
+        <input type="checkbox" id="${id}"${item.done ? ' checked' : ''}>
+        <label for="${id}">${esc(item.text)}</label>
+        <button class="item-del" onclick="removeOpenItem('${key}')" aria-label="Remove">×</button>`;
+      div.querySelector('input').addEventListener('change', e => toggleOpenItem(key, e.target.checked, div));
+      cl.insertBefore(div, empty);
+    });
+  }
+}
+
+async function toggleOpenItem(key, done, div) {
+  div.classList.toggle('done', done);
+  try { await fbPatch(`open-items/${key}`, { done }); } catch(e) {}
+}
+
+async function addOpenItem() {
+  const inp = document.getElementById('new-item');
+  const text = inp.value.trim();
+  if (!text) return;
+  inp.value = '';
+  try {
+    await fbPost('open-items', { text, done: false, ts: Date.now() });
+    const items = await fbGet('open-items').catch(() => ({}));
+    renderOpenItems(items || {});
+  } catch(e) { showToast('Error saving item.'); }
+}
+
+async function removeOpenItem(key) {
+  try {
+    await fbDelete(`open-items/${key}`);
+    const items = await fbGet('open-items').catch(() => ({}));
+    renderOpenItems(items || {});
+  } catch(e) { showToast('Error removing item.'); }
+}
+
+document.getElementById('new-item').addEventListener('keydown', e => { if (e.key === 'Enter') addOpenItem(); });
+
+// ─── Section nav highlight ─────────────────────────────────────
+const sections = ['itinerary', 'logistics', 'marketing', 'collateral', 'open-items'];
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+  let active = sections[0];
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= 80) active = id;
+  });
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + active));
+}, { passive: true });
+
+// ─── AI Drawer ─────────────────────────────────────────────────
+const SYSTEM_PROMPT = `You help a small planning team update a shared page for Jared Cooney Horvath's November 2026 community visit.
+
+EDITABLE fields (you may update these):
+- landing_url: TLO landing page URL (string)
+- rsvp1: RSVP count, Wellesley parent event Mon Nov 16 (integer)
+- rsvp2: RSVP count, Concord parent event Tue Nov 17 (integer)
+- rsvp3: RSVP count, Winchester event Wed Nov 18 (integer)
+- link1: FourNorms sign-up link for Wellesley event (string)
+- link2: FourNorms sign-up link for Concord event (string)
+- link3: Sign-up link for Winchester event (string)
+
+LOCKED — not editable through you, managed by Emily Lines only:
+- Itinerary / confirmed schedule
+- Hotel, flights, ground transportation
+- Daily liaisons
+
+When the user describes a change, respond with ONLY valid JSON, nothing else:
+{"field":"field_name","value":new_value,"summary":"one-line description of the change"}
+
+For RSVP fields, value must be an integer.
+For locked sections: {"locked":true,"summary":"brief note to contact Emily"}
+If unclear: {"error":true,"summary":"what you need clarified"}`;
+
+let drawerOpen = false;
+let pendingChange = null;
+const editLog = [];
+
+function toggleDrawer() {
+  drawerOpen = !drawerOpen;
+  document.getElementById('ai-drawer').classList.toggle('open', drawerOpen);
+}
+function clearAI() {
+  document.getElementById('ai-textarea').value = '';
+  dismissAI();
+}
+function dismissAI() {
+  document.getElementById('ai-response').classList.remove('show');
+  document.getElementById('ai-thinking').classList.remove('show');
+  pendingChange = null;
+}
+
+async function sendAI() {
+  if (!ANTHROPIC_KEY) { showToast('Anthropic API key not configured.'); return; }
+  const text = document.getElementById('ai-textarea').value.trim();
+  if (!text) return;
+  dismissAI();
+  document.getElementById('ai-thinking').classList.add('show');
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': ANTHROPIC_KEY,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 256,
+        system: SYSTEM_PROMPT,
+        messages: [{ role: 'user', content: text }]
+      })
+    });
+    document.getElementById('ai-thinking').classList.remove('show');
+    if (!res.ok) throw new Error('API error ' + res.status);
+    const data = await res.json();
+    const raw = data.content[0].text.trim();
+    let parsed;
+    try { parsed = JSON.parse(raw); } catch(e) { throw new Error('Bad JSON from Claude'); }
+
+    if (parsed.locked) {
+      pendingChange = null;
+      document.getElementById('ai-diff-content').innerHTML = `<strong>Locked section</strong>${parsed.summary}`;
+    } else if (parsed.error) {
+      pendingChange = null;
+      document.getElementById('ai-diff-content').innerHTML = `<strong>Couldn't understand</strong>${parsed.summary}`;
+    } else {
+      pendingChange = parsed;
+      document.getElementById('ai-diff-content').innerHTML = `<strong>${labelFor(parsed.field)}</strong>${parsed.summary}`;
+    }
+    document.getElementById('ai-response').classList.add('show');
+  } catch(e) {
+    document.getElementById('ai-thinking').classList.remove('show');
+    showToast('Something went wrong. Please try again.');
+    console.error(e);
+  }
+}
+
+function labelFor(field) {
+  const labels = { landing_url:'Landing page URL', rsvp1:'Wellesley RSVPs', rsvp2:'Concord RSVPs', rsvp3:'Winchester RSVPs', link1:'Wellesley sign-up link', link2:'Concord sign-up link', link3:'Winchester sign-up link' };
+  return labels[field] || field;
+}
+
+async function applyAI() {
+  const text = document.getElementById('ai-textarea').value.trim();
+  if (pendingChange) {
+    const { field, value } = pendingChange;
+    const el = document.getElementById('f-' + field);
+    if (el) el.value = value;
+    await saveField(field, value);
+  }
+  editLog.unshift(text.length > 65 ? text.slice(0, 65) + '…' : text);
+  renderLog();
+  dismissAI();
+  document.getElementById('ai-textarea').value = '';
+  showToast('Changes applied ✓');
+}
+
+function renderLog() {
+  const logEl = document.getElementById('edit-log');
+  document.getElementById('log-empty').style.display = editLog.length ? 'none' : 'block';
+  Array.from(logEl.querySelectorAll('.edit-log-item')).forEach(el => el.remove());
+  editLog.slice(0, 5).forEach(entry => {
+    const div = document.createElement('div');
+    div.className = 'edit-log-item';
+    div.innerHTML = `<span class="log-dot">✓</span><span>${esc(entry)}</span>`;
+    logEl.appendChild(div);
+  });
+}
+
+document.getElementById('ai-textarea').addEventListener('keydown', e => {
+  if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) sendAI();
+});
+
+// ─── Toast ─────────────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+// ─── Escape HTML ───────────────────────────────────────────────
+function esc(str) {
+  const d = document.createElement('div');
+  d.textContent = String(str ?? '');
+  return d.innerHTML;
+}
+
+// ─── Auto-refresh every 90 seconds ────────────────────────────
+setInterval(() => { if (document.getElementById('main').style.display !== 'none') loadAll(); }, 90000);
+</script>
+</body>
+</html>
