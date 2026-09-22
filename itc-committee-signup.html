@@ -262,7 +262,7 @@
 
   <header>
     <h1>ITC Event Committees</h1>
-    <p class="sub">Two events are coming up this fall, and both need a planning team. Choose the committee, or committees, you would like to join below.</p>
+    <p class="sub">Thank you to everyone who expressed interest in helping out this fall. Our committees are now full — we're so grateful for this community's enthusiasm.</p>
   </header>
 
   <div class="event" id="event1-card">
@@ -270,8 +270,7 @@
     <p class="meta">Thursday, October 15 &middot; 7:00 PM &middot; WCUC</p>
     <p class="desc">Helping parents connect around intentional tech use at school and at home, with a how-to session on common parental control questions.</p>
     <div class="status-row">
-      <span id="event1-status">Loading status…</span>
-      <span class="need">3 volunteers needed</span>
+      <span style="font-style:italic;color:#8A8A7D;">Committee is full</span>
     </div>
   </div>
 
@@ -280,207 +279,17 @@
     <p class="meta">Tuesday, November 17 &middot; 7:00 PM &middot; CMS Auditorium</p>
     <p class="desc">An evening with the neuroscientist and author of <em>The Digital Delusion</em>.</p>
     <div class="status-row">
-      <span id="event2-status">Loading status…</span>
-      <span class="need">5 to 6 volunteers needed</span>
+      <span style="font-style:italic;color:#8A8A7D;">Committee is full</span>
     </div>
   </div>
 
-  <form id="signup-form">
-    <fieldset>
-      <legend>Which committee would you like to join? <span class="required">*</span></legend>
-      <label class="check-option">
-        <input type="checkbox" name="event1" id="cb-event1">
-        <span>
-          <span class="label-main">Community Connection Event</span>
-          <span class="label-sub">Thursday, October 15, WCUC</span>
-        </span>
-      </label>
-      <label class="check-option">
-        <input type="checkbox" name="event2" id="cb-event2">
-        <span>
-          <span class="label-main">An Evening with Jared Cooney Horvath</span>
-          <span class="label-sub">Tuesday, November 17, CMS Auditorium</span>
-        </span>
-      </label>
-    </fieldset>
-    <div class="error-text" id="event-error" style="display:none;">Please select at least one committee.</div>
-
-    <label class="field-label" for="name">Name <span class="required">*</span></label>
-    <input type="text" id="name" required>
-
-    <label class="field-label" for="email">Email <span class="required">*</span></label>
-    <input type="email" id="email" required>
-
-    <label class="field-label" for="phone">Phone (optional)</label>
-    <input type="tel" id="phone">
-
-    <label class="field-label" for="notes">Anything we should know about your availability? (optional)</label>
-    <textarea id="notes"></textarea>
-
-    <button type="submit" class="submit" id="submit-btn">Join a committee</button>
-  </form>
-
-  <div class="confirm" id="confirm-panel" style="display:none;">
-    <h2>Thank you</h2>
-    <p>You are signed up. We will follow up soon to schedule a kick-off meeting.</p>
-  </div>
-
-  <div class="admin-toggle">
-    <a id="admin-link">View signups</a>
-  </div>
-
-  <div class="admin-panel" id="admin-panel" style="display:none;">
-    <table>
-      <thead>
-        <tr><th>Name</th><th>Contact</th><th>Committees</th><th>Notes</th></tr>
-      </thead>
-      <tbody id="admin-rows"></tbody>
-    </table>
-    <div class="empty-state" id="admin-empty" style="display:none;">No signups yet.</div>
+  <div style="margin-top:44px; border-top:1px solid var(--line); padding-top:36px;">
+    <h2 style="font-size:20px; font-weight:400; color:var(--forest); margin:0 0 12px;">Looking for other ways to get involved?</h2>
+    <p style="font-size:15px; color:#5B5B4F; margin:0 0 24px; max-width:52ch; line-height:1.65;">There's a lot happening this fall with the Intentional Tech Coalition — from speaking at a school committee meeting to signing our community petition. Visit our Take Action page to see how you can make a difference.</p>
+    <a href="https://intentionaltechcoalition.org/itc-take-action.html" style="display:inline-block; background:var(--forest); color:#fff; text-decoration:none; font-family:Georgia,serif; font-size:15px; padding:12px 24px; border-radius:2px;">See ways to get involved →</a>
   </div>
 
 </div>
 
-<script>
-const FIREBASE_URL = "https://itc-sc-meeting-sign-ups-default-rtdb.firebaseio.com";
-const FORMSPREE_URL = "https://formspree.io/f/meewbkvy";
-
-async function loadSignups() {
-  try {
-    const res = await fetch(`${FIREBASE_URL}/committee-signups.json`);
-    if (!res.ok) return [];
-    const data = await res.json();
-    if (!data) return [];
-    return Object.values(data);
-  } catch (e) {
-    console.error('Failed to load signups', e);
-    return [];
-  }
-}
-
-async function saveSignup(entry) {
-  const res = await fetch(`${FIREBASE_URL}/committee-signups.json`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(entry)
-  });
-  if (!res.ok) throw new Error('write failed');
-  return res.json();
-}
-
-function renderStatus(entries) {
-  const c1 = entries.filter(e => e.event1).length;
-  const c2 = entries.filter(e => e.event2).length;
-  document.getElementById('event1-status').textContent = c1 + (c1 === 1 ? ' volunteer signed up' : ' volunteers signed up');
-  document.getElementById('event2-status').textContent = c2 + (c2 === 1 ? ' volunteer signed up' : ' volunteers signed up');
-}
-
-function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
-}
-
-function renderAdmin(entries) {
-  const rows = document.getElementById('admin-rows');
-  const empty = document.getElementById('admin-empty');
-  rows.innerHTML = '';
-  if (entries.length === 0) {
-    empty.style.display = 'block';
-    return;
-  }
-  empty.style.display = 'none';
-  entries
-    .sort((a, b) => (a.timestamp || '').localeCompare(b.timestamp || ''))
-    .forEach(e => {
-      const tr = document.createElement('tr');
-      const committees = [
-        e.event1 ? '<span class="pill">Community Connection</span>' : '',
-        e.event2 ? '<span class="pill">Horvath Evening</span>' : ''
-      ].join('');
-      tr.innerHTML =
-        '<td>' + escapeHtml(e.name || '') + '</td>' +
-        '<td>' + escapeHtml(e.email || '') + (e.phone ? '<br>' + escapeHtml(e.phone) : '') + '</td>' +
-        '<td>' + committees + '</td>' +
-        '<td>' + escapeHtml(e.notes || '') + '</td>';
-      rows.appendChild(tr);
-    });
-}
-
-async function refresh() {
-  const entries = await loadSignups();
-  renderStatus(entries);
-  renderAdmin(entries);
-  return entries;
-}
-
-document.getElementById('admin-link').addEventListener('click', () => {
-  const panel = document.getElementById('admin-panel');
-  const isHidden = panel.style.display === 'none';
-  panel.style.display = isHidden ? 'block' : 'none';
-  document.getElementById('admin-link').textContent = isHidden ? 'Hide signups' : 'View signups';
-});
-
-document.getElementById('signup-form').addEventListener('submit', async (ev) => {
-  ev.preventDefault();
-  const event1 = document.getElementById('cb-event1').checked;
-  const event2 = document.getElementById('cb-event2').checked;
-  const errorEl = document.getElementById('event-error');
-
-  if (!event1 && !event2) {
-    errorEl.style.display = 'block';
-    return;
-  }
-  errorEl.style.display = 'none';
-
-  const btn = document.getElementById('submit-btn');
-  btn.disabled = true;
-  btn.textContent = 'Submitting…';
-
-  const committees = [
-    event1 ? 'Community Connection Event (Oct 15)' : '',
-    event2 ? 'Evening with Jared Cooney Horvath (Nov 17)' : ''
-  ].filter(Boolean).join(', ');
-
-  const entry = {
-    name: document.getElementById('name').value.trim(),
-    email: document.getElementById('email').value.trim(),
-    phone: document.getElementById('phone').value.trim(),
-    notes: document.getElementById('notes').value.trim(),
-    event1: event1,
-    event2: event2,
-    timestamp: new Date().toISOString()
-  };
-
-  try {
-    await saveSignup(entry);
-
-    // Fire-and-forget email notification
-    fetch(FORMSPREE_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        _subject: 'New committee sign-up: ' + entry.name,
-        name: entry.name,
-        email: entry.email,
-        phone: entry.phone || '—',
-        committees: committees,
-        notes: entry.notes || '—'
-      })
-    }).catch(() => {});
-
-    document.getElementById('signup-form').style.display = 'none';
-    document.getElementById('confirm-panel').style.display = 'block';
-    await refresh();
-  } catch (e) {
-    console.error(e);
-    btn.disabled = false;
-    btn.textContent = 'Join a committee';
-    alert('Something went wrong saving your signup. Please try again.');
-  }
-});
-
-refresh();
-</script>
 </body>
 </html>
