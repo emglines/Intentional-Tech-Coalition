@@ -284,6 +284,13 @@ th { font-family:var(--sans); font-size:11.5px; font-weight:600; letter-spacing:
             </tr>
             <tr>
               <td class="day-cell">Tue 11/17</td>
+              <td>Morning</td>
+              <td>School programming — Wellesley</td>
+              <td style="font-style:italic;color:var(--text-muted);">TBD</td>
+              <td><span class="aud-pill">Students</span></td>
+            </tr>
+            <tr>
+              <td class="day-cell">Tue 11/17</td>
               <td>1:15–2:10 PM</td>
               <td>Meeting with students, grades 9–12</td>
               <td>Lexington High School</td>
@@ -307,32 +314,6 @@ th { font-family:var(--sans); font-size:11.5px; font-weight:600; letter-spacing:
         </div>
       </div>
 
-      <div style="margin-top:20px;">
-        <div class="sec-head">
-          <h2>Pending — Wednesday 11/18</h2>
-          <span class="badge badge-pending">Awaiting Jared's confirmation</span>
-        </div>
-        <div class="pending-block">
-          <div class="table-scroll">
-            <table>
-              <tr><th>Time</th><th>Event</th><th>Location</th><th>Audience</th></tr>
-              <tr>
-                <td style="font-style:italic;color:var(--text-muted);">TBD</td>
-                <td>Public event in Winchester</td>
-                <td style="font-style:italic;color:var(--text-muted);">TBD</td>
-                <td><span class="aud-pill pub">Public</span></td>
-              </tr>
-              <tr>
-                <td style="font-style:italic;color:var(--text-muted);">TBD</td>
-                <td>Private session with local advocates</td>
-                <td style="font-style:italic;color:var(--text-muted);">TBD</td>
-                <td><span class="aud-pill">Advocates</span></td>
-              </tr>
-            </table>
-          </div>
-          <p class="sub">Winchester event and advocates session lock in once Jared confirms he can stay the extra night.</p>
-        </div>
-      </div>
     </div>
 
     <!-- LOGISTICS (locked) -->
@@ -346,25 +327,14 @@ th { font-family:var(--sans); font-size:11.5px; font-weight:600; letter-spacing:
         <div class="lock-notice">🔒 Managed by Emily. Message her directly to update any logistics details.</div>
         <div class="logistics-grid">
           <div class="log-card">
-            <h3>✈ Flights</h3>
-            <div class="log-display"><div class="log-display-label">Arrival flight</div><div class="log-display-value tbd" id="l-arrival">TBD</div></div>
-            <div class="log-display"><div class="log-display-label">Departure flight</div><div class="log-display-value tbd" id="l-departure">TBD — depends on 11/18 confirmation</div></div>
-          </div>
-          <div class="log-card">
-            <h3>🚗 Ground Transportation</h3>
-            <div class="log-display"><div class="log-display-label">Airport pickup / drop-off</div><div class="log-display-value tbd" id="l-airport">TBD</div></div>
-            <div class="log-display"><div class="log-display-label">Daily driving</div><div class="log-display-value tbd" id="l-driving">TBD — Lexington ↔ Wellesley ↔ Concord</div></div>
-          </div>
-          <div class="log-card">
-            <h3>🏨 Hotel</h3>
-            <div class="log-display"><div class="log-display-label">Property</div><div class="log-display-value tbd" id="l-hotel">TBD</div></div>
-            <div class="log-display"><div class="log-display-label">Nights</div><div class="log-display-value" id="l-nights">11/16, 11/17 (+ 11/18 if confirmed)</div></div>
+            <h3>🍽 Meals</h3>
+            <div class="log-display"><div class="log-display-label">Monday 11/16</div><div class="log-display-value tbd" id="l-meals-mon">TBD</div></div>
+            <div class="log-display"><div class="log-display-label">Tuesday 11/17</div><div class="log-display-value tbd" id="l-meals-tue">TBD</div></div>
           </div>
           <div class="log-card">
             <h3>👤 Daily Liaisons</h3>
             <div class="log-display"><div class="log-display-label">Monday 11/16</div><div class="log-display-value tbd" id="l-mon">TBD</div></div>
             <div class="log-display"><div class="log-display-label">Tuesday 11/17</div><div class="log-display-value tbd" id="l-tue">TBD</div></div>
-            <div class="log-display"><div class="log-display-label">Wednesday 11/18 (if confirmed)</div><div class="log-display-value tbd" id="l-wed">TBD</div></div>
           </div>
         </div>
       </div>
@@ -374,7 +344,7 @@ th { font-family:var(--sans); font-size:11.5px; font-weight:600; letter-spacing:
     <div class="sec" id="marketing">
       <div class="sec-head">
         <h2>Marketing &amp; RSVPs</h2>
-        <span class="sec-note">Editable by team · use ✦ AI Edit or type directly</span>
+        <span class="sec-note">Editable by team · type directly to update</span>
       </div>
 
       <div class="mkt-card">
@@ -420,21 +390,6 @@ th { font-family:var(--sans); font-size:11.5px; font-weight:600; letter-spacing:
             </div>
           </div>
           <span class="aud-pill pub">Public</span>
-        </div>
-        <div class="event-card pending-card">
-          <div class="event-card-info">
-            <h4>Public event — Winchester</h4>
-            <div class="emeta">Wed, Nov 18 · Time &amp; location TBD</div>
-            <div class="rsvp-row">
-              <input type="number" id="f-rsvp3" data-field="rsvp3" value="0" min="0">
-              RSVPs <span class="field-status" id="status-rsvp3"></span>
-            </div>
-            <div class="signup-link-row">
-              <input type="text" id="f-link3" data-field="link3" placeholder="Sign-up link once confirmed…">
-              <span class="field-status" id="status-link3"></span>
-            </div>
-          </div>
-          <span class="badge badge-pending">Pending</span>
         </div>
       </div>
     </div>
