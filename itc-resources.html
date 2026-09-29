@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- itc-resources, v11, June 18, 2026. Stable filename: version tracked here, not in the filename. Session arc: Start here featured block (single SBS Resource Library link); shelves flow into two packed columns; shelf order Websites, Books, Articles, Podcasts (placeholder), Events; events + podcasts are coming-soon slots. Websites, Articles, and Books all tightened to one-line descriptions; author/source meta removed from Articles only (Websites keep their short category label); compact evidence tags kept on three preliminary/contested items: "(Working paper.)", "(Preprint, small sample.)", "(Causal strength debated.)". -->
+<!-- itc-resources, v12, September 29, 2026. Stable filename: version tracked here, not in the filename. URL stays itc-resources.html even though the page is now titled "Resources & Events". Session arc: page retitled Resources & Events across nav and footer sitewide; new forest-green featured event band (.evfeat) sits between pagehead and criteria, carrying ITC's own upcoming event with flyer-matched numbered topic list and sage detail panel; the older "Upcoming events" shelf renamed "Events nearby" and reserved for other organizations' events, with a pointer up to ours. Earlier arc: Start here featured block (single SBS Resource Library link); shelves flow into two packed columns; shelf order Websites, Books, Articles, Podcasts (placeholder), Events nearby; podcasts is a coming-soon slot. Websites, Articles, and Books all tightened to one-line descriptions; author/source meta removed from Articles only (Websites keep their short category label); compact evidence tags kept on three preliminary/contested items: "(Working paper.)", "(Preprint, small sample.)", "(Causal strength debated.)". -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resources | The Intentional Tech Coalition</title>
+<title>Resources &amp; Events | The Intentional Tech Coalition</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..600;1,9..144,200..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--sage:#C0CABF;--sage-dk:#A9B6A6;--forest:#3F5138;--forest-2:#5F6D57;--plum:#463347;--plum-dk:#382839;--ink:#242321;--cream:#E5E0DA;--paper:#F4F1EC;--white:#FBFAF7;--line:rgba(63,81,56,.22);--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--r:18px;}
@@ -37,6 +37,27 @@ header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
 .pagehead{background:var(--sage);padding:56px 0 60px;}
 .pagehead h1{font-size:clamp(30px,4.5vw,46px);color:var(--plum);margin:16px 0 16px;max-width:680px;}
 .pagehead p.lede{font-size:clamp(15px,2vw,18px);max-width:640px;color:var(--ink);opacity:.9;}
+.evfeat{background:var(--forest);color:var(--paper);padding:52px 0 58px;scroll-margin-top:24px;}
+.evfeat .eyebrow{color:var(--sage);}
+.evfeat .eyebrow::before{background:var(--sage);opacity:.7;}
+.ev-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:44px;align-items:start;margin-top:14px;}
+.ev-title{font-size:clamp(27px,4vw,40px);color:var(--paper);margin-bottom:8px;}
+.ev-tagline{font-family:var(--serif);font-size:clamp(15px,2vw,19px);color:var(--sage);margin-bottom:20px;}
+.ev-blurb{font-size:14.5px;line-height:1.72;opacity:.93;margin-bottom:26px;max-width:58ch;}
+.ev-cover h4{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:13px;}
+.ev-list{list-style:none;counter-reset:ev;display:grid;gap:7px;}
+.ev-list li{counter-increment:ev;display:flex;gap:13px;align-items:flex-start;font-size:14px;line-height:1.5;border:1px solid rgba(192,202,191,.3);border-radius:10px;padding:11px 15px;}
+.ev-list li::before{content:counter(ev);flex-shrink:0;width:23px;height:23px;border-radius:50%;background:var(--plum);color:var(--paper);font-family:var(--sans);font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.ev-details{background:var(--sage);color:var(--ink);border-radius:var(--r);padding:26px 26px 28px;position:sticky;top:24px;}
+.ev-det{padding:15px 0;border-top:1px solid rgba(63,81,56,.28);}
+.ev-det:first-child{border-top:none;padding-top:0;}
+.ev-det .lbl{display:block;font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--forest-2);margin-bottom:6px;}
+.ev-det .val{font-size:14.5px;line-height:1.5;}
+.ev-det .val .big{font-family:var(--serif);font-size:19px;color:var(--plum);display:block;margin-bottom:2px;}
+.ev-det .val .sm{font-size:13px;opacity:.82;}
+.ev-note{background:var(--white);border-radius:12px;padding:13px 16px;margin-top:18px;font-size:13.5px;line-height:1.5;}
+.ev-note strong{font-family:var(--serif);font-size:15.5px;color:var(--plum);display:block;margin-bottom:2px;}
+.ev-details .btn{display:block;text-align:center;margin-top:14px;}
 .criteria{background:var(--cream);border-bottom:1px solid var(--line);padding:36px 0;}
 .criteria .row{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
 .criteria h3{font-size:16px;color:var(--forest);margin-bottom:6px;}
@@ -81,7 +102,7 @@ footer p{font-size:13px;line-height:1.6;opacity:.8;margin-top:12px;max-width:36c
 footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9aa392;margin-bottom:10px;}
 footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.85;}
 .fineprint{margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;opacity:.55;}
-@media(max-width:760px){.criteria .row{grid-template-columns:1fr;}.feat-grid{grid-template-columns:1fr;}.entries{columns:1;}.library{grid-template-columns:1fr;gap:28px;}.index{position:static;display:flex;flex-wrap:wrap;gap:8px 18px;}.index h4{width:100%;margin-bottom:4px;}.index a{border-bottom:none;padding:2px 0;}}
+@media(max-width:760px){.criteria .row{grid-template-columns:1fr;}.feat-grid{grid-template-columns:1fr;}.entries{columns:1;}.library{grid-template-columns:1fr;gap:28px;}.index{position:static;display:flex;flex-wrap:wrap;gap:8px 18px;}.index h4{width:100%;margin-bottom:4px;}.index a{border-bottom:none;padding:2px 0;}.ev-grid{grid-template-columns:1fr;gap:30px;}.ev-details{position:static;}}
 .nav-toggle{display:none;}.hamburger{display:none;}
 @media(max-width:760px){header{position:relative;}.hamburger{display:flex;align-items:center;font-size:22px;line-height:1;cursor:pointer;color:var(--forest);padding:4px 8px;user-select:none;}.menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(192,202,191,.97);flex-direction:column;padding:14px 24px 20px;gap:0;border-bottom:1px solid var(--line);z-index:100;}.menu a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}.menu .btn{display:block;text-align:center;margin-top:14px;border-bottom:none;padding:11px 22px;}.nav-toggle:checked~.menu{display:flex;}}
 </style>
@@ -103,7 +124,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       <a href="itc-at-home.html">At Home</a>
       <a href="itc-take-action.html">Take Action</a>
       <a href="itc-survey.html">Concord's Data</a>
-      <a href="itc-resources.html" aria-current="page">Resources</a>
+      <a href="itc-resources.html" aria-current="page">Resources &amp; Events</a>
       <a href="itc-join.html" class="btn">Join us</a>
     </nav>
   </div>
@@ -111,9 +132,55 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 
 <section class="pagehead">
   <div class="wrap">
-    <span class="eyebrow one">Resources</span>
-    <h1>Recommended resources</h1>
-    <p class="lede">The books, websites, articles, and events that come up again and again at our gatherings. We keep this list short on purpose: everything here is something we've actually read, used, and would hand to a neighbor.</p>
+    <span class="eyebrow one">Resources &amp; Events</span>
+    <h1>Resources &amp; Events</h1>
+    <p class="lede">Our upcoming gatherings, plus the books, websites, and articles that come up again and again when families ask where to start. We keep this list short on purpose: everything here is something we've actually read, used, and would hand to a neighbor.</p>
+  </div>
+</section>
+
+<section class="evfeat" id="next-event">
+  <div class="wrap">
+    <span class="eyebrow one">Our next event</span>
+    <div class="ev-grid">
+      <div>
+        <h2 class="ev-title">Navigating tech at home and school</h2>
+        <p class="ev-tagline">Tips for families making intentional tech choices</p>
+        <p class="ev-blurb">Every family's path with technology looks a little different, and there's no single right answer. Join the Intentional Tech Coalition for an evening of practical tips on parental controls, school advocacy, family tech conversations, strategies at home, and smartphone alternatives. High school families will also find a dedicated conversation on building community and advocating for intentional tech at the high school level. Whether you're just starting to think about these choices or are well on your way, come learn alongside a community of parents and caregivers navigating the same questions.</p>
+        <div class="ev-cover">
+          <h4>What we'll cover</h4>
+          <ol class="ev-list">
+            <li>Setting up family and parental controls</li>
+            <li>Advocating for your student in schools</li>
+            <li>High school families: building community and advocating for intentional tech</li>
+            <li>Navigating family conversations around tech</li>
+            <li>Tips and tricks at home</li>
+            <li>Alternate devices to smartphones</li>
+          </ol>
+        </div>
+      </div>
+      <aside class="ev-details">
+        <div class="ev-det">
+          <span class="lbl">When</span>
+          <div class="val">
+            <span class="big">Thursday, October 15</span>
+            7:00 to 9:00 PM
+          </div>
+        </div>
+        <div class="ev-det">
+          <span class="lbl">Where</span>
+          <div class="val">
+            <span class="big">West Concord Union Church</span>
+            North Hall, downstairs community room<br>
+            <span class="sm">1317 Main St, Concord, MA 01742</span>
+          </div>
+        </div>
+        <div class="ev-note">
+          <strong>No registration required</strong>
+          Come as you are, and bring a neighbor if you like.
+        </div>
+        <a class="btn" href="https://maps.google.com/?q=1317+Main+St+Concord+MA+01742" target="_blank" rel="noopener">Get directions</a>
+      </aside>
+    </div>
   </div>
 </section>
 
@@ -141,12 +208,13 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
     <div class="library">
       <nav class="index" aria-label="Resource categories">
         <h4>On this page</h4>
+        <a href="#next-event">Our next event</a>
         <a href="#start">Start here</a>
         <a href="#websites">Websites &amp; organizations</a>
         <a href="#books">Books</a>
         <a href="#articles">Articles &amp; research</a>
         <a href="#podcasts">Podcasts</a>
-        <a href="#events">Upcoming events</a>
+        <a href="#events">Events nearby</a>
       </nav>
       <div>
         <div class="featured" id="start">
@@ -313,8 +381,8 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
           </div>
         </div>
         <div class="shelf" id="events">
-          <h2>Upcoming events</h2>
-          <p class="shelf-note">There are wonderful organizations near us hosting talks, screenings, and workshops for families. We share the ones we think are worth your evening; these events are theirs, not ours, and we're glad to point you to them.</p>
+          <h2>Events nearby</h2>
+          <p class="shelf-note">There are wonderful organizations near us hosting talks, screenings, and workshops for families. We share the ones we think are worth your evening; these events are theirs, not ours, and we're glad to point you to them. For our own gatherings, see <a class="tlink" href="#next-event">our next event</a> above.</p>
           <div class="entry slot">
             <p class="why">Details coming soon. We'll add event listings here as the fall calendar comes together.</p>
           </div>
@@ -354,7 +422,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
         <a href="itc-at-home.html">At Home</a>
         <a href="itc-take-action.html">Take Action</a>
         <a href="itc-survey.html">Concord's Data</a>
-        <a href="itc-resources.html">Resources</a>
+        <a href="itc-resources.html">Resources &amp; Events</a>
       </div>
       <div>
         <h4>Connect</h4>
