@@ -7,7 +7,7 @@
 <title>Public Comment Sign-Up | The Intentional Tech Coalition</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..600;1,9..144,200..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--sage:#C0CABF;--sage-dk:#A9B6A6;--forest:#3F5138;--forest-2:#5F6D57;--plum:#463347;--plum-dk:#382839;--ink:#242321;--cream:#E5E0DA;--paper:#F4F1EC;--white:#FBFAF7;--line:rgba(63,81,56,.22);--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--r:18px;}
+:root{--sage:#C0CABF;--sage-dk:#A9B6A6;--forest:#3F5138;--forest-2:#5F6D57;--plum:#463347;--plum-dk:#382839;--ink:#242321;--cream:#E5E0DA;--paper:#F4F1EC;--white:#FBFAF7;--line:rgba(63,81,56,.22);--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--r:4px;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
 .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
@@ -34,6 +34,22 @@ header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
 .menu{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:500;}
 .menu a{color:var(--ink);opacity:.8;}
 .menu .btn{padding:8px 18px;opacity:1;color:var(--paper);}
+/* Family / school / community mark */
+.venn{display:block;}
+.venn circle{fill:none;}
+.venn .c-fam{stroke:var(--forest);}
+.venn .c-sch{stroke:var(--plum);}
+.venn .c-com{stroke:var(--sage-dk);}
+.venn text{font-family:var(--serif);font-style:italic;fill:var(--forest-2);text-anchor:middle;dominant-baseline:central;}
+.venn.ondark .c-fam{stroke:var(--sage);}
+.venn.ondark .c-sch{stroke:#C9ADCB;}
+.venn.ondark .c-com{stroke:var(--sage-dk);}
+.venn.ondark text{fill:var(--paper);}
+.venn.dim circle{opacity:.26;}
+.venn.dim .on{opacity:1;}
+.foot-mark{display:flex;justify-content:center;margin-top:34px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);}
+.foot-mark .venn{width:146px;height:146px;}
+@media(max-width:560px){.foot-mark .venn{width:124px;height:124px;}}
 .nav-toggle{display:none;}.hamburger{display:none;}
 @media(max-width:760px){header{position:relative;}.hamburger{display:flex;align-items:center;font-size:22px;line-height:1;cursor:pointer;color:var(--forest);padding:4px 8px;user-select:none;}.menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(192,202,191,.97);flex-direction:column;padding:14px 24px 20px;gap:0;border-bottom:1px solid var(--line);z-index:100;}.menu a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}.menu .btn{display:block;text-align:center;margin-top:14px;border-bottom:none;padding:11px 22px;}.nav-toggle:checked~.menu{display:flex;}}
 .pagehead{background:var(--sage);padding:56px 0 60px;}
@@ -57,7 +73,7 @@ header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
 .count-badge{font-size:12px;font-weight:700;letter-spacing:.04em;padding:4px 12px;border-radius:999px;background:var(--cream);color:var(--plum);white-space:nowrap;flex-shrink:0;margin-top:3px;}
 .count-badge.full{background:rgba(63,81,56,.12);color:var(--forest);}
 .slots{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
-.slot{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--paper);font-size:13.5px;}
+.slot{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:4px;padding:10px 14px;background:var(--paper);font-size:13.5px;}
 .slot-num{font-family:var(--serif);font-size:15px;color:var(--sage-dk);min-width:18px;}
 .slot-name{font-weight:600;color:var(--forest);}
 .slot-empty{color:var(--forest-2);opacity:.65;font-style:italic;}
@@ -74,7 +90,7 @@ footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;}
 footer p{font-size:13px;line-height:1.6;opacity:.8;margin-top:12px;max-width:36ch;}
 footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9aa392;margin-bottom:10px;}
 footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.85;}
-.fineprint{margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;opacity:.55;}
+.fineprint{margin-top:22px;padding-top:0;border-top:none;font-size:11px;opacity:.55;}
 @media(max-width:760px){footer .grid{grid-template-columns:1fr;gap:24px;}.block{padding:36px 0;}.form-row{flex-direction:column;}.form-row input,.form-row .btn{width:100%;}}
 </style>
 </head>
@@ -142,7 +158,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
           <span class="main">Intentional<br>Tech Coalition</span>
           <span class="rule-row"><span>CONCORD</span></span>
         </a>
-        <p>Led by Emily Lines, a Concord parent, working in partnership with local families, educators, and schools on intentional, research-informed technology choices.</p>
+        <p>Led by a team of Concord parents, working in partnership with local families, educators, and schools on intentional, research-informed technology choices.</p>
       </div>
       <div>
         <h4>Explore</h4>
@@ -154,12 +170,15 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       </div>
       <div>
         <h4>Connect</h4>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScHSgIEZOFOU3VFBzbT8IE-m5FFvplILXcrWwMlcAadOtxZsw/viewform?usp=header" target="_blank">Take the Shape the Year Survey</a>
         <a href="itc-join.html">Join the coalition</a>
+        <a href="itc-volunteer-roles.html">Volunteer roles</a>
         <a href="itc-take-action.html#speak">Speak at a meeting</a>
         <a href="mailto:concordschoolcommittee@concordps.org">Email the school committee</a>
         <a href="mailto:emily@intentionaltechcoalition.org">Contact us</a>
       </div>
+    </div>
+    <div class="foot-mark">
+      <svg class="venn ondark" viewBox="0 0 100 100" aria-hidden="true"><circle class="c-fam" cx="33.5" cy="40.5" r="26" stroke-width="2.2"/><circle class="c-sch" cx="66.5" cy="40.5" r="26" stroke-width="2.2"/><circle class="c-com" cx="50" cy="69.1" r="26" stroke-width="2.2"/><text x="25.7" y="36" font-size="7.7">family</text><text x="74.3" y="36" font-size="7.7">school</text><text x="50" y="78.1" font-size="7.7">community</text></svg>
     </div>
     <div class="fineprint">© 2026 The Intentional Tech Coalition. A volunteer parent group in Concord, MA.</div>
   </div>

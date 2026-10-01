@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<!-- itc-volunteer-roles, v2, October 1, 2026. Stable filename: version tracked here, not in the filename. Built from the approved volunteer-roles.html handoff, merged into site layout: shared header/nav/footer, Fraunces + Hanken Grotesk in place of Georgia + Work Sans, site brand tokens in place of the handoff's own, dark-mode rules dropped (site is light only). All new classes carry a vr- prefix so generic names cannot collide if styles are ever consolidated. House style for this page: no em dashes or en dashes; ranges written as words. v2: commitment pills removed (they over-weighted time and risked deterring volunteers); warmth now comes from a cream section band behind white tiles plus a uniform sage icon chip per role, where the glyph labels that one role and the color is identical across all tiles, so no color implies a category. Social Media role added. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volunteer Roles | The Intentional Tech Coalition</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..600;1,9..144,200..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#C0CABF;--sage-dk:#A9B6A6;--forest:#3F5138;--forest-2:#5F6D57;--plum:#463347;--plum-dk:#382839;--ink:#242321;--cream:#E5E0DA;--paper:#F4F1EC;--white:#FBFAF7;--line:rgba(63,81,56,.22);--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--r:4px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.08;}
+a{color:inherit;text-decoration:none;}
+:focus-visible{outline:2px solid var(--forest-2);outline-offset:2px;}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--forest-2);}
+.eyebrow::before{content:"";height:1px;width:22px;background:var(--forest-2);opacity:.55;}
+.eyebrow.one::after{display:none;}
+.btn{display:inline-block;border:none;cursor:pointer;font-family:var(--sans);font-weight:600;font-size:13px;border-radius:999px;padding:10px 22px;background:var(--plum);color:var(--paper);text-decoration:none;}
+.btn.ghost{background:transparent;color:var(--forest);border:1.5px solid var(--forest);}
+.wm{display:inline-flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;}
+.wm .the{font-family:var(--serif);font-weight:300;font-size:11px;color:var(--forest-2);line-height:1;letter-spacing:.06em;margin-bottom:1px;}
+.wm .main{font-family:var(--serif);font-weight:400;font-size:17px;color:var(--forest);line-height:1.04;letter-spacing:-.01em;}
+.wm .rule-row{display:flex;align-items:center;gap:7px;margin-top:4px;}
+.wm .rule-row span{font-family:var(--sans);font-size:7.5px;font-weight:600;letter-spacing:.38em;color:var(--forest-2);}
+.wm .rule-row::before,.wm .rule-row::after{content:"";height:1px;width:20px;background:var(--forest-2);opacity:.5;}
+footer .wm .the{color:var(--sage);opacity:.65;}
+footer .wm .main{color:var(--sage);}
+footer .wm .rule-row span{color:var(--sage);opacity:.7;}
+footer .wm .rule-row::before,footer .wm .rule-row::after{background:var(--sage);opacity:.4;}
+header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:960px;margin:0 auto;}
+.menu{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:500;}
+.menu a{color:var(--ink);opacity:.8;}
+.menu a[aria-current]{opacity:1;font-weight:700;color:var(--forest);border-bottom:2px solid var(--forest);padding-bottom:2px;}
+.menu .btn{padding:8px 18px;opacity:1;color:var(--paper);}
+.pagehead{background:var(--sage);padding:56px 0 60px;position:relative;overflow:hidden;}
+.pagehead .venn-bg{position:absolute;right:-64px;top:-72px;width:340px;height:340px;opacity:.32;pointer-events:none;}
+.pagehead .venn-bg circle{stroke-width:2;}
+.pagehead .wrap{position:relative;}
+@media(max-width:760px){.pagehead .venn-bg{width:230px;height:230px;right:-70px;top:-50px;opacity:.26;}}
+.pagehead h1{font-size:clamp(30px,5vw,50px);color:var(--plum);margin:16px 0 16px;max-width:640px;}
+.pagehead p.lede{font-size:clamp(15px,2vw,18px);max-width:640px;color:var(--ink);opacity:.9;}
+.block{padding:64px 0;}
+
+/* Volunteer roles, scoped with a vr- prefix */
+.vr-section{background:var(--cream);border-bottom:1px solid var(--line);}
+.vr-filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.vr-filter-label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--forest-2);width:100%;margin-bottom:8px;}
+.vr-chip{font-family:var(--sans);font-size:13px;font-weight:600;background:var(--white);color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:8px 18px;cursor:pointer;transition:background .14s,border-color .14s,color .14s;}
+.vr-chip:hover{border-color:var(--forest-2);}
+.vr-chip[aria-pressed="true"]{background:var(--forest);color:var(--paper);border-color:var(--forest);}
+.vr-count{font-size:13px;color:var(--forest-2);margin:16px 0 24px;}
+
+.vr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.vr-tile{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px 24px 20px;display:flex;flex-direction:column;min-height:15rem;transition:border-color .14s,box-shadow .14s;}
+.vr-tile:hover{border-color:var(--sage-dk);box-shadow:0 2px 10px rgba(63,81,56,.07);}
+.vr-tile[hidden]{display:none;}
+.vr-tile h2{font-size:24px;color:var(--plum);margin-bottom:0;}
+.vr-tile h2::before{content:"";display:block;width:26px;height:1.5px;background:var(--sage-dk);margin-bottom:14px;}
+.vr-when{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--forest-2);margin:9px 0 12px;}
+.vr-when b{font-weight:600;color:var(--forest);}
+.vr-what{font-size:14px;line-height:1.6;margin-bottom:14px;}
+.vr-detail{font-size:13.5px;color:var(--forest-2);line-height:1.6;margin-bottom:14px;padding-left:18px;}
+.vr-detail li{margin-bottom:4px;}
+.vr-detail li.fit{list-style:none;margin:0 0 9px -18px;color:var(--ink);}
+.vr-detail li.fit strong{font-weight:700;color:var(--forest);}
+.vr-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:6px;}
+.vr-more{font-family:var(--sans);background:none;border:0;padding:0;font-size:13px;font-weight:600;color:var(--forest);cursor:pointer;border-bottom:1.5px solid var(--sage-dk);}
+.vr-more:hover{border-bottom-color:var(--forest);}
+.vr-ask{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--plum);border-bottom:1.5px solid rgba(70,51,71,.3);}
+.vr-ask:hover{border-bottom-color:var(--plum);}
+@media(prefers-reduced-motion:no-preference){.vr-detail{animation:vrOpen .18s ease-out;}@keyframes vrOpen{from{opacity:0;transform:translateY(-4px);}}}
+
+/* Interest form */
+.vrf-section{scroll-margin-top:20px;}
+.vrf-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:36px 36px 32px;}
+.vrf-card h2{font-size:clamp(24px,3.5vw,32px);color:var(--forest);margin:10px 0 8px;}
+.vrf-intro{font-size:14.5px;opacity:.85;max-width:56ch;margin-bottom:28px;}
+.vrf-group{margin-bottom:26px;}
+.vrf-q{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--forest-2);margin-bottom:11px;}
+.vrf-names{display:flex;gap:12px;flex-wrap:wrap;}
+.vrf-names input{flex:1;min-width:190px;}
+.vrf-section input[type="text"],.vrf-section input[type="email"],.vrf-section textarea{font-family:var(--sans);font-size:14.5px;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:4px;padding:11px 16px;width:100%;}
+.vrf-section input[type="text"]:focus,.vrf-section input[type="email"]:focus,.vrf-section textarea:focus{outline:2px solid var(--forest-2);outline-offset:1px;border-color:transparent;}
+.vrf-section textarea{min-height:84px;resize:vertical;line-height:1.6;}
+.vrf-hint{font-size:12.5px;color:var(--forest-2);margin-top:7px;}
+.vrf-chips{display:flex;flex-wrap:wrap;gap:8px;}
+.vrf-chip{position:relative;display:inline-flex;align-items:center;font-family:var(--sans);font-size:13.5px;font-weight:500;background:var(--paper);color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:8px 17px;cursor:pointer;transition:background .13s,border-color .13s,color .13s;}
+.vrf-chip input{position:absolute;opacity:0;width:0;height:0;pointer-events:none;}
+.vrf-chip:hover{border-color:var(--forest-2);}
+.vrf-chip:has(input:checked){background:var(--forest);color:var(--paper);border-color:var(--forest);font-weight:600;}
+.vrf-chip:focus-within{outline:2px solid var(--forest-2);outline-offset:2px;}
+.vrf-chip.flash{animation:vrfFlash .9s ease-out;}
+@keyframes vrfFlash{0%,100%{box-shadow:0 0 0 0 rgba(63,81,56,0);}30%{box-shadow:0 0 0 5px rgba(63,81,56,.22);}}
+@media(prefers-reduced-motion:reduce){.vrf-chip.flash{animation:none;}}
+.vrf-submit{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:30px;padding-top:24px;border-top:1px solid var(--line);}
+.vrf-submit .btn{font-size:14px;padding:12px 28px;}
+.vrf-note{font-size:12.5px;color:var(--forest-2);}
+.vrf-done{display:none;text-align:center;padding:26px 10px 20px;}
+.vrf-done h2{font-size:clamp(22px,3vw,28px);color:var(--forest);margin-bottom:10px;}
+.vrf-done p{font-size:15px;opacity:.85;max-width:44ch;margin:0 auto;}
+@media(max-width:600px){.vrf-card{padding:28px 22px 26px;}}
+
+.vr-join .inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;}
+.vr-join p{font-family:var(--serif);font-size:clamp(20px,3vw,28px);color:var(--forest);line-height:1.2;max-width:30ch;}
+
+footer{background:var(--ink);color:#cfd3cb;padding:48px 0 32px;}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;}
+footer p{font-size:13px;line-height:1.6;opacity:.8;margin-top:12px;max-width:36ch;}
+footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9aa392;margin-bottom:10px;}
+footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.85;}
+.fineprint{margin-top:22px;padding-top:0;border-top:none;font-size:11px;opacity:.55;}
+@media(max-width:760px){footer .grid{grid-template-columns:1fr;gap:28px;}}
+/* Family / school / community mark */
+.venn{display:block;}
+.venn circle{fill:none;}
+.venn .c-fam{stroke:var(--forest);}
+.venn .c-sch{stroke:var(--plum);}
+.venn .c-com{stroke:var(--sage-dk);}
+.venn text{font-family:var(--serif);font-style:italic;fill:var(--forest-2);text-anchor:middle;dominant-baseline:central;}
+.venn.ondark .c-fam{stroke:var(--sage);}
+.venn.ondark .c-sch{stroke:#C9ADCB;}
+.venn.ondark .c-com{stroke:var(--sage-dk);}
+.venn.ondark text{fill:var(--paper);}
+.venn.dim circle{opacity:.26;}
+.venn.dim .on{opacity:1;}
+.foot-mark{display:flex;justify-content:center;margin-top:34px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);}
+.foot-mark .venn{width:146px;height:146px;}
+@media(max-width:560px){.foot-mark .venn{width:124px;height:124px;}}
+.nav-toggle{display:none;}.hamburger{display:none;}
+@media(max-width:760px){header{position:relative;}.hamburger{display:flex;align-items:center;font-size:22px;line-height:1;cursor:pointer;color:var(--forest);padding:4px 8px;user-select:none;}.menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(192,202,191,.97);flex-direction:column;padding:14px 24px 20px;gap:0;border-bottom:1px solid var(--line);z-index:100;}.menu a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}.menu .btn{display:block;text-align:center;margin-top:14px;border-bottom:none;padding:11px 22px;}.nav-toggle:checked~.menu{display:flex;}}
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="nav">
+    <a href="itc-homepage.html" class="wm">
+      <span class="the">The</span>
+      <span class="main">Intentional<br>Tech Coalition</span>
+      <span class="rule-row"><span>CONCORD</span></span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger" aria-label="Open menu">&#9776;</label>
+    <nav class="menu">
+      <a href="itc-at-school.html">At School</a>
+      <a href="itc-at-home.html">At Home</a>
+      <a href="itc-take-action.html">Take Action</a>
+      <a href="itc-survey.html">Concord's Data</a>
+      <a href="itc-resources.html">Resources &amp; Events</a>
+      <a href="itc-join.html" class="btn">Join us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehead">
+  <svg class="venn venn-bg" viewBox="0 0 100 100" aria-hidden="true"><circle class="c-fam" cx="33.5" cy="40.5" r="26"/><circle class="c-sch" cx="66.5" cy="40.5" r="26"/><circle class="c-com" cx="50" cy="69.1" r="26"/></svg>
+  <div class="wrap">
+    <span class="eyebrow one">Ways to help</span>
+    <h1>Volunteer roles for 2026-27</h1>
+    <p class="lede">These roles will help us bring our 2026-27 priorities to life. Many hands make light work, so anyone who takes on a role is welcome to recruit others to help wherever they see fit. Our leadership team is here to support every effort along the way.</p>
+  </div>
+</section>
+
+<section class="block vr-section">
+  <div class="wrap">
+
+    <div class="vr-filters" role="group" aria-label="Filter roles by time commitment">
+      <span class="vr-filter-label">Filter by time commitment</span>
+      <button class="vr-chip" data-f="all" aria-pressed="true">All roles</button>
+      <button class="vr-chip" data-f="week" aria-pressed="false">A little each week</button>
+      <button class="vr-chip" data-f="month" aria-pressed="false">A little each month</button>
+      <button class="vr-chip" data-f="project" aria-pressed="false">Short-term project</button>
+    </div>
+    <p class="vr-count" id="vr-count" role="status"></p>
+
+    <div class="vr-grid" id="vr-grid">
+
+      <article class="vr-tile" data-r="week">
+        <h2>Public Comment</h2>
+        <p class="vr-when"><b>2 hours</b> every two weeks</p>
+        <p class="vr-what">Fills all three public comment slots at each School Committee meeting.</p>
+        <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> are organized, comfortable following up with people, and like helping others feel ready to speak</li><li>Shares ITC's public comment tips</li><li>Supports speakers as they prepare</li></ul>
+        <div class="vr-foot"><button class="vr-more" aria-expanded="false">Details</button><a class="vr-ask" href="#interest" data-role="Public Comment">I'm interested</a></div>
+      </article>
+
+      <article class="vr-tile" data-r="month">
+        <h2>School Correspondence</h2>
+        <p class="vr-when"><b>2 hours</b> a month</p>
+        <p class="vr-what">Sends one to two coalition emails a month to the School Committee and central office.</p>
+        <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> write clearly and concisely and are comfortable with a constructive, cooperative tone</li><li>Updates and suggestions on behalf of ITC</li></ul>
+        <div class="vr-foot"><button class="vr-more" aria-expanded="false">Details</button><a class="vr-ask" href="#interest" data-role="School Correspondence">I'm interested</a></div>
+      </article>
+
+      <article class="vr-tile" data-r="month">
+        <h2>Communications</h2>
+        <p class="vr-when"><b>2 to 4 hours</b> a month</p>
+        <p class="vr-what">Puts together the monthly ITC newsletter and sends blurbs to school PTG newsletters.</p>
+        <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> enjoy writing and editing and like pulling information together into a polished format</li><li>Our point of contact for sharing information with the schools</li></ul>
+        <div class="vr-foot"><button class="vr-more" aria-expanded="false">Details</button><a class="vr-ask" href="#interest" data-role="Communications">I'm interested</a></div>
+      </article>
+
+      <article class="vr-tile" data-r="week">
+        <h2>Outreach</h2>
+        <p class="vr-when"><b>1 to 2 hours</b> a week</p>
+        <p class="vr-what">Finds local events and other ways to raise ITC's visibility in town.</p>
+        <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> keep up with what's happening around town and enjoy connecting people with opportunities</li><li>Arranges flyers and volunteers for events</li><li>No need to attend every event yourself</li></ul>
+        <div class="vr-foot"><button class="vr-more" aria-expanded="false">Details</button><a class="vr-ask" href="#interest" data-role="Outreach">I'm interested</a></div>
+      </article>
+
+      <article class="vr-tile" data-r="week">
+        <h2>Social Media</h2>
+        <p class="vr-when"><b>1 to 2 hours</b> a week</p>
+        <p class="vr-what">Keeps ITC present on social media and in local parent groups.</p>
+        <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> are comfortable posting online and enjoy keeping a steady, friendly presence in local conversations</li><li>Shares ITC news, events, and resources</li><li>Watches local parent groups for chances to be helpful</li></ul>
+        <div class="vr-foot"><button class="vr-more" aria-expanded="false">Details</button><a class="vr-ask" href="#interest" data-role="Social Media">I'm interested</a></div>
+      </article>
+
+      <article class="vr-tile" data-r="month">
+        <h2>Press</h2>
+        <p class="vr-when"><b>1 to 2 hours</b> a month</p>
+        <p class="vr-what">Looks for opportunities to share ITC's story in the press and responds to incoming press inquiries.</p>
+        <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> enjoy persuasive writing and are comfortable reaching out to a local newspaper</li><li>Writes a few letters to the editor about our work</li></ul>
+        <div class="vr-foot"><button class="vr-more" aria-expanded="false">Details</button><a class="vr-ask" href="#interest" data-role="Press">I'm interested</a></div>
+      </article>
+
+      <article class="vr-tile" data-r="week">
+        <h2>Business Partnerships</h2>
+        <p class="vr-when"><b>1 hour</b> a week</p>
+        <p class="vr-what">Invites local businesses to set aside a device-free space or time.</p>
+        <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> like talking with local business owners and enjoy building relationships in the community</li><li>Shares ITC materials on the benefits</li><li>Keeps our partner business list current</li></ul>
+        <div class="vr-foot"><button class="vr-more" aria-expanded="false">Details</button><a class="vr-ask" href="#interest" data-role="Business Partnerships">I'm interested</a></div>
+      </article>
+
+      <article class="vr-tile" data-r="month">
+        <h2>Community Coffee</h2>
+        <p class="vr-when"><b>1 to 2 hours</b> a month, not including attending</p>
+        <p class="vr-what">Plans five informal community coffees through the end of the school year.</p>
+        <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> enjoy planning and hosting and like bringing people together in a relaxed setting</li><li>Schedules one or two leadership team members per coffee, on a rotation</li></ul>
+        <div class="vr-foot"><button class="vr-more" aria-expanded="false">Details</button><a class="vr-ask" href="#interest" data-role="Community Coffee">I'm interested</a></div>
+      </article>
+
+      <article class="vr-tile" data-r="project month">
+        <h2>Research</h2>
+        <p class="vr-when"><b>5 to 10 hours</b> to start, then 1 to 2 hours a month</p>
+        <p class="vr-what">Gathers public information on the district's EdTech contracts, programs, and spending.</p>
+        <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> are comfortable reading budgets and public documents and enjoy organizing information</li><li>Combines it with other data ITC collects</li></ul>
+        <div class="vr-foot"><button class="vr-more" aria-expanded="false">Details</button><a class="vr-ask" href="#interest" data-role="Research">I'm interested</a></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="block vrf-section" id="interest">
+  <div class="wrap">
+    <div class="vrf-card" id="vrf-card">
+      <span class="eyebrow one">Raise your hand</span>
+      <h2>Tell us what you're drawn to</h2>
+      <p class="vrf-intro">About a minute, and nothing here is required. Answer what you can and leave the rest blank. We'll follow up to talk it through before anything is settled.</p>
+
+      <form id="vrf-form" novalidate>
+
+        <div class="vrf-group">
+          <p class="vrf-q">Your name and email</p>
+          <div class="vrf-names">
+            <input type="text" id="vrf-name" name="name" placeholder="Name" autocomplete="name">
+            <input type="email" id="vrf-email" name="email" placeholder="you@email.com" autocomplete="email">
+          </div>
+          <p class="vrf-hint">So we can get back to you. Leave blank if you'd rather just look around.</p>
+        </div>
+
+        <div class="vrf-group">
+          <p class="vrf-q">Which roles interest you? Pick as many as you like</p>
+          <div class="vrf-chips" id="vrf-roles">
+            <label class="vrf-chip"><input type="checkbox" name="roles" value="Public Comment"><span>Public Comment</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="roles" value="School Correspondence"><span>School Correspondence</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="roles" value="Communications"><span>Communications</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="roles" value="Outreach"><span>Outreach</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="roles" value="Social Media"><span>Social Media</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="roles" value="Press"><span>Press</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="roles" value="Business Partnerships"><span>Business Partnerships</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="roles" value="Community Coffee"><span>Community Coffee</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="roles" value="Research"><span>Research</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="roles" value="Not sure yet"><span>Not sure yet</span></label>
+          </div>
+        </div>
+
+        <div class="vrf-group">
+          <p class="vrf-q">How much time feels realistic right now?</p>
+          <div class="vrf-chips">
+            <label class="vrf-chip"><input type="checkbox" name="time" value="A little each week"><span>A little each week</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="time" value="A little each month"><span>A little each month</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="time" value="A one-time project"><span>A one-time project</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="time" value="Depends on the week"><span>Depends on the week</span></label>
+          </div>
+        </div>
+
+        <div class="vrf-group">
+          <p class="vrf-q">What do you enjoy, or feel good at?</p>
+          <div class="vrf-chips">
+            <label class="vrf-chip"><input type="checkbox" name="talent" value="Writing and editing"><span>Writing and editing</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="talent" value="Talking with people"><span>Talking with people</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="talent" value="Organizing and planning"><span>Organizing and planning</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="talent" value="Research and data"><span>Research and data</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="talent" value="Social media and design"><span>Social media and design</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="talent" value="Speaking up in public"><span>Speaking up in public</span></label>
+            <label class="vrf-chip"><input type="checkbox" name="talent" value="Still figuring it out"><span>Still figuring it out</span></label>
+          </div>
+        </div>
+
+        <div class="vrf-group" style="margin-bottom:0;">
+          <p class="vrf-q">Comments or questions</p>
+          <textarea id="vrf-notes" name="notes" placeholder="Anything you'd like us to know, or anything you'd like to ask."></textarea>
+        </div>
+
+        <div class="vrf-submit">
+          <button type="submit" class="btn" id="vrf-btn">Send this in</button>
+          <span class="vrf-note">No commitment. We'll reach out to talk first.</span>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="vrf-done" id="vrf-done">
+      <h2>Thank you</h2>
+      <p>We're glad you're interested. Someone from our leadership team will be in touch soon to talk it through.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block vr-join">
+  <div class="wrap">
+    <div class="inner">
+      <p>Questions about a role? Our leadership team is happy to talk it through.</p>
+      <a class="btn" href="mailto:emily@intentionaltechcoalition.org?subject=ITC%20volunteer%20role">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a href="itc-homepage.html" class="wm">
+          <span class="the">The</span>
+          <span class="main">Intentional<br>Tech Coalition</span>
+          <span class="rule-row"><span>CONCORD</span></span>
+        </a>
+        <p>Led by a team of Concord parents, working in partnership with local families, educators, and schools on intentional, research-informed technology choices.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="itc-at-school.html">At School</a>
+        <a href="itc-at-home.html">At Home</a>
+        <a href="itc-take-action.html">Take Action</a>
+        <a href="itc-survey.html">Concord's Data</a>
+        <a href="itc-resources.html">Resources &amp; Events</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="itc-join.html">Join the coalition</a>
+        <a href="itc-volunteer-roles.html">Volunteer roles</a>
+        <a href="itc-take-action.html#speak">Speak at a meeting</a>
+        <a href="mailto:concordschoolcommittee@concordps.org">Email the school committee</a>
+        <a href="mailto:emily@intentionaltechcoalition.org">Contact us</a>
+      </div>
+    </div>
+    <div class="foot-mark">
+      <svg class="venn ondark" viewBox="0 0 100 100" aria-hidden="true"><circle class="c-fam" cx="33.5" cy="40.5" r="26" stroke-width="2.2"/><circle class="c-sch" cx="66.5" cy="40.5" r="26" stroke-width="2.2"/><circle class="c-com" cx="50" cy="69.1" r="26" stroke-width="2.2"/><text x="25.7" y="36" font-size="7.7">family</text><text x="74.3" y="36" font-size="7.7">school</text><text x="50" y="78.1" font-size="7.7">community</text></svg>
+    </div>
+    <div class="fineprint">© 2026 The Intentional Tech Coalition. A volunteer parent group in Concord, MA.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.vr-chip');
+  var tiles = document.querySelectorAll('.vr-tile');
+  var countEl = document.getElementById('vr-count');
+
+  function apply(f){
+    var shown = 0;
+    tiles.forEach(function(t){
+      var match = (f === 'all' || t.dataset.r.split(' ').indexOf(f) !== -1);
+      t.hidden = !match;
+      if (match) shown++;
+    });
+    countEl.textContent = shown === 1 ? 'Showing 1 role' : 'Showing ' + shown + ' roles';
+  }
+
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      chips.forEach(function(x){ x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
+      apply(c.dataset.f);
+    });
+  });
+
+  document.querySelectorAll('.vr-more').forEach(function(b){
+    b.addEventListener('click', function(){
+      var d = b.closest('.vr-tile').querySelector('.vr-detail');
+      var open = b.getAttribute('aria-expanded') === 'true';
+      d.hidden = open;
+      b.setAttribute('aria-expanded', open ? 'false' : 'true');
+      b.textContent = open ? 'Details' : 'Hide details';
+    });
+  });
+
+  apply('all');
+
+  // "I'm interested" ticks that role in the form below, then the anchor scrolls to it.
+  document.querySelectorAll('.vr-ask').forEach(function(a){
+    a.addEventListener('click', function(){
+      var role = a.dataset.role;
+      var cb = document.querySelector('#vrf-roles input[value="' + role + '"]');
+      if (!cb) return;
+      cb.checked = true;
+      var chip = cb.closest('.vrf-chip');
+      chip.classList.remove('flash');
+      void chip.offsetWidth;
+      chip.classList.add('flash');
+    });
+  });
+})();
+
+(function(){
+  var FIREBASE_URL = "https://itc-sc-meeting-sign-ups-default-rtdb.firebaseio.com";
+  var FORMSPREE_URL = "https://formspree.io/f/meewbkvy";
+
+  var form = document.getElementById('vrf-form');
+  var btn = document.getElementById('vrf-btn');
+
+  function picked(name){
+    return Array.prototype.map.call(
+      document.querySelectorAll('#vrf-form input[name="' + name + '"]:checked'),
+      function(i){ return i.value; }
+    );
+  }
+
+  form.addEventListener('submit', async function(ev){
+    ev.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    var entry = {
+      name: document.getElementById('vrf-name').value.trim(),
+      email: document.getElementById('vrf-email').value.trim(),
+      roles: picked('roles'),
+      time: picked('time'),
+      talent: picked('talent'),
+      notes: document.getElementById('vrf-notes').value.trim(),
+      timestamp: new Date().toISOString()
+    };
+
+    try {
+      var res = await fetch(FIREBASE_URL + '/volunteer-interest.json', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(entry)
+      });
+      if (!res.ok) throw new Error('write failed');
+
+      fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: 'Volunteer interest: ' + (entry.name || 'no name given'),
+          name: entry.name || 'Not given',
+          email: entry.email || 'Not given',
+          roles: entry.roles.length ? entry.roles.join(', ') : 'None selected',
+          time: entry.time.length ? entry.time.join(', ') : 'Not answered',
+          talent: entry.talent.length ? entry.talent.join(', ') : 'Not answered',
+          notes: entry.notes || 'None'
+        })
+      }).catch(function(){});
+
+      document.getElementById('vrf-card').style.display = 'none';
+      var done = document.getElementById('vrf-done');
+      done.style.display = 'block';
+      done.setAttribute('tabindex', '-1');
+      done.focus();
+    } catch (e) {
+      btn.disabled = false;
+      btn.textContent = 'Send this in';
+      alert('Something went wrong sending that. Please try again, or email us directly.');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

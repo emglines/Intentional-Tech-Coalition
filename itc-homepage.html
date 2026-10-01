@@ -7,7 +7,7 @@
 <title>The Intentional Tech Coalition | Concord, MA</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..600;1,9..144,200..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--sage:#C0CABF;--sage-dk:#A9B6A6;--forest:#3F5138;--forest-2:#5F6D57;--plum:#463347;--plum-dk:#382839;--ink:#242321;--cream:#E5E0DA;--paper:#F4F1EC;--white:#FBFAF7;--line:rgba(63,81,56,.22);--bar-hi:#3F5138;--bar-md:#5F6D57;--bar-lo:#97A78E;--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--r:18px;}
+:root{--sage:#C0CABF;--sage-dk:#A9B6A6;--forest:#3F5138;--forest-2:#5F6D57;--plum:#463347;--plum-dk:#382839;--ink:#242321;--cream:#E5E0DA;--paper:#F4F1EC;--white:#FBFAF7;--line:rgba(63,81,56,.22);--bar-hi:#3F5138;--bar-md:#5F6D57;--bar-lo:#97A78E;--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--r:4px;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
 .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
@@ -56,6 +56,14 @@ header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
 .hero-evidence .eb-foot{margin-top:14px;border-top:1px solid var(--line);padding-top:13px;font-size:12.5px;line-height:1.5;}
 .hero-evidence .eb-foot a{font-weight:700;color:var(--plum);text-decoration:underline;}
 @media(max-width:760px){.hero-grid{grid-template-columns:1fr;gap:32px;}.hero-evidence{order:2;}}
+.teach-band{background:var(--forest);color:var(--paper);padding:50px 0 52px;}
+.teach-inner{display:grid;grid-template-columns:auto 1fr;gap:52px;align-items:center;}
+.teach-inner .venn{width:216px;height:216px;flex-shrink:0;}
+.teach-band .eyebrow{color:var(--sage);}
+.teach-band .eyebrow::before{background:var(--sage);opacity:.7;}
+.teach-band h2{font-size:clamp(27px,3.9vw,40px);color:var(--white);margin:0 0 15px;max-width:14ch;}
+.teach-band p{font-size:15.5px;opacity:.9;line-height:1.7;max-width:48ch;}
+@media(max-width:780px){.teach-inner{grid-template-columns:1fr;gap:28px;justify-items:start;}.teach-inner .venn{width:168px;height:168px;}}
 .approach{background:var(--paper);padding:52px 0;border-bottom:1px solid var(--line);}
 .approach .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
 .approach-tile{padding:6px 34px;border-right:1px solid var(--line);}
@@ -138,6 +146,13 @@ header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
 .survey-join p{font-size:13.5px;opacity:.8;line-height:1.55;margin-bottom:12px;}
 .survey-join .time-note{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--forest-2);background:var(--cream);border-radius:999px;padding:4px 12px;margin-bottom:16px;}
 .action-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.action-grid.three{grid-template-columns:repeat(3,1fr);}
+.action-grid.three .action-card .venn{width:40px;height:40px;margin-bottom:13px;}
+.action-grid.three .action-card h3{font-size:23px;}
+.way-links{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:2px;}
+.way-links a{font-size:13.5px;color:var(--paper);border-bottom:1px solid rgba(192,202,191,.45);padding-bottom:1px;}
+.way-links a:hover{border-bottom-color:var(--sage);}
+.ways-cta{margin-top:22px;text-align:center;}
 .action-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:28px;}
 .action-card .ac-tag{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:10px;}
 .action-card h3{font-family:var(--serif);font-size:20px;color:var(--white);margin-bottom:8px;}
@@ -146,17 +161,17 @@ header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
 .action-card .btn.light{background:var(--sage);color:var(--forest);}
 .action-card .btn.outline{background:transparent;border:1.5px solid rgba(255,255,255,.35);color:var(--white);}
 .dates{margin:14px 0;display:flex;flex-direction:column;gap:8px;}
-.date-row{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border-radius:10px;padding:10px 14px;}
+.date-row{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border-radius:4px;padding:10px 14px;}
 .date-badge{font-family:var(--serif);font-size:13px;color:var(--sage);min-width:72px;}
 .date-info{font-size:13px;opacity:.85;flex:1;}
 .date-info span{display:block;font-size:11px;opacity:.65;margin-top:1px;}
 .res-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
-.res-item{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start;}
+.res-item{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start;}
 .res-num{font-family:var(--serif);font-size:22px;color:var(--sage-dk);min-width:28px;line-height:1;padding-top:2px;}
 .res-item b{font-family:var(--serif);font-size:15px;color:var(--forest);font-weight:500;display:block;margin-bottom:3px;}
 .res-item span{font-size:12.5px;color:var(--forest-2);line-height:1.4;}
 .join{background:var(--sage);}
-.join-card{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;}
+.join-card{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:40px;display:block;max-width:620px;}
 .join-card h2{font-size:clamp(22px,3vw,32px);color:var(--forest);margin-bottom:10px;}
 .join-card > div > p{font-size:14px;opacity:.85;margin-bottom:16px;}
 .field{display:flex;gap:8px;flex-wrap:wrap;}
@@ -173,8 +188,24 @@ footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;}
 footer p{font-size:13px;line-height:1.6;opacity:.8;margin-top:12px;max-width:36ch;}
 footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9aa392;margin-bottom:10px;}
 footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.85;}
-.fineprint{margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;opacity:.55;}
+.fineprint{margin-top:22px;padding-top:0;border-top:none;font-size:11px;opacity:.55;}
 @media(max-width:760px){.approach .grid{grid-template-columns:1fr;}.approach-tile{border-right:none;border-bottom:1px solid var(--line);padding:18px 0;}.approach-tile:last-child{border-bottom:none;}}
+/* Family / school / community mark */
+.venn{display:block;}
+.venn circle{fill:none;}
+.venn .c-fam{stroke:var(--forest);}
+.venn .c-sch{stroke:var(--plum);}
+.venn .c-com{stroke:var(--sage-dk);}
+.venn text{font-family:var(--serif);font-style:italic;fill:var(--forest-2);text-anchor:middle;dominant-baseline:central;}
+.venn.ondark .c-fam{stroke:var(--sage);}
+.venn.ondark .c-sch{stroke:#C9ADCB;}
+.venn.ondark .c-com{stroke:var(--sage-dk);}
+.venn.ondark text{fill:var(--paper);}
+.venn.dim circle{opacity:.26;}
+.venn.dim .on{opacity:1;}
+.foot-mark{display:flex;justify-content:center;margin-top:34px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);}
+.foot-mark .venn{width:146px;height:146px;}
+@media(max-width:560px){.foot-mark .venn{width:124px;height:124px;}}
 .nav-toggle{display:none;}.hamburger{display:none;}
 @media(max-width:760px){
 header{position:relative;}
@@ -188,7 +219,7 @@ header{position:relative;}
 .stat-row{grid-template-columns:1fr;gap:12px;}.panel{padding:20px 18px;}
 .survey-footer{flex-direction:column;gap:14px;align-items:flex-start;}.survey-footer p{display:none;}
 .pledge-card{grid-template-columns:1fr;padding:24px;}.pledge-right{display:none;}.feat-pair{grid-template-columns:1fr;}
-.action-grid{grid-template-columns:1fr;}.action-card{padding:22px;}
+.action-grid,.action-grid.three{grid-template-columns:1fr;}.action-card{padding:22px;}
 .res-section{display:none;}
 .join-card{grid-template-columns:1fr;padding:28px 24px;gap:24px;}
 footer .grid{grid-template-columns:1fr;gap:24px;}
@@ -234,10 +265,6 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
             <span class="pip">For CMS families</span>
             Sign the Concord Middle School parent pledge &rarr;
           </a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScHSgIEZOFOU3VFBzbT8IE-m5FFvplILXcrWwMlcAadOtxZsw/viewform?usp=header" class="nudge-pill" target="_blank">
-            <span class="pip">Open to all</span>
-            Take the Shape the Year Survey &rarr;
-          </a>
         </div>
       </div>
       <aside class="hero-evidence" aria-label="What the research shows">
@@ -262,6 +289,18 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
           We read the research closely and share it plainly. <a href="itc-resources.html">Browse the resources we recommend</a>
         </div>
       </aside>
+    </div>
+  </div>
+</section>
+
+<section class="teach-band">
+  <div class="wrap">
+    <div class="teach-inner">
+      <svg class="venn ondark" viewBox="0 0 100 100" aria-hidden="true"><circle class="c-fam" cx="33.5" cy="40.5" r="26" stroke-width="2"/><circle class="c-sch" cx="66.5" cy="40.5" r="26" stroke-width="2"/><circle class="c-com" cx="50.0" cy="69.1" r="26" stroke-width="2"/><text x="25.7" y="36.0" font-size="7.7">family</text><text x="74.3" y="36.0" font-size="7.7">school</text><text x="50.0" y="78.1" font-size="7.7">community</text></svg>
+      <div>
+        <h2>Connected by choice</h2>
+        <p>Concord families working with each other and with our schools toward intentional, research-informed tech choices at home and at school.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -361,10 +400,26 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow one">Make a difference</span>
-      <h2 style="margin-top:14px;">Take action</h2>
-      <p>You don't have to do everything. Pick the one thing that feels most doable right now.</p>
+      <h2 style="margin-top:14px;">Let's ask for progress together</h2>
+      <p>Families here are stepping up in different ways, from signing a request to taking on a role for the year. Every one of them moves this work forward.</p>
     </div>
+
     <div class="feat-pair">
+      <div class="feat-card">
+        <div class="fc-tag">Urgent &middot; For all Concord families</div>
+        <h3>Sign the AI request</h3>
+        <p>We're asking Concord Public Schools to slow down on student-facing generative AI and to bring families into the decision before going further.</p>
+        <div class="list-label">What we're asking for</div>
+        <ul class="item-list">
+          <li>Remove Gemini from Concord Middle School devices now</li>
+          <li>Pause student-facing generative AI on all school-issued devices for middle schoolers</li>
+          <li>Form a committee to review the evidence</li>
+        </ul>
+        <div class="card-foot">
+          <a href="itc-ai-request.html" class="btn sage">Read and sign &rarr;</a>
+          <span class="time-chip">1 minute</span>
+        </div>
+      </div>
       <div class="feat-card">
         <div class="fc-tag">For parents of Concord Middle School students</div>
         <h3>Sign the CMS parent pledge</h3>
@@ -373,65 +428,49 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
           <li>Not send students to school with a personal device unless there is a clear family or medical need</li>
           <li>Not call or text students on personal devices during school hours</li>
           <li>Route all school-day communication through the school office</li>
-          <li>Work in partnership with educators to build a focused, connected school culture</li>
         </ul>
         <div class="card-foot">
           <a href="https://docs.google.com/document/d/12Paw6ntlZyAAbSnaHCNCUIj5k02FL_KE80x48p5ON_8/edit?tab=t.0" class="btn sage" target="_blank">Read the full pledge</a>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLScg3ufVW7tq8G-fKrdv3LXkvI2f0A65VjYRbcBgdlyEHEaMRQ/viewform?usp=header" class="btn sage" target="_blank">Sign the pledge</a>
         </div>
       </div>
-      <div class="feat-card">
-        <div class="fc-tag">For all Concord families</div>
-        <h3>Take the Shape the Year Survey</h3>
-        <p>We're gathering input from as many Concord families, caregivers, and educators as possible to shape what we build for 2026-27. Your answers are private and shared only with ITC leadership.</p>
-        <div class="list-label">What you're helping shape</div>
-        <ul class="item-list">
-          <li>Gatherings and workshops for the coming school year</li>
-          <li>Coalition advocacy priorities for the school committee</li>
-          <li>Ways to stay involved that fit your life</li>
+    </div>
+
+    <div class="action-grid three">
+      <div class="action-card">
+        <svg class="venn ondark dim" viewBox="0 0 100 100" aria-hidden="true"><circle class="c-fam on" cx="33.5" cy="40.5" r="26" stroke-width="5.5" style="fill:var(--forest);fill-opacity:.12;"/><circle class="c-sch" cx="66.5" cy="40.5" r="26" stroke-width="4.5"/><circle class="c-com" cx="50.0" cy="69.1" r="26" stroke-width="4.5"/></svg>
+        <h3>From home</h3>
+        <p>A few minutes at the kitchen table, on your own schedule.</p>
+        <ul class="way-links">
+          <li><a href="itc-take-action.html#write">Write to school leaders</a></li>
+          <li><a href="itc-take-action.html">Opt out of internet use consent</a></li>
+          <li><a href="itc-take-action.html">Tell a friend</a></li>
         </ul>
-        <div class="card-foot">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScHSgIEZOFOU3VFBzbT8IE-m5FFvplILXcrWwMlcAadOtxZsw/viewform?usp=header" class="btn sage" target="_blank">Take the survey &rarr;</a>
-          <span class="time-chip">5 minutes</span>
-        </div>
+      </div>
+      <div class="action-card">
+        <svg class="venn ondark dim" viewBox="0 0 100 100" aria-hidden="true"><circle class="c-fam" cx="33.5" cy="40.5" r="26" stroke-width="4.5"/><circle class="c-sch" cx="66.5" cy="40.5" r="26" stroke-width="4.5"/><circle class="c-com on" cx="50.0" cy="69.1" r="26" stroke-width="5.5" style="fill:var(--sage-dk);fill-opacity:.2;"/></svg>
+        <h3>In the community</h3>
+        <p>Show up alongside neighbors, where it counts.</p>
+        <ul class="way-links">
+          <li><a href="itc-resources.html#next-event">Come to an upcoming event</a></li>
+          <li><a href="itc-public-comment-signup.html">Speak at public comment</a></li>
+          <li><a href="itc-take-action.html">Partner with us</a></li>
+        </ul>
+      </div>
+      <div class="action-card">
+        <svg class="venn ondark" viewBox="0 0 100 100" aria-hidden="true"><circle class="c-fam on" cx="33.5" cy="40.5" r="26" stroke-width="5.5" style="fill:var(--forest);fill-opacity:.12;"/><circle class="c-sch on" cx="66.5" cy="40.5" r="26" stroke-width="5.5" style="fill:var(--plum);fill-opacity:.12;"/><circle class="c-com on" cx="50.0" cy="69.1" r="26" stroke-width="5.5" style="fill:var(--sage-dk);fill-opacity:.2;"/></svg>
+        <h3>Volunteer with us</h3>
+        <p>Take on a piece of the work, with support from the team.</p>
+        <ul class="way-links">
+          <li><a href="itc-volunteer-roles.html">Take on a volunteer role</a></li>
+          <li><a href="itc-take-action.html">Join our leadership team</a></li>
+          <li><a href="itc-take-action.html">Something else in mind?</a></li>
+        </ul>
       </div>
     </div>
-    <div class="action-grid">
-      <div class="action-card">
-        <div class="ac-tag">Come together</div>
-        <h3>Join a coalition meeting</h3>
-        <p>We gather regularly to share what we're learning, plan next steps, and support each other. All Concord families and educators are welcome.</p>
-        <div class="dates"><div class="date-row"><span class="date-badge">Sep 2026</span><div class="date-info">Next meeting: date &amp; location TBC<span>Add your email below to get the details</span></div></div></div>
-        <div class="btn-row"><a href="itc-join.html" class="btn light">Join the mailing list</a></div>
-      </div>
-      <div class="action-card">
-        <div class="ac-tag">Speak up</div>
-        <h3>Address the school committee</h3>
-        <p>Public comment is one of the most direct ways to be heard. Anyone may speak for two to three minutes; you fill out a short form when you arrive, even if you arrive late. The next school committee meetings:</p>
-        <div class="dates">
-          <div class="date-row"><span class="date-badge">Aug 26</span><div class="date-info">Joint School Committee meeting<span>Wednesday, August 26, 2026 · 6:00 pm · Ripley</span></div></div>
-          <div class="date-row"><span class="date-badge">Sep 9</span><div class="date-info">Joint School Committee meeting<span>Wednesday, September 9, 2026 · 6:00 pm · Ripley</span></div></div>
-        </div>
-        <div class="btn-row"><a href="https://www.concordps.org/school-committee/meetings-and-minutes" class="btn light" target="_blank">See meeting dates and agendas</a></div>
-      </div>
-      <div class="action-card">
-        <div class="ac-tag">Write in</div>
-        <h3>Email the school committee &amp; administrators</h3>
-        <p>A personal note from a parent carries real weight, and it doesn't have to be adversarial. We've gathered topic ideas, and what's worked for us when writing our own.</p>
-        <div class="btn-row">
-          <a href="itc-take-action.html#write" class="btn light">See topics and pointers</a>
-          <a href="mailto:concordschoolcommittee@concordps.org" class="btn outline">Send your own email</a>
-        </div>
-      </div>
-      <div class="action-card">
-        <div class="ac-tag">Spread the word</div>
-        <h3>Encourage friends to learn more</h3>
-        <p>The more families who are informed and engaged, the stronger the partnership between families and schools becomes. Share the Concord Tech Impressions Survey, invite a neighbor to a meeting, or forward this page.</p>
-        <div class="btn-row">
-          <a href="mailto:?subject=A%20community%20survey%20from%20Concord%20parents&body=Hi%21%20A%20group%20of%20Concord%20parents%20is%20gathering%20a%20community%20snapshot%20of%20how%20families%20experience%20technology%20at%20school%20and%20at%20home.%20I%20thought%20you%20might%20want%20to%20add%20your%20voice%3A%20https%3A//docs.google.com/forms/d/e/1FAIpQLScuLdkK1xImdPHkDFpXFV9dgIXdIIb5U_NCSxbSoWTDp64h6A/viewform" class="btn light">Share the Tech Impressions Survey</a>
-          <a href="#" class="btn outline">Share this page</a>
-        </div>
-      </div>
+
+    <div class="ways-cta">
+      <a href="itc-take-action.html" class="btn sage">See all the ways to help &rarr;</a>
     </div>
   </div>
 </section>
@@ -468,15 +507,6 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
         <p style="font-size:12px;color:var(--forest-2);margin-top:10px;">One or two emails a month.</p>
         <p style="font-size:13px;margin-top:18px;opacity:.75;">Next gathering: <strong>September 2026</strong>, date &amp; location TBC.</p>
       </div>
-      <div class="survey-join">
-        <div class="sj-tag">For all Concord families</div>
-        <h3>Shape what we build for 2026-27</h3>
-        <p>We're gathering input from families, caregivers, and educators across Concord to plan next year's gatherings, workshops, and advocacy priorities. Every answer helps us build something worth showing up for.</p>
-        <div class="time-note">5 minutes &middot; Private</div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScHSgIEZOFOU3VFBzbT8IE-m5FFvplILXcrWwMlcAadOtxZsw/viewform?usp=header" class="btn" style="font-size:13px;padding:9px 18px;" target="_blank">Take the Shape the Year Survey &rarr;</a>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -490,7 +520,7 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
           <span class="main">Intentional<br>Tech Coalition</span>
           <span class="rule-row"><span>CONCORD</span></span>
         </a>
-        <p>Led by Emily Lines, a Concord parent, working in partnership with local families, educators, and schools on intentional, research-informed technology choices.</p>
+        <p>Led by a team of Concord parents, working in partnership with local families, educators, and schools on intentional, research-informed technology choices.</p>
       </div>
       <div>
         <h4>Explore</h4>
@@ -502,12 +532,15 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
       </div>
       <div>
         <h4>Connect</h4>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScHSgIEZOFOU3VFBzbT8IE-m5FFvplILXcrWwMlcAadOtxZsw/viewform?usp=header" target="_blank">Take the Shape the Year Survey</a>
         <a href="itc-join.html">Join the coalition</a>
+        <a href="itc-volunteer-roles.html">Volunteer roles</a>
         <a href="itc-take-action.html#speak">Speak at a meeting</a>
         <a href="mailto:concordschoolcommittee@concordps.org">Email the school committee</a>
         <a href="mailto:emily@intentionaltechcoalition.org">Contact us</a>
       </div>
+    </div>
+    <div class="foot-mark">
+      <svg class="venn ondark" viewBox="0 0 100 100" aria-hidden="true"><circle class="c-fam" cx="33.5" cy="40.5" r="26" stroke-width="2.2"/><circle class="c-sch" cx="66.5" cy="40.5" r="26" stroke-width="2.2"/><circle class="c-com" cx="50" cy="69.1" r="26" stroke-width="2.2"/><text x="25.7" y="36" font-size="7.7">family</text><text x="74.3" y="36" font-size="7.7">school</text><text x="50" y="78.1" font-size="7.7">community</text></svg>
     </div>
     <div class="fineprint">Survey conducted April to May 2026 in Concord, MA. Data partner attribution to be confirmed. Screen-time and well-being figures are descriptive associations, not causal claims. © 2026 The Intentional Tech Coalition.</div>
   </div>
