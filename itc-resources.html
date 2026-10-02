@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-resources, v12, September 29, 2026. Stable filename: version tracked here, not in the filename. URL stays itc-resources.html even though the page is now titled "Resources & Events". Session arc: page retitled Resources & Events across nav and footer sitewide; new forest-green featured event band (.evfeat) sits between pagehead and criteria, carrying ITC's own upcoming event with flyer-matched numbered topic list and sage detail panel; the older "Upcoming events" shelf renamed "Events nearby" and reserved for other organizations' events, with a pointer up to ours. Earlier arc: Start here featured block (single SBS Resource Library link); shelves flow into two packed columns; shelf order Websites, Books, Articles, Podcasts (placeholder), Events nearby; podcasts is a coming-soon slot. Websites, Articles, and Books all tightened to one-line descriptions; author/source meta removed from Articles only (Websites keep their short category label); compact evidence tags kept on three preliminary/contested items: "(Working paper.)", "(Preprint, small sample.)", "(Causal strength debated.)". -->
+<!-- itc-resources, v13, October 1, 2026. v13: removed the Articles & research, Podcasts, and Events nearby shelves; added a "Tools & materials we've made" shelf above Start here, holding ITC-authored documents, first entry the EdTech working glossary (itc-edtech-glossary.pdf, stable filename so version bumps do not break the link). Previously v12, September 29, 2026. Stable filename: version tracked here, not in the filename. URL stays itc-resources.html even though the page is now titled "Resources & Events". Session arc: page retitled Resources & Events across nav and footer sitewide; new forest-green featured event band (.evfeat) sits between pagehead and criteria, carrying ITC's own upcoming event with flyer-matched numbered topic list and sage detail panel; the older "Upcoming events" shelf renamed "Events nearby" and reserved for other organizations' events, with a pointer up to ours. Earlier arc: Start here featured block (single SBS Resource Library link); shelves flow into two packed columns; shelf order Websites, Books, Articles, Podcasts (placeholder), Events nearby; podcasts is a coming-soon slot. Websites, Articles, and Books all tightened to one-line descriptions; author/source meta removed from Articles only (Websites keep their short category label); compact evidence tags kept on three preliminary/contested items: "(Working paper.)", "(Preprint, small sample.)", "(Causal strength debated.)". -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -82,6 +82,16 @@ header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
 .entry.slot{border:1px dashed rgba(63,81,56,.35);border-radius:var(--r);padding:18px 22px;margin-top:14px;background:var(--white);}
 .entry.slot .title{color:var(--forest-2);}
 .entry.slot .why{color:var(--forest-2);opacity:1;}
+.tool-list{display:flex;flex-direction:column;gap:14px;}
+.tool{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px 26px;transition:border-color .14s,box-shadow .14s;}
+.tool:hover{border-color:var(--sage-dk);box-shadow:0 2px 10px rgba(63,81,56,.07);}
+.tool-kind{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--forest-2);margin-bottom:7px;}
+.tool h3{font-family:var(--serif);font-size:21px;color:var(--plum);margin-bottom:8px;line-height:1.18;font-weight:400;}
+.tool p{font-size:13.5px;line-height:1.6;opacity:.85;margin-bottom:0;max-width:62ch;}
+.tool-meta{font-family:var(--sans);font-size:12px;color:var(--forest-2);}
+.tool-go{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--plum);white-space:nowrap;border-bottom:1.5px solid var(--sage-dk);padding-bottom:1px;}
+.tool:hover .tool-go{border-bottom-color:var(--plum);}
+@media(max-width:640px){.tool{grid-template-columns:1fr;gap:14px;}.tool-go{justify-self:start;}}
 .featured{margin-bottom:52px;scroll-margin-top:24px;}
 .featured h2{font-size:clamp(24px,3.5vw,32px);color:var(--forest);margin:10px 0 6px;}
 .featured .shelf-note{font-size:13.5px;opacity:.8;margin-bottom:20px;max-width:60ch;}
@@ -150,7 +160,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
   <div class="wrap">
     <span class="eyebrow one">Resources &amp; Events</span>
     <h1>Resources &amp; Events</h1>
-    <p class="lede">Our upcoming gatherings, plus the books, websites, and articles that come up again and again when families ask where to start. We keep this list short on purpose: everything here is something we've actually read, used, and would hand to a neighbor.</p>
+    <p class="lede">Our upcoming gatherings, the tools we've written ourselves, and the books and websites that come up again and again when families ask where to start. We keep this list short on purpose: everything here is something we've actually read, used, and would hand to a neighbor.</p>
   </div>
 </section>
 
@@ -225,14 +235,26 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       <nav class="index" aria-label="Resource categories">
         <h4>On this page</h4>
         <a href="#next-event">Our next event</a>
+        <a href="#tools">Tools &amp; materials</a>
         <a href="#start">Start here</a>
         <a href="#websites">Websites &amp; organizations</a>
         <a href="#books">Books</a>
-        <a href="#articles">Articles &amp; research</a>
-        <a href="#podcasts">Podcasts</a>
-        <a href="#events">Events nearby</a>
       </nav>
       <div>
+        <div class="shelf" id="tools">
+          <h2>Tools &amp; materials we've made</h2>
+          <p class="shelf-note">What the coalition has written for Concord families, educators, and school leaders. Free to read, use, and share.</p>
+          <div class="tool-list">
+            <a class="tool" href="itc-edtech-glossary.pdf" target="_blank" rel="noopener">
+              <div>
+                <div class="tool-kind">Working document</div>
+                <h3>Working Glossary: Educational Technology Terms</h3>
+                <p>Shared language for conversations about technology in Concord Public Schools and the Concord-Carlisle Regional School District. Defines EdTech, screen time, artificial intelligence, vetting, student data safety, phone policies, and more. Where a definition already exists in law, peer-district policy, or research, we adopt it rather than writing our own.</p>
+              </div>
+              <span class="tool-go">Read it &rarr;</span>
+            </a>
+          </div>
+        </div>
         <div class="featured" id="start">
           <span class="eyebrow one">Start here</span>
           <h2>The collection we point to most</h2>
@@ -341,66 +363,6 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
             <div class="meta">Anna Lembke &middot; 2021</div>
             <p class="why">A Stanford psychiatrist on how constant digital stimulation reshapes the brain's reward system, and how to find balance.</p>
           </div>
-          </div>
-        </div>
-        <div class="shelf" id="articles">
-          <h2>Articles &amp; research</h2>
-          <p class="shelf-note">Shorter reads and studies we cite often. Some links may sit behind a paywall.</p>
-          <div class="entries">
-          <div class="entry">
-            <div class="title"><a class="tlink" href="https://www.journals.uchicago.edu/doi/10.1086/691462" target="_blank" rel="noopener">Brain Drain: The Mere Presence of One's Own Smartphone Reduces Available Cognitive Capacity</a></div>
-            <p class="why">Across experiments, simply having a phone nearby, even powered off, left people with less available attention.</p>
-          </div>
-          <div class="entry">
-            <div class="title"><a class="tlink" href="https://journals.sagepub.com/doi/10.1177/2167702617723376" target="_blank" rel="noopener">Increases in Depressive Symptoms, Suicide-Related Outcomes, and Suicide Rates Among U.S. Adolescents</a></div>
-            <p class="why">In a large national sample, heavier screen time was associated with higher rates of anxiety, depression, and suicide-related outcomes.</p>
-          </div>
-          <div class="entry">
-            <div class="title"><a class="tlink" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4735240" target="_blank" rel="noopener">Smartphone Bans, Student Outcomes and Mental Health</a></div>
-            <p class="why">In Norwegian middle schools with strict phone bans, girls had fewer specialist mental-health visits and students reported less bullying. (Working paper.)</p>
-          </div>
-          <div class="entry">
-            <div class="title"><a class="tlink" href="https://www.nytimes.com/2025/11/16/opinion/laptop-classroom-test-scores.html?unlocked_article_code=1.1k8.zru6.Wiwez_Hqc2X8&amp;smid=url-share" target="_blank" rel="noopener">The Screen That Ate Your Child's Education</a></div>
-            <p class="why">An accessible argument that school-issued devices are crowding out real learning.</p>
-          </div>
-          <div class="entry">
-            <div class="title"><a class="tlink" href="https://jamanetwork.com/journals/jamapediatrics/fullarticle/2829879" target="_blank" rel="noopener">Adolescent Smartphone Use During School Hours</a></div>
-            <p class="why">How much of the school day adolescents actually spend on their phones.</p>
-          </div>
-          <div class="entry">
-            <div class="title"><a class="tlink" href="https://penntoday.upenn.edu/news/angela-duckworth-over-20000-educators-share-insights-school-cell-phone-policies" target="_blank" rel="noopener">Over 20,000 Educators Share Insights on School Cellphone Policies</a></div>
-            <p class="why">What school phone policies look like in practice, and how well they are working.</p>
-          </div>
-          <div class="entry">
-            <div class="title"><a class="tlink" href="https://www.pewresearch.org/short-reads/2024/06/12/72-percent-of-us-high-school-teachers-say-cellphone-distraction-is-a-major-problem-in-the-classroom/" target="_blank" rel="noopener">72% of U.S. High School Teachers Say Cellphone Distraction Is a Major Problem</a></div>
-            <p class="why">How much teachers see phones disrupting the classroom.</p>
-          </div>
-          <div class="entry">
-            <div class="title"><a class="tlink" href="https://arxiv.org/abs/2506.08872v1" target="_blank" rel="noopener">Your Brain on ChatGPT: Accumulation of Cognitive Debt When Using an AI Assistant</a></div>
-            <p class="why">Students using an AI assistant to write essays showed weaker neural engagement. (Preprint, small sample.)</p>
-          </div>
-          <div class="entry">
-            <div class="title"><a class="tlink" href="https://metasinternalresearch.org/" target="_blank" rel="noopener">Meta's Internal Research</a></div>
-            <p class="why">Meta's own internal studies on social media and youth mental health, in plain language, drawn from whistleblower and legal disclosures.</p>
-          </div>
-          <div class="entry">
-            <div class="title"><a class="tlink" href="https://internetsafetylabs.org/wp-content/uploads/2022/12/2022-k12-edtech-safety-benchmark-national-findings-part-1.pdf" target="_blank" rel="noopener">2022 K-12 EdTech Safety Benchmark: National Findings</a></div>
-            <p class="why">The apps and EdTech used in schools, and how they handle student data privacy.</p>
-          </div>
-          </div>
-        </div>
-        <div class="shelf" id="podcasts">
-          <h2>Podcasts</h2>
-          <p class="shelf-note">Conversations worth a commute or a dog walk, the shows and episodes that come up at our gatherings.</p>
-          <div class="entry slot">
-            <p class="why">Recommendations coming soon. Have a show you keep sharing? <a class="tlink" href="mailto:emily@intentionaltechcoalition.org?subject=A%20podcast%20recommendation">Tell us.</a></p>
-          </div>
-        </div>
-        <div class="shelf" id="events">
-          <h2>Events nearby</h2>
-          <p class="shelf-note">There are wonderful organizations near us hosting talks, screenings, and workshops for families. We share the ones we think are worth your evening; these events are theirs, not ours, and we're glad to point you to them. For our own gatherings, see <a class="tlink" href="#next-event">our next event</a> above.</p>
-          <div class="entry slot">
-            <p class="why">Details coming soon. We'll add event listings here as the fall calendar comes together.</p>
           </div>
         </div>
         
