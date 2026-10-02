@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-resources, v15, October 1, 2026. v15: the featured event (.evfeat) is now a flyer-matched card that mirrors the printed "Navigating tech at home and school" flyer (ITC-Navigating-Tech-Flyer-Oct15_v2.pdf), so print and web read as one piece: forest header band with the Venn mark, wordmark and "Connected by choice"; bold sans two-line title; sage When/Where strip; cream body carrying the flyer illustration rebuilt as inline SVG (no raster asset, no new font), the blurb, and the numbered "What we'll cover" list; plum footer with "No registration required", Get directions, and a Print the flyer link to itc-navigating-tech-flyer.pdf (stable filename, copy of the v2 flyer). The flyer's QR code is deliberately omitted on the web. Section id #next-event preserved: itc-homepage.html and itc-take-action.html link to it. Old .ev-grid/.ev-details/.ev-note styles removed. Previously v14, October 1, 2026. v14: added Turning Life On's Your Consent Counts guide to the Tools & materials shelf; tool cards now name their publisher, since the shelf holds work from more than one organization. Previously v13, October 1, 2026. v13: removed the Articles & research, Podcasts, and Events nearby shelves; added a "Tools & materials we've made" shelf above Start here, holding ITC-authored documents, first entry the EdTech working glossary (itc-edtech-glossary.pdf, stable filename so version bumps do not break the link). Previously v12, September 29, 2026. Stable filename: version tracked here, not in the filename. URL stays itc-resources.html even though the page is now titled "Resources & Events". Session arc: page retitled Resources & Events across nav and footer sitewide; new forest-green featured event band (.evfeat) sits between pagehead and criteria, carrying ITC's own upcoming event with flyer-matched numbered topic list and sage detail panel; the older "Upcoming events" shelf renamed "Events nearby" and reserved for other organizations' events, with a pointer up to ours. Earlier arc: Start here featured block (single SBS Resource Library link); shelves flow into two packed columns; shelf order Websites, Books, Articles, Podcasts (placeholder), Events nearby; podcasts is a coming-soon slot. Websites, Articles, and Books all tightened to one-line descriptions; author/source meta removed from Articles only (Websites keep their short category label); compact evidence tags kept on three preliminary/contested items: "(Working paper.)", "(Preprint, small sample.)", "(Causal strength debated.)". -->
+<!-- itc-resources, v16, October 2, 2026. v16: featured event is now a two-column layout (.ev-layout): a sticky intro column on the left carrying the eyebrow, the blurb (moved out of the flyer card, where it was never part of the print piece), and the Get directions / Print the flyer buttons; the flyer card sits right at roughly 1.38fr. The card is smaller than in v15 and its internal padding and type scale down with it, but the surrounding forest band is no longer empty at the sides. When/Where strip switched to auto 1fr with the date set nowrap so "Thursday, October 15" holds one line. Mobile (<=760px) collapses to one column, intro first; <=560px tightens padding further, lets the tagline wrap, and makes the two buttons full width. Verified clean at 1280, 390 and 320px. Previously v15, October 1, 2026. v15: the featured event (.evfeat) is now a flyer-matched card that mirrors the printed "Navigating tech at home and school" flyer (ITC-Navigating-Tech-Flyer-Oct15_v2.pdf), so print and web read as one piece: forest header band with the Venn mark, wordmark and "Connected by choice"; bold sans two-line title; sage When/Where strip; cream body carrying the flyer illustration rebuilt as inline SVG (no raster asset, no new font), the blurb, and the numbered "What we'll cover" list; plum footer with "No registration required", Get directions, and a Print the flyer link to itc-navigating-tech-flyer.pdf (stable filename, copy of the v2 flyer). The flyer's QR code is deliberately omitted on the web. Section id #next-event preserved: itc-homepage.html and itc-take-action.html link to it. Old .ev-grid/.ev-details/.ev-note styles removed. Previously v14, October 1, 2026. v14: added Turning Life On's Your Consent Counts guide to the Tools & materials shelf; tool cards now name their publisher, since the shelf holds work from more than one organization. Previously v13, October 1, 2026. v13: removed the Articles & research, Podcasts, and Events nearby shelves; added a "Tools & materials we've made" shelf above Start here, holding ITC-authored documents, first entry the EdTech working glossary (itc-edtech-glossary.pdf, stable filename so version bumps do not break the link). Previously v12, September 29, 2026. Stable filename: version tracked here, not in the filename. URL stays itc-resources.html even though the page is now titled "Resources & Events". Session arc: page retitled Resources & Events across nav and footer sitewide; new forest-green featured event band (.evfeat) sits between pagehead and criteria, carrying ITC's own upcoming event with flyer-matched numbered topic list and sage detail panel; the older "Upcoming events" shelf renamed "Events nearby" and reserved for other organizations' events, with a pointer up to ours. Earlier arc: Start here featured block (single SBS Resource Library link); shelves flow into two packed columns; shelf order Websites, Books, Articles, Podcasts (placeholder), Events nearby; podcasts is a coming-soon slot. Websites, Articles, and Books all tightened to one-line descriptions; author/source meta removed from Articles only (Websites keep their short category label); compact evidence tags kept on three preliminary/contested items: "(Working paper.)", "(Preprint, small sample.)", "(Causal strength debated.)". -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -42,35 +42,39 @@ header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
 .evfeat{background:#32402C;padding:48px 0 56px;scroll-margin-top:24px;}
 .evfeat .eyebrow{color:var(--sage);}
 .evfeat .eyebrow::before{background:var(--sage);opacity:.7;}
-.flyer{max-width:800px;margin:18px auto 0;background:var(--paper);border-radius:6px;overflow:hidden;box-shadow:0 18px 46px rgba(0,0,0,.3);}
-.flyer-head{background:var(--forest);color:var(--paper);padding:28px 42px 34px;}
-.flyer-brandrow{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:26px;}
+.ev-layout{display:grid;grid-template-columns:1fr 1.38fr;gap:42px;align-items:start;margin-top:4px;}
+.ev-intro{position:sticky;top:24px;color:var(--paper);}
+.ev-intro .lead{font-family:var(--serif);font-size:clamp(19px,2.5vw,25px);line-height:1.36;color:var(--sage);margin:15px 0 14px;}
+.ev-intro p{font-size:14.5px;line-height:1.72;opacity:.9;}
+.ev-intro .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;}
+.ev-intro .btn{background:var(--sage);color:var(--plum);}
+.ev-intro .btn.ghost{background:transparent;color:var(--paper);border:1.5px solid rgba(244,241,236,.45);}
+.flyer{background:var(--paper);border-radius:6px;overflow:hidden;box-shadow:0 16px 42px rgba(0,0,0,.3);}
+.flyer-head{background:var(--forest);color:var(--paper);padding:24px 30px 28px;}
+.flyer-brandrow{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:22px;}
 .flyer-brand{display:flex;align-items:center;gap:11px;}
-.flyer-brand .venn{width:38px;height:38px;flex-shrink:0;}
-.flyer-brand .nm{font-family:var(--serif);font-size:16.5px;line-height:1.15;display:block;}
+.flyer-brand .venn{width:33px;height:33px;flex-shrink:0;}
+.flyer-brand .nm{font-family:var(--serif);font-size:14.5px;line-height:1.15;display:block;}
 .flyer-brand .loc{display:block;font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-top:4px;}
-.flyer-tag{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--sage);white-space:nowrap;}
-.flyer-title{font-family:var(--sans);font-weight:800;font-size:clamp(29px,5.2vw,50px);line-height:1.05;letter-spacing:-.015em;color:var(--paper);margin:0 0 12px;}
-.flyer-sub{font-size:clamp(14px,2vw,18px);color:var(--sage);margin:0;}
-.flyer-strip{background:var(--sage);color:var(--ink);display:grid;grid-template-columns:1fr 1.3fr;}
-.flyer-strip .col{padding:20px 42px 22px;}
-.flyer-strip .col+.col{border-left:1px solid rgba(63,81,56,.3);padding-left:34px;}
+.flyer-tag{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--sage);white-space:nowrap;}
+.flyer-title{font-family:var(--sans);font-weight:800;font-size:clamp(26px,3.7vw,38px);line-height:1.06;letter-spacing:-.015em;color:var(--paper);margin:0 0 10px;}
+.flyer-sub{font-size:clamp(13.5px,1.6vw,16px);color:var(--sage);margin:0;}
+.flyer-strip{background:var(--sage);color:var(--ink);display:grid;grid-template-columns:auto 1fr;}
+.flyer-strip .col{padding:17px 30px 19px;}
+.flyer-strip .col:first-child .big{white-space:nowrap;}
+.flyer-strip .col+.col{border-left:1px solid rgba(63,81,56,.3);padding-left:24px;}
 .flyer-strip .lbl{display:block;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--forest-2);margin-bottom:6px;}
-.flyer-strip .big{display:block;font-family:var(--serif);font-size:clamp(17px,2.4vw,21px);color:var(--plum);line-height:1.2;margin-bottom:3px;}
-.flyer-strip .sm{display:block;font-size:13.5px;line-height:1.45;}
-.flyer-body{padding:30px 42px 34px;}
-.flyer-illo{display:block;width:100%;max-width:500px;height:auto;margin:0 auto 24px;}
-.flyer-blurb{font-size:14.5px;line-height:1.7;max-width:58ch;margin:0 auto 28px;opacity:.9;}
+.flyer-strip .big{display:block;font-family:var(--serif);font-size:clamp(15.5px,1.7vw,18px);color:var(--plum);line-height:1.25;margin-bottom:3px;text-wrap:balance;}
+.flyer-strip .sm{display:block;font-size:12.5px;line-height:1.45;}
+.flyer-body{padding:26px 30px 28px;}
+.flyer-illo{display:block;width:100%;max-width:420px;height:auto;margin:0 auto 22px;}
 .flyer-cover{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--forest-2);margin-bottom:13px;}
 .ev-list{list-style:none;counter-reset:ev;display:grid;gap:7px;}
-.ev-list li{counter-increment:ev;display:flex;gap:13px;align-items:center;font-size:14px;line-height:1.45;border:1px solid rgba(63,81,56,.28);border-radius:4px;padding:11px 15px;}
-.ev-list li::before{content:counter(ev);flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--plum);color:var(--paper);font-family:var(--sans);font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center;}
-.flyer-foot{background:var(--plum);color:var(--paper);padding:24px 42px 26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;}
-.flyer-foot .fnote strong{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(18px,2.6vw,24px);margin-bottom:3px;}
-.flyer-foot .fnote span{font-size:13.5px;opacity:.85;}
-.flyer-acts{display:flex;gap:10px;flex-wrap:wrap;}
-.flyer-acts .btn{background:var(--paper);color:var(--plum);}
-.flyer-acts .btn.ghost{background:transparent;color:var(--paper);border:1.5px solid rgba(244,241,236,.5);}
+.ev-list li{counter-increment:ev;display:flex;gap:11px;align-items:center;font-size:13px;line-height:1.4;border:1px solid rgba(63,81,56,.28);border-radius:4px;padding:9px 13px;}
+.ev-list li::before{content:counter(ev);flex-shrink:0;width:21px;height:21px;border-radius:50%;background:var(--plum);color:var(--paper);font-family:var(--sans);font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.flyer-foot{background:var(--plum);color:var(--paper);padding:19px 30px 21px;}
+.flyer-foot .fnote strong{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(17px,2.1vw,21px);margin-bottom:2px;}
+.flyer-foot .fnote span{font-size:12.5px;opacity:.85;line-height:1.45;display:block;}
 .criteria{background:var(--cream);border-bottom:1px solid var(--line);padding:36px 0;}
 .criteria .row{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
 .criteria h3{font-size:16px;color:var(--forest);margin-bottom:6px;}
@@ -125,7 +129,7 @@ footer p{font-size:13px;line-height:1.6;opacity:.8;margin-top:12px;max-width:36c
 footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9aa392;margin-bottom:10px;}
 footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.85;}
 .fineprint{margin-top:22px;padding-top:0;border-top:none;font-size:11px;opacity:.55;}
-@media(max-width:760px){.criteria .row{grid-template-columns:1fr;}.feat-grid{grid-template-columns:1fr;}.entries{columns:1;}.library{grid-template-columns:1fr;gap:28px;}.index{position:static;display:flex;flex-wrap:wrap;gap:8px 18px;}.index h4{width:100%;margin-bottom:4px;}.index a{border-bottom:none;padding:2px 0;}.flyer-strip{grid-template-columns:1fr;}.flyer-strip .col+.col{border-left:none;border-top:1px solid rgba(63,81,56,.3);padding-left:42px;}.flyer-head,.flyer-body,.flyer-foot{padding-left:26px;padding-right:26px;}.flyer-strip .col{padding-left:26px;padding-right:26px;}.flyer-strip .col+.col{padding-left:26px;}.flyer-brandrow{flex-wrap:wrap;gap:10px;}.flyer-foot{display:block;}.flyer-acts{margin-top:16px;}}
+@media(max-width:760px){.criteria .row{grid-template-columns:1fr;}.feat-grid{grid-template-columns:1fr;}.entries{columns:1;}.library{grid-template-columns:1fr;gap:28px;}.index{position:static;display:flex;flex-wrap:wrap;gap:8px 18px;}.index h4{width:100%;margin-bottom:4px;}.index a{border-bottom:none;padding:2px 0;}.ev-layout{grid-template-columns:1fr;gap:28px;}.ev-intro{position:static;}.flyer-strip{grid-template-columns:1fr;}.flyer-strip .col+.col{border-left:none;border-top:1px solid rgba(63,81,56,.3);}.flyer-head,.flyer-body,.flyer-foot,.flyer-strip .col{padding-left:22px;padding-right:22px;}.flyer-brandrow{flex-wrap:wrap;gap:8px;}.flyer-illo{max-width:340px;}}
 /* Family / school / community mark */
 .venn{display:block;}
 .venn circle{fill:none;}
@@ -141,7 +145,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 .venn.dim .on{opacity:1;}
 .foot-mark{display:flex;justify-content:center;margin-top:34px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);}
 .foot-mark .venn{width:146px;height:146px;}
-@media(max-width:560px){.foot-mark .venn{width:124px;height:124px;}}
+@media(max-width:560px){.foot-mark .venn{width:124px;height:124px;}.flyer-head,.flyer-body,.flyer-foot,.flyer-strip .col{padding-left:17px;padding-right:17px;}.flyer-tag{white-space:normal;}.ev-intro .acts .btn{flex:1 1 100%;text-align:center;}}
 .nav-toggle{display:none;}.hamburger{display:none;}
 @media(max-width:760px){header{position:relative;}.hamburger{display:flex;align-items:center;font-size:22px;line-height:1;cursor:pointer;color:var(--forest);padding:4px 8px;user-select:none;}.menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(192,202,191,.97);flex-direction:column;padding:14px 24px 20px;gap:0;border-bottom:1px solid var(--line);z-index:100;}.menu a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}.menu .btn{display:block;text-align:center;margin-top:14px;border-bottom:none;padding:11px 22px;}.nav-toggle:checked~.menu{display:flex;}}
 </style>
@@ -179,8 +183,19 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 
 <section class="evfeat" id="next-event">
   <div class="wrap">
-    <span class="eyebrow one">Our next event</span>
-    <article class="flyer">
+    <div class="ev-layout">
+
+      <div class="ev-intro">
+        <span class="eyebrow one">Our next event</span>
+        <p class="lead">Every family&rsquo;s path with technology looks a little different, and there&rsquo;s no single right answer.</p>
+        <p>Join the Intentional Tech Coalition for an evening of practical tips on parental controls, school advocacy, family tech conversations, strategies at home, and smartphone alternatives. High school families will also find a dedicated conversation on building community and advocating for intentional tech at the high school level. Whether you&rsquo;re just starting to think about these choices or are well on your way, come learn alongside a community of parents and caregivers navigating the same questions.</p>
+        <div class="acts">
+          <a class="btn" href="https://maps.google.com/?q=1317+Main+St+Concord+MA+01742" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn ghost" href="itc-navigating-tech-flyer.pdf" target="_blank" rel="noopener">Print the flyer</a>
+        </div>
+      </div>
+
+      <article class="flyer">
 
       <div class="flyer-head">
         <div class="flyer-brandrow">
@@ -209,7 +224,6 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 
       <div class="flyer-body">
         <svg class="flyer-illo" viewBox="370 45 1060 350" role="img" aria-label="Illustration of parents and caregivers talking around two tables"><title>A community gathering in conversation</title><path d="M566 124 h20 l-26 28 Z" fill="#E5E0DA"/><rect x="540" y="62" width="112" height="66" rx="23" fill="#E5E0DA"/><circle cx="572" cy="95" r="7.5" fill="#463347"/><circle cx="596" cy="95" r="7.5" fill="#463347"/><circle cx="620" cy="95" r="7.5" fill="#463347"/><path d="M1196 117 h20 l-26 28 Z" fill="#463347"/><rect x="1156" y="55" width="112" height="66" rx="23" fill="#463347"/><circle cx="1188" cy="88" r="7.5" fill="#E5E0DA"/><circle cx="1212" cy="88" r="7.5" fill="#E5E0DA"/><circle cx="1236" cy="88" r="7.5" fill="#E5E0DA"/><circle cx="433" cy="228" r="36" fill="#EBCFA9"/><path d="M396 378 V295 A37 37 0 0 1 470 295 V378 Z" fill="#6E7D62"/><circle cx="535" cy="170" r="38" fill="#C8914F"/><path d="M492 378 V251 A43 43 0 0 1 578 251 V378 Z" fill="#463347"/><circle cx="654" cy="168" r="41" fill="#E9D3B4"/><path d="M606 378 V257 A48 48 0 0 1 702 257 V378 Z" fill="#6E7D62"/><circle cx="776" cy="178" r="36" fill="#8A5E3B"/><path d="M734 378 V256 A42 42 0 0 1 818 256 V378 Z" fill="#3F5138"/><circle cx="1025" cy="168" r="38" fill="#E9D3B4"/><path d="M982 378 V249 A43 43 0 0 1 1068 249 V378 Z" fill="#3F5138"/><circle cx="1144" cy="170" r="36" fill="#5C4028"/><path d="M1100 378 V250 A44 44 0 0 1 1188 250 V378 Z" fill="#463347"/><circle cx="1263" cy="165" r="41" fill="#C8914F"/><path d="M1216 378 V253 A47 47 0 0 1 1310 253 V378 Z" fill="#6E7D62"/><ellipse cx="650" cy="330" rx="175" ry="48" fill="#AEBBA7"/><ellipse cx="1152" cy="330" rx="168" ry="48" fill="#AEBBA7"/><rect x="628" y="306" width="26" height="24" rx="3" fill="#F4F1EC"/><rect x="706" y="314" width="46" height="16" rx="3" fill="#F4F1EC"/><rect x="1046" y="314" width="46" height="16" rx="3" fill="#F4F1EC"/><rect x="1104" y="306" width="30" height="24" rx="3" fill="#F4F1EC"/><circle cx="860" cy="222" r="33" fill="#C8914F"/><path d="M822 378 V293 A38 38 0 0 1 898 293 V378 Z" fill="#463347"/><circle cx="939" cy="222" r="32" fill="#8A5E3B"/><path d="M902 378 V291 A37 37 0 0 1 976 291 V378 Z" fill="#3F5138"/><circle cx="1369" cy="222" r="34" fill="#EBCFA9"/><path d="M1330 378 V295 A39 39 0 0 1 1408 295 V378 Z" fill="#463347"/></svg>
-        <p class="flyer-blurb">Every family's path with technology looks a little different, and there's no single right answer. Join the Intentional Tech Coalition for an evening of practical tips on parental controls, school advocacy, family tech conversations, strategies at home, and smartphone alternatives. High school families will also find a dedicated conversation on building community and advocating for intentional tech at the high school level. Whether you're just starting to think about these choices or are well on your way, come learn alongside a community of parents and caregivers navigating the same questions.</p>
         <h3 class="flyer-cover">What we'll cover</h3>
         <ol class="ev-list">
           <li>Setting up family and parental controls</li>
@@ -226,13 +240,11 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
           <strong>No registration required</strong>
           <span>Come as you are, and bring a neighbor if you like.</span>
         </div>
-        <div class="flyer-acts">
-          <a class="btn" href="https://maps.google.com/?q=1317+Main+St+Concord+MA+01742" target="_blank" rel="noopener">Get directions</a>
-          <a class="btn ghost" href="itc-navigating-tech-flyer.pdf" target="_blank" rel="noopener">Print the flyer</a>
-        </div>
       </div>
 
-    </article>
+      </article>
+
+    </div>
   </div>
 </section>
 
