@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-volunteer-roles, v2, October 1, 2026. Stable filename: version tracked here, not in the filename. Built from the approved volunteer-roles.html handoff, merged into site layout: shared header/nav/footer, Fraunces + Hanken Grotesk in place of Georgia + Work Sans, site brand tokens in place of the handoff's own, dark-mode rules dropped (site is light only). All new classes carry a vr- prefix so generic names cannot collide if styles are ever consolidated. House style for this page: no em dashes or en dashes; ranges written as words. v2: commitment pills removed (they over-weighted time and risked deterring volunteers); warmth now comes from a cream section band behind white tiles plus a uniform sage icon chip per role, where the glyph labels that one role and the color is identical across all tiles, so no color implies a category. Social Media role added. -->
+<!-- itc-volunteer-roles, v3, October 13, 2026. Easier to say yes: "Pitch in once" section of one-time asks above the roles, lede adds June 2027 end point, role sharing, and draft review; Public Comment reworded; Short-term filter removed; Research first step named; "Pitch in once" added to the form. v2: October 1, 2026. Stable filename: version tracked here, not in the filename. Built from the approved volunteer-roles.html handoff, merged into site layout: shared header/nav/footer, Fraunces + Hanken Grotesk in place of Georgia + Work Sans, site brand tokens in place of the handoff's own, dark-mode rules dropped (site is light only). All new classes carry a vr- prefix so generic names cannot collide if styles are ever consolidated. House style for this page: no em dashes or en dashes; ranges written as words. v2: commitment pills removed (they over-weighted time and risked deterring volunteers); warmth now comes from a cream section band behind white tiles plus a uniform sage icon chip per role, where the glyph labels that one role and the color is identical across all tiles, so no color implies a category. Social Media role added. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -45,6 +45,18 @@ header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
 .block{padding:64px 0;}
 
 /* Volunteer roles, scoped with a vr- prefix */
+.once-section{background:var(--paper);border-bottom:1px solid var(--line);}
+.once-head{max-width:620px;margin-bottom:26px;}
+.once-head h2{font-size:clamp(26px,4vw,36px);color:var(--forest);margin:14px 0 10px;}
+.once-head p{font-size:15px;opacity:.85;line-height:1.6;}
+.once-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.once{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--sage-dk);border-radius:var(--r);padding:16px 18px;}
+.once h3{font-family:var(--serif);font-weight:400;font-size:17px;color:var(--plum);margin-bottom:4px;line-height:1.25;}
+.once p{font-size:13px;color:var(--forest-2);line-height:1.5;}
+.once p a{color:var(--plum);font-weight:600;border-bottom:1.5px solid var(--sage-dk);}
+.once-foot{margin-top:20px;font-size:14px;}
+.once-foot span{color:var(--forest-2);margin-left:6px;}
+@media(max-width:760px){.once-grid{grid-template-columns:1fr;}}
 .vr-section{background:var(--cream);border-bottom:1px solid var(--line);}
 .vr-filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
 .vr-filter-label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--forest-2);width:100%;margin-bottom:8px;}
@@ -161,7 +173,26 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
   <div class="wrap">
     <span class="eyebrow one">Ways to help</span>
     <h1>Volunteer roles for 2026-27</h1>
-    <p class="lede">These roles will help us bring our 2026-27 priorities to life. Many hands make light work, so anyone who takes on a role is welcome to recruit others to help wherever they see fit. Our leadership team is here to support every effort along the way.</p>
+    <p class="lede">These roles will help us bring our 2026-27 priorities to life. Each one runs through June 2027, and every role can be shared by two people. Our leadership team is here to support you along the way, including a second set of eyes on anything sent on ITC's behalf. Many hands make light work, so anyone who takes on a role is welcome to recruit others to help.</p>
+  </div>
+</section>
+
+<section class="block once-section">
+  <div class="wrap">
+    <div class="once-head">
+      <span class="eyebrow one">Pitch in once</span>
+      <h2>Have an hour? Start here</h2>
+      <p>No ongoing commitment. Each of these is a single, small way to help, and many of our longer-term volunteers started just like this.</p>
+    </div>
+    <div class="once-grid">
+      <div class="once"><h3>Welcome families at a gathering</h3><p>Help set up and greet people at one of our events.</p></div>
+      <div class="once"><h3>Put up a flyer</h3><p>At your school, the library, or a favorite local business.</p></div>
+      <div class="once"><h3>Proofread a newsletter</h3><p>One read-through before it goes out.</p></div>
+      <div class="once"><h3>Share one post</h3><p>Pass along an ITC post in a parent group you're part of.</p></div>
+      <div class="once"><h3>Speak once at public comment</h3><p>Two to three minutes at a School Committee meeting. <a href="itc-public-comment-signup.html">Pick a date</a></p></div>
+      <div class="once"><h3>Bring a friend to a gathering</h3><p>No sign-up needed. <a href="itc-resources.html#next-event">See our next event</a></p></div>
+    </div>
+    <p class="once-foot"><a class="vr-ask" href="#interest" data-role="Pitch in once">Count me in</a> <span>and tell us which one in the form below.</span></p>
   </div>
 </section>
 
@@ -173,7 +204,6 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       <button class="vr-chip" data-f="all" aria-pressed="true">All roles</button>
       <button class="vr-chip" data-f="week" aria-pressed="false">A little each week</button>
       <button class="vr-chip" data-f="month" aria-pressed="false">A little each month</button>
-      <button class="vr-chip" data-f="project" aria-pressed="false">Short-term project</button>
     </div>
     <p class="vr-count" id="vr-count" role="status"></p>
 
@@ -182,7 +212,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       <article class="vr-tile" data-r="week">
         <h2>Public Comment</h2>
         <p class="vr-when"><b>2 hours</b> every two weeks</p>
-        <p class="vr-what">Fills all three public comment slots at each School Committee meeting.</p>
+        <p class="vr-what">Invites families to speak at each School Committee meeting and helps them feel ready.</p>
         <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> are organized, comfortable following up with people, and like helping others feel ready to speak</li><li>Shares ITC's public comment tips</li><li>Supports speakers as they prepare</li></ul>
         <div class="vr-foot"><button class="vr-more" aria-expanded="false">Details</button><a class="vr-ask" href="#interest" data-role="Public Comment">I'm interested</a></div>
       </article>
@@ -191,7 +221,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
         <h2>School Correspondence</h2>
         <p class="vr-when"><b>2 hours</b> a month</p>
         <p class="vr-what">Sends one to two coalition emails a month to the School Committee and central office.</p>
-        <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> write clearly and concisely and are comfortable with a constructive, cooperative tone</li><li>Updates and suggestions on behalf of ITC</li></ul>
+        <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> write clearly and concisely and are comfortable with a constructive, cooperative tone</li><li>Updates and suggestions on behalf of ITC</li><li>A leadership team member reviews each email with you before it goes out</li></ul>
         <div class="vr-foot"><button class="vr-more" aria-expanded="false">Details</button><a class="vr-ask" href="#interest" data-role="School Correspondence">I'm interested</a></div>
       </article>
 
@@ -223,7 +253,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
         <h2>Press</h2>
         <p class="vr-when"><b>1 to 2 hours</b> a month</p>
         <p class="vr-what">Looks for opportunities to share ITC's story in the press and responds to incoming press inquiries.</p>
-        <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> enjoy persuasive writing and are comfortable reaching out to a local newspaper</li><li>Writes a few letters to the editor about our work</li></ul>
+        <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> enjoy persuasive writing and are comfortable reaching out to a local newspaper</li><li>Writes a few letters to the editor about our work</li><li>A leadership team member reviews drafts with you before anything is sent</li></ul>
         <div class="vr-foot"><button class="vr-more" aria-expanded="false">Details</button><a class="vr-ask" href="#interest" data-role="Press">I'm interested</a></div>
       </article>
 
@@ -247,7 +277,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
         <h2>Research</h2>
         <p class="vr-when"><b>5 to 10 hours</b> to start, then 1 to 2 hours a month</p>
         <p class="vr-what">Gathers public information on the district's EdTech contracts, programs, and spending.</p>
-        <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> are comfortable reading budgets and public documents and enjoy organizing information</li><li>Combines it with other data ITC collects</li></ul>
+        <ul class="vr-detail" hidden><li class="fit"><strong>A good fit if you</strong> are comfortable reading budgets and public documents and enjoy organizing information</li><li>First step: pull the district's public budget and contract documents into one shared spreadsheet</li><li>Combines it with other data ITC collects</li></ul>
         <div class="vr-foot"><button class="vr-more" aria-expanded="false">Details</button><a class="vr-ask" href="#interest" data-role="Research">I'm interested</a></div>
       </article>
 
@@ -276,6 +306,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
         <div class="vrf-group">
           <p class="vrf-q">Which roles interest you? Pick as many as you like</p>
           <div class="vrf-chips" id="vrf-roles">
+            <label class="vrf-chip"><input type="checkbox" name="roles" value="Pitch in once"><span>Pitch in once</span></label>
             <label class="vrf-chip"><input type="checkbox" name="roles" value="Public Comment"><span>Public Comment</span></label>
             <label class="vrf-chip"><input type="checkbox" name="roles" value="School Correspondence"><span>School Correspondence</span></label>
             <label class="vrf-chip"><input type="checkbox" name="roles" value="Communications"><span>Communications</span></label>
