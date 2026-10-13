@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-at-school, v9, October 13, 2026. Stable filename: version tracked here, not in the filename. Rebuilt around the 2026-27 School Priorities 1-pager (Safety, Efficacy, Alignment): asks framed as requests, school-level one-pagers for family advocacy (elementary and middle linked as PDFs), TAC kept as a soft "Looking ahead" card, survey findings removed. -->
+<!-- itc-at-school, v10, October 13, 2026. Added K-8 internet consent guide card below the school-level tabs. v9: Stable filename: version tracked here, not in the filename. Rebuilt around the 2026-27 School Priorities 1-pager (Safety, Efficacy, Alignment): asks framed as requests, school-level one-pagers for family advocacy (elementary and middle linked as PDFs), TAC kept as a soft "Looking ahead" card, survey findings removed. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -136,6 +136,11 @@ header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
 .levels-key .k{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--plum);}
 .levels-key p{font-size:13px;opacity:.85;line-height:1.45;margin-top:4px;}
 @media(max-width:620px){.levels-key{grid-template-columns:1fr;}}
+.consent{margin-top:16px;background:var(--white);border:1px solid var(--line);border-left:5px solid var(--forest);border-radius:var(--r);padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;}
+.consent > div{max-width:600px;}
+.consent .t{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--forest-2);}
+.consent h3{font-size:20px;color:var(--forest);margin:6px 0 6px;}
+.consent p{font-size:13.5px;opacity:.85;line-height:1.55;}
 .tacsec{background:var(--sage-lt);padding:56px 0 60px;}
 .tacsec .tac{margin-top:0;}
 .qrow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
@@ -368,6 +373,14 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       <div class="panel p1"><div><h3>For elementary school families</h3><p>Five asks for grades K-5, including allowed sites only, screens never used as a prize, and pencils and paper books first. Each comes with a sample message to a teacher or principal, plus a step-by-step guide to opting out of internet on school devices.</p></div><a href="itc-elementary-asks.pdf" class="btn" target="_blank">Download the elementary asks</a></div>
       <div class="panel p2"><div><h3>For middle school families</h3><p>Seven asks for grades 6-8, including no generative AI, phones locked away from first bell to last, and school devices staying at school. Each comes with a sample message to a teacher or principal, plus tips for home.</p></div><a href="itc-middle-asks.pdf" class="btn" target="_blank">Download the middle school asks</a></div>
       <div class="panel p3"><div><h3>For high school families</h3><p>A one-pager for CCHS families is in the works.</p></div><span class="btn soon">One-pager coming soon</span></div>
+    </div>
+    <div class="consent">
+      <div>
+        <span class="t">For K-8 families</span>
+        <h3>Opting out of internet on school devices</h3>
+        <p>If the protections on your child's school device don't feel like enough, this step-by-step guide shows how to withhold internet consent in Aspen and ask for specific guardrails, with three email templates to choose from. It's a request, not a refusal.</p>
+      </div>
+      <a href="itc-internet-consent-guide.pdf" class="btn" target="_blank">Read the guide</a>
     </div>
   </div>
 </section>
