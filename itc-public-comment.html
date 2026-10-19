@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<!-- itc-public-comment, v1, October 19, 2026. Sample public comments for school committee speakers: shape-of-a-comment timeline, the three priority questions with short shared asks, six topic samples with fill-in prompts (name and street address opening), and an open "your own topic" card. Print and copy per sample; #topic web addresses open a specific sample. Not yet linked from the nav or Take Action. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speak at Public Comment | The Intentional Tech Coalition</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..600;1,9..144,200..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#C0CABF;--sage-dk:#A9B6A6;--forest:#3F5138;--forest-2:#5F6D57;--plum:#463347;--plum-dk:#382839;--ink:#242321;--cream:#E5E0DA;--paper:#F4F1EC;--white:#FBFAF7;--line:rgba(63,81,56,.22);--clay:#E9935E;--clay-dk:#925938;--clay-tint:#FBE9DF;--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--r:4px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.08;}
+a{color:inherit;text-decoration:none;}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--forest-2);}
+.eyebrow::before{content:"";height:1px;width:22px;background:var(--forest-2);opacity:.55;}
+.btn{display:inline-block;border:none;cursor:pointer;font-family:var(--sans);font-weight:600;font-size:13px;border-radius:999px;padding:10px 22px;background:var(--clay);color:var(--plum);text-decoration:none;}
+.btn.ghost{background:transparent;color:var(--forest);border:1.5px solid var(--forest);}
+.btn.sm{font-size:12px;padding:7px 16px;}
+.wm{display:inline-flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;}
+.wm .the{font-family:var(--serif);font-weight:300;font-size:11px;color:var(--forest-2);line-height:1;letter-spacing:.06em;margin-bottom:1px;}
+.wm .main{font-family:var(--serif);font-weight:400;font-size:17px;color:var(--forest);line-height:1.04;letter-spacing:-.01em;}
+.wm .rule-row{display:flex;align-items:center;gap:7px;margin-top:4px;}
+.wm .rule-row span{font-family:var(--sans);font-size:7.5px;font-weight:600;letter-spacing:.38em;color:var(--forest-2);}
+.wm .rule-row::before,.wm .rule-row::after{content:"";height:1px;width:20px;background:var(--forest-2);opacity:.5;}
+footer .wm .the{color:var(--sage);opacity:.65;}
+footer .wm .main{color:var(--sage);}
+footer .wm .rule-row span{color:var(--sage);opacity:.7;}
+footer .wm .rule-row::before,footer .wm .rule-row::after{background:var(--sage);opacity:.4;}
+header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:960px;margin:0 auto;}
+.menu{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:500;}
+.menu a{color:var(--ink);opacity:.8;}
+.menu a[aria-current]{opacity:1;font-weight:700;color:var(--forest);border-bottom:2px solid var(--forest);padding-bottom:2px;}
+.menu .btn{padding:8px 18px;opacity:1;background:var(--plum);color:var(--paper);}
+.nav-toggle{display:none;}.hamburger{display:none;}
+
+/* Pagehead */
+.pagehead{background:var(--sage);padding:56px 0 52px;}
+.pagehead h1{font-size:clamp(30px,5vw,50px);color:var(--plum);margin:16px 0 16px;max-width:680px;}
+.pagehead p.lede{font-size:clamp(15px,2vw,18px);max-width:640px;opacity:.9;}
+.nextmtg{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-top:28px;}
+.datebadge{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;background:var(--clay);color:var(--plum);border-radius:var(--r);width:64px;height:64px;line-height:1;}
+.datebadge .m{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
+.datebadge .d{font-family:var(--serif);font-size:28px;margin-top:3px;}
+.nextmtg .txt{font-size:14px;line-height:1.5;}
+.nextmtg .txt strong{font-family:var(--serif);font-weight:400;font-size:18px;color:var(--plum);display:block;}
+
+.block{padding:60px 0;}
+.sec-head{max-width:620px;margin-bottom:30px;}
+.sec-head h2{font-size:clamp(26px,4vw,36px);color:var(--forest);margin:14px 0 10px;}
+.sec-head p{font-size:15px;opacity:.85;}
+
+/* Shape + shared asks, visual (option B) */
+.prep{padding:40px 0 36px;background:var(--cream);}
+.prep .row + .row{margin-top:30px;}
+.tl{display:flex;margin-top:14px;border-radius:var(--r);overflow:hidden;min-height:76px;}
+.seg{display:flex;flex-direction:column;justify-content:center;padding:12px 18px;}
+.seg .tm{font-family:var(--serif);font-style:italic;font-size:14px;opacity:.85;}
+.seg .lb{font-family:var(--serif);font-size:18px;line-height:1.2;margin-top:2px;}
+.s1{flex:1;background:var(--sage);color:var(--forest);}
+.s2{flex:3;background:var(--clay);color:var(--plum);}
+.s3{flex:3;background:var(--plum);color:var(--paper);}
+.pq{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px;}
+.pcol{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--forest);border-radius:var(--r);padding:16px 18px 10px;}
+.pcol.efficacy{border-top-color:var(--plum);}
+.pcol.alignment{border-top-color:var(--sage-dk);}
+.pcol .pn{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--forest-2);}
+.pcol h3{font-size:19px;color:var(--plum);margin:4px 0 8px;line-height:1.2;}
+.pcol ul{list-style:none;}
+.pcol li{font-size:13px;padding:6px 0;border-top:1px solid var(--line);line-height:1.4;}
+.more{display:inline-block;margin-top:12px;font-size:12.5px;font-weight:600;color:var(--forest);border-bottom:1.5px solid var(--sage-dk);}
+.nextmtg .btn{margin-left:auto;}
+@media(max-width:760px){
+  .tl{flex-direction:column;min-height:0;}
+  .seg{flex:none;flex-direction:row;align-items:baseline;gap:12px;padding:12px 16px;}
+  .seg .tm{flex:0 0 52px;}
+  .seg .lb{font-size:16px;margin-top:0;}
+  .nextmtg .btn{margin-left:0;}
+  .pq{grid-template-columns:1fr;}
+}
+/* Samples */
+.picker{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:start;}
+.topics{position:sticky;top:16px;display:flex;flex-direction:column;gap:6px;}
+.topic{display:block;width:100%;text-align:left;cursor:pointer;background:transparent;border:1px solid transparent;border-radius:var(--r);padding:10px 14px;font-family:var(--sans);color:var(--ink);}
+.topic .tt{display:block;font-family:var(--serif);font-size:16.5px;color:var(--forest);line-height:1.2;}
+.topic .ts{display:block;font-size:11.5px;color:var(--forest-2);margin-top:2px;}
+.topic:hover{background:var(--white);border-color:var(--line);}
+.topic[aria-selected="true"]{background:var(--white);border-color:var(--line);box-shadow:inset 3px 0 0 var(--clay);}
+.topic.own .tt{color:var(--plum);font-style:italic;}
+.topics hr{border:none;border-top:1px solid var(--line);margin:6px 0;}
+
+.sample{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:30px 34px 26px;}
+.sample[hidden]{display:none;}
+.s-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;padding-bottom:16px;border-bottom:1.5px solid var(--line);margin-bottom:20px;}
+.s-top h3{font-size:28px;color:var(--plum);}
+.tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:3px 10px;margin-right:4px;vertical-align:4px;}
+.tag.safety{background:var(--forest);color:var(--paper);}
+.tag.efficacy{background:var(--plum);color:var(--paper);}
+.tag.alignment{background:var(--sage);color:var(--forest);}
+.s-tools{display:flex;gap:8px;}
+.s-meta{display:grid;grid-template-columns:1fr auto;gap:6px 20px;font-size:13px;color:var(--forest-2);margin-bottom:22px;}
+.s-meta strong{color:var(--forest);font-weight:600;}
+.s-meta .mins{font-family:var(--serif);font-style:italic;color:var(--plum);white-space:nowrap;}
+.speech p{font-family:var(--serif);font-size:17px;line-height:1.62;color:var(--ink);margin-bottom:14px;font-weight:350;}
+.fill{background:var(--clay-tint);color:var(--clay-dk);border-bottom:1.5px dashed var(--clay);padding:1px 4px;border-radius:2px;font-family:var(--sans);font-size:14.5px;font-weight:500;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+.fill.opt::before{content:"Optional: ";font-weight:700;}
+.speech p.theask{background:var(--paper);border-left:3px solid var(--plum);padding:14px 18px;border-radius:0 var(--r) var(--r) 0;}
+.speech p.theask b{font-weight:600;color:var(--plum);}
+.s-src{font-size:11.5px;color:var(--forest-2);border-top:1px solid var(--line);padding-top:12px;margin-top:6px;line-height:1.55;}
+.s-src a{border-bottom:1px solid var(--sage-dk);}
+.prompts{list-style:none;margin:4px 0 18px;}
+.prompts li{font-size:14px;padding:10px 0 10px 26px;border-bottom:1px solid var(--line);position:relative;line-height:1.5;}
+.prompts li::before{content:"";position:absolute;left:4px;top:17px;width:8px;height:8px;border-radius:50%;background:var(--clay);}
+.prompts li b{font-family:var(--serif);font-weight:400;font-size:16px;color:var(--plum);display:block;}
+.other-topics{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 20px;}
+.other-topics span{font-size:12.5px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 12px;}
+
+/* Coordinate + tips */
+.coord{background:var(--forest);color:var(--paper);}
+.coord-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start;}
+.coord h2{font-size:clamp(24px,3.6vw,32px);color:var(--paper);margin:14px 0 12px;}
+.coord .eyebrow{color:var(--sage);}
+.coord .eyebrow::before{background:var(--sage);}
+.coord p{font-size:15px;opacity:.9;max-width:44ch;margin-bottom:20px;}
+.coord ul{list-style:none;}
+.coord li{font-size:13.5px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.14);line-height:1.5;}
+.coord li:last-child{border-bottom:none;}
+
+
+footer{background:var(--ink);color:#cfd3cb;padding:48px 0 32px;}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;}
+footer p{font-size:13px;line-height:1.6;opacity:.8;margin-top:12px;max-width:36ch;}
+footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9aa392;margin-bottom:10px;}
+footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.85;}
+.fineprint{margin-top:22px;font-size:11px;opacity:.55;}
+.venn{display:block;}
+.venn circle{fill:none;}
+.venn text{font-family:var(--serif);font-style:italic;text-anchor:middle;dominant-baseline:central;}
+.venn.ondark .c-fam{stroke:var(--sage);}
+.venn.ondark .c-sch{stroke:#C9ADCB;}
+.venn.ondark .c-com{stroke:var(--sage-dk);}
+.venn.ondark text{fill:var(--paper);}
+.foot-mark{display:flex;justify-content:center;margin-top:34px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);}
+.foot-mark .venn{width:146px;height:146px;}
+
+@media(max-width:900px){
+  .coord-grid{grid-template-columns:1fr;gap:24px;}
+}
+@media(max-width:760px){
+  header{position:relative;}
+  .hamburger{display:flex;align-items:center;font-size:22px;line-height:1;cursor:pointer;color:var(--forest);padding:4px 8px;user-select:none;}
+  .menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(192,202,191,.97);flex-direction:column;padding:14px 24px 20px;gap:0;border-bottom:1px solid var(--line);z-index:100;}
+  .menu a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}
+  .menu .btn{display:block;text-align:center;margin-top:14px;border-bottom:none;padding:11px 22px;}
+  .nav-toggle:checked~.menu{display:flex;}
+  .wrap{padding:0 16px;}
+  .picker{grid-template-columns:1fr;gap:16px;}
+  .topics{position:static;flex-direction:row;overflow-x:auto;gap:6px;padding-bottom:6px;margin:0 -16px;padding-left:16px;padding-right:16px;}
+  .topics hr{display:none;}
+  .topic{flex:0 0 auto;width:auto;border-color:var(--line);background:var(--white);padding:8px 12px;}
+  .topic .ts{display:none;}
+  .topic .tt{font-size:14.5px;white-space:nowrap;}
+  .topic[aria-selected="true"]{box-shadow:inset 0 -3px 0 var(--clay);}
+  .sample{padding:22px 18px 20px;}
+  .s-meta{grid-template-columns:1fr;}
+  .speech p{font-size:16px;}
+  footer .grid{grid-template-columns:1fr;gap:28px;}
+}
+
+/* Print: only the chosen sample, large type for reading at the podium */
+@media print{
+  body{background:#fff;}
+  header,footer,.pagehead,.block:not(#samples),.coord,.topics,.sec-head,.s-tools{display:none !important;}
+  #samples{padding:0;}
+  .picker{display:block;}
+  .sample{border:none;padding:0;}
+  .s-meta{display:none;}
+  .speech p{font-size:15pt;line-height:1.55;}
+  .fill{background:none;border-bottom:1px dashed #999;color:#555;}
+  .speech p.theask{background:none;border-left:3px solid #000;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="itc-homepage.html" class="wm">
+      <span class="the">The</span>
+      <span class="main">Intentional<br>Tech Coalition</span>
+      <span class="rule-row"><span>CONCORD</span></span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger" aria-label="Open menu">&#9776;</label>
+    <nav class="menu">
+      <a href="itc-at-school.html">At School</a>
+      <a href="itc-at-home.html">At Home</a>
+      <a href="itc-take-action.html" aria-current="page">Take Action</a>
+      <a href="itc-survey.html">Concord's Data</a>
+      <a href="itc-resources.html">Resources &amp; Events</a>
+      <a href="itc-join.html" class="btn">Join us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="eyebrow">Take Action &middot; Public comment</span>
+    <h1>Say what brought you here</h1>
+    <p class="lede">Anyone can speak during public comment at a school committee meeting, for two to three minutes. The samples below are starting points, not scripts. The part that matters most is the part only you can write: what you've seen, and why it brought you to the microphone.</p>
+    <div class="nextmtg" id="nextmtg">
+      <div class="datebadge"><span class="m" id="nm-m">Oct</span><span class="d" id="nm-d">21</span></div>
+      <div class="txt"><strong id="nm-line">Next meeting: Wednesday, October 21</strong><span id="nm-sub">6:00 pm &middot; CMS Library &middot; in person or on Zoom</span></div>
+      <a class="btn" href="#samples">See the sample comments</a>
+    </div>
+  </div>
+</section>
+
+<section class="block prep" id="asks">
+  <div class="wrap">
+    <div class="row">
+      <span class="eyebrow">The shape of a comment</span>
+      <div class="tl" role="list">
+        <div class="seg s1" role="listitem"><span class="tm">20 sec</span><span class="lb">Who you are</span></div>
+        <div class="seg s2" role="listitem"><span class="tm">1 min</span><span class="lb">What you've seen, and why it matters</span></div>
+        <div class="seg s3" role="listitem"><span class="tm">1 min</span><span class="lb">One clear ask, and thanks</span></div>
+      </div>
+    </div>
+    <div class="row">
+      <span class="eyebrow">Close with a shared ask</span>
+      <div class="pq">
+        <div class="pcol safety"><span class="pn">Safety</span><h3>Is it safe for our children?</h3><ul><li>A public list of every tool and its data</li><li>AI off by default</li><li>Approved sites only</li></ul></div>
+        <div class="pcol efficacy"><span class="pn">Efficacy</span><h3>Does it help students learn?</h3><ul><li>Evidence before adoption</li><li>Independent proof</li><li>Fewer, better tools</li></ul></div>
+        <div class="pcol alignment"><span class="pn">Alignment</span><h3>Does it reflect our district's own goals?</h3><ul><li>An open District Technology Committee</li><li>Student well-being first</li><li>Phones stored bell to bell</li></ul></div>
+      </div>
+      <a class="more" href="itc-at-school.html">Read the full priorities</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="samples">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Sample comments</span>
+      <h2>Pick a topic, then make it yours</h2>
+      <p>Each sample has <span class="fill">highlighted spaces</span> for your own story. Print one to bring with you, or copy it into a document and rewrite it as much as you like.</p>
+    </div>
+
+    <div class="picker">
+      <div class="topics" role="tablist" aria-label="Sample comment topics">
+        <button class="topic" role="tab" data-t="safety-online"><span class="tt">Internet safety</span><span class="ts">Approved sites only</span></button>
+        <button class="topic" role="tab" data-t="tools-list"><span class="tt">What tools are we using?</span><span class="ts">A public list of EdTech tools</span></button>
+        <button class="topic" role="tab" data-t="no-ai"><span class="tt">Generative AI</span><span class="ts">Off by default, Gemini off at CMS</span></button>
+        <button class="topic" role="tab" data-t="efficacy"><span class="tt">Does it help kids learn?</span><span class="ts">Evidence before adoption</span></button>
+        <button class="topic" role="tab" data-t="alignment"><span class="tt">Our district's own goals</span><span class="ts">Partnership and well-being</span></button>
+        <button class="topic" role="tab" data-t="bell"><span class="tt">Phones at CCHS</span><span class="ts">Bell-to-bell, secure storage</span></button>
+        <hr>
+        <button class="topic own" role="tab" data-t="own"><span class="tt">Something else on your mind</span><span class="ts">Start from your own topic</span></button>
+      </div>
+
+      <div>
+
+        <!-- 1. Internet safety -->
+        <article class="sample" id="safety-online" role="tabpanel">
+          <div class="s-top">
+            <h3><span class="tag safety">Safety</span><br>Internet safety</h3>
+            <div class="s-tools"><button class="btn sm js-print">Print this one</button><button class="btn sm ghost js-copy">Copy text</button></div>
+          </div>
+          <div class="s-meta">
+            <span><strong>A good fit if</strong> your child is in elementary or middle school, or you've seen something on a school device that worried you.</span>
+            <span class="mins">About 2&frac12; minutes</span>
+          </div>
+          <div class="speech">
+            <p>Good evening. My name is <span class="fill">your name</span>, I live at <span class="fill">your street address</span>, and <span class="fill">how you're connected: I'm the parent of a fourth grader at Alcott</span>. Thank you for the time you give this community.</p>
+            <p>I'm here because of <span class="fill">a moment that made you pay attention. For example: the evening my child showed me a video they'd found on their school Chromebook</span>. <span class="fill">A sentence or two on how that felt, and what you did next.</span></p>
+            <p>I learned that our school devices mostly work by blocking harmful sites one at a time. The internet is too big for that approach to keep up. A 2023 Common Sense Media report found that one in three teens had viewed pornography while at school, and nearly half of those used a school-owned device to do it. That isn't a Concord number, and I'm not suggesting anyone here has been careless. It tells me that blocking has limits everywhere.</p>
+            <p>There's another approach: an allow-list. Student devices reach only the sites the district has approved, and teachers can ask to add new ones when they need them. For younger students, that matches how we already think about safety in the building. We don't leave every door open and lock the risky rooms one by one.</p>
+            <p>I'd also like a way to see what my child does on a school device. Our filtering vendor offers a parent and caregiver app that shows screen time, and offering it to families would help us be real partners at home.</p>
+            <p class="theask"><b>My ask tonight:</b> that elementary and middle school devices reach approved sites only, and that families be offered the parent app from the district's filtering vendor. <span class="fill opt">one way you'd help</span> Thank you.</p>
+          </div>
+          <p class="s-src">Source: Common Sense Media (2023), <a href="https://www.commonsensemedia.org/sites/default/files/research/report/2022-teens-and-pornography-final-web.pdf" target="_blank" rel="noopener">Teens and Pornography</a>. National survey of U.S. teens. Puts into practice: Allow-list internet, on our <a href="itc-at-school.html">2026-27 priorities</a>.</p>
+        </article>
+
+        <!-- 2. List of EdTech tools -->
+        <article class="sample" id="tools-list" role="tabpanel">
+          <div class="s-top">
+            <h3><span class="tag safety">Safety</span><span class="tag efficacy">Efficacy</span><br>What tools are we using?</h3>
+            <div class="s-tools"><button class="btn sm js-print">Print this one</button><button class="btn sm ghost js-copy">Copy text</button></div>
+          </div>
+          <div class="s-meta">
+            <span><strong>A good fit if</strong> you've tried to figure out which apps your child uses at school, or you care about student data privacy.</span>
+            <span class="mins">About 2&frac12; minutes</span>
+          </div>
+          <div class="speech">
+            <p>Good evening. My name is <span class="fill">your name</span>, I live at <span class="fill">your street address</span>, and <span class="fill">how you're connected</span>. Thank you for your service to our schools.</p>
+            <p>I came tonight with a simple question: what apps does my child use at school? <span class="fill">What happened when you tried to find out. For example: I counted the logins on my second grader's device and stopped at a dozen.</span></p>
+            <p>I'm not asking because I assume something is wrong. I'm asking because I can't see it. There's no public list of the tools Concord students use, what data each one collects, or how much time students spend on them.</p>
+            <p>That matters because the industry as a whole has a poor record here. A 2022 Internet Safety Labs study of 1,357 apps that U.S. schools recommended or required found that 96 percent shared children's data with third parties, most often advertising and analytics companies.</p>
+            <p>A list would help with something teachers and families both feel, too: there are a lot of apps. Every login is another place for a child's attention and data to go. Fewer, well-chosen tools would be easier for teachers to manage and easier for families to support at home.</p>
+            <p class="theask"><b>My ask tonight:</b> that the district publish an inventory of every student-facing tool, with the data it collects, who it's shared with, and how long it's kept. That it publish a count of the apps in use at each grade this fall, paid and free, and reduce that list by June 2027 to those with a proven purpose. And that families receive a screen time report each term. Thank you.</p>
+          </div>
+          <p class="s-src">Source: Internet Safety Labs (2022), <a href="https://internetsafetylabs.org/" target="_blank" rel="noopener">K-12 EdTech Benchmark</a>. Puts into practice: A full tool inventory and screen time report; Fewer, better tools, on our <a href="itc-at-school.html">2026-27 priorities</a>.</p>
+        </article>
+
+        <!-- 3. Generative AI -->
+        <article class="sample" id="no-ai" role="tabpanel">
+          <div class="s-top">
+            <h3><span class="tag safety">Safety</span><br>Generative AI</h3>
+            <div class="s-tools"><button class="btn sm js-print">Print this one</button><button class="btn sm ghost js-copy">Copy text</button></div>
+          </div>
+          <div class="s-meta">
+            <span><strong>A good fit if</strong> you have a middle schooler, you signed the AI request, or you work with AI and have concerns about it for kids.</span>
+            <span class="mins">About 2&frac12; minutes</span>
+          </div>
+          <div class="speech">
+            <p>Good evening. My name is <span class="fill">your name</span>, I live at <span class="fill">your street address</span>, and <span class="fill">how you're connected: my child is in seventh grade at CMS</span>. Thank you for being here tonight.</p>
+            <p>Starting in August, Google began expanding Gemini in Google Classroom to students of all ages by default, including on devices issued to Concord Middle School students. <span class="fill">How you found out, and how it felt. For example: I learned about it from my child, not from the school.</span></p>
+            <p>I don't think this is anyone's fault. AI features increasingly arrive through routine software updates, inside tools students already use. Nobody in this room decided to give twelve-year-olds a chatbot. It arrived on its own. That's why I think the answer is a default, rather than a debate about each feature after it lands.</p>
+            <p>The early research gives me pause. In a 2025 study published in PNAS, high school students who practiced math with unrestricted access to GPT-4 later scored 17 percent lower on an exam taken without it. <span class="fill opt">what you've noticed about how your child learns best</span> At this age, working through a hard problem is the learning.</p>
+            <p class="theask"><b>My ask tonight:</b> that generative AI features stay turned off for students until each one has been reviewed, and, as an immediate step, that Gemini be removed from Concord Middle School devices while that review is underway. When AI use does resume, I'd ask for a simple, well-publicized opt-out with no penalty to students. Thank you for the care you bring to this.</p>
+          </div>
+          <p class="s-src">Source: Bastani et al. (2025), <a href="https://www.pnas.org/doi/10.1073/pnas.2422633122" target="_blank" rel="noopener">PNAS</a>. Field experiment in high school math classes. Puts into practice: AI off by default, on our <a href="itc-at-school.html">2026-27 priorities</a>, and the <a href="itc-ai-request.html">AI request</a>.</p>
+        </article>
+
+        <!-- 4. EdTech efficacy -->
+        <article class="sample" id="efficacy" role="tabpanel">
+          <div class="s-top">
+            <h3><span class="tag efficacy">Efficacy</span><br>Does it help kids learn?</h3>
+            <div class="s-tools"><button class="btn sm js-print">Print this one</button><button class="btn sm ghost js-copy">Copy text</button></div>
+          </div>
+          <div class="s-meta">
+            <span><strong>A good fit if</strong> you've wondered whether an app is actually teaching your child anything, or you work in education, research, or purchasing.</span>
+            <span class="mins">About 2&frac12; minutes</span>
+          </div>
+          <div class="speech">
+            <p>Good evening. My name is <span class="fill">your name</span>, I live at <span class="fill">your street address</span>, and <span class="fill">how you're connected</span>. Thank you for listening.</p>
+            <p>I'm here because of a question I couldn't answer at my own kitchen table. <span class="fill">For example: my child spends half an hour a night on a math app, and when I asked what it was teaching, neither of us could say.</span></p>
+            <p>I'm not against technology in classrooms. I'm for tools that work, and the evidence on that is thinner than most of us would guess. A 2023 LearnPlatform review of the 100 most-used EdTech tools in U.S. classrooms found that only 26 had research meeting federal ESSA evidence standards. The rest may be fine. We just don't know.</p>
+            <p>Federal law already gives us a way to ask. ESSA sorts research into tiers, from strong evidence down to a reasonable rationale. Asking which tier a product's research reaches, who paid for the study, and which students it studied is ordinary good purchasing.</p>
+            <p>I'd also ask that we judge results by what students remember and can do away from the screen, not by minutes logged or badges earned. <span class="fill opt">what you notice when your child explains what they learned</span></p>
+            <p class="theask"><b>My ask tonight:</b> that before any student-facing tool is adopted, the district share the learning need it meets, the research behind it and its ESSA evidence tier, and how results will be measured away from the screen. And that learning gains be confirmed by independent research, not studies funded by the company selling the product. Thank you for your work.</p>
+          </div>
+          <p class="s-src">Source: LearnPlatform by Instructure (2023), EdTech Evidence Report. New to ESSA tiers? See our <a href="itc-edtech-glossary.pdf">glossary of terms</a>. Puts into practice: Evidence at adoption; Independent proof, on our <a href="itc-at-school.html">2026-27 priorities</a>.</p>
+        </article>
+
+        <!-- 5. District value alignment -->
+        <article class="sample" id="alignment" role="tabpanel">
+          <div class="s-top">
+            <h3><span class="tag alignment">Alignment</span><br>Our district's own goals</h3>
+            <div class="s-tools"><button class="btn sm js-print">Print this one</button><button class="btn sm ghost js-copy">Copy text</button></div>
+          </div>
+          <div class="s-meta">
+            <span><strong>A good fit if</strong> you want to offer to work alongside the district, or you're speaking for the first time and want a warm, simple message.</span>
+            <span class="mins">About 2&frac12; minutes</span>
+          </div>
+          <div class="speech">
+            <p>Good evening. My name is <span class="fill">your name</span>, I live at <span class="fill">your street address</span>, and <span class="fill">how you're connected</span>. Thank you for all you do.</p>
+            <p>I came tonight because I read our district's Strategic Plan, and I agree with it. Initiative 4.4 says the district will "partner with parents and community members to identify and engage with best practices for student technology, including social media use." Outcome 2.3 sets a goal of cutting student stress in half from 2022 levels. Those are the right goals.</p>
+            <p><span class="fill">Why these goals matter to your family. For example: what you've seen technology do to your child's sleep, focus, or mood, or what has helped.</span></p>
+            <p>In a community survey of Concord public-school families this spring, 48 of 71 said the district communicates about technology "not well." It's a community snapshot, not a scientific poll, but it tells me there's room to build the partnership the plan describes. The District Technology Committee is the natural place to do it.</p>
+            <p class="theask"><b>My ask tonight:</b> that this year, the District Technology Committee post agendas ahead of its meetings, let parent and caregiver representatives add items, publish summaries, set a timeline with clear deliverables, and report regularly to this committee on what was reviewed, decided, and why. And that technology decisions be weighed against the goal of cutting student stress in half. <span class="fill opt">one way you'd be glad to help</span> Thank you for writing such a clear plan. I'd like to help carry it out.</p>
+          </div>
+          <p class="s-src">Sources: Concord Public Schools and Concord-Carlisle Regional School District, <a href="https://resources.finalsite.net/images/v1783007215/concordpsorg/uxqldpiobopl9pemg7b3/ConcordCarlisleStrategicPlan2023-2028.pdf" target="_blank" rel="noopener">District Strategic Plan 2023-2028</a>; ITC community survey, April to May 2026 (<a href="itc-survey.html">Concord's Data</a>). Puts into practice: Parent partnership; Student well-being, on our <a href="itc-at-school.html">2026-27 priorities</a>.</p>
+        </article>
+
+        <!-- 6. Bell to bell at CCHS -->
+        <article class="sample" id="bell" role="tabpanel">
+          <div class="s-top">
+            <h3><span class="tag alignment">Alignment</span><br>Phones at CCHS</h3>
+            <div class="s-tools"><button class="btn sm js-print">Print this one</button><button class="btn sm ghost js-copy">Copy text</button></div>
+          </div>
+          <div class="s-meta">
+            <span><strong>A good fit if</strong> you're a CCHS parent, student, or teacher, or your child is heading there soon. Students speaking for themselves are especially powerful here.</span>
+            <span class="mins">About 2&frac12; minutes</span>
+          </div>
+          <div class="speech">
+            <p>Good evening. My name is <span class="fill">your name</span>, I live at <span class="fill">your street address</span>, and <span class="fill">how you're connected: my child is a sophomore at CCHS, or, I'm a junior at CCHS</span>. Thank you for having us.</p>
+            <p>I'm here about phones during the school day. <span class="fill">What you've seen or heard. For example: my child tells me lunch is quiet because everyone is on their phone.</span></p>
+            <p>Most of the conversation about phones is about class time. I want to talk about the rest of the day: lunch, free blocks, and the minutes between classes. Those are the times when friendships are built and connection happens. It's where a student notices a friend having a hard day, joins a new table, or works out a disagreement face to face. It's where teenagers learn how to be members of a community. Those moments are crucial, and students shouldn't spend them buried in a phone.</p>
+            <p>Right now, the policy at CCHS depends largely on the classroom, and it doesn't reach in-between times at all. Secure storage from first bell to last protects all of it, and it means no teacher has to enforce a rule alone. In one recent working paper on U.S. schools that adopted locking pouches, teacher-reported phone use in class fell from 61 percent to 13 percent.</p>
+            <p>Revising the phone policy is already one of this committee's goals. I'd love for Concord to get there in a way that fits our schools, ahead of any state requirement.</p>
+            <p class="theask"><b>My ask tonight,</b> and it's one this committee can act on directly: adopt a phone policy with secure storage at all schools, including CCHS, from first bell to last, so lunch, free time, and passing time are protected too. And enforce it consistently in every building. Families can help with communication, logistics, and backing it up at home. Thank you.</p>
+          </div>
+          <p class="s-src">Source: Allcott et al. (2026), <a href="https://www.nber.org/papers/w35132" target="_blank" rel="noopener">NBER Working Paper 35132</a> (Working paper.) Puts into practice: Bell-to-bell policy, on our <a href="itc-at-school.html">2026-27 priorities</a>.</p>
+        </article>
+
+        <!-- 7. Your own topic -->
+        <article class="sample" id="own" role="tabpanel">
+          <div class="s-top">
+            <h3>Something else on your mind</h3>
+            <div class="s-tools"><button class="btn sm js-print">Print this one</button><button class="btn sm ghost js-copy">Copy text</button></div>
+          </div>
+          <div class="s-meta">
+            <span><strong>A good fit if</strong> what brought you here isn't on our list. That's welcome. Committee members remember the comments that are clearly someone's own.</span>
+            <span class="mins">Two to three minutes</span>
+          </div>
+          <p style="font-size:14px;margin-bottom:8px;">Other concerns families raised in our spring survey:</p>
+          <div class="other-topics">
+            <span>Screens as a reward or during free time</span>
+            <span>Homework on school computers</span>
+            <span>Needing a personal phone for QR codes and sign-ups</span>
+            <span>Clubs and teams using social media for required messages</span>
+            <span>YouTube on school devices</span>
+            <span>Holding a book or a pencil</span>
+          </div>
+          <ul class="prompts">
+            <li><b>Who you are</b>Your name, your street address, and how you're connected to our schools.</li>
+            <li><b>What brought you here tonight</b>One moment, conversation, or change you noticed. Be specific: a day of the week, a grade, something your child said.</li>
+            <li><b>Why it matters to you</b>What you worry about, or what you've seen work. A fact can help, but your experience is the point.</li>
+            <li><b>What you're hoping for</b>The change you'd like to see. If one of our <a href="#asks" style="border-bottom:1px solid var(--sage-dk);">shared asks</a> fits, say it in your own words. Committee members notice when they hear it from many people.</li>
+            <li><b>Thanks</b>Committee members are volunteers and public servants carrying a heavy load.</li>
+          </ul>
+          <div class="speech">
+            <p>Good evening. My name is <span class="fill">your name</span>, I live at <span class="fill">your street address</span>, and <span class="fill">how you're connected</span>. Thank you for your time.</p>
+            <p>I'm here because <span class="fill">what brought you tonight</span>.</p>
+            <p><span class="fill">Why it matters to you, in a few sentences.</span></p>
+            <p class="theask"><b>I'm asking</b> <span class="fill">the change you hope for, or one of the shared asks</span>. Thank you.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block coord">
+  <div class="wrap coord-grid">
+    <div>
+      <span class="eyebrow">Planning to speak?</span>
+      <h2>Tell us which topic you're leaning toward</h2>
+      <p>We coordinate so families show up together, and so speakers at the same meeting cover different ground. If you'd like to talk your comment through first, we're glad to.</p>
+      <a class="btn" href="mailto:emily@intentionaltechcoalition.org?subject=Speaking%20at%20public%20comment">Let us know</a>
+    </div>
+    <ul>
+      <li>Fill out a short form when you arrive. Arriving late is fine.</li>
+      <li>Two to three minutes goes quickly. One clear point lands better than five rushed ones.</li>
+      <li>Reading from a printed page works beautifully, in person or on Zoom.</li>
+      <li>Stay constructive. We're asking to work with the district, and our tone shows it.</li>
+      <li>You can also simply attend. A full room speaks, even when you don't.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a href="itc-homepage.html" class="wm">
+          <span class="the">The</span>
+          <span class="main">Intentional<br>Tech Coalition</span>
+          <span class="rule-row"><span>CONCORD</span></span>
+        </a>
+        <p>Led by a team of Concord parents, working in partnership with local families, educators, and schools on intentional, research-informed technology choices.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="itc-at-school.html">At School</a>
+        <a href="itc-at-home.html">At Home</a>
+        <a href="itc-take-action.html">Take Action</a>
+        <a href="itc-survey.html">Concord's Data</a>
+        <a href="itc-resources.html">Resources &amp; Events</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="itc-join.html">Join the coalition</a>
+        <a href="itc-volunteer-roles.html">Volunteer roles</a>
+        <a href="itc-take-action.html#speak">Speak at a meeting</a>
+        <a href="mailto:concordschoolcommittee@concordps.org">Email the school committee</a>
+        <a href="mailto:emily@intentionaltechcoalition.org">Contact us</a>
+      </div>
+    </div>
+    <div class="foot-mark">
+      <svg class="venn ondark" viewBox="0 0 100 100" aria-hidden="true"><circle class="c-fam" cx="33.5" cy="40.5" r="26" stroke-width="2.2"/><circle class="c-sch" cx="66.5" cy="40.5" r="26" stroke-width="2.2"/><circle class="c-com" cx="50" cy="69.1" r="26" stroke-width="2.2"/><text x="25.7" y="36" font-size="7.7">family</text><text x="74.3" y="36" font-size="7.7">school</text><text x="50" y="78.1" font-size="7.7">community</text></svg>
+    </div>
+    <div class="fineprint">© 2026 The Intentional Tech Coalition. A volunteer parent group in Concord, MA.</div>
+  </div>
+</footer>
+
+<script>
+// Next school committee meeting (same list as Take Action)
+(function(){
+  var meetings = [
+    { iso: "2026-10-21", time: "6:00 pm", loc: "CMS Library" },
+    { iso: "2026-11-04", time: "6:00 pm", loc: "Carlisle Town Hall" },
+    { iso: "2026-11-18", time: "6:00 pm", loc: "CMS Library" },
+    { iso: "2026-12-02", time: "6:00 pm", loc: "Ripley" },
+    { iso: "2026-12-16", time: "6:00 pm", loc: "CMS Library" }
+  ];
+  var today = new Date().toISOString().slice(0, 10);
+  var next = meetings.find(function(m){ return m.iso >= today; });
+  var box = document.getElementById('nextmtg');
+  if (!next) { box.style.display = 'none'; return; }
+  var d = new Date(next.iso + 'T12:00:00');
+  document.getElementById('nm-m').textContent = d.toLocaleDateString('en-US', { month: 'short' });
+  document.getElementById('nm-d').textContent = d.getDate();
+  document.getElementById('nm-line').textContent = 'Next meeting: ' + d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+  document.getElementById('nm-sub').textContent = next.time + ' \xb7 ' + next.loc + ' \xb7 in person or on Zoom';
+})();
+
+// Topic picker: one sample at a time; the web address (#no-ai, #bell...) opens a specific one
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.topic'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.sample'));
+  function show(id, scroll){
+    if (!document.getElementById(id)) id = tabs[0].dataset.t;
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', t.dataset.t === id ? 'true' : 'false'); });
+    panels.forEach(function(p){ p.hidden = p.id !== id; });
+    if (scroll) document.getElementById('samples').scrollIntoView({ behavior: 'smooth' });
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ show(t.dataset.t); history.replaceState(null, '', '#' + t.dataset.t); });
+  });
+  var h = location.hash.slice(1);
+  var fromHash = panels.some(function(p){ return p.id === h; });
+  show(fromHash ? h : tabs[0].dataset.t, fromHash);
+
+  document.querySelectorAll('.js-print').forEach(function(b){ b.addEventListener('click', function(){ window.print(); }); });
+  document.querySelectorAll('.js-copy').forEach(function(b){
+    b.addEventListener('click', function(){
+      var paras = b.closest('.sample').querySelectorAll('.speech p');
+      var text = Array.prototype.map.call(paras, function(p){
+        var c = p.cloneNode(true);
+        c.querySelectorAll('.fill').forEach(function(f){
+          f.textContent = '[' + (f.classList.contains('opt') ? 'Optional: ' : '') + f.textContent + ']';
+        });
+        return c.textContent.replace(/\s+/g, ' ').trim();
+      }).join('\n\n');
+      navigator.clipboard.writeText(text).then(function(){
+        var old = b.textContent; b.textContent = 'Copied'; setTimeout(function(){ b.textContent = old; }, 1600);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
