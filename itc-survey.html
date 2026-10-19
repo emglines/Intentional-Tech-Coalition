@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-survey, v9, October 19, 2026. Apricot action accent on the Join us button and primary actions. v8: June 18, 2026. Stable filename (itc-survey.html) kept; short label stays "Concord's Data" sitewide. Being heard section: replaced dot grids with segmented stripe bands (rule 21, one stacked bar per question, segment widths from exact counts); added missing rounding note to Q1 (sums to 99). -->
+<!-- itc-survey, v10, October 19, 2026. Rebuilt around the 2026 Emerson Youth Risk Behavior Survey compared with 2024: four student-survey headline numbers; jump bar; Concord families did their part (2024 vs 2026 cards); stress from home vs schoolwork against the Strategic Plan goal; phone rules at the Ellen Garrison Building at Concord Middle School vs Concord-Carlisle High School; what the survey doesn't measure (checklist) with the 2026-27 priorities and bell to bell; full table by grade and sources. Community survey trimmed to three numbers. Call to action band at the bottom. v9: October 19, 2026, apricot action accent. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -133,10 +133,150 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 :root{--accent:#E9935E;--accent-ink:#463347;--accent-dk:#925938;--accent-lt:#FBE9DF;}
 .btn.accent{background:var(--accent);color:var(--accent-ink);}
 .menu .btn.accent{color:var(--accent-ink);}
+
+/* 2024 vs 2026 comparison (draft, Oct 19, 2026) */
+.keyrow{display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;font-weight:600;color:var(--forest-2);margin:-16px 0 22px;}
+.keyrow span{display:inline-flex;align-items:center;gap:7px;}
+.sw{width:22px;height:9px;border-radius:99px;display:inline-block;}
+.sw.y22{background:var(--sage);}.sw.y24{background:var(--sage-dk);}.sw.y26{background:var(--forest);}
+.cmpgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.cmpcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px 24px 16px;}
+.cmpcard h3{font-size:20px;color:var(--forest);margin-bottom:4px;}
+.cmpcard .sub{font-size:12.5px;opacity:.8;margin-bottom:10px;line-height:1.45;}
+.m{padding:12px 0;border-top:1px solid var(--line);}
+.m .lab{font-size:13px;font-weight:600;line-height:1.35;}
+.m .gr{display:block;font-size:10px;color:var(--plum);font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-top:2px;}
+.yr{display:grid;grid-template-columns:34px 1fr 38px;align-items:center;gap:8px;margin-top:6px;font-size:11.5px;}
+.yr .y{color:var(--forest-2);font-weight:600;font-variant-numeric:tabular-nums;}
+.yr .t{height:9px;background:var(--cream);border-radius:99px;overflow:hidden;}
+.yr .f{height:100%;border-radius:99px;}
+.f.y22{background:var(--sage);}.f.y24{background:var(--sage-dk);}.f.y26{background:var(--forest);}
+.yr .v{text-align:right;font-weight:700;color:var(--forest);font-variant-numeric:tabular-nums;}
+.stressec{background:var(--cream);}
+.stress{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.spanel{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:26px 26px 20px;}
+.spanel h3{font-size:22px;color:var(--forest);margin-bottom:2px;}
+.spanel .verdict{font-size:13px;font-weight:700;color:var(--plum);margin-bottom:6px;}
+.g{position:relative;padding:14px 0 6px;border-top:1px solid var(--line);margin-top:10px;}
+.g .gl{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;font-weight:700;}
+.g .gl em{font-style:normal;font-weight:600;color:var(--forest-2);font-size:11.5px;}
+.g .goal{position:absolute;top:34px;bottom:4px;width:0;border-left:2px dashed var(--plum);left:calc(42px + (100% - 88px) * var(--goal));}
+.scale{font-size:11px;color:var(--forest-2);margin-top:12px;}
+.callout{margin-top:22px;background:var(--plum);color:var(--paper);border-radius:var(--r);padding:24px 28px;display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.callout .k{font-family:var(--serif);font-size:34px;line-height:1;}
+.callout p{font-size:13.5px;line-height:1.55;opacity:.92;margin-top:6px;}
+.sec-head.wide{max-width:none;}
+.sec-head.wide h2,.sec-head.wide p{max-width:620px;}
+.nw{white-space:nowrap;}
+.rule .rk{min-height:3.3em;}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.rule{background:var(--forest);color:var(--paper);border-radius:var(--r);padding:26px 28px;}
+.rule.hs{background:var(--plum);}
+.rule .rk{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.75;}
+.rule h3{font-size:24px;margin:8px 0 8px;line-height:1.15;}
+.rule p{font-size:13.5px;line-height:1.55;opacity:.9;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.fair{margin-top:18px;font-size:13.5px;line-height:1.6;max-width:720px;}
+.gap{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:32px 34px;display:grid;grid-template-columns:1.1fr 1fr;gap:34px;}
+.gap blockquote{font-family:var(--serif);font-size:19px;line-height:1.4;color:var(--forest);border-left:3px solid var(--sage-dk);padding-left:18px;}
+.gap blockquote mark{background:var(--accent-lt);color:var(--accent-dk);padding:0 3px;}
+.gap .cite{font-size:11.5px;color:var(--forest-2);margin-top:10px;padding-left:21px;}
+.gap p{font-size:13.5px;line-height:1.6;margin-bottom:12px;}
+.asks{list-style:none;margin:6px 0 18px;}
+.asks li{position:relative;padding:8px 0 8px 18px;font-size:13.5px;line-height:1.5;border-bottom:1px solid var(--line);}
+.asks li:last-child{border-bottom:none;}
+.asks li::before{content:"";position:absolute;left:0;top:16px;width:7px;height:7px;border-radius:50%;background:var(--accent);}
+.alltable{width:100%;border-collapse:collapse;margin-top:14px;font-size:12.5px;font-variant-numeric:tabular-nums;}
+.alltable th{text-align:right;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--forest-2);padding:6px 0 6px 10px;border-bottom:1px solid var(--line);font-weight:700;}
+.alltable th:first-child{text-align:left;padding-left:0;}
+.alltable th.grp{text-align:center;color:var(--plum);border-bottom:none;padding-bottom:0;}
+.alltable td{padding:7px 0 7px 10px;border-bottom:1px solid var(--line);text-align:right;}
+.alltable td:first-child{text-align:left;padding-left:0;}
+.alltable td.n{font-weight:700;color:var(--forest);}
+.alltable tr.sep td{padding-top:16px;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--plum);border-bottom:none;}
+.tablewrap{overflow-x:auto;}
+.chk{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:8px 28px;}
+.chk-h{display:flex;justify-content:space-between;gap:16px;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-2);padding:14px 0 12px;border-bottom:1px solid var(--line);}
+.chk-r{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);}
+.chk-r:last-child{border-bottom:none;}
+.chk-r b{display:block;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--forest);line-height:1.2;}
+.chk-r div span{display:block;font-size:13px;opacity:.8;margin-top:2px;}
+.st{flex:none;display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;border-radius:999px;padding:6px 14px 6px 6px;white-space:nowrap;}
+.st i{font-style:normal;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;}
+.st.no{color:var(--plum);background:rgba(70,51,71,.08);}
+.st.no i{background:var(--plum);color:var(--paper);}
+.st.ok{color:var(--forest);background:rgba(63,81,56,.1);}
+.st.ok i{background:var(--forest);color:var(--paper);}
+.prio3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.pc{display:block;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px 16px;}
+a.pc:hover{border-color:var(--forest);}
+.pc .pk{display:block;font-family:var(--serif);font-size:22px;color:var(--forest);line-height:1.1;}
+.pc .pq{display:block;font-size:12.5px;font-style:italic;color:var(--plum);margin:2px 0 10px;}
+.pc ul{list-style:none;}
+.pc li{position:relative;padding:6px 0 6px 15px;font-size:13px;line-height:1.45;border-top:1px solid var(--line);}
+.pc li::before{content:"";position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--sage-dk);}
+.askpanel{margin-top:36px;background:var(--accent-lt);border-top:5px solid var(--accent);border-radius:var(--r);padding:28px 28px 28px;}
+.ask-top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:18px;}
+.ask-top h3{font-size:clamp(26px,3.4vw,34px);color:var(--plum);}
+.ask-top span{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-dk);}
+.askpanel .pc{border-color:rgba(146,89,56,.25);}
+.b2b{margin-top:14px;background:var(--white);border:2px solid var(--accent);border-radius:var(--r);padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:24px;font-size:14px;line-height:1.5;}
+.b2b b{color:var(--accent-dk);}
+.b2b .btn{flex:none;}
+@media(max-width:760px){.askpanel{padding:22px 18px;}.prio3{grid-template-columns:1fr;}.b2b{flex-direction:column;align-items:flex-start;}}
+#unmeasured{padding-bottom:36px;}
+#alltable .fulllist{margin-top:0;}
+.qwrap{margin-top:34px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--sage-dk);border-radius:var(--r);padding:22px 28px 18px;}
+#unmeasured .qwrap blockquote{border-left:none;padding-left:0;font-size:19px;}
+#unmeasured .qwrap blockquote mark{background:var(--cream);color:var(--forest);padding:1px 4px;border-radius:3px;}
+#unmeasured .qwrap .cite{padding-left:0;}
+.chk-note{font-family:var(--serif);font-size:19px;color:var(--plum);margin-top:16px;}
+.unm-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;margin-top:36px;align-items:center;}
+#unmeasured blockquote{font-family:var(--serif);font-size:19px;line-height:1.4;color:var(--forest);border-left:3px solid var(--sage-dk);padding-left:18px;}
+#unmeasured blockquote mark{background:var(--accent-lt);color:var(--accent-dk);padding:0 3px;}
+#unmeasured .cite{font-size:11.5px;color:var(--forest-2);margin-top:10px;padding-left:21px;}
+.famstat{font-size:13.5px;line-height:1.5;}
+.famstat b{display:block;font-family:var(--serif);font-weight:400;font-size:40px;line-height:1;color:var(--plum);margin-bottom:4px;}
+.asks-h{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--forest-2);margin-bottom:8px;}
+.nasks{list-style:none;margin-bottom:20px;}
+.nasks li{display:flex;gap:14px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);font-size:13.5px;line-height:1.5;}
+.nasks li:last-child{border-bottom:none;}
+.nasks .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-family:var(--serif);font-size:14px;display:flex;align-items:center;justify-content:center;}
+@media(max-width:760px){.chk{padding:6px 18px;}.chk-h span:last-child{display:none;}.chk-r{flex-direction:column;align-items:flex-start;gap:10px;}.unm-grid{grid-template-columns:1fr;gap:28px;}}
+.srcnote{max-width:none;}
+.jump{position:sticky;top:0;z-index:50;background:rgba(244,241,236,.97);border-bottom:1px solid var(--line);}
+.jump .wrap{display:flex;align-items:center;gap:8px;padding-top:10px;padding-bottom:10px;overflow-x:auto;scrollbar-width:none;}
+.jump .wrap::-webkit-scrollbar{display:none;}
+.jump .jl{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--forest-2);white-space:nowrap;margin-right:4px;}
+.jump a{white-space:nowrap;font-size:12.5px;font-weight:600;color:var(--forest);border:1px solid var(--line);border-radius:999px;padding:6px 13px;background:var(--white);}
+.jump a:hover{border-color:var(--forest);}
+.jump a.go{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);}
+html{scroll-behavior:smooth;}
+section[id]{scroll-margin-top:56px;}
+.cta{background:var(--forest);color:var(--paper);padding:64px 0 68px;}
+.cta-head{max-width:720px;margin-bottom:30px;}
+.cta .eyebrow{color:var(--sage);}
+.cta .eyebrow::before{background:var(--sage);}
+.cta-head h2{font-size:clamp(26px,3.8vw,38px);color:var(--paper);margin:14px 0 12px;line-height:1.15;}
+.cta-head p{font-size:15px;opacity:.9;}
+.cta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.cta-card{display:flex;flex-direction:column;background:var(--white);color:var(--ink);border-radius:var(--r);padding:22px 22px 20px;border-top:4px solid var(--accent);}
+a.cta-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.18);}
+.cta-card .tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--plum);}
+.cta-card h3{font-size:19px;color:var(--forest);margin:8px 0 8px;line-height:1.2;}
+.cta-card p{font-size:13px;line-height:1.5;opacity:.85;margin-bottom:14px;}
+.cta-card .go,.cta-card .go-row{margin-top:auto;}
+.cta-card .go{display:inline-block;font-size:13px;font-weight:700;color:var(--accent-dk);border-bottom:2px solid var(--accent);padding-bottom:1px;align-self:flex-start;}
+.cta-card .go-row{display:flex;flex-wrap:wrap;gap:8px 16px;}
+.cta-card .go-row .go{margin-top:0;}
+.cta-foot{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px;}
+.btn.ghost-light{background:transparent;color:var(--paper);border:1.5px solid var(--sage);}
+@media(max-width:900px){.cta-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.cta-grid{grid-template-columns:1fr;}}
+@media(max-width:760px){.cmpgrid,.stress,.rules,.twocol,.gap,.callout{grid-template-columns:1fr;}.rule .rk{min-height:0;}.keyrow{margin-top:-8px;}}
 </style>
 </head>
 <body>
-
 
 <header>
   <div class="nav">
@@ -160,222 +300,260 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 
 <section class="pagehead">
   <div class="wrap">
-    <span class="eyebrow one">Concord's data</span>
+    <span class="eyebrow one">Concord's data &middot; Updated for 2026</span>
     <h1>What Concord's data show</h1>
-    <p class="lede">Two local sources tell us how technology is showing up for our young people: the district's own near-census student survey, taken every two years, and our community survey of Concord families from spring 2026. They point the same way, and this page shares both, with the numbers, how we gathered them, and what they do and don't tell us.</p>
+    <p class="lede">Every two years, the Emerson Youth Risk Behavior Survey reaches nearly every student in grades 6, 8, and 9 through 12, in Concord-Carlisle and other area districts. The 2026 results are in, and set beside 2024 they tell a clear story: Concord families are changing how technology works at home, and students' answers show it on almost every home measure. The school day has not moved the same way. Below are the survey's numbers side by side, and what you can do about the school day.</p>
     <div class="specline">
-      <div class="spec"><div class="k">46%</div><div class="v">of students say they spend too much time on their phones, climbing to 60% by twelfth grade</div><div class="src">District survey</div></div>
-      <div class="spec"><div class="k">81%</div><div class="v">of high schoolers keep a phone in the bedroom at night</div><div class="src">District survey</div></div>
-      <div class="spec"><div class="k">90%</div><div class="v">of Concord families flagged phones or screen time at school as a concern (64 of 71)</div><div class="src">Community survey</div></div>
-      <div class="spec"><div class="k">82%</div><div class="v">of families said a K-8 technology advisory committee would be extremely valuable (58 of 71)</div><div class="src">Community survey</div></div>
+      <div class="spec"><div class="k">19%</div><div class="v">of high schoolers report high stress from home, down from 36% in 2022</div><div class="src">Student survey</div></div>
+      <div class="spec"><div class="k">59%</div><div class="v">report high stress from schoolwork, barely changed from 64% in 2022</div><div class="src">Student survey</div></div>
+      <div class="spec"><div class="k">57%</div><div class="v">of sixth graders keep devices out of the bedroom at night, up from 43% in 2024</div><div class="src">Student survey</div></div>
+      <div class="spec"><div class="k">77%</div><div class="v">of high schoolers say phones are allowed outside class, at lunch and between classes</div><div class="src">Student survey</div></div>
     </div>
   </div>
 </section>
 
-<section class="howto">
+<nav class="jump" aria-label="Jump to a section">
   <div class="wrap">
-    <div class="row">
-      <div>
-        <h3>Two local sources</h3>
-        <p>This page draws on two Concord datasets: the district's Emerson Youth Risk Behavior Survey, a near-census of students taken every two years, and our own spring 2026 survey of local families.</p>
-      </div>
-      <div>
-        <h3>What each can bear</h3>
-        <p>The student survey is larger and more representative, so it carries the most weight here. Our community survey is a self-selected snapshot, smaller but close to the family experience. Every figure is labeled with its source.</p>
-      </div>
-      <div>
-        <h3>Associations, not causes</h3>
-        <p>Both are descriptive. We show counts alongside percentages and read these as patterns in our community, not proof of cause.</p>
-      </div>
-    </div>
+    <span class="jl">Jump to</span>
+    <a href="#home">Families did their part</a>
+    <a href="#stress">Stress: home vs. school</a>
+    <a href="#rules">Phone rules</a>
+    <a href="#unmeasured">What isn't measured</a>
+    <a href="#families">Family snapshot</a>
+    <a href="#act" class="go">Take action</a>
   </div>
-</section>
+</nav>
 
-<section class="block">
+
+<section class="block" id="home">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow one">The district's student survey</span>
-      <h2>What students report</h2>
-      <p>The largest local source is the district's own Emerson Youth Risk Behavior Survey, a near-census of Concord-Carlisle students taken every two years. On phones and social media, students' answers point the same way families do.</p>
+      <span class="eyebrow one">Two years later &middot; The student survey</span>
+      <h2>Concord families did their part</h2>
+      <p>In 2024, students said they were spending too much time on their phones, sleeping beside them, and running into trouble online. Families heard it. By 2026, students report closer watch at home, devices leaving the bedroom, and steep drops in online harms.</p>
     </div>
-    <div class="headlines">
-      <div class="headline">
-        <div class="num">46%</div>
-        <div class="count">District total · 1,236 responses</div>
-        <p>of students feel they spend too much time on their phones, with the same share saying so about social media. That feeling climbs with age, reaching 60% by twelfth grade.</p>
-      </div>
-      <div class="headline">
-        <div class="num">42%</div>
-        <div class="count">High school · 906 responses</div>
-        <p>of high schoolers say they lose focus in class at least occasionally because they are checking their phone, up from 15% in sixth grade.</p>
-      </div>
-      <div class="headline">
-        <div class="num">81%</div>
-        <div class="count">High school · 933 responses</div>
-        <p>of high schoolers keep a phone in the bedroom at night. Across all grades, 7% of students wake at least once a night to a device.</p>
-      </div>
-    </div>
-    <p class="qnote" style="margin-top:18px;max-width:680px;">More from the same survey: students report a median of 2.7 hours a weekday on devices for non-school activities and 2.2 hours on social media; 28% feel they must answer messages immediately, often or always; and parent monitoring of phone use falls from 70% in sixth grade to 31% in high school.</p>
-    <p class="srcnote">Source: the 2024 Emerson Youth Risk Behavior Survey, Concord-Carlisle Regional School District, conducted in spring 2024 by Market Street Research for Emerson Health and the district. 79% of the district's 1,677 enrolled students responded. Figures are for Concord-Carlisle students, with the group and response count shown beside each headline. Descriptive associations, not causal claims.</p>
+    <div class="keyrow"><span><i class="sw y24"></i>2024</span><span><i class="sw y26"></i>2026</span></div>
+    <div class="cmpgrid"><div class="cmpcard"><h3>Closer watch at home</h3><p class="sub">More parents are setting and checking limits, including in high school, where monitoring had always dropped off. Higher is better.</p><div class="m"><div class="lab">Parents monitor their phone use<span class="gr">8th grade</span></div><div class="yr" title="2024: 58%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:58.0%;display:block"></span></span><span class="v">58%</span></div><div class="yr" title="2026: 71%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:71.0%;display:block"></span></span><span class="v">71%</span></div></div><div class="m"><div class="lab">Parents monitor their phone use<span class="gr">High school</span></div><div class="yr" title="2024: 31%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:31.0%;display:block"></span></span><span class="v">31%</span></div><div class="yr" title="2026: 40%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:40.0%;display:block"></span></span><span class="v">40%</span></div></div><div class="m"><div class="lab">Parents monitor their social media<span class="gr">6th grade</span></div><div class="yr" title="2024: 52%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:52.0%;display:block"></span></span><span class="v">52%</span></div><div class="yr" title="2026: 64%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:64.0%;display:block"></span></span><span class="v">64%</span></div></div><div class="m"><div class="lab">Feel supported by family<span class="gr">High school</span></div><div class="yr" title="2024: 90%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:90.0%;display:block"></span></span><span class="v">90%</span></div><div class="yr" title="2026: 93%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:93.0%;display:block"></span></span><span class="v">93%</span></div></div></div><div class="cmpcard"><h3>Healthier nights</h3><p class="sub">Devices are leaving bedrooms, and fewer students are woken by them. Phones out of the bedroom: higher is better. The rest: lower is better.</p><div class="m"><div class="lab">No devices in the bedroom at night<span class="gr">6th grade</span></div><div class="yr" title="2024: 43%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:43.0%;display:block"></span></span><span class="v">43%</span></div><div class="yr" title="2026: 57%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:57.0%;display:block"></span></span><span class="v">57%</span></div></div><div class="m"><div class="lab">No devices in the bedroom at night<span class="gr">High school</span></div><div class="yr" title="2024: 13%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:13.0%;display:block"></span></span><span class="v">13%</span></div><div class="yr" title="2026: 19%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:19.0%;display:block"></span></span><span class="v">19%</span></div></div><div class="m"><div class="lab">Woken at least once a night by a device<span class="gr">High school</span></div><div class="yr" title="2024: 6%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:6.0%;display:block"></span></span><span class="v">6%</span></div><div class="yr" title="2026: 2%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:2.0%;display:block"></span></span><span class="v">2%</span></div></div><div class="m"><div class="lab">Sleep 7 hours or less on school nights<span class="gr">High school</span></div><div class="yr" title="2024: 77%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:77.0%;display:block"></span></span><span class="v">77%</span></div><div class="yr" title="2026: 70%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:70.0%;display:block"></span></span><span class="v">70%</span></div></div></div><div class="cmpcard"><h3>Fewer online harms</h3><p class="sub">Every measure of risky online experience fell, most of them steeply. Lower is better.</p><div class="m"><div class="lab">Unwanted contact from someone online<span class="gr">High school</span></div><div class="yr" title="2024: 14%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:14.0%;display:block"></span></span><span class="v">14%</span></div><div class="yr" title="2026: 6%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:6.0%;display:block"></span></span><span class="v">6%</span></div></div><div class="m"><div class="lab">Sent or received sexual images<span class="gr">High school</span></div><div class="yr" title="2024: 20%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:20.0%;display:block"></span></span><span class="v">20%</span></div><div class="yr" title="2026: 7%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:7.0%;display:block"></span></span><span class="v">7%</span></div></div><div class="m"><div class="lab">Saw pornography in the past month<span class="gr">High school</span></div><div class="yr" title="2024: 43%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:43.0%;display:block"></span></span><span class="v">43%</span></div><div class="yr" title="2026: 29%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:29.0%;display:block"></span></span><span class="v">29%</span></div></div><div class="m"><div class="lab">Feel they spend too much time on their phone<span class="gr">6th grade</span></div><div class="yr" title="2024: 30%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:30.0%;display:block"></span></span><span class="v">30%</span></div><div class="yr" title="2026: 14%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:14.0%;display:block"></span></span><span class="v">14%</span></div></div></div></div>
+    <p class="srcnote">Each card shows the grade where the change is clearest. Every grade, for every measure, is in the <a href="#alltable" style="text-decoration:underline;">full table</a> further down the page.</p>
   </div>
 </section>
 
-<section class="block">
+<section class="block stressec" id="stress">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow one">The Concord Tech Impressions Survey</span>
+      <span class="eyebrow one">The district's own goal</span>
+      <h2>Stress from home fell by half. Stress from school barely moved.</h2>
+      <p>The district's Strategic Plan sets a goal to cut student stress in half from 2022 levels, measured by this survey. The survey asks about two sources of stress separately. One of them is on track. The other is not.</p>
+    </div>
+    <div class="keyrow"><span><i class="sw y22"></i>2022</span><span><i class="sw y24"></i>2024</span><span><i class="sw y26"></i>2026</span><span><i style="display:inline-block;width:0;height:12px;border-left:2px dashed var(--plum);"></i>Goal: half of 2022</span></div>
+    <div class="stress">
+      <div class="spanel">
+        <h3>Stress from home</h3>
+        <p class="verdict">Goal met in 8th grade, nearly met in high school</p>
+        <div class="g" style="--goal:0.1929"><div class="gl"><span>8th grade</span><em>Goal: 14%</em></div><div class="yr" title="2022: 27%"><span class="y">2022</span><span class="t"><span class="f y22" style="width:38.6%;display:block"></span></span><span class="v">27%</span></div><div class="yr" title="2024: 17%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:24.3%;display:block"></span></span><span class="v">17%</span></div><div class="yr" title="2026: 13%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:18.6%;display:block"></span></span><span class="v">13%</span></div><span class="goal" aria-hidden="true"></span></div>
+        <div class="g" style="--goal:0.2571"><div class="gl"><span>High school</span><em>Goal: 18%</em></div><div class="yr" title="2022: 36%"><span class="y">2022</span><span class="t"><span class="f y22" style="width:51.4%;display:block"></span></span><span class="v">36%</span></div><div class="yr" title="2024: 24%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:34.3%;display:block"></span></span><span class="v">24%</span></div><div class="yr" title="2026: 19%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:27.1%;display:block"></span></span><span class="v">19%</span></div><span class="goal" aria-hidden="true"></span></div>
+        <p class="scale">Share reporting somewhat or very high stress from events or pressure at home.</p>
+      </div>
+      <div class="spanel">
+        <h3>Stress from schoolwork</h3>
+        <p class="verdict">Far from the goal, and up in 8th grade</p>
+        <div class="g" style="--goal:0.3071"><div class="gl"><span>8th grade</span><em>Goal: 22%</em></div><div class="yr" title="2022: 43%"><span class="y">2022</span><span class="t"><span class="f y22" style="width:61.4%;display:block"></span></span><span class="v">43%</span></div><div class="yr" title="2024: 48%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:68.6%;display:block"></span></span><span class="v">48%</span></div><div class="yr" title="2026: 45%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:64.3%;display:block"></span></span><span class="v">45%</span></div><span class="goal" aria-hidden="true"></span></div>
+        <div class="g" style="--goal:0.4571"><div class="gl"><span>High school</span><em>Goal: 32%</em></div><div class="yr" title="2022: 64%"><span class="y">2022</span><span class="t"><span class="f y22" style="width:91.4%;display:block"></span></span><span class="v">64%</span></div><div class="yr" title="2024: 61%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:87.1%;display:block"></span></span><span class="v">61%</span></div><div class="yr" title="2026: 59%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:84.3%;display:block"></span></span><span class="v">59%</span></div><span class="goal" aria-hidden="true"></span></div>
+        <p class="scale">Share reporting somewhat or very high stress from school or academic workload.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <div><div class="k">36% to 19%</div><p>High schoolers reporting high stress from home, 2022 to 2026. For eighth graders it fell from 27% to 13%, beating the district's goal.</p></div>
+      <div><div class="k">64% to 59%</div><p>High schoolers reporting high stress from schoolwork over the same years. Reaching the goal means getting to 32%. For eighth graders, school stress rose from 43% to 45%.</p></div>
+    </div>
+    <p class="srcnote">Both bars in each panel use the same scale, so lengths compare directly. Sixth graders' stress fell from both sources (home 16% to 14%, schoolwork 36% to 29%, 2022 to 2026); see the full table.</p>
+  </div>
+</section>
+
+<section class="block" id="rules">
+  <div class="wrap">
+    <div class="sec-head wide">
+      <span class="eyebrow one"><span>Ellen Garrison Building at Concord Middle School <span class="nw">and Concord-Carlisle High School</span></span></span>
+      <h2>Where phones stay off from bell to bell, the gains are biggest</h2>
+      <p>Concord's schools have two different phone rules, and between 2024 and 2026 the two groups' results moved very differently.</p>
+    </div>
+    <div class="rules">
+      <div class="rule">
+        <div class="rk">Ellen Garrison Building at Concord Middle School</div>
+        <h3>Off and in backpacks, bell to bell</h3>
+        <p>Phones are turned off and left in students' backpacks for the whole school day. Elementary schools follow the same rule.</p>
+      </div>
+      <div class="rule hs">
+        <div class="rk"><span class="nw">Concord-Carlisle</span> High School</div>
+        <h3>Put away during class only</h3>
+        <p>Phones only need to be put away during class. Lunch, passing time, and other time outside class are open.</p>
+      </div>
+    </div>
+    <div class="twocol">
+      <div class="cmpcard"><h3>Felt depressed for two weeks or more</h3><p class="sub">In the past year. Lower is better.</p>
+        <div class="m"><div class="lab">Cut in half<span class="gr">6th grade</span></div><div class="yr" title="2024: 21%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:21.0%;display:block"></span></span><span class="v">21%</span></div><div class="yr" title="2026: 10%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:10.0%;display:block"></span></span><span class="v">10%</span></div></div><div class="m"><div class="lab">Down<span class="gr">8th grade</span></div><div class="yr" title="2024: 11%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:11.0%;display:block"></span></span><span class="v">11%</span></div><div class="yr" title="2026: 8%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:8.0%;display:block"></span></span><span class="v">8%</span></div></div><div class="m"><div class="lab">No change<span class="gr">High school</span></div><div class="yr" title="2024: 14%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:14.0%;display:block"></span></span><span class="v">14%</span></div><div class="yr" title="2026: 14%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:14.0%;display:block"></span></span><span class="v">14%</span></div></div>
+      </div>
+      <div class="cmpcard"><h3>Feel they spend too much time on their phone</h3><p class="sub">Lower is better.</p>
+        <div class="m"><div class="lab">Cut in half<span class="gr">6th grade</span></div><div class="yr" title="2024: 30%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:30.0%;display:block"></span></span><span class="v">30%</span></div><div class="yr" title="2026: 14%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:14.0%;display:block"></span></span><span class="v">14%</span></div></div><div class="m"><div class="lab">Down<span class="gr">8th grade</span></div><div class="yr" title="2024: 33%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:33.0%;display:block"></span></span><span class="v">33%</span></div><div class="yr" title="2026: 26%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:26.0%;display:block"></span></span><span class="v">26%</span></div></div><div class="m"><div class="lab">Down slightly<span class="gr">High school</span></div><div class="yr" title="2024: 51%"><span class="y">2024</span><span class="t"><span class="f y24" style="width:51.0%;display:block"></span></span><span class="v">51%</span></div><div class="yr" title="2026: 46%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:46.0%;display:block"></span></span><span class="v">46%</span></div></div>
+      </div>
+    </div>
+    <p class="fair">Concord-Carlisle High School has bright spots too: fewer students say they lose focus in class because of their phones (42% to 29%), and more are getting more than seven hours of sleep. But on mood, high schoolers stand still. The same 14% felt depressed for two weeks or more in both years, while the rate among sixth graders was cut in half.</p>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0;" id="unmeasured">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow one">What the survey leaves out</span>
+      <h2>The half of the day the survey doesn't measure</h2>
+      <p>Screens show up all through a student's day. The survey asks about only one part of it: the part families manage.</p>
+    </div>
+
+    <div class="chk">
+      <div class="chk-h"><span>Where screens show up in a student's day</span><span>Does the survey ask how much?</span></div>
+      <div class="chk-r">
+        <div><b>In class</b><span>Classroom screens, school-issued laptops and tablets</span></div>
+        <span class="st no"><i aria-hidden="true">&#10005;</i>Not asked</span>
+      </div>
+      <div class="chk-r">
+        <div><b>Lunch and between classes</b><span>Phones at Concord-Carlisle High School, where the rule allows them</span></div>
+        <span class="st no"><i aria-hidden="true">&#10005;</i>Not asked</span>
+      </div>
+      <div class="chk-r">
+        <div><b>Homework</b><span>The survey asks how long homework takes, not how much of it is on a school computer</span></div>
+        <span class="st no"><i aria-hidden="true">&#10005;</i>Not asked</span>
+      </div>
+      <div class="chk-r yes">
+        <div><b>After school, on their own</b><span>Phones, TV, games, and social media for non-school activities</span></div>
+        <span class="st ok"><i aria-hidden="true">&#10003;</i>Asked every two years</span>
+      </div>
+    </div>
+    <p class="chk-note">Families answer for the last row, and it's improving. The school day is the next part to measure, and the superintendent has agreed to look into it this year.</p>
+
+    <div class="qwrap">
+        <blockquote>"How much time do you spend weekdays after school using computers, television, phones, game consoles, or other visual technology <mark>for non-school related activities</mark>?"</blockquote>
+        <p class="cite">The survey's only screen-time question, as asked in 2024 and 2026</p>
+    </div>
+
+    <div class="askpanel">
+    <div class="ask-top"><h3>What we're asking</h3><span>Our 2026-27 school priorities</span></div>
+    <div class="prio3">
+      <a class="pc" href="itc-at-school.html#safety">
+        <span class="pk">Safety</span>
+        <span class="pq">Is it safe for our children?</span>
+        <ul><li>A public inventory of every student-facing tool and the data it collects</li><li>Generative AI off by default until reviewed</li><li>School devices that reach approved sites only</li></ul>
+      </a>
+      <a class="pc" href="itc-at-school.html#efficacy">
+        <span class="pk">Efficacy</span>
+        <span class="pq">Does it help students learn?</span>
+        <ul><li>Evidence shared before any student-facing tool is adopted</li><li>Proof from independent research, not the company selling it</li><li>Fewer, better tools by June 2027</li></ul>
+      </a>
+      <a class="pc" href="itc-at-school.html#alignment">
+        <span class="pk">Alignment</span>
+        <span class="pq">Does it reflect our district's own goals?</span>
+        <ul><li>Real partnership with parents on the District Technology Committee</li><li>Technology decisions that support the goal to cut student stress in half</li><li>A parent app that shows screen time on school devices</li></ul>
+      </a>
+    </div>
+    <div class="b2b">
+      <div><b>And bell to bell at every school.</b> Bring Concord-Carlisle High School in line with the elementary schools and the Ellen Garrison Building at Concord Middle School: phones off and away from first bell to last, with secure storage.</div>
+      <a href="itc-at-school.html" class="btn accent">See our school priorities</a>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="alltable" style="padding-top:0;">
+  <div class="wrap">
+    <details class="fulllist">
+      <summary>See every 2024 and 2026 figure, by grade</summary>
+      <div class="tablewrap">
+      <table class="alltable">
+        <tr><th></th><th class="grp" colspan="2">6th grade</th><th class="grp" colspan="2">8th grade</th><th class="grp" colspan="2">High school</th></tr>
+        <tr><th>Measure</th><th>2024</th><th>2026</th><th>2024</th><th>2026</th><th>2024</th><th>2026</th></tr>
+        <tr class="sep"><td colspan="7">At home</td></tr>
+        <tr><td>Parents monitor their phone use</td><td>70%</td><td class="n">78%</td><td>58%</td><td class="n">71%</td><td>31%</td><td class="n">40%</td></tr>
+        <tr><td>Parents monitor their social media</td><td>52%</td><td class="n">64%</td><td>43%</td><td class="n">53%</td><td>19%</td><td class="n">25%</td></tr>
+        <tr><td>Have a social media account parents don't know about</td><td>15%</td><td class="n">2%</td><td>13%</td><td class="n">10%</td><td>19%</td><td class="n">13%</td></tr>
+        <tr><td>Feel supported by family</td><td>93%</td><td class="n">93%</td><td>90%</td><td class="n">95%</td><td>90%</td><td class="n">93%</td></tr>
+        <tr class="sep"><td colspan="7">Nights and sleep</td></tr>
+        <tr><td>No devices in the bedroom at night</td><td>43%</td><td class="n">57%</td><td>26%</td><td class="n">32%</td><td>13%</td><td class="n">19%</td></tr>
+        <tr><td>Keep a phone in the bedroom at night</td><td>38%</td><td class="n">28%</td><td>64%</td><td class="n">58%</td><td>81%</td><td class="n">75%</td></tr>
+        <tr><td>Woken at least once a night by a device</td><td>10%</td><td class="n">3%</td><td>5%</td><td class="n">2%</td><td>6%</td><td class="n">2%</td></tr>
+        <tr><td>Sleep 7 hours or less on school nights</td><td>40%</td><td class="n">37%</td><td>49%</td><td class="n">47%</td><td>77%</td><td class="n">70%</td></tr>
+        <tr class="sep"><td colspan="7">Screens and phones</td></tr>
+        <tr><td>6 or more hours of non-school screen time on weekdays</td><td>10%</td><td class="n">6%</td><td>16%</td><td class="n">10%</td><td>13%</td><td class="n">9%</td></tr>
+        <tr><td>Feel they spend too much time on their phone</td><td>30%</td><td class="n">14%</td><td>33%</td><td class="n">26%</td><td>51%</td><td class="n">46%</td></tr>
+        <tr><td>Often or always feel they must answer messages right away</td><td>33%</td><td class="n">24%</td><td>25%</td><td class="n">24%</td><td>27%</td><td class="n">22%</td></tr>
+        <tr><td>Lose focus in class because of their phone, at least occasionally</td><td>15%</td><td class="n">6%</td><td>30%</td><td class="n">20%</td><td>42%</td><td class="n">29%</td></tr>
+        <tr class="sep"><td colspan="7">Online</td></tr>
+        <tr><td>Unwanted contact from someone online</td><td>17%</td><td class="n">4%</td><td>9%</td><td class="n">7%</td><td>14%</td><td class="n">6%</td></tr>
+        <tr><td>Sent or received sexual images</td><td>11%</td><td class="n">1%</td><td>13%</td><td class="n">3%</td><td>20%</td><td class="n">7%</td></tr>
+        <tr><td>Saw pornography in the past month</td><td>30%</td><td class="n">8%</td><td>38%</td><td class="n">19%</td><td>43%</td><td class="n">29%</td></tr>
+        <tr class="sep"><td colspan="7">Well-being</td></tr>
+        <tr><td>Felt depressed for two weeks or more</td><td>21%</td><td class="n">10%</td><td>11%</td><td class="n">8%</td><td>14%</td><td class="n">14%</td></tr>
+        <tr><td>Hard time making it through stressful events</td><td>33%</td><td class="n">25%</td><td>32%</td><td class="n">23%</td><td>28%</td><td class="n">21%</td></tr>
+        <tr><td>High stress from home</td><td>20%</td><td class="n">14%</td><td>17%</td><td class="n">13%</td><td>24%</td><td class="n">19%</td></tr>
+        <tr><td>High stress from schoolwork</td><td>38%</td><td class="n">29%</td><td>48%</td><td class="n">45%</td><td>61%</td><td class="n">59%</td></tr>
+      </table>
+      </div>
+    </details>
+
+    <p class="srcnote">Sources: the 2026 Emerson Youth Risk Behavior Survey, Concord-Carlisle Regional School District, conducted in March 2026 by Market Street Research for Emerson Health and the district (69% of the district's 1,588 enrolled students responded), and the 2024 Emerson Youth Risk Behavior Survey, conducted in spring 2024 (79% of 1,677 enrolled students responded). Every comparison uses the same questions, asked of the same grades, in the same schools; where the district's goal is measured from 2022, we show 2022 too. Figures are for Concord-Carlisle students as published in the 2026 report. One 2026 chart, weekday hours on social media, appears to repeat the numbers from another chart, so we have left it out until it is confirmed.</p>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0;" id="families">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow one">A snapshot from Concord families</span>
       <h2>What families told us</h2>
-      <p>The Concord Tech Impressions Survey asked Concord families how technology shows up in our schools and how heard they feel. Three findings stood out.</p>
+      <p>In spring 2026, 71 Concord public-school families answered our community survey. It's a self-selected snapshot, not a scientific poll, but it points the same way as the student survey.</p>
     </div>
     <div class="headlines">
-      <div class="headline">
-        <div class="num">90%</div>
-        <div class="count">64 of 71 respondents</div>
-        <p>flagged cell phones or screen time during the school day as a concern, the two most-cited worries in the survey.</p>
-      </div>
-      <div class="headline">
-        <div class="num">77%</div>
-        <div class="count">55 of 71 respondents</div>
-        <p>do not have a clear understanding of how the personal device policy is enforced. 16 respondents, 23%, say they do.</p>
-      </div>
-      <div class="headline">
-        <div class="num">82%</div>
-        <div class="count">58 of 71 respondents</div>
-        <p>say a K-8 Technology Advisory Committee would be "extremely valuable," the clearest point of consensus in the survey.</p>
-      </div>
+      <div class="headline"><div class="num">90%</div><div class="count">64 of 71 families</div><p>flagged phones or screen time during the school day as a concern.</p></div>
+      <div class="headline"><div class="num">68%</div><div class="count">48 of 71 families</div><p>say the district communicates "not well" about technology in schools.</p></div>
+      <div class="headline"><div class="num">82%</div><div class="count">58 of 71 families</div><p>say a K-8 Technology Advisory Committee would be "extremely valuable."</p></div>
     </div>
+    <p class="srcnote">The Concord Tech Impressions Survey, April to May 2026. Still open: <a href="https://docs.google.com/forms/d/e/1FAIpQLScuLdkK1xImdPHkDFpXFV9dgIXdIIb5U_NCSxbSoWTDp64h6A/viewform" target="_blank" style="text-decoration:underline;">add your voice</a>.</p>
   </div>
 </section>
 
-<section class="block" style="padding-top:0;">
+<section class="cta" id="act">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow one">Concerns</span>
-      <h2>What families are concerned about</h2>
-      <p>Respondents could select as many concerns as applied. Shares are of the 71 Concord public-school respondents.</p>
+    <div class="cta-head">
+      <span class="eyebrow one">Your turn</span>
+      <h2>Families are doing more to keep kids safe at home. Here's how to advocate for your child to be safer at school.</h2>
+      <p>The numbers above show what happens when families make intentional choices. The school day deserves the same care, and you don't need to wait for the district to start. Pick one.</p>
     </div>
-    <div class="panel">
-      <div class="bar"><div class="top"><b>Excessive screen time during school hours</b><span class="pct">75% <span>(53)</span></span></div><div class="track"><div class="fill hi" style="width:75%"></div></div></div>
-      <div class="bar"><div class="top"><b>Cell phone use during the school day</b><span class="pct">72% <span>(51)</span></span></div><div class="track"><div class="fill hi" style="width:72%"></div></div></div>
-      <div class="bar"><div class="top"><b>Online safety and exposure to inappropriate content</b><span class="pct">70% <span>(50)</span></span></div><div class="track"><div class="fill hi" style="width:70%"></div></div></div>
-      <div class="bar"><div class="top"><b>Screen time used as free time or as a reward</b><span class="pct">65% <span>(46)</span></span></div><div class="track"><div class="fill hi" style="width:65%"></div></div></div>
-      <div class="bar"><div class="top"><b>Time spent doing homework on school computers</b><span class="pct">54% <span>(38)</span></span></div><div class="track"><div class="fill md" style="width:54%"></div></div></div>
-      <div class="bar"><div class="top"><b>AI tools for student use</b><span class="pct">46% <span>(33)</span></span></div><div class="track"><div class="fill md" style="width:46%"></div></div></div>
-      <div class="bar"><div class="top"><b>Data privacy and student information</b><span class="pct">45% <span>(32)</span></span></div><div class="track"><div class="fill md" style="width:45%"></div></div></div>
-      <div class="bar" style="margin-bottom:0;"><div class="top"><b>AI tools used by educators</b><span class="pct">39% <span>(28)</span></span></div><div class="track"><div class="fill lo" style="width:39%"></div></div></div>
-      <details class="fulllist">
-        <summary>See every concern from the survey</summary>
-        <table>
-          <tr><td>Excessive screen time during school hours</td><td>53 · 75%</td></tr>
-          <tr><td>Student cell phone access or use during the school day</td><td>51 · 72%</td></tr>
-          <tr><td>Online safety and exposure to inappropriate content</td><td>50 · 70%</td></tr>
-          <tr><td>Use of screen time in schools during free time or as a reward</td><td>46 · 65%</td></tr>
-          <tr><td>Amount of time spent doing homework on school-issued computers</td><td>38 · 54%</td></tr>
-          <tr><td>Implementation of AI tools for student use (e.g., generative AI for assignments or tutoring support)</td><td>33 · 46%</td></tr>
-          <tr><td>Data privacy and protection of student information</td><td>32 · 45%</td></tr>
-          <tr><td>Reliance on personal smartphones for school activities (e.g., QR codes for signups or contests)</td><td>31 · 44%</td></tr>
-          <tr><td>Use of Artificial Intelligence (AI) tools by educators (e.g., for grading, lesson planning, or student evaluation)</td><td>28 · 39%</td></tr>
-          <tr><td>Use of social media by school clubs, teams, or programs for required communications</td><td>26 · 37%</td></tr>
-          <tr><td>Limited digital literacy or responsible technology use in education</td><td>19 · 27%</td></tr>
-          <tr><td>I am not concerned about school-based technology use</td><td>1 · 1%</td></tr>
-        </table>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section class="block heardsec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow one">Being heard</span>
-      <h2>How heard and informed do families feel?</h2>
-      <p>Each bar represents all 71 respondents, divided by how they answered. These three questions are where the gap between families and the district shows most clearly.</p>
-    </div>
-
-    <div class="qcard">
-      <div>
-        <h3>How confident are you that family input is considered in technology decisions?</h3>
-        <ul class="legend">
-          <li><span class="swatch" style="background:var(--plum)"></span>Not confident<span class="n">40 · 56%</span></li>
-          <li><span class="swatch" style="background:var(--sage-dk)"></span>Somewhat confident<span class="n">28 · 39%</span></li>
-          <li><span class="swatch" style="background:var(--forest)"></span>Very confident<span class="n">1 · 1%</span></li>
-          <li><span class="swatch" style="background:rgba(63,81,56,.12);border:1px solid var(--forest-2)"></span>Other or unsure<span class="n">2 · 3%</span></li>
-        </ul>
-        <p class="qnote" style="margin-top:10px;">Rounded percentages here sum to 99; the counts are exact.</p>
+    <div class="cta-grid">
+      <a class="cta-card" href="itc-internet-consent-guide.pdf" target="_blank">
+        <span class="tag">Grades K-8</span>
+        <h3>Set guardrails on your child's school device</h3>
+        <p>Our step-by-step guide walks through the internet consent form in Aspen, with email templates for asking for the protections you want.</p>
+        <span class="go">Read the guide</span>
+      </a>
+      <div class="cta-card">
+        <span class="tag">Grades K-8</span>
+        <h3>Ask your child's teacher or principal</h3>
+        <p>Short, specific asks for your child's classroom, each with the research behind it and a sample message you can send as is.</p>
+        <span class="go-row"><a class="go" href="itc-elementary-asks.pdf" target="_blank">Elementary asks</a><a class="go" href="itc-middle-asks.pdf" target="_blank">Middle school asks</a></span>
       </div>
-      <div class="band" role="img" aria-label="Stacked bar of 71 respondents: 40 not confident, 28 somewhat confident, 1 very confident, 2 other or unsure"><span class="seg s-neg" style="flex:40">56%</span><span class="seg s-mid" style="flex:28">39%</span><span class="seg s-pos" style="flex:1"></span><span class="seg s-other" style="flex:2"></span></div>
+      <a class="cta-card" href="itc-ai-request.html">
+        <span class="tag">Middle school</span>
+        <h3>Sign the AI request</h3>
+        <p>Ask the district to pause student-facing generative AI on all school-issued devices for middle schoolers.</p>
+        <span class="go">Sign the request</span>
+      </a>
+      <a class="cta-card" href="itc-public-comment.html">
+        <span class="tag">All grades</span>
+        <h3>Bring these numbers to the School Committee</h3>
+        <p>Speak for two to three minutes during public comment. Our sample comments and first-time speaker tips make it easy to start.</p>
+        <span class="go">See sample comments</span>
+      </a>
     </div>
-
-    <div class="qcard">
-      <div>
-        <h3>How well does the district communicate about technology use in schools?</h3>
-        <ul class="legend">
-          <li><span class="swatch" style="background:var(--plum)"></span>Not well<span class="n">48 · 68%</span></li>
-          <li><span class="swatch" style="background:var(--sage-dk)"></span>Somewhat well<span class="n">18 · 25%</span></li>
-          <li><span class="swatch" style="background:var(--forest)"></span>Very well<span class="n">2 · 3%</span></li>
-          <li><span class="swatch" style="background:rgba(63,81,56,.12);border:1px solid var(--forest-2)"></span>Other or unsure<span class="n">3 · 4%</span></li>
-        </ul>
-      </div>
-      <div class="band" role="img" aria-label="Stacked bar of 71 respondents: 48 not well, 18 somewhat well, 2 very well, 3 other or unsure"><span class="seg s-neg" style="flex:48">68%</span><span class="seg s-mid" style="flex:18">25%</span><span class="seg s-pos" style="flex:2"></span><span class="seg s-other" style="flex:3"></span></div>
-    </div>
-
-    <div class="qcard">
-      <div>
-        <h3>How familiar are you with the personal device policy?</h3>
-        <ul class="legend">
-          <li><span class="swatch" style="background:var(--plum)"></span>Not familiar<span class="n">14 · 20%</span></li>
-          <li><span class="swatch" style="background:var(--sage-dk)"></span>A little familiar<span class="n">31 · 44%</span></li>
-          <li><span class="swatch" style="background:var(--forest)"></span>Very familiar<span class="n">26 · 37%</span></li>
-        </ul>
-        <p class="qnote" style="margin-top:10px;">Rounded percentages here sum to 101; the counts are exact.</p>
-      </div>
-      <div class="band" role="img" aria-label="Stacked bar of 71 respondents: 14 not familiar, 31 a little familiar, 26 very familiar"><span class="seg s-neg" style="flex:14">20%</span><span class="seg s-mid" style="flex:31">44%</span><span class="seg s-pos" style="flex:26">37%</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow one">The clearest consensus</span>
-      <h2>Families want a seat at the table</h2>
-    </div>
-    <div class="tac">
-      <div class="big">82%<span>58 of 71 respondents</span></div>
-      <div>
-        <h3>A Technology Advisory Committee rated "extremely valuable"</h3>
-        <p>The survey asked about a K-8 Technology Advisory Committee that would bring families, educators, and administrators together on technology decisions. No other question drew agreement this strong. It's the single clearest signal in the survey, and it points toward partnership, not opposition.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block" style="padding-top:0;">
-  <div class="wrap">
-    <div class="voices">
-      <div class="sec-head" style="margin-bottom:22px;">
-        <span class="eyebrow one">In their own words</span>
-        <h2>What families added</h2>
-        <p>Beyond the checkboxes, families wrote in concerns of their own. The themes below recur across those write-ins.</p>
-      </div>
-      <ul class="theme-list">
-        <li>Video games on school computers during school hours and homework time</li>
-        <li>Fewer chances to hold a book or write with a pencil</li>
-        <li>How Smartpass is used at CMS</li>
-        <li>Technology use in elementary library classes</li>
-      </ul>
-      <div class="placeholder">Selected parent voices, hand-picked and shared with permission, will appear here. We never publish write-in responses automatically.</div>
-    </div>
-  </div>
-</section>
-
-<section class="endcta">
-  <div class="wrap">
-    <h2>Add your voice to the picture</h2>
-    <p>The Concord Tech Impressions Survey stays open, and every response sharpens the family side of the picture. Take it, share it with a neighbor, or join the coalition to hear what comes next.</p>
-    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScuLdkK1xImdPHkDFpXFV9dgIXdIIb5U_NCSxbSoWTDp64h6A/viewform" class="btn accent" target="_blank">Take the survey</a>
-      <a href="mailto:?subject=A%20community%20survey%20from%20Concord%20parents&body=Hi%21%20A%20group%20of%20Concord%20parents%20is%20gathering%20a%20community%20snapshot%20of%20how%20families%20experience%20technology%20at%20school%20and%20at%20home.%20I%20thought%20you%20might%20want%20to%20add%20your%20voice%3A%20https%3A//docs.google.com/forms/d/e/1FAIpQLScuLdkK1xImdPHkDFpXFV9dgIXdIIb5U_NCSxbSoWTDp64h6A/viewform" class="btn ghost">Share the survey</a>
+    <div class="cta-foot">
+      <a href="itc-take-action.html" class="btn light">See every way to help</a>
+      <a href="itc-join.html" class="btn ghost-light">Join the coalition</a>
     </div>
   </div>
 </section>
