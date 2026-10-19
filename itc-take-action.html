@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-take-action, v12, October 19, 2026. Upcoming event line now points to the Nov 17 Horvath event. v11: October 13, 2026. Removed Safety and CMS tags from From home items. v10: October 13, 2026. Aligned to 2026-27 priorities: "Write to school leaders" leads From home and links to the school-level one-pagers (fixes dead #write link); AI request moved to third, Urgent tag replaced by Safety tags; lede links priorities; public comment tip links the 1-pager. v9: October 1, 2026. Stable filename: version tracked here, not in the filename. Reorganized from the time-based "Ways to help" rail (Five minutes / Half an hour / An evening / Ongoing) into three audience buckets: From home, In the community, Volunteer with us. The featured three-card strip is gone; the AI request and CMS communication pledge now sit as weighted items inside From home, carrying small Urgent and CMS tags instead of full cards. Shape the Year Survey removed from this page and from the footer. Public comment keeps its #speak anchor and the auto-updating #sc-next-date-line. Footer blurb de-personalized and Volunteer roles added to Connect. -->
+<!-- itc-take-action, v13, October 19, 2026. Apricot action accent on the Join us button and primary actions. v12: October 19, 2026. Upcoming event line now points to the Nov 17 Horvath event. v11: October 13, 2026. Removed Safety and CMS tags from From home items. v10: October 13, 2026. Aligned to 2026-27 priorities: "Write to school leaders" leads From home and links to the school-level one-pagers (fixes dead #write link); AI request moved to third, Urgent tag replaced by Safety tags; lede links priorities; public comment tip links the 1-pager. v9: October 1, 2026. Stable filename: version tracked here, not in the filename. Reorganized from the time-based "Ways to help" rail (Five minutes / Half an hour / An evening / Ongoing) into three audience buckets: From home, In the community, Volunteer with us. The featured three-card strip is gone; the AI request and CMS communication pledge now sit as weighted items inside From home, carrying small Urgent and CMS tags instead of full cards. Shape the Year Survey removed from this page and from the footer. Public comment keeps its #speak anchor and the auto-updating #sc-next-date-line. Footer blurb de-personalized and Volunteer roles added to Connect. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -50,8 +50,8 @@ header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
 .ways-head h3{font-size:24px;color:var(--plum);}
 .way{padding:16px 0;border-bottom:1px solid var(--line);}
 .way:last-child{border-bottom:none;padding-bottom:4px;}
-.way a.t{display:inline;font-family:var(--serif);font-size:16.5px;color:var(--forest);line-height:1.22;border-bottom:1.5px solid var(--sage-dk);}
-.way a.t:hover{border-bottom-color:var(--forest);}
+.way a.t{display:inline;font-family:var(--serif);font-size:16.5px;color:var(--forest);line-height:1.22;border-bottom:2px solid var(--accent);}
+.way a.t:hover{border-bottom-color:var(--accent-dk);}
 .way p{font-size:12.5px;color:var(--forest-2);line-height:1.55;margin-top:6px;}
 .way .date{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--plum);margin-top:7px;}
 .way .sub{display:inline-block;font-size:11.5px;font-weight:600;color:var(--forest-2);margin-top:6px;}
@@ -91,6 +91,10 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 @media(max-width:560px){.foot-mark .venn{width:124px;height:124px;}}
 .nav-toggle{display:none;}.hamburger{display:none;}
 @media(max-width:760px){header{position:relative;}.hamburger{display:flex;align-items:center;font-size:22px;line-height:1;cursor:pointer;color:var(--forest);padding:4px 8px;user-select:none;}.menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(192,202,191,.97);flex-direction:column;padding:14px 24px 20px;gap:0;border-bottom:1px solid var(--line);z-index:100;}.menu a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}.menu .btn{display:block;text-align:center;margin-top:14px;border-bottom:none;padding:11px 22px;}.nav-toggle:checked~.menu{display:flex;}}
+/* Apricot accent, used only for actions (Oct 19, 2026) */
+:root{--accent:#E9935E;--accent-ink:#463347;--accent-dk:#925938;--accent-lt:#FBE9DF;}
+.btn.accent{background:var(--accent);color:var(--accent-ink);}
+.menu .btn.accent{color:var(--accent-ink);}
 </style>
 </head>
 <body>
@@ -111,7 +115,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       <a href="itc-take-action.html" aria-current="page">Take Action</a>
       <a href="itc-survey.html">Concord's Data</a>
       <a href="itc-resources.html">Resources &amp; Events</a>
-      <a href="itc-join.html" class="btn">Join us</a>
+      <a href="itc-join.html" class="btn accent">Join us</a>
     </nav>
   </div>
 </header>

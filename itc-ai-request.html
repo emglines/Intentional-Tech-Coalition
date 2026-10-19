@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-ai-request.html, v1, August 2026 -->
+<!-- itc-ai-request.html, v2, October 19, 2026. Apricot action accent on the Join us button and primary actions. v1: August 2026 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -152,6 +152,10 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
   .nav-toggle:checked~.menu{display:flex;}
   footer .grid{grid-template-columns:1fr;}
 }
+/* Apricot accent, used only for actions (Oct 19, 2026) */
+:root{--accent:#E9935E;--accent-ink:#463347;--accent-dk:#925938;--accent-lt:#FBE9DF;}
+.btn.accent{background:var(--accent);color:var(--accent-ink);}
+.menu .btn.accent{color:var(--accent-ink);}
 </style>
 </head>
 <body>
@@ -171,7 +175,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       <a href="itc-take-action.html" aria-current="page">Take Action</a>
       <a href="itc-survey.html">Concord's Data</a>
       <a href="itc-resources.html">Resources &amp; Events</a>
-      <a href="itc-join.html" class="btn">Join us</a>
+      <a href="itc-join.html" class="btn accent">Join us</a>
     </nav>
   </div>
 </header>
@@ -269,7 +273,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
             </div>
             <div id="sign-status" class="sign-status"></div>
             <div class="sign-btn-row">
-              <button type="submit" class="btn" id="sign-btn">Add my name</button>
+              <button type="submit" class="btn accent" id="sign-btn">Add my name</button>
             </div>
           </form>
         </div>

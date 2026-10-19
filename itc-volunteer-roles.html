@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-volunteer-roles, v3, October 13, 2026. Easier to say yes: "Pitch in once" section of one-time asks above the roles, lede adds June 2027 end point, role sharing, and draft review; Public Comment reworded; Short-term filter removed; Research first step named; "Pitch in once" added to the form. v2: October 1, 2026. Stable filename: version tracked here, not in the filename. Built from the approved volunteer-roles.html handoff, merged into site layout: shared header/nav/footer, Fraunces + Hanken Grotesk in place of Georgia + Work Sans, site brand tokens in place of the handoff's own, dark-mode rules dropped (site is light only). All new classes carry a vr- prefix so generic names cannot collide if styles are ever consolidated. House style for this page: no em dashes or en dashes; ranges written as words. v2: commitment pills removed (they over-weighted time and risked deterring volunteers); warmth now comes from a cream section band behind white tiles plus a uniform sage icon chip per role, where the glyph labels that one role and the color is identical across all tiles, so no color implies a category. Social Media role added. -->
+<!-- itc-volunteer-roles, v4, October 19, 2026. Apricot action accent on the Join us button and primary actions. v3: October 13, 2026. Easier to say yes: "Pitch in once" section of one-time asks above the roles, lede adds June 2027 end point, role sharing, and draft review; Public Comment reworded; Short-term filter removed; Research first step named; "Pitch in once" added to the form. v2: October 1, 2026. Stable filename: version tracked here, not in the filename. Built from the approved volunteer-roles.html handoff, merged into site layout: shared header/nav/footer, Fraunces + Hanken Grotesk in place of Georgia + Work Sans, site brand tokens in place of the handoff's own, dark-mode rules dropped (site is light only). All new classes carry a vr- prefix so generic names cannot collide if styles are ever consolidated. House style for this page: no em dashes or en dashes; ranges written as words. v2: commitment pills removed (they over-weighted time and risked deterring volunteers); warmth now comes from a cream section band behind white tiles plus a uniform sage icon chip per role, where the glyph labels that one role and the color is identical across all tiles, so no color implies a category. Social Media role added. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -143,6 +143,10 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 @media(max-width:560px){.foot-mark .venn{width:124px;height:124px;}}
 .nav-toggle{display:none;}.hamburger{display:none;}
 @media(max-width:760px){header{position:relative;}.hamburger{display:flex;align-items:center;font-size:22px;line-height:1;cursor:pointer;color:var(--forest);padding:4px 8px;user-select:none;}.menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(192,202,191,.97);flex-direction:column;padding:14px 24px 20px;gap:0;border-bottom:1px solid var(--line);z-index:100;}.menu a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}.menu .btn{display:block;text-align:center;margin-top:14px;border-bottom:none;padding:11px 22px;}.nav-toggle:checked~.menu{display:flex;}}
+/* Apricot accent, used only for actions (Oct 19, 2026) */
+:root{--accent:#E9935E;--accent-ink:#463347;--accent-dk:#925938;--accent-lt:#FBE9DF;}
+.btn.accent{background:var(--accent);color:var(--accent-ink);}
+.menu .btn.accent{color:var(--accent-ink);}
 </style>
 </head>
 <body>
@@ -163,7 +167,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       <a href="itc-take-action.html">Take Action</a>
       <a href="itc-survey.html">Concord's Data</a>
       <a href="itc-resources.html">Resources &amp; Events</a>
-      <a href="itc-join.html" class="btn">Join us</a>
+      <a href="itc-join.html" class="btn accent">Join us</a>
     </nav>
   </div>
 </header>
@@ -349,7 +353,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
         </div>
 
         <div class="vrf-submit">
-          <button type="submit" class="btn" id="vrf-btn">Send this in</button>
+          <button type="submit" class="btn accent" id="vrf-btn">Send this in</button>
           <span class="vrf-note">No commitment. We'll reach out to talk first.</span>
         </div>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-at-home, v9, October 19, 2026. Next event card now features the Nov 17 Horvath event. v8: October 13, 2026. First two gathering cards featured the Oct 15 event and a "more gatherings" card. v7: June 17, 2026. Stable filename: version tracked here, not in the filename. -->
+<!-- itc-at-home, v10, October 19, 2026. Apricot action accent on the Join us button and primary actions. v9: October 19, 2026. Next event card now features the Nov 17 Horvath event. v8: October 13, 2026. First two gathering cards featured the Oct 15 event and a "more gatherings" card. v7: June 17, 2026. Stable filename: version tracked here, not in the filename. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -92,6 +92,10 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 @media(max-width:560px){.foot-mark .venn{width:124px;height:124px;}}
 .nav-toggle{display:none;}.hamburger{display:none;}
 @media(max-width:760px){header{position:relative;}.hamburger{display:flex;align-items:center;font-size:22px;line-height:1;cursor:pointer;color:var(--forest);padding:4px 8px;user-select:none;}.menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(192,202,191,.97);flex-direction:column;padding:14px 24px 20px;gap:0;border-bottom:1px solid var(--line);z-index:100;}.menu a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}.menu .btn{display:block;text-align:center;margin-top:14px;border-bottom:none;padding:11px 22px;}.nav-toggle:checked~.menu{display:flex;}}
+/* Apricot accent, used only for actions (Oct 19, 2026) */
+:root{--accent:#E9935E;--accent-ink:#463347;--accent-dk:#925938;--accent-lt:#FBE9DF;}
+.btn.accent{background:var(--accent);color:var(--accent-ink);}
+.menu .btn.accent{color:var(--accent-ink);}
 </style>
 </head>
 <body>
@@ -112,7 +116,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       <a href="itc-take-action.html">Take Action</a>
       <a href="itc-survey.html">Concord's Data</a>
       <a href="itc-resources.html">Resources &amp; Events</a>
-      <a href="itc-join.html" class="btn">Join us</a>
+      <a href="itc-join.html" class="btn accent">Join us</a>
     </nav>
   </div>
 </header>
@@ -210,7 +214,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
         <p>Join the coalition to hear about gatherings and workshops, or just come to the next one and see if it's for you. Every family is welcome, wherever you are on this.</p>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <a href="itc-join.html" class="btn" style="background:var(--cream);color:var(--plum);">Join the coalition</a>
+        <a href="itc-join.html" class="btn accent">Join the coalition</a>
         <a href="itc-take-action.html" class="btn outline">See upcoming events</a>
       </div>
     </div>

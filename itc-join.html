@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-join, v5, June 17, 2026. Stable filename: version tracked here, not in the filename. Signup card now collects first name, last name, and email, mirroring the homepage join card (rule 29); lead aligned to "Add your name". -->
+<!-- itc-join, v6, October 19, 2026. Apricot action accent on the Join us button and primary actions. v5: June 17, 2026. Stable filename: version tracked here, not in the filename. Signup card now collects first name, last name, and email, mirroring the homepage join card (rule 29); lead aligned to "Add your name". -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -84,6 +84,10 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 @media(max-width:560px){.foot-mark .venn{width:124px;height:124px;}}
 .nav-toggle{display:none;}.hamburger{display:none;}
 @media(max-width:760px){header{position:relative;}.hamburger{display:flex;align-items:center;font-size:22px;line-height:1;cursor:pointer;color:var(--forest);padding:4px 8px;user-select:none;}.menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(192,202,191,.97);flex-direction:column;padding:14px 24px 20px;gap:0;border-bottom:1px solid var(--line);z-index:100;}.menu a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}.menu .btn{display:block;text-align:center;margin-top:14px;border-bottom:none;padding:11px 22px;}.nav-toggle:checked~.menu{display:flex;}}
+/* Apricot accent, used only for actions (Oct 19, 2026) */
+:root{--accent:#E9935E;--accent-ink:#463347;--accent-dk:#925938;--accent-lt:#FBE9DF;}
+.btn.accent{background:var(--accent);color:var(--accent-ink);}
+.menu .btn.accent{color:var(--accent-ink);}
 </style>
 </head>
 <body>
@@ -104,7 +108,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       <a href="itc-take-action.html">Take Action</a>
       <a href="itc-survey.html">Concord's Data</a>
       <a href="itc-resources.html">Resources &amp; Events</a>
-      <a href="itc-join.html" class="btn">Join us</a>
+      <a href="itc-join.html" class="btn accent">Join us</a>
     </nav>
   </div>
 </header>
@@ -127,7 +131,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
           <input type="text" name="first_name" placeholder="First name" aria-label="First name" required>
           <input type="text" name="last_name" placeholder="Last name" aria-label="Last name" required>
           <input type="email" name="email" placeholder="you@email.com" aria-label="Email address" required>
-          <button class="btn" type="submit">Keep me in the loop</button>
+          <button class="btn accent" type="submit">Keep me in the loop</button>
         </form>
         <p class="placeholder-note">One or two emails a month.</p>
       </div>
@@ -159,7 +163,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap;">
         <a href="https://docs.google.com/document/d/12Paw6ntlZyAAbSnaHCNCUIj5k02FL_KE80x48p5ON_8/edit?tab=t.0" class="btn ghost" target="_blank">Read the pledge</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScg3ufVW7tq8G-fKrdv3LXkvI2f0A65VjYRbcBgdlyEHEaMRQ/viewform?usp=header" class="btn" target="_blank">Sign the pledge</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScg3ufVW7tq8G-fKrdv3LXkvI2f0A65VjYRbcBgdlyEHEaMRQ/viewform?usp=header" class="btn accent" target="_blank">Sign the pledge</a>
       </div>
     </div>
   </div>
