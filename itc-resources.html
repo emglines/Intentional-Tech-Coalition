@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-resources, v16, October 2, 2026. v16: featured event is now a two-column layout (.ev-layout): a sticky intro column on the left carrying the eyebrow, the blurb (moved out of the flyer card, where it was never part of the print piece), and the Get directions / Print the flyer buttons; the flyer card sits right at roughly 1.38fr. The card is smaller than in v15 and its internal padding and type scale down with it, but the surrounding forest band is no longer empty at the sides. When/Where strip switched to auto 1fr with the date set nowrap so "Thursday, October 15" holds one line. Mobile (<=760px) collapses to one column, intro first; <=560px tightens padding further, lets the tagline wrap, and makes the two buttons full width. Verified clean at 1280, 390 and 320px. Previously v15, October 1, 2026. v15: the featured event (.evfeat) is now a flyer-matched card that mirrors the printed "Navigating tech at home and school" flyer (ITC-Navigating-Tech-Flyer-Oct15_v2.pdf), so print and web read as one piece: forest header band with the Venn mark, wordmark and "Connected by choice"; bold sans two-line title; sage When/Where strip; cream body carrying the flyer illustration rebuilt as inline SVG (no raster asset, no new font), the blurb, and the numbered "What we'll cover" list; plum footer with "No registration required", Get directions, and a Print the flyer link to itc-navigating-tech-flyer.pdf (stable filename, copy of the v2 flyer). The flyer's QR code is deliberately omitted on the web. Section id #next-event preserved: itc-homepage.html and itc-take-action.html link to it. Old .ev-grid/.ev-details/.ev-note styles removed. Previously v14, October 1, 2026. v14: added Turning Life On's Your Consent Counts guide to the Tools & materials shelf; tool cards now name their publisher, since the shelf holds work from more than one organization. Previously v13, October 1, 2026. v13: removed the Articles & research, Podcasts, and Events nearby shelves; added a "Tools & materials we've made" shelf above Start here, holding ITC-authored documents, first entry the EdTech working glossary (itc-edtech-glossary.pdf, stable filename so version bumps do not break the link). Previously v12, September 29, 2026. Stable filename: version tracked here, not in the filename. URL stays itc-resources.html even though the page is now titled "Resources & Events". Session arc: page retitled Resources & Events across nav and footer sitewide; new forest-green featured event band (.evfeat) sits between pagehead and criteria, carrying ITC's own upcoming event with flyer-matched numbered topic list and sage detail panel; the older "Upcoming events" shelf renamed "Events nearby" and reserved for other organizations' events, with a pointer up to ours. Earlier arc: Start here featured block (single SBS Resource Library link); shelves flow into two packed columns; shelf order Websites, Books, Articles, Podcasts (placeholder), Events nearby; podcasts is a coming-soon slot. Websites, Articles, and Books all tightened to one-line descriptions; author/source meta removed from Articles only (Websites keep their short category label); compact evidence tags kept on three preliminary/contested items: "(Working paper.)", "(Preprint, small sample.)", "(Causal strength debated.)". -->
+<!-- itc-resources, v17, October 19, 2026. v17: the Oct 15 flyer band is replaced by a plum featured band (.jch, id #next-event) for the Nov 16/17 Dr. Jared Cooney Horvath event (Concord registration on Four Norms, Learn more to turninglifeon.org/jch, headshot itc-horvath-headshot.jpg). Tools & materials now holds seven ITC documents in For school / For home groups; a "Speak up for your child" apricot-tint panel holds the consent guide, elementary asks and middle asks for parents advocating for their own child. Turning Life On's Your Consent Counts card removed (credited on the consent guide card). Tech-Wise Arlington added to Websites. Apricot accent on Join us, Send a recommendation, Read it links. Shelf notes run full column width. Previously v16, October 2, 2026. v16: featured event is now a two-column layout (.ev-layout): a sticky intro column on the left carrying the eyebrow, the blurb (moved out of the flyer card, where it was never part of the print piece), and the Get directions / Print the flyer buttons; the flyer card sits right at roughly 1.38fr. The card is smaller than in v15 and its internal padding and type scale down with it, but the surrounding forest band is no longer empty at the sides. When/Where strip switched to auto 1fr with the date set nowrap so "Thursday, October 15" holds one line. Mobile (<=760px) collapses to one column, intro first; <=560px tightens padding further, lets the tagline wrap, and makes the two buttons full width. Verified clean at 1280, 390 and 320px. Previously v15, October 1, 2026. v15: the featured event (.evfeat) is now a flyer-matched card that mirrors the printed "Navigating tech at home and school" flyer (ITC-Navigating-Tech-Flyer-Oct15_v2.pdf), so print and web read as one piece: forest header band with the Venn mark, wordmark and "Connected by choice"; bold sans two-line title; sage When/Where strip; cream body carrying the flyer illustration rebuilt as inline SVG (no raster asset, no new font), the blurb, and the numbered "What we'll cover" list; plum footer with "No registration required", Get directions, and a Print the flyer link to itc-navigating-tech-flyer.pdf (stable filename, copy of the v2 flyer). The flyer's QR code is deliberately omitted on the web. Section id #next-event preserved: itc-homepage.html and itc-take-action.html link to it. Old .ev-grid/.ev-details/.ev-note styles removed. Previously v14, October 1, 2026. v14: added Turning Life On's Your Consent Counts guide to the Tools & materials shelf; tool cards now name their publisher, since the shelf holds work from more than one organization. Previously v13, October 1, 2026. v13: removed the Articles & research, Podcasts, and Events nearby shelves; added a "Tools & materials we've made" shelf above Start here, holding ITC-authored documents, first entry the EdTech working glossary (itc-edtech-glossary.pdf, stable filename so version bumps do not break the link). Previously v12, September 29, 2026. Stable filename: version tracked here, not in the filename. URL stays itc-resources.html even though the page is now titled "Resources & Events". Session arc: page retitled Resources & Events across nav and footer sitewide; new forest-green featured event band (.evfeat) sits between pagehead and criteria, carrying ITC's own upcoming event with flyer-matched numbered topic list and sage detail panel; the older "Upcoming events" shelf renamed "Events nearby" and reserved for other organizations' events, with a pointer up to ours. Earlier arc: Start here featured block (single SBS Resource Library link); shelves flow into two packed columns; shelf order Websites, Books, Articles, Podcasts (placeholder), Events nearby; podcasts is a coming-soon slot. Websites, Articles, and Books all tightened to one-line descriptions; author/source meta removed from Articles only (Websites keep their short category label); compact evidence tags kept on three preliminary/contested items: "(Working paper.)", "(Preprint, small sample.)", "(Causal strength debated.)". -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -75,6 +75,66 @@ header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
 .flyer-foot{background:var(--plum);color:var(--paper);padding:19px 30px 21px;}
 .flyer-foot .fnote strong{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(17px,2.1vw,21px);margin-bottom:2px;}
 .flyer-foot .fnote span{font-size:12.5px;opacity:.85;line-height:1.45;display:block;}
+.jch{background:var(--plum-dk);color:var(--paper);padding:52px 0 44px;scroll-margin-top:24px;}
+.jch-top{display:grid;grid-template-columns:1fr 230px;gap:44px;align-items:start;}
+.jch-eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+.jch h2{font-size:clamp(32px,5vw,50px);line-height:1.04;color:var(--paper);margin-bottom:12px;}
+.jch-sub{font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.2vw,21px);color:#E7CFC0;margin-bottom:18px;}
+.jch-blurb{font-size:15px;line-height:1.68;opacity:.9;margin-bottom:20px;}
+.jch-topics{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.jch-topics li{font-size:13px;line-height:1.45;padding:12px 14px;border:1px solid rgba(244,241,236,.22);border-radius:var(--r);border-top:3px solid var(--accent);}
+.jch-photo img{display:block;width:100%;height:auto;border-radius:120px 120px 6px 6px;border:3px solid var(--accent);}
+.jch-photo figcaption{font-size:12px;line-height:1.5;opacity:.85;margin-top:12px;}
+.jch-photo figcaption strong{display:block;font-size:13.5px;opacity:1;margin-bottom:3px;}
+.jch-nights-h{font-size:14.5px;margin:34px 0 14px;opacity:.95;}
+.jch-nights{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;}
+.night{display:flex;gap:18px;align-items:center;border:1px solid rgba(244,241,236,.22);border-radius:6px;padding:18px 20px;}
+.night.main{background:var(--paper);color:var(--ink);border-color:var(--paper);}
+.night-date{flex-shrink:0;width:66px;text-align:center;border-radius:var(--r);padding:9px 0 8px;background:rgba(244,241,236,.12);line-height:1;}
+.night.main .night-date{background:var(--accent);color:var(--accent-ink);}
+.night-date span{display:block;}
+.night-date .m,.night-date .w{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
+.night-date .d{font-family:var(--serif);font-size:30px;margin:4px 0 3px;}
+.night-tag{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#E7CFC0;margin-bottom:4px;}
+.night.main .night-tag{color:var(--accent-dk);}
+.night h3{font-size:21px;margin-bottom:4px;}
+.night.main h3{color:var(--plum);}
+.night p{font-size:13px;opacity:.85;margin-bottom:12px;}
+.night .btn.ghost{color:var(--paper);border-color:rgba(244,241,236,.55);}
+.jch-fine{font-size:12.5px;opacity:.72;margin-top:18px;line-height:1.55;}
+@media(max-width:760px){.jch-top{grid-template-columns:1fr;gap:26px;}.jch-photo{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;}.jch-photo figcaption{margin-top:0;}.jch-topics{grid-template-columns:1fr;gap:8px;}.jch-nights{grid-template-columns:1fr;}}
+@media(max-width:420px){.night{flex-direction:column;align-items:flex-start;gap:12px;}.night .btn{display:block;text-align:center;}}
+.jch-blurb strong{color:var(--paper);font-weight:700;}
+.jch-leave{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#E7CFC0;margin-bottom:10px;}
+.jch-foot{display:flex;justify-content:space-between;align-items:flex-start;gap:28px;margin-top:18px;}
+.jch-foot .jch-fine{margin-top:0;}
+.jch-more{flex-shrink:0;font-size:13.5px;font-weight:700;color:var(--paper);border-bottom:1.5px solid var(--accent);padding-bottom:1px;white-space:nowrap;}
+.jch-more:hover{border-bottom-color:var(--paper);}
+@media(max-width:760px){.jch-foot{flex-direction:column;gap:12px;}}
+:root{--accent:#E9935E;--accent-ink:#463347;--accent-dk:#925938;--accent-lt:#FBE9DF;}
+.btn.accent{background:var(--accent);color:var(--accent-ink);}
+.menu .btn.accent{color:var(--accent-ink);}
+.anchor{display:block;scroll-margin-top:24px;}
+.tgroup{margin-top:30px;}
+.tgroup:first-of-type{margin-top:0;}
+.tgroup-h{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--forest-2);padding-bottom:10px;margin-bottom:14px;border-bottom:1px solid var(--line);}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.tgrid .tcard:last-child:nth-child(odd){grid-column:1/-1;}
+.tcard{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;transition:border-color .14s,box-shadow .14s;}
+.tcard:hover{border-color:var(--accent);box-shadow:0 2px 10px rgba(146,89,56,.10);}
+.tcard h3{font-family:var(--serif);font-size:18.5px;color:var(--plum);margin-bottom:7px;line-height:1.22;font-weight:400;}
+.tcard p{font-size:13px;line-height:1.55;opacity:.85;margin-bottom:14px;}
+.tcard .tool-go{margin-top:auto;align-self:flex-start;color:var(--accent-dk);border-bottom:1.5px solid var(--accent);}
+.tcard:hover .tool-go{border-bottom-color:var(--accent-dk);}
+.advo{background:var(--accent-lt);border-radius:var(--r);padding:20px 20px 20px;margin-bottom:14px;}
+.advo-lbl{display:block;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-dk);margin-bottom:6px;}
+.advo-note{font-size:13.5px;line-height:1.55;color:var(--ink);margin-bottom:16px;}
+.advo .tgrid .tcard:last-child:nth-child(odd){grid-column:auto;}
+.advo .tgrid .tcard:first-child{grid-column:1/-1;}
+.library .shelf .shelf-note,.library .featured .shelf-note{max-width:none;}
+.pagehead p.lede{max-width:780px;}
+.advo .tcard{border-color:rgba(146,89,56,.2);}
+@media(max-width:640px){.tgrid{grid-template-columns:1fr;}.advo{padding:16px 14px;}}
 .criteria{background:var(--cream);border-bottom:1px solid var(--line);padding:36px 0;}
 .criteria .row{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
 .criteria h3{font-size:16px;color:var(--forest);margin-bottom:6px;}
@@ -168,85 +228,68 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       <a href="itc-take-action.html">Take Action</a>
       <a href="itc-survey.html">Concord's Data</a>
       <a href="itc-resources.html" aria-current="page">Resources &amp; Events</a>
-      <a href="itc-join.html" class="btn">Join us</a>
+      <a href="itc-join.html" class="btn accent">Join us</a>
     </nav>
   </div>
 </header>
+
+<section class="jch" id="next-event">
+  <div class="wrap">
+    <div class="jch-top">
+      <div class="jch-copy">
+        <span class="jch-eyebrow">Free event &middot; Tuesday, November 17 in Concord</span>
+        <h2>Your Child&rsquo;s Brain in a Screen-Saturated World</h2>
+        <p class="jch-sub">An evening with neuroscientist Dr. Jared Cooney Horvath</p>
+        <p class="jch-blurb">If you&rsquo;ve ever wondered what screens are doing to your child&rsquo;s learning, this is the evening to be in the room. Dr. Horvath, a neuroscientist and Harvard educator who has worked with more than 1,000 schools, gives clear, practical answers for families of kids in K-12. <strong>Come with your questions</strong>: every talk ends with a 30-minute live Q&amp;A. <strong>Leave with tools and strategies</strong> you can use at home the very next day.</p>
+        <p class="jch-leave">You&rsquo;ll leave knowing</p>
+        <ul class="jch-topics">
+          <li>What builds kids&rsquo; attention, memory, and real understanding, and what gets in the way</li>
+          <li>How to tell healthy challenge from harmful stress</li>
+          <li>Concrete things you can do at home, and ask about at school, including around technology</li>
+        </ul>
+      </div>
+      <figure class="jch-photo">
+        <img src="itc-horvath-headshot.jpg" alt="Dr. Jared Cooney Horvath" width="330" height="387">
+        <figcaption><strong>Jared Cooney Horvath, PhD, MEd</strong>Neuroscientist, Harvard educator, and author of the New York Times bestseller <em>The Digital Delusion</em>. Testified before the U.S. Senate on how screens affect kids&rsquo; learning.</figcaption>
+      </figure>
+    </div>
+
+    <p class="jch-nights-h"><strong>One talk, two nights.</strong> Free and open to families from every town. Save your seat for the night that works for you.</p>
+    <div class="jch-nights">
+      <div class="night main">
+        <div class="night-date"><span class="m">Nov</span><span class="d">17</span><span class="w">Tue</span></div>
+        <div class="night-info">
+          <span class="night-tag">In Concord &middot; Co-hosted by the coalition</span>
+          <h3>Tuesday, November 17</h3>
+          <p>7:00 to 9:00 PM &middot; Concord Middle School Auditorium</p>
+          <a class="btn accent" href="https://www.fournorms.com/events/turning-life-on-speaker-series-dr-jared-cooney-horvath-inside-the-learning-brain" target="_blank" rel="noopener">Register for Concord</a>
+        </div>
+      </div>
+      <div class="night">
+        <div class="night-date"><span class="m">Nov</span><span class="d">16</span><span class="w">Mon</span></div>
+        <div class="night-info">
+          <span class="night-tag">In Wellesley</span>
+          <h3>Monday, November 16</h3>
+          <p>7:00 to 9:00 PM &middot; Wellesley, MA</p>
+          <a class="btn ghost" href="https://www.turninglifeon.org/jch" target="_blank" rel="noopener">Register for Wellesley</a>
+        </div>
+      </div>
+    </div>
+    <div class="jch-foot">
+      <p class="jch-fine">Each evening is a 90-minute presentation followed by a 30-minute live Q&amp;A. No background needed. Presented by Turning Life On and the Lexington Education Foundation, with community partners Beyond Screens Wellesley, Lex Kids Be Kids, Open Door Education, the Intentional Tech Coalition, Wellesley Education Foundation, and Wellesley Mothers Forum.</p>
+      <a class="jch-more" href="https://www.turninglifeon.org/jch" target="_blank" rel="noopener">Learn more about the event &rarr;</a>
+    </div>
+  </div>
+</section>
 
 <section class="pagehead">
   <div class="wrap">
     <span class="eyebrow one">Resources &amp; Events</span>
     <h1>Resources &amp; Events</h1>
-    <p class="lede">Our upcoming gatherings, the tools we've written ourselves, and the books and websites that come up again and again when families ask where to start. We keep this list short on purpose: everything here is something we've actually read, used, and would hand to a neighbor.</p>
+    <p class="lede">The tools we've written ourselves, and the books and websites that come up again and again when families ask where to start. We keep this list short on purpose: everything here is something we've actually read, used, and would hand to a neighbor.</p>
   </div>
 </section>
 
-<section class="evfeat" id="next-event">
-  <div class="wrap">
-    <div class="ev-layout">
-
-      <div class="ev-intro">
-        <span class="eyebrow one">Our next event</span>
-        <p class="lead">Every family&rsquo;s path with technology looks a little different, and there&rsquo;s no single right answer.</p>
-        <p>Join the Intentional Tech Coalition for an evening of practical tips on parental controls, school advocacy, family tech conversations, strategies at home, and smartphone alternatives. High school families will also find a dedicated conversation on building community and advocating for intentional tech at the high school level. Whether you&rsquo;re just starting to think about these choices or are well on your way, come learn alongside a community of parents and caregivers navigating the same questions.</p>
-        <div class="acts">
-          <a class="btn" href="https://maps.google.com/?q=1317+Main+St+Concord+MA+01742" target="_blank" rel="noopener">Get directions</a>
-          <a class="btn ghost" href="itc-navigating-tech-flyer.pdf" target="_blank" rel="noopener">Print the flyer</a>
-        </div>
-      </div>
-
-      <article class="flyer">
-
-      <div class="flyer-head">
-        <div class="flyer-brandrow">
-          <div class="flyer-brand">
-            <svg class="venn ondark" viewBox="0 0 100 100" aria-hidden="true"><circle class="c-fam" cx="33.5" cy="40.5" r="26" stroke-width="3.4"/><circle class="c-sch" cx="66.5" cy="40.5" r="26" stroke-width="3.4"/><circle class="c-com" cx="50" cy="69.1" r="26" stroke-width="3.4"/></svg>
-            <span><span class="nm">The Intentional Tech Coalition</span><span class="loc">Concord &middot; Massachusetts</span></span>
-          </div>
-          <span class="flyer-tag">Connected by choice</span>
-        </div>
-        <h2 class="flyer-title">Navigating tech<br>at home and school</h2>
-        <p class="flyer-sub">Tips for families making intentional tech choices</p>
-      </div>
-
-      <div class="flyer-strip">
-        <div class="col">
-          <span class="lbl">When</span>
-          <span class="big">Thursday, October 15</span>
-          <span class="sm">7:00 to 9:00 PM</span>
-        </div>
-        <div class="col">
-          <span class="lbl">Where</span>
-          <span class="big">West Concord Union Church</span>
-          <span class="sm">1317 Main St, Concord, MA 01742<br>North Hall, downstairs community room</span>
-        </div>
-      </div>
-
-      <div class="flyer-body">
-        <svg class="flyer-illo" viewBox="370 45 1060 350" role="img" aria-label="Illustration of parents and caregivers talking around two tables"><title>A community gathering in conversation</title><path d="M566 124 h20 l-26 28 Z" fill="#E5E0DA"/><rect x="540" y="62" width="112" height="66" rx="23" fill="#E5E0DA"/><circle cx="572" cy="95" r="7.5" fill="#463347"/><circle cx="596" cy="95" r="7.5" fill="#463347"/><circle cx="620" cy="95" r="7.5" fill="#463347"/><path d="M1196 117 h20 l-26 28 Z" fill="#463347"/><rect x="1156" y="55" width="112" height="66" rx="23" fill="#463347"/><circle cx="1188" cy="88" r="7.5" fill="#E5E0DA"/><circle cx="1212" cy="88" r="7.5" fill="#E5E0DA"/><circle cx="1236" cy="88" r="7.5" fill="#E5E0DA"/><circle cx="433" cy="228" r="36" fill="#EBCFA9"/><path d="M396 378 V295 A37 37 0 0 1 470 295 V378 Z" fill="#6E7D62"/><circle cx="535" cy="170" r="38" fill="#C8914F"/><path d="M492 378 V251 A43 43 0 0 1 578 251 V378 Z" fill="#463347"/><circle cx="654" cy="168" r="41" fill="#E9D3B4"/><path d="M606 378 V257 A48 48 0 0 1 702 257 V378 Z" fill="#6E7D62"/><circle cx="776" cy="178" r="36" fill="#8A5E3B"/><path d="M734 378 V256 A42 42 0 0 1 818 256 V378 Z" fill="#3F5138"/><circle cx="1025" cy="168" r="38" fill="#E9D3B4"/><path d="M982 378 V249 A43 43 0 0 1 1068 249 V378 Z" fill="#3F5138"/><circle cx="1144" cy="170" r="36" fill="#5C4028"/><path d="M1100 378 V250 A44 44 0 0 1 1188 250 V378 Z" fill="#463347"/><circle cx="1263" cy="165" r="41" fill="#C8914F"/><path d="M1216 378 V253 A47 47 0 0 1 1310 253 V378 Z" fill="#6E7D62"/><ellipse cx="650" cy="330" rx="175" ry="48" fill="#AEBBA7"/><ellipse cx="1152" cy="330" rx="168" ry="48" fill="#AEBBA7"/><rect x="628" y="306" width="26" height="24" rx="3" fill="#F4F1EC"/><rect x="706" y="314" width="46" height="16" rx="3" fill="#F4F1EC"/><rect x="1046" y="314" width="46" height="16" rx="3" fill="#F4F1EC"/><rect x="1104" y="306" width="30" height="24" rx="3" fill="#F4F1EC"/><circle cx="860" cy="222" r="33" fill="#C8914F"/><path d="M822 378 V293 A38 38 0 0 1 898 293 V378 Z" fill="#463347"/><circle cx="939" cy="222" r="32" fill="#8A5E3B"/><path d="M902 378 V291 A37 37 0 0 1 976 291 V378 Z" fill="#3F5138"/><circle cx="1369" cy="222" r="34" fill="#EBCFA9"/><path d="M1330 378 V295 A39 39 0 0 1 1408 295 V378 Z" fill="#463347"/></svg>
-        <h3 class="flyer-cover">What we'll cover</h3>
-        <ol class="ev-list">
-          <li>Setting up family and parental controls</li>
-          <li>Advocating for your student in schools</li>
-          <li>High school families: building community and advocating for intentional tech</li>
-          <li>Navigating family conversations around tech</li>
-          <li>Tips and tricks at home</li>
-          <li>Alternate devices to smartphones</li>
-        </ol>
-      </div>
-
-      <div class="flyer-foot">
-        <div class="fnote">
-          <strong>No registration required</strong>
-          <span>Come as you are, and bring a neighbor if you like.</span>
-        </div>
-      </div>
-
-      </article>
-
-    </div>
-  </div>
-</section>
 
 <section class="criteria">
   <div class="wrap">
@@ -272,7 +315,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
     <div class="library">
       <nav class="index" aria-label="Resource categories">
         <h4>On this page</h4>
-        <a href="#next-event">Our next event</a>
+        <a href="#next-event">Upcoming event</a>
         <a href="#tools">Tools &amp; materials</a>
         <a href="#start">Start here</a>
         <a href="#websites">Websites &amp; organizations</a>
@@ -281,24 +324,64 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       <div>
         <div class="shelf" id="tools">
           <h2>Tools &amp; materials we've made</h2>
-          <p class="shelf-note">Written for Concord families, educators, and school leaders by the coalition and the organizations we work alongside. Free to read, use, and share.</p>
-          <div class="tool-list">
-            <a class="tool" href="itc-edtech-glossary.pdf" target="_blank" rel="noopener">
-              <div>
-                <div class="tool-kind">Intentional Tech Coalition &middot; Working document</div>
+          <p class="shelf-note">Written by the coalition for Concord families. Most of these were handed out at our October 15 event, Navigating Tech at Home and School. Free to read, print, and share.</p>
+          <div class="tgroup">
+            <h4 class="tgroup-h">For school</h4>
+            <div class="advo">
+              <span class="advo-lbl">Speak up for your child</span>
+              <p class="advo-note">Use these on your own child&rsquo;s behalf. Pick the asks that fit your family, adapt the sample messages, and send them to your child&rsquo;s teacher or principal. You don&rsquo;t need to be part of the coalition to use them.</p>
+              <div class="tgrid">
+              <a class="tcard" href="itc-internet-consent-guide.pdf" target="_blank" rel="noopener">
+                <span class="tool-kind">Step-by-step guide &middot; Grades K-8</span>
+                <h3>Internet Consent on School Devices</h3>
+                <p>How to withhold internet consent for your child in Aspen, choose the protections you want, and send one of three email templates. Adapted from Turning Life On's Your Consent Counts.</p>
+                <span class="tool-go">Read it &rarr;</span>
+              </a>
+              <a class="tcard" href="itc-elementary-asks.pdf" target="_blank" rel="noopener">
+                <span class="tool-kind">Two-page handout &middot; Grades K-5</span>
+                <h3>Elementary School Suggested Asks</h3>
+                <p>Five asks you can make for your child, each with the research behind it and a short sample message to send their teacher or principal.</p>
+                <span class="tool-go">Read it &rarr;</span>
+              </a>
+              <a class="tcard" href="itc-middle-asks.pdf" target="_blank" rel="noopener">
+                <span class="tool-kind">Two-page handout &middot; Grades 6-8</span>
+                <h3>Middle School Suggested Asks</h3>
+                <p>Seven asks you can make for your child, from allowed-sites-only internet to phones locked away, each with a sample message to send.</p>
+                <span class="tool-go">Read it &rarr;</span>
+              </a>
+              </div>
+            </div>
+            <div class="tgrid">
+              <a class="tcard" href="itc-school-priorities.pdf" target="_blank" rel="noopener">
+                <span class="tool-kind">One-pager</span>
+                <h3>2026-27 School Priorities</h3>
+                <p>The coalition's three priorities for the year, Safety, Efficacy, and Alignment, and what we're asking the district to do under each.</p>
+                <span class="tool-go">Read it &rarr;</span>
+              </a>
+              <a class="tcard" href="itc-edtech-glossary.pdf" target="_blank" rel="noopener">
+                <span class="tool-kind">Working document</span>
                 <h3>Working Glossary: Educational Technology Terms</h3>
-                <p>Shared language for conversations about technology in Concord Public Schools and the Concord-Carlisle Regional School District. Defines EdTech, screen time, artificial intelligence, vetting, student data safety, phone policies, and more. Where a definition already exists in law, peer-district policy, or research, we adopt it rather than writing our own.</p>
-              </div>
-              <span class="tool-go">Read it &rarr;</span>
-            </a>
-            <a class="tool" href="https://www.fournorms.com/organizations/turning-life-on/library/tlo-your-consent-counts" target="_blank" rel="noopener">
-              <div>
-                <div class="tool-kind">Turning Life On &middot; Printable guide</div>
-                <h3>Your Consent Counts</h3>
-                <p>How school consent forms for your child's internet and device use actually work, and what you can do with one: find it, give it with conditions, decline it, or take it back. Includes letter templates.</p>
-              </div>
-              <span class="tool-go">Read it &rarr;</span>
-            </a>
+                <p>Shared language for talking about technology in Concord's schools, from EdTech and screen time to AI, student data safety, and evidence standards.</p>
+                <span class="tool-go">Read it &rarr;</span>
+              </a>
+            </div>
+          </div>
+          <div class="tgroup">
+            <h4 class="tgroup-h">For home</h4>
+            <div class="tgrid">
+              <a class="tcard" href="itc-intentional-tech-families.pdf" target="_blank" rel="noopener">
+                <span class="tool-kind">Two-page handout</span>
+                <h3>Thinking about Intentional Tech for Families</h3>
+                <p>Four questions to ask before a new game or a first phone, examples of shared family values, and five small steps to try.</p>
+                <span class="tool-go">Read it &rarr;</span>
+              </a>
+              <a class="tcard" href="itc-phone-comparison.pdf" target="_blank" rel="noopener">
+                <span class="tool-kind">Comparison guide</span>
+                <h3>Comparing Kids' Watches, Phones &amp; Parental Controls</h3>
+                <p>Kids' smartwatches, flip phones, and basic phones side by side, plus the main parental control apps, with suggestions by age.</p>
+                <span class="tool-go">Read it &rarr;</span>
+              </a>
+            </div>
           </div>
         </div>
         <div class="featured" id="start">
@@ -373,6 +456,11 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
             <div class="meta">Talks and education</div>
             <p class="why">Max Stossel's organization: talks and guidance for schools and families on social media.</p>
           </div>
+          <div class="entry">
+            <div class="title"><a class="tlink" href="https://techwisearlington.org/smartphone-alternatives/" target="_blank" rel="noopener">Tech-Wise Arlington: Smartphone alternatives</a></div>
+            <div class="meta">Parent group &middot; Device guide</div>
+            <p class="why">Sixteen phones, watches, and other smartphone alternatives compared by cost, features, and common problems.</p>
+          </div>
           </div>
         </div>
         <div class="shelf" id="books">
@@ -424,7 +512,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
         <h2>Read something we should know about?</h2>
         <p>If a book, article, or other resource inspired you or changed how you think about tech, we'd love to hear about it.</p>
       </div>
-      <a href="mailto:emily@intentionaltechcoalition.org?subject=A%20resource%20recommendation" class="btn">Send a recommendation</a>
+      <a href="mailto:emily@intentionaltechcoalition.org?subject=A%20resource%20recommendation" class="btn accent">Send a recommendation</a>
     </div>
   </div>
 </section>
