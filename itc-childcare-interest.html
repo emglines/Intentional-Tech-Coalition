@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!-- itc-childcare-interest, v1, October 19, 2026. Childcare interest form for the Nov 17 Concord Horvath event (ages 5 to 12; reply by Nov 1; confirmation by Nov 4; cost left off until decided). Sends to Formspree form mqpeoyez. Linked from the Concord night card on Resources. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Childcare Interest | The Intentional Tech Coalition</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..600;1,9..144,200..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#C0CABF;--sage-dk:#A9B6A6;--forest:#3F5138;--forest-2:#5F6D57;--plum:#463347;--plum-dk:#382839;--ink:#242321;--cream:#E5E0DA;--paper:#F4F1EC;--white:#FBFAF7;--line:rgba(63,81,56,.22);--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--r:4px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.08;}
+a{color:inherit;text-decoration:none;}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--forest-2);}
+.eyebrow::before{content:"";height:1px;width:22px;background:var(--forest-2);opacity:.55;}
+.eyebrow.one::after{display:none;}
+.btn{display:inline-block;border:none;cursor:pointer;font-family:var(--sans);font-weight:600;font-size:13px;border-radius:999px;padding:10px 22px;background:var(--plum);color:var(--paper);text-decoration:none;}
+.btn.ghost{background:transparent;color:var(--forest);border:1.5px solid var(--forest);}
+.wm{display:inline-flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;}
+.wm .the{font-family:var(--serif);font-weight:300;font-size:11px;color:var(--forest-2);line-height:1;letter-spacing:.06em;margin-bottom:1px;}
+.wm .main{font-family:var(--serif);font-weight:400;font-size:17px;color:var(--forest);line-height:1.04;letter-spacing:-.01em;}
+.wm .rule-row{display:flex;align-items:center;gap:7px;margin-top:4px;}
+.wm .rule-row span{font-family:var(--sans);font-size:7.5px;font-weight:600;letter-spacing:.38em;color:var(--forest-2);}
+.wm .rule-row::before,.wm .rule-row::after{content:"";height:1px;width:20px;background:var(--forest-2);opacity:.5;}
+footer .wm .the{color:var(--sage);opacity:.65;}
+footer .wm .main{color:var(--sage);}
+footer .wm .rule-row span{color:var(--sage);opacity:.7;}
+footer .wm .rule-row::before,footer .wm .rule-row::after{background:var(--sage);opacity:.4;}
+header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:960px;margin:0 auto;}
+.menu{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:500;}
+.menu a{color:var(--ink);opacity:.8;}
+.menu a[aria-current]{opacity:1;font-weight:700;color:var(--forest);border-bottom:2px solid var(--forest);padding-bottom:2px;}
+.menu .btn{padding:8px 18px;opacity:1;color:var(--paper);}
+.pagehead{background:var(--sage);padding:56px 0 60px;}
+.pagehead h1{font-size:clamp(30px,5vw,52px);color:var(--plum);margin:16px 0 16px;max-width:640px;}
+.pagehead p.lede{font-size:clamp(15px,2vw,18px);max-width:620px;color:var(--ink);opacity:.9;}
+.block{padding:64px 0;}
+.join-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start;}
+.signup-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:34px 32px;}
+.signup-card h2{font-size:clamp(24px,3.5vw,32px);color:var(--forest);margin-bottom:10px;}
+.signup-card p{font-size:14px;opacity:.85;}
+.field{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
+.field input{flex:1;min-width:200px;font-family:var(--sans);font-size:14px;padding:11px 16px;border:1.5px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);}
+.field input:focus{outline:2px solid var(--forest-2);outline-offset:1px;}
+.placeholder-note{font-size:12px;color:var(--forest-2);margin-top:10px;}
+.expect h3{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--forest-2);font-weight:600;margin-bottom:4px;}
+.expect .row{padding:16px 0;border-top:1px solid var(--line);}
+.expect .row:first-of-type{border-top:none;padding-top:4px;}
+.expect .row h4{font-family:var(--serif);font-weight:400;font-size:18px;color:var(--plum);margin-bottom:4px;}
+.expect .row p{font-size:13.5px;opacity:.85;line-height:1.6;}
+.pledge-strip{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:44px 0;}
+.pledge-strip .inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;}
+.pledge-strip h2{font-size:clamp(22px,3vw,30px);color:var(--forest);max-width:460px;}
+.pledge-strip p{font-size:14px;opacity:.85;max-width:460px;margin-top:8px;}
+.contact h2{font-size:clamp(24px,3.5vw,32px);color:var(--forest);margin:14px 0 10px;}
+.contact p{font-size:15px;opacity:.85;max-width:560px;}
+.contact .email-line{margin-top:18px;font-size:15px;}
+.contact .email-line a{font-weight:600;color:var(--plum);text-decoration:underline;}
+footer{background:var(--ink);color:#cfd3cb;padding:48px 0 32px;}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;}
+footer p{font-size:13px;line-height:1.6;opacity:.8;margin-top:12px;max-width:36ch;}
+footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9aa392;margin-bottom:10px;}
+footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.85;}
+.fineprint{margin-top:22px;padding-top:0;border-top:none;font-size:11px;opacity:.55;}
+@media(max-width:760px){.join-grid{grid-template-columns:1fr;gap:32px;}}
+/* Family / school / community mark */
+.venn{display:block;}
+.venn circle{fill:none;}
+.venn .c-fam{stroke:var(--forest);}
+.venn .c-sch{stroke:var(--plum);}
+.venn .c-com{stroke:var(--sage-dk);}
+.venn text{font-family:var(--serif);font-style:italic;fill:var(--forest-2);text-anchor:middle;dominant-baseline:central;}
+.venn.ondark .c-fam{stroke:var(--sage);}
+.venn.ondark .c-sch{stroke:#C9ADCB;}
+.venn.ondark .c-com{stroke:var(--sage-dk);}
+.venn.ondark text{fill:var(--paper);}
+.venn.dim circle{opacity:.26;}
+.venn.dim .on{opacity:1;}
+.foot-mark{display:flex;justify-content:center;margin-top:34px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);}
+.foot-mark .venn{width:146px;height:146px;}
+@media(max-width:560px){.foot-mark .venn{width:124px;height:124px;}}
+.nav-toggle{display:none;}.hamburger{display:none;}
+@media(max-width:760px){header{position:relative;}.hamburger{display:flex;align-items:center;font-size:22px;line-height:1;cursor:pointer;color:var(--forest);padding:4px 8px;user-select:none;}.menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(192,202,191,.97);flex-direction:column;padding:14px 24px 20px;gap:0;border-bottom:1px solid var(--line);z-index:100;}.menu a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}.menu .btn{display:block;text-align:center;margin-top:14px;border-bottom:none;padding:11px 22px;}.nav-toggle:checked~.menu{display:flex;}}
+/* Apricot accent, used only for actions (Oct 19, 2026) */
+:root{--accent:#E9935E;--accent-ink:#463347;--accent-dk:#925938;--accent-lt:#FBE9DF;}
+.btn.accent{background:var(--accent);color:var(--accent-ink);}
+.menu .btn.accent{color:var(--accent-ink);}
+/* childcare interest page */
+.cc-head{background:#2E3E4E;color:var(--paper);padding:52px 0 56px;}
+.cc-head .eyebrow{color:var(--accent);}
+.cc-head .eyebrow::before,.cc-head .eyebrow::after{background:var(--accent);}
+.cc-head h1{font-size:clamp(30px,5vw,48px);color:var(--paper);margin:16px 0 14px;max-width:640px;}
+.cc-head .lede{font-size:clamp(15px,2vw,18px);max-width:620px;opacity:.9;}
+.cc-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start;}
+.cc-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:30px 30px 26px;}
+.cc-card h2{font-size:clamp(22px,3vw,28px);color:var(--forest);margin-bottom:6px;}
+.cc-card > p{font-size:14px;opacity:.85;}
+.cc-form{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;margin-top:20px;}
+.cc-form label{display:flex;flex-direction:column;gap:5px;font-size:12.5px;font-weight:600;color:var(--forest);}
+.cc-form label.full{grid-column:1/-1;}
+.cc-form label span.opt{font-weight:400;opacity:.7;}
+.cc-form input,.cc-form select{font-family:var(--sans);font-size:14px;padding:11px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);font-weight:400;}
+.cc-form input:focus,.cc-form select:focus{outline:2px solid var(--forest-2);outline-offset:1px;}
+.cc-form .btn{grid-column:1/-1;justify-self:start;margin-top:4px;padding:12px 26px;font-size:14px;}
+.cc-note{font-size:12.5px;color:var(--forest-2);margin-top:14px;line-height:1.5;}
+.cc-note a{font-weight:700;color:var(--accent-dk);border-bottom:1.5px solid var(--accent);}
+.cc-thanks{display:none;background:var(--accent-lt);border-radius:var(--r);padding:18px 20px;margin-top:18px;font-size:14px;}
+.cc-thanks b{display:block;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--plum);margin-bottom:4px;}
+.cc-know{border-top:3px solid #3A9A9A;background:var(--white);border-radius:var(--r);padding:22px 24px;}
+.cc-know h3{font-size:19px;color:var(--forest);margin-bottom:6px;}
+.cc-know .row{padding:12px 0;border-top:1px solid var(--line);}
+.cc-know .row:first-of-type{border-top:none;}
+.cc-know h4{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-2);margin-bottom:3px;font-family:var(--sans);}
+.cc-know p{font-size:13.5px;line-height:1.5;}
+.tbd{background:#FFF1B8;border-radius:3px;padding:0 4px;font-weight:600;}
+@media(max-width:760px){.cc-grid,.cc-form{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="nav">
+    <a href="itc-homepage.html" class="wm">
+      <span class="the">The</span>
+      <span class="main">Intentional<br>Tech Coalition</span>
+      <span class="rule-row"><span>CONCORD</span></span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger" aria-label="Open menu">&#9776;</label>
+    <nav class="menu">
+      <a href="itc-at-school.html">At School</a>
+      <a href="itc-at-home.html">At Home</a>
+      <a href="itc-take-action.html">Take Action</a>
+      <a href="itc-survey.html">Concord's Data</a>
+      <a href="itc-resources.html">Resources &amp; Events</a>
+      <a href="itc-join.html" class="btn accent">Join us</a>
+    </nav>
+  </div>
+</header>
+
+
+<section class="cc-head">
+  <div class="wrap">
+    <span class="eyebrow one">Tuesday, November 17 &middot; Concord Middle School</span>
+    <h1>Would childcare help you come?</h1>
+    <p class="lede">We'd love for every parent and caregiver who wants to hear Dr. Jared Cooney Horvath to be able to come. If enough families are interested, we'll arrange childcare at Concord Middle School during the talk. Let us know below. It takes about a minute.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap cc-grid">
+    <div class="cc-card">
+      <h2>I'm interested in childcare</h2>
+      <p>For children ages 5 to 12. Please let us know by November 1. This helps us gauge interest; it isn't a reservation yet.</p>
+      <form class="cc-form" id="cc-form" action="https://formspree.io/f/mqpeoyez" method="POST">
+        <input type="hidden" name="_subject" value="Childcare interest: Nov 17 Horvath event">
+        <label>First name<input type="text" name="first_name" required></label>
+        <label>Last name<input type="text" name="last_name" required></label>
+        <label class="full">Email<input type="email" name="email" placeholder="you@email.com" required></label>
+        <label>Number of children
+          <select name="children" required>
+            <option value="">Choose</option><option>1</option><option>2</option><option>3</option><option>4 or more</option>
+          </select>
+        </label>
+        <label>Their ages<input type="text" name="ages" placeholder="For example, 6 and 9" required></label>
+        <label class="full"><span>Anything we should know? <span class="opt">(optional)</span></span><input type="text" name="notes" placeholder="Allergies, access needs, or questions"></label>
+        <button class="btn accent" type="submit">Count me in</button>
+      </form>
+      <div class="cc-thanks" id="cc-thanks"><b>Thank you!</b>We'll email you by Wednesday, November 4 to let you know whether childcare will be offered.</div>
+      <p class="cc-note">Childcare doesn't register you for the talk. Please also <a href="https://www.fournorms.com/events/turning-life-on-speaker-series-dr-jared-cooney-horvath-inside-the-learning-brain" target="_blank" rel="noopener">register for the Concord evening</a>.</p>
+    </div>
+    <aside class="cc-know">
+      <h3>Good to know</h3>
+      <div class="row"><h4>When</h4><p>Tuesday, November 17, 7:00 to 9:00 PM, during the talk.</p></div>
+      <div class="row"><h4>Ages</h4><p>Children ages 5 to 12.</p></div>
+      <div class="row"><h4>Please tell us by</h4><p>Sunday, November 1, so we can plan for the right number of caregivers.</p></div>
+      <div class="row"><h4>Questions</h4><p><a href="mailto:emily@intentionaltechcoalition.org?subject=Childcare%20on%20Nov%2017" style="font-weight:700;color:var(--accent-dk);border-bottom:1.5px solid var(--accent);">Email us</a></p></div>
+    </aside>
+  </div>
+</section>
+
+<script>
+// Send to Formspree in the background and show the thank-you message on the page
+(function(){
+  var form=document.getElementById('cc-form'), thanks=document.getElementById('cc-thanks');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sending...';
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); form.style.display='none'; thanks.style.display='block'; })
+      .catch(function(){ btn.disabled=false; btn.textContent='Count me in'; alert('Sorry, that did not go through. Please try again, or email emily@intentionaltechcoalition.org.'); });
+  });
+})();
+</script>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a href="itc-homepage.html" class="wm">
+          <span class="the">The</span>
+          <span class="main">Intentional<br>Tech Coalition</span>
+          <span class="rule-row"><span>CONCORD</span></span>
+        </a>
+        <p>Led by a team of Concord parents, working in partnership with local families, educators, and schools on intentional, research-informed technology choices.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="itc-at-school.html">At School</a>
+        <a href="itc-at-home.html">At Home</a>
+        <a href="itc-take-action.html">Take Action</a>
+        <a href="itc-survey.html">Concord's Data</a>
+        <a href="itc-resources.html">Resources &amp; Events</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="itc-join.html">Join the coalition</a>
+        <a href="itc-volunteer-roles.html">Volunteer roles</a>
+        <a href="itc-take-action.html#speak">Speak at a meeting</a>
+        <a href="mailto:concordschoolcommittee@concordps.org">Email the school committee</a>
+        <a href="mailto:emily@intentionaltechcoalition.org">Contact us</a>
+      </div>
+    </div>
+    <div class="foot-mark">
+      <svg class="venn ondark" viewBox="0 0 100 100" aria-hidden="true"><circle class="c-fam" cx="33.5" cy="40.5" r="26" stroke-width="2.2"/><circle class="c-sch" cx="66.5" cy="40.5" r="26" stroke-width="2.2"/><circle class="c-com" cx="50" cy="69.1" r="26" stroke-width="2.2"/><text x="25.7" y="36" font-size="7.7">family</text><text x="74.3" y="36" font-size="7.7">school</text><text x="50" y="78.1" font-size="7.7">community</text></svg>
+    </div>
+    <div class="fineprint">© 2026 The Intentional Tech Coalition. A volunteer parent group in Concord, MA.</div>
+  </div>
+</footer>
+
+</body>
+</html>
