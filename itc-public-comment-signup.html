@@ -96,6 +96,12 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 :root{--accent:#E9935E;--accent-ink:#463347;--accent-dk:#925938;--accent-lt:#FBE9DF;}
 .btn.accent{background:var(--accent);color:var(--accent-ink);}
 .menu .btn.accent{color:var(--accent-ink);}
+.new-here{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px;background:var(--accent-lt);border:1px solid rgba(233,147,94,.45);border-left:5px solid var(--accent);padding:20px 24px;color:var(--ink);}
+.new-here > div{flex:1 1 380px;}
+.new-here h2{font-size:22px;color:var(--plum);margin-bottom:6px;}
+.new-here p{font-size:14px;line-height:1.6;}
+.new-here a:not(.btn){color:var(--accent-dk);}
+.new-here .btn{text-decoration:none;}
 </style>
 </head>
 <body>
@@ -124,7 +130,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
   <div class="wrap">
     <span class="eyebrow one">Take Action</span>
     <h1>Sign up to speak at a school committee meeting</h1>
-    <p class="lede">Three speaker slots per meeting. Expertise is a bonus, not a requirement — just bring your voice. Speakers have 2–3 minutes and are welcome to read from a printed sheet. You can attend in person or via Zoom.</p>
+    <p class="lede">Three speaker slots per meeting. Expertise is a bonus, not a requirement. Just bring your voice. Speakers have two to three minutes and are welcome to read from a printed sheet. You can attend in person or via Zoom.</p>
   </div>
 </section>
 
@@ -142,8 +148,12 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       </ol>
     </div>
 
-    <div class="info-bar">
-      Need ideas or a little encouragement? Visit the <a href="itc-take-action.html">Take Action page</a> — or reach out to <a href="mailto:emily@intentionaltechcoalition.org">emily@intentionaltechcoalition.org</a> if you'd like to talk it through first.
+    <div class="info-bar new-here">
+      <div>
+        <h2>New to public comment?</h2>
+        <p>Our sample comments and tips give you a place to start. Or reach out to <a href="mailto:emily@intentionaltechcoalition.org">emily@intentionaltechcoalition.org</a> if you'd like to talk it through first.</p>
+      </div>
+      <a class="btn accent" href="itc-public-comment.html#samples">See sample comments</a>
     </div>
 
     <div id="meetings"><div class="loading-state">Loading sign-up sheet…</div></div>
