@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-take-action, v14, October 19, 2026. "Jump to" box beside the intro (From home, In the community, Volunteer with us, Sample public comments); public comment item links to the sample comments page; the seven-tip list is replaced by a short band with See sample comments and Sign up to speak buttons. v13: October 19, 2026. October 19, 2026. Apricot action accent on the Join us button and primary actions. v12: October 19, 2026. Upcoming event line now points to the Nov 17 Horvath event. v11: October 13, 2026. Removed Safety and CMS tags from From home items. v10: October 13, 2026. Aligned to 2026-27 priorities: "Write to school leaders" leads From home and links to the school-level one-pagers (fixes dead #write link); AI request moved to third, Urgent tag replaced by Safety tags; lede links priorities; public comment tip links the 1-pager. v9: October 1, 2026. Stable filename: version tracked here, not in the filename. Reorganized from the time-based "Ways to help" rail (Five minutes / Half an hour / An evening / Ongoing) into three audience buckets: From home, In the community, Volunteer with us. The featured three-card strip is gone; the AI request and CMS communication pledge now sit as weighted items inside From home, carrying small Urgent and CMS tags instead of full cards. Shape the Year Survey removed from this page and from the footer. Public comment keeps its #speak anchor and the auto-updating #sc-next-date-line. Footer blurb de-personalized and Volunteer roles added to Connect. -->
+<!-- itc-take-action, v15, October 19, 2026. Tips band retitled "First time speaking at a school committee meeting?" with a four-tip overview, a short arrival note, and links to sample comments and sign-up. v14: October 19, 2026. "Jump to" box beside the intro (From home, In the community, Volunteer with us, Sample public comments); public comment item links to the sample comments page; the seven-tip list is replaced by a short band with See sample comments and Sign up to speak buttons. v13: October 19, 2026. October 19, 2026. Apricot action accent on the Join us button and primary actions. v12: October 19, 2026. Upcoming event line now points to the Nov 17 Horvath event. v11: October 13, 2026. Removed Safety and CMS tags from From home items. v10: October 13, 2026. Aligned to 2026-27 priorities: "Write to school leaders" leads From home and links to the school-level one-pagers (fixes dead #write link); AI request moved to third, Urgent tag replaced by Safety tags; lede links priorities; public comment tip links the 1-pager. v9: October 1, 2026. Stable filename: version tracked here, not in the filename. Reorganized from the time-based "Ways to help" rail (Five minutes / Half an hour / An evening / Ongoing) into three audience buckets: From home, In the community, Volunteer with us. The featured three-card strip is gone; the AI request and CMS communication pledge now sit as weighted items inside From home, carrying small Urgent and CMS tags instead of full cards. Shape the Year Survey removed from this page and from the footer. Public comment keeps its #speak anchor and the auto-updating #sc-next-date-line. Footer blurb de-personalized and Volunteer roles added to Connect. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -95,11 +95,19 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 :root{--accent:#E9935E;--accent-ink:#463347;--accent-dk:#925938;--accent-lt:#FBE9DF;}
 .btn.accent{background:var(--accent);color:var(--accent-ink);}
 .menu .btn.accent{color:var(--accent-ink);}
-.tips-band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px 40px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:30px 32px;}
-.tips-band > div:first-child{max-width:560px;}
+.tips-band{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:30px 32px;}
+.tips-top{max-width:620px;}
 .tips-band h2{font-size:clamp(24px,3.6vw,32px);color:var(--forest);margin:12px 0 10px;}
 .tips-band p{font-size:15px;opacity:.85;}
+.tips-quick{list-style:none;counter-reset:tq;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:24px 0 16px;border-top:1.5px solid var(--line);}
+.tips-quick li{counter-increment:tq;padding:16px 18px 4px 0;font-size:13px;line-height:1.5;color:var(--forest-2);}
+.tips-quick li + li{padding-left:18px;border-left:1px solid var(--line);}
+.tips-quick li::before{content:counter(tq);display:block;font-family:var(--serif);font-style:italic;font-size:15px;color:var(--accent-dk);}
+.tips-quick b{display:block;font-family:var(--serif);font-weight:400;font-size:17px;color:var(--plum);line-height:1.2;margin:2px 0 6px;}
+.tips-band p.tips-foot{font-size:13px;color:var(--forest-2);opacity:1;margin-bottom:20px;}
 .tips-btns{display:flex;flex-wrap:wrap;gap:10px;}
+@media(max-width:760px){.tips-band{padding:24px 18px;}.tips-quick{grid-template-columns:1fr 1fr;row-gap:8px;}.tips-quick li:nth-child(3){padding-left:0;border-left:none;}}
+@media(max-width:460px){.tips-quick{grid-template-columns:1fr;}.tips-quick li + li{padding-left:0;border-left:none;border-top:1px solid var(--line);}}
 .ph-grid{display:grid;grid-template-columns:1fr 250px;gap:48px;align-items:end;}
 .pagehead .ph-grid h1{margin-top:16px;}
 .jump{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px 12px;}
@@ -238,13 +246,20 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 <section class="block tips" id="tips">
   <div class="wrap">
     <div class="tips-band">
-      <div>
+      <div class="tips-top">
         <span class="eyebrow one">A little encouragement</span>
-        <h2>First time speaking at public comment?</h2>
-        <p>It's less intimidating than it sounds, and personal stories from parents are what committee members remember. Our sample comments give you a place to start.</p>
+        <h2>First time speaking at a school committee meeting?</h2>
+        <p>It's less intimidating than it sounds. Anyone can speak during public comment. Here's the quick version, and our sample comments page has more.</p>
       </div>
+      <ol class="tips-quick">
+        <li><b>Two to three minutes</b>One clear point lands better than five rushed ones.</li>
+        <li><b>Start with your story</b>What you've seen with your own kids is what committee members remember.</li>
+        <li><b>Read from the page</b>Written remarks work beautifully, in person or on Zoom.</li>
+        <li><b>Close with an ask, and thanks</b>Stay constructive. Committee members are volunteers carrying a heavy load.</li>
+      </ol>
+      <p class="tips-foot">Fill out a short form when you arrive. Arriving late is fine. And you can always simply attend: a full room speaks, even when you don't.</p>
       <div class="tips-btns">
-        <a class="btn accent" href="itc-public-comment.html#samples">See sample comments</a>
+        <a class="btn accent" href="itc-public-comment.html#samples">See sample comments and tips</a>
         <a class="btn ghost" href="itc-public-comment-signup.html">Sign up to speak</a>
       </div>
     </div>
