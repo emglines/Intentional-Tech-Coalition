@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-homepage, v20, October 19, 2026. Adds a one-time pop-up (#jch-pop) for the Nov 17 Horvath event: shows once per browser, closes on X, Escape or backdrop, and switches itself off after Nov 17, 2026. Rebuilt the top of the page around the 2026-27 priorities ("Every Concord student deserves..." hero with the priorities ring; Safety, Efficacy, Alignment cards each with a research finding, the asks, and actions families can take); next school committee meeting strip; "Ready for more?" cards; apricot clay accent for actions. Removed the hero research panel, nudge pills, second "Connected by choice" band, "Where intentional choices happen" arenas, and the old "Make a difference" section. v19: October 13, 2026. Added 2026-27 school priorities announcement. v18: June 18, 2026. Mobile layout. -->
+<!-- itc-homepage, v20, October 19, 2026. Copy edits from Emily (lede, Efficacy "74 of 100 ... do not have", Alignment "Stress in half"); priority cards aligned row by row (subgrid), questions on their own line, two one-line actions per card. Adds a one-time pop-up (#jch-pop) for the Nov 17 Horvath event: shows once per browser, closes on X, Escape or backdrop, and switches itself off after Nov 17, 2026. Rebuilt the top of the page around the 2026-27 priorities ("Every Concord student deserves..." hero with the priorities ring; Safety, Efficacy, Alignment cards each with a research finding, the asks, and actions families can take); next school committee meeting strip; "Ready for more?" cards; apricot clay accent for actions. Removed the hero research panel, nudge pills, second "Connected by choice" band, "Where intentional choices happen" arenas, and the old "Make a difference" section. v19: October 13, 2026. Added 2026-27 school priorities announcement. v18: June 18, 2026. Mobile layout. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -146,13 +146,13 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
 .ring-art .cap a{font-weight:700;border-bottom:2px solid var(--accent);}
 /* Priorities, each with what we ask and what families can do */
 .prio-band{background:var(--paper);padding:60px 0 64px;}
-.prio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.prio-grid{display:grid;grid-template-columns:repeat(3,1fr);column-gap:18px;row-gap:0;}
 .prio-grid>*{min-width:0;}
-.prio{background:var(--white);border:1px solid var(--line);border-top:6px solid var(--ring-s);border-radius:var(--r);display:flex;flex-direction:column;scroll-margin-top:20px;}
+.prio{background:var(--white);border:1px solid var(--line);border-top:6px solid var(--ring-s);border-radius:var(--r);display:grid;grid-template-rows:subgrid;grid-row:span 4;row-gap:0;scroll-margin-top:20px;}
 .prio.e{border-top-color:var(--ring-e);} .prio.a{border-top-color:var(--sage-dk);}
 .prio .top{padding:22px 24px 18px;}
 .prio .k{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--forest-2);}
-.prio .k i{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;font-size:13px;margin-left:6px;}
+.prio .k i{display:block;font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;font-size:14px;color:var(--forest);margin-top:4px;}
 .prio h3{font-size:25px;color:var(--plum);line-height:1.15;margin-top:8px;}
 .prio .why{margin:0 24px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 .prio .why .num{font-family:var(--serif);font-size:40px;line-height:1;color:var(--forest);}
@@ -164,7 +164,7 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
 .prio .ask ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
 .prio .ask li{font-size:13.5px;line-height:1.45;padding-left:16px;position:relative;}
 .prio .ask li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--sage-dk);}
-.prio .do{margin-top:auto;background:var(--accent-lt);padding:16px 24px 20px;border-radius:0 0 var(--r) var(--r);}
+.prio .do{background:var(--accent-lt);padding:16px 24px 20px;border-radius:0 0 var(--r) var(--r);}
 .prio .do .lbl{color:var(--accent-dk);}
 .prio .do a{display:flex;justify-content:space-between;gap:10px;align-items:baseline;font-weight:600;font-size:14px;color:var(--accent-dk);padding:6px 0;border-bottom:1px solid var(--line);}
 .prio .do a:last-child{border-bottom:none;}
@@ -188,7 +188,7 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
 .more-card p{font-size:13px;opacity:.82;margin-bottom:10px;}
 .more-card a{font-size:13.5px;font-weight:700;color:var(--accent-dk);border-bottom:1.5px solid var(--accent);}
 .res-item.wide{grid-column:1/-1;}
-@media(max-width:860px){.hero-grid,.prio-grid,.more-grid{grid-template-columns:1fr;}.next-inner{grid-template-columns:1fr;gap:18px;justify-items:start;}.ring-art svg{max-width:300px;}}
+@media(max-width:860px){.hero-grid,.prio-grid,.more-grid{grid-template-columns:1fr;}.prio+.prio{margin-top:18px;}.next-inner{grid-template-columns:1fr;gap:18px;justify-items:start;}.ring-art svg{max-width:300px;}}
 .jpop{position:fixed;inset:0;z-index:500;background:rgba(36,35,33,.55);display:flex;align-items:center;justify-content:center;padding:16px;}
 .jpop[hidden]{display:none;}
 .jpop-card{position:relative;display:grid;grid-template-columns:200px 1fr;max-width:620px;width:100%;background:var(--plum-dk,#382839);color:var(--paper);border-radius:8px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.35);animation:jpop-in .25s ease-out;}
@@ -240,7 +240,7 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
     <div>
       <span class="eyebrow one">Concord, Massachusetts &middot; Connected by choice</span>
       <h1>Every Concord student deserves technology that is <em>safe</em>, <em>effective</em>, and <em>true to our values</em>.</h1>
-      <p class="lede">We're a coalition of Concord families, caregivers, and educators working in partnership with our schools. This year we're asking the district for three things, and there's a small, concrete way for every family to help with each one.</p>
+      <p class="lede">We're a coalition of Concord families, caregivers, and educators working in partnership with our schools. This year we're asking the district for three things, and there's a concrete way for every family to help with each one.</p>
       <div class="cta">
         <a href="#priorities" class="btn accent">See what you can do</a>
         <a href="itc-school-priorities.pdf" class="btn ghost" target="_blank">Download the 1-pager</a>
@@ -288,14 +288,14 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
         </ul></div>
         <div class="do"><div class="lbl">You can</div>
           <a href="itc-ai-request.html">Sign the AI request <span class="t">1 min</span></a>
-          <a href="itc-internet-consent-guide.pdf" target="_blank">Opt out of internet use consent <span class="t">10 min</span></a>
+          <a href="itc-internet-consent-guide.pdf" target="_blank">Opt out of internet consent <span class="t">10 min</span></a>
         </div>
       </div>
       <div class="prio e" id="efficacy">
         <div class="top"><span class="k">Efficacy<i>Does it help students learn?</i></span><h3>Kids deserve tools that are proven to help them learn.</h3></div>
         <div class="why">
-          <div class="num">26 of 100</div>
-          <p>of the most-used EdTech tools in U.S. classrooms had research meeting federal ESSA evidence standards.</p>
+          <div class="num">74 of 100</div>
+          <p>of the most-used EdTech tools in U.S. classrooms do not have research meeting federal ESSA evidence standards.</p>
           <span class="src">LearnPlatform Evidence Report, 2023</span>
         </div>
         <div class="ask"><div class="lbl">What we're asking</div><ul>
@@ -305,14 +305,13 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
         </ul></div>
         <div class="do"><div class="lbl">You can</div>
           <a href="itc-at-school.html#levels">Write to school leaders <span class="t">15 min</span></a>
-          <a href="itc-elementary-asks.pdf" target="_blank">Elementary asks <span class="t">One-pager</span></a>
-          <a href="itc-middle-asks.pdf" target="_blank">Middle school asks <span class="t">One-pager</span></a>
+          <a href="itc-edtech-glossary.pdf" target="_blank">Learn the evidence terms <span class="t">5 min</span></a>
         </div>
       </div>
       <div class="prio a" id="alignment">
         <div class="top"><span class="k">Alignment<i>Does it reflect our district's own goals?</i></span><h3>Kids deserve technology that reflects our district's values.</h3></div>
         <div class="why">
-          <div class="num">Half</div>
+          <div class="num">Stress in half</div>
           <p>Our district's Strategic Plan aims to cut student stress in half from 2022 levels, and to partner with parents on best practices for student technology. We ask that technology decisions support both.</p>
           <span class="src"><a href="https://resources.finalsite.net/images/v1783007215/concordpsorg/uxqldpiobopl9pemg7b3/ConcordCarlisleStrategicPlan2023-2028.pdf" target="_blank">District Strategic Plan 2023-2028</a></span>
         </div>
@@ -322,7 +321,7 @@ footer .grid{grid-template-columns:1fr;gap:24px;}
           <li>A parent app that shows screen time on school devices</li>
         </ul></div>
         <div class="do"><div class="lbl">You can</div>
-          <a href="itc-public-comment-signup.html">Speak at a school committee meeting <span class="t">An evening</span></a>
+          <a href="itc-public-comment-signup.html">Speak at public comment <span class="t">An evening</span></a>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLScg3ufVW7tq8G-fKrdv3LXkvI2f0A65VjYRbcBgdlyEHEaMRQ/viewform?usp=header" target="_blank">CMS families: sign the pledge <span class="t">2 min</span></a>
         </div>
       </div>
