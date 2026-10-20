@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-at-school, v12, October 19, 2026. Apricot action accent on the Join us button and primary actions. v11: October 19, 2026. Alignment tied to the District Strategic Plan 2023-2028: source lines cite and link the plan (initiative 4.4, outcome 2.3), and a second quote adds outcome 4.4 on balance in technology use. v10: October 13, 2026. Added K-8 internet consent guide card below the school-level tabs. v9: Stable filename: version tracked here, not in the filename. Rebuilt around the 2026-27 School Priorities 1-pager (Safety, Efficacy, Alignment): asks framed as requests, school-level one-pagers for family advocacy (elementary and middle linked as PDFs), TAC kept as a soft "Looking ahead" card, survey findings removed. -->
+<!-- itc-at-school, v13, October 19, 2026. 2026 student survey strip under the page heading (parents monitoring phones, devices out of bedrooms, more sleep, less heavy screen time, each 2024 vs 2026); data notes on the screen time report, Student well-being, and Bell-to-bell cards, each linking to Concord's Data. v12: October 19, 2026. Apricot action accent on the Join us button and primary actions. v11: October 19, 2026. Alignment tied to the District Strategic Plan 2023-2028: source lines cite and link the plan (initiative 4.4, outcome 2.3), and a second quote adds outcome 4.4 on balance in technology use. v10: October 13, 2026. Added K-8 internet consent guide card below the school-level tabs. v9: Stable filename: version tracked here, not in the filename. Rebuilt around the 2026-27 School Priorities 1-pager (Safety, Efficacy, Alignment): asks framed as requests, school-level one-pagers for family advocacy (elementary and middle linked as PDFs), TAC kept as a soft "Looking ahead" card, survey findings removed. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -186,6 +186,27 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 :root{--accent:#E9935E;--accent-ink:#463347;--accent-dk:#925938;--accent-lt:#FBE9DF;}
 .btn.accent{background:var(--accent);color:var(--accent-ink);}
 .menu .btn.accent{color:var(--accent-ink);}
+.newdata{background:var(--cream);border-bottom:1px solid var(--line);padding:26px 0 28px;}
+.nd-top{display:flex;align-items:center;justify-content:space-between;gap:28px;}
+.nd-chips{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px;}
+.nd-c{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--forest);border-radius:var(--r);padding:12px 14px;display:flex;flex-direction:column;}
+.nd-c .nl{display:block;font-size:12.5px;font-weight:600;line-height:1.35;margin-bottom:6px;}
+.nd-c .nv{font-size:11.5px;color:var(--forest-2);margin-top:auto;white-space:nowrap;}
+.nd-c .nv b{font-family:var(--serif);font-weight:400;font-size:19px;color:var(--forest);}
+.nd-c .nv i{font-style:normal;margin:0 2px;}
+.nd-k{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--plum);}
+.newdata p{font-size:14.5px;line-height:1.55;margin-top:4px;max-width:720px;}
+.newdata p b{color:var(--forest);}
+.newdata .btn{flex:none;white-space:nowrap;}
+.card .dnote{margin-top:14px;background:var(--paper);border-left:3px solid var(--forest-2);border-radius:2px;padding:10px 12px;font-size:12.5px;line-height:1.5;}
+.card .dnote a{font-weight:700;color:var(--plum);text-decoration:underline;}
+.dn-row{display:flex;justify-content:space-between;gap:10px;padding:2px 0;}
+.dn-row{align-items:baseline;}.dn-row b{font-family:var(--serif);font-weight:400;font-size:16px;color:var(--forest);white-space:nowrap;}
+.dn-row b.pl{color:var(--plum);}
+.dn-row + .dn-row{margin-bottom:6px;border-top:1px solid var(--line);}
+@media(max-width:900px){.nd-chips{grid-template-columns:1fr 1fr;}}
+@media(max-width:760px){.nd-top{flex-direction:column;align-items:flex-start;gap:14px;}}
+@media(max-width:480px){.nd-chips{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -235,6 +256,24 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
   </div>
 </section>
 
+<section class="newdata">
+  <div class="wrap">
+    <div class="nd-top">
+      <div>
+        <span class="nd-k">New &middot; 2026 student survey</span>
+        <p><b>Concord families are doing their part at home.</b> Students' answers show parents keeping a closer eye on phones and screens, devices leaving bedrooms, and kids getting more sleep. The asks below are how the school day catches up.</p>
+      </div>
+      <a href="itc-survey.html" class="btn">See Concord's Data</a>
+    </div>
+    <div class="nd-chips">
+      <div class="nd-c"><span class="nl">High schoolers whose parents monitor their phone use</span><span class="nv"><b>31%</b> in 2024 <i>to</i> <b>40%</b> in 2026</span></div>
+      <div class="nd-c"><span class="nl">Sixth graders with no devices in the bedroom at night</span><span class="nv"><b>43%</b> in 2024 <i>to</i> <b>57%</b> in 2026</span></div>
+      <div class="nd-c"><span class="nl">High schoolers sleeping more than 7 hours on school nights</span><span class="nv"><b>23%</b> in 2024 <i>to</i> <b>30%</b> in 2026</span></div>
+      <div class="nd-c"><span class="nl">High schoolers with 6+ hours of non-school screen time a weekday</span><span class="nv"><b>13%</b> in 2024 <i>to</i> <b>9%</b> in 2026</span></div>
+    </div>
+  </div>
+</section>
+
 <section class="whynow">
   <div class="wrap">
     <div class="grid">
@@ -272,6 +311,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
           <li>Any minimum-use contract terms</li>
         </ul>
         <p style="margin-top:12px;">We also ask for a screen time report by grade, class, and application, updated each term.</p>
+        <div class="dnote">The student survey measures screen time after school, on students' own time, but not during the school day. The superintendent has agreed to look into this year. <a href="itc-survey.html#unmeasured">See what isn't measured</a></div>
       </div>
       <div class="card">
         <h3>AI off by default</h3>
@@ -338,12 +378,14 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
         <h3>Student well-being</h3>
         <div class="who">Asked of: Administration and Leadership</div>
         <p>We ask that technology decisions support the district&rsquo;s goal to cut student stress in half from 2022 levels, as measured by the Youth Risk Behavior Survey.</p>
+        <div class="dnote"><div class="dn-row"><span>Stress from home</span><b>36% to 19%</b></div><div class="dn-row"><span>Stress from schoolwork</span><b class="pl">64% to 59%</b></div>High schoolers, 2022 to 2026. At home, the goal is nearly met. At school, it isn't close. <a href="itc-survey.html#stress">See the data</a></div>
         <div class="src"><a href="https://resources.finalsite.net/images/v1783007215/concordpsorg/uxqldpiobopl9pemg7b3/ConcordCarlisleStrategicPlan2023-2028.pdf" target="_blank" class="tlink">District Strategic Plan</a>, outcome 2.3: cut student stress in half</div>
       </div>
       <div class="card">
         <h3>Bell-to-bell policy</h3>
         <div class="who">Asked of: School Committee</div>
         <p>We ask the School Committee to adopt a phone policy with secure storage at all schools, ahead of state legislation, and to enforce it consistently in every building.</p>
+        <div class="dnote">At the elementary schools and the Ellen Garrison Building at Concord Middle School, phones are off and in backpacks bell to bell. At Concord-Carlisle High School, they only need to be put away during class. From 2024 to 2026, sixth graders feeling depressed fell from 21% to 10%; high schoolers held at 14%. <a href="itc-survey.html#rules">See the data</a></div>
         <div class="src">School Committee goal: revise phone policy</div>
       </div>
     </div>
