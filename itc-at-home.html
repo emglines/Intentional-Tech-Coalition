@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-at-home, v11, October 19, 2026. "See upcoming events" now goes to Resources & Events. v10: October 19, 2026. Apricot action accent on the Join us button and primary actions. v9: October 19, 2026. Next event card now features the Nov 17 Horvath event. v8: October 13, 2026. First two gathering cards featured the Oct 15 event and a "more gatherings" card. v7: June 17, 2026. Stable filename: version tracked here, not in the filename. -->
+<!-- itc-at-home, v12, October 19, 2026. "You're part of a shift" section after the promise strip: three home measures from the 2026 student survey (2024 vs 2026, year-labeled bars), links to Concord's Data and At School. v11: October 19, 2026. "See upcoming events" now goes to Resources & Events. v10: October 19, 2026. Apricot action accent on the Join us button and primary actions. v9: October 19, 2026. Next event card now features the Nov 17 Horvath event. v8: October 13, 2026. First two gathering cards featured the Oct 15 event and a "more gatherings" card. v7: June 17, 2026. Stable filename: version tracked here, not in the filename. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -96,6 +96,26 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 :root{--accent:#E9935E;--accent-ink:#463347;--accent-dk:#925938;--accent-lt:#FBE9DF;}
 .btn.accent{background:var(--accent);color:var(--accent-ink);}
 .menu .btn.accent{color:var(--accent-ink);}
+.shift{background:var(--paper);border-bottom:1px solid var(--line);padding:44px 0;}
+.shift-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;}
+.shift h2{font-family:var(--serif);font-size:clamp(28px,4vw,40px);color:var(--forest);margin:12px 0 12px;}
+.shift p{font-size:15px;line-height:1.6;opacity:.88;margin-bottom:10px;}
+.shift-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:14px;}
+.shift-links .tlink{font-size:13.5px;font-weight:700;color:var(--plum);border-bottom:1.5px solid var(--plum);}
+.shift-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:16px 22px 10px;}
+.sk{display:flex;gap:16px;font-size:12px;font-weight:600;color:var(--forest-2);margin-bottom:4px;}
+.sk span{display:inline-flex;align-items:center;gap:6px;}
+.sw{display:inline-block;width:20px;height:9px;border-radius:99px;}
+.sw.old,.f.old{background:var(--sage-dk);}.sw.new,.f.new{background:var(--forest);}
+.sh{padding:10px 0 6px;border-top:1px solid var(--line);margin-top:6px;}
+.shl{font-size:13.5px;font-weight:600;line-height:1.35;}
+.shl span{display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--plum);margin-top:2px;}
+.yr{display:grid;grid-template-columns:36px 1fr 36px;align-items:center;gap:8px;margin-top:6px;font-size:12px;}
+.yr .y{color:var(--forest-2);font-weight:600;}
+.yr .t{height:10px;background:var(--cream);border-radius:99px;overflow:hidden;}
+.yr .f{display:block;height:100%;border-radius:99px;}
+.yr .v{text-align:right;font-weight:700;color:var(--forest);}
+@media(max-width:760px){.shift-grid{grid-template-columns:1fr;gap:28px;}}
 </style>
 </head>
 <body>
@@ -144,6 +164,27 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
         <span class="spot-wrap"><svg class="spot" viewBox="0 0 44 44" fill="none" stroke="#463347" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Two linked circles icon"><circle cx="17" cy="22" r="9"/><circle cx="27" cy="22" r="9"/></svg></span>
         <div><h3>No going it alone</h3><p>Tech decisions are easier when neighbors make them together. A shared norm beats a solo battle every time.</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="block shift" id="shift">
+  <div class="wrap shift-grid">
+    <div>
+      <span class="eyebrow">From the 2026 student survey</span>
+      <h2>You're part of a shift</h2>
+      <p>Every two years, nearly every Concord-Carlisle student in grades 6, 8, and 9 through 12 answers the Emerson Youth Risk Behavior Survey. Between 2024 and 2026, their answers show Concord families making more intentional choices at home, and it's adding up.</p>
+      <p>Every small step counts: a charging spot outside the bedroom, a look at the settings, a family conversation about screens. Concord families are doing their part, and you're in good company.</p>
+      <div class="shift-links">
+        <a href="itc-survey.html" class="btn">See all the numbers</a>
+        <a href="itc-at-school.html" class="tlink">What we're asking of the school day &rarr;</a>
+      </div>
+    </div>
+    <div class="shift-card">
+      <div class="sk"><span><i class="sw old"></i>2024</span><span><i class="sw new"></i>2026</span></div>
+      <div class="sh"><div class="shl">Parents monitor their phone use<span>8th grade</span></div><div class="yr"><span class="y">2024</span><span class="t"><span class="f old" style="width:58%"></span></span><span class="v">58%</span></div><div class="yr"><span class="y">2026</span><span class="t"><span class="f new" style="width:71%"></span></span><span class="v">71%</span></div></div>
+      <div class="sh"><div class="shl">No devices in the bedroom at night<span>6th grade</span></div><div class="yr"><span class="y">2024</span><span class="t"><span class="f old" style="width:43%"></span></span><span class="v">43%</span></div><div class="yr"><span class="y">2026</span><span class="t"><span class="f new" style="width:57%"></span></span><span class="v">57%</span></div></div>
+      <div class="sh"><div class="shl">Sleeping more than 7 hours on school nights<span>High school</span></div><div class="yr"><span class="y">2024</span><span class="t"><span class="f old" style="width:23%"></span></span><span class="v">23%</span></div><div class="yr"><span class="y">2026</span><span class="t"><span class="f new" style="width:30%"></span></span><span class="v">30%</span></div></div>
     </div>
   </div>
 </section>
