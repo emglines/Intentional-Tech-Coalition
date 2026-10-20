@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-ai-request.html, v2, October 19, 2026. Apricot action accent on the Join us button and primary actions. v1: August 2026 -->
+<!-- itc-ai-request.html, v3, October 19, 2026. "Why a pause makes sense" section between the request and the sign-up form: Stanford SCALE review, Bastani et al. PNAS, New York City pause, and a "Shouldn't school prepare kids for AI?" answer linking Tech-Wise Arlington. Request wording unchanged. v2: October 19, 2026. Apricot action accent on the Join us button and primary actions. v1: August 2026 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -156,6 +156,19 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 :root{--accent:#E9935E;--accent-ink:#463347;--accent-dk:#925938;--accent-lt:#FBE9DF;}
 .btn.accent{background:var(--accent);color:var(--accent-ink);}
 .menu .btn.accent{color:var(--accent-ink);}
+.why{background:var(--paper);border-top:1px solid var(--line);}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.why-card{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--forest);border-radius:var(--r);padding:22px 22px 18px;display:flex;flex-direction:column;}
+.why-card .wk{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--plum);}
+.why-card .wn{font-family:var(--serif);font-size:44px;line-height:1;color:var(--forest);margin:10px 0 8px;}
+.why-card p{font-size:13.5px;line-height:1.55;opacity:.88;margin-bottom:14px;}
+.why-card .ws{margin-top:auto;font-size:11.5px;font-style:italic;color:var(--forest-2);text-decoration:underline;}
+.faq{margin-top:18px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--sage-dk);border-radius:var(--r);padding:20px 24px;}
+.fq-q{font-family:var(--serif);font-size:20px;color:var(--forest);margin-bottom:6px;}
+.faq p{font-size:14px;line-height:1.6;opacity:.9;}
+.faq .fq-more{margin-top:8px;font-size:13px;}
+.faq a{font-weight:700;color:var(--plum);text-decoration:underline;}
+@media(max-width:760px){.why-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -231,6 +244,41 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
         <iframe class="petition-iframe" src="itc-ai-request.pdf" title="A Two-Part Request on Generative AI in Concord Schools"></iframe>
         <a class="petition-pdf-link" href="itc-ai-request.pdf" target="_blank">Open the full request as a PDF ↗</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="block why" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow one">Why a pause makes sense</span>
+      <h2>What the research shows, and what other districts are doing</h2>
+      <p>A pause isn't a verdict on AI. It's a chance to look at the evidence before it reaches our students, and right now the evidence is thin.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="wk">No proof it helps</span>
+        <div class="wn">0</div>
+        <p>high-quality studies of student AI use in U.S. K-12 classrooms. Stanford reviewed more than 800 papers on AI in schools and found only 20 rigorous studies anywhere. Students often do better while using AI; once it's removed, results are mixed.</p>
+        <a class="ws" href="https://scale.stanford.edu/research-in-action/understanding-evidence-base-ai-k12-education" target="_blank" rel="noopener">Stanford SCALE Initiative, March 2026</a>
+      </div>
+      <div class="why-card">
+        <span class="wk">It can get in the way</span>
+        <div class="wn">17%</div>
+        <p>lower exam scores for high schoolers who had practiced math with unrestricted ChatGPT-style help, once it was taken away, even though their practice scores rose 48% while they used it. A version built with learning guardrails largely avoided the harm.</p>
+        <a class="ws" href="https://www.pnas.org/doi/10.1073/pnas.2422633122" target="_blank" rel="noopener">Bastani et al., PNAS, 2025</a>
+      </div>
+      <div class="why-card">
+        <span class="wk">Others are pausing too</span>
+        <div class="wn">NYC</div>
+        <p>The country's largest school district paused student use of generative AI for 2026-27, from its youngest students through 8th grade. It removed software with student-facing AI, banned companion chatbots, and will spend the year studying the effects.</p>
+        <a class="ws" href="https://govtech.com/education/k-12/nyc-schools-hits-pause-on-ai-draws-clear-line-on-student-use" target="_blank" rel="noopener">New York City Public Schools, September 2026</a>
+      </div>
+    </div>
+    <div class="faq">
+      <div class="fq-q">"Shouldn't school prepare kids for AI?"</div>
+      <p>We think the best preparation is the foundation AI can't supply: reading closely, writing clearly, doing math without help, and noticing when an answer doesn't add up. AI amplifies the skills a student already has, and those skills grow best with AI out of the loop, especially in the K-8 years.</p>
+      <p class="fq-more">Want to go deeper? Tech-Wise Arlington's <a href="https://techwisearlington.org/ai-for-parents/" target="_blank" rel="noopener">AI Parent's Playbook</a> covers AI at home, at school, and beyond.</p>
     </div>
   </div>
 </section>

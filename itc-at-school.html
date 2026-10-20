@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-at-school, v13, October 19, 2026. 2026 student survey strip under the page heading (parents monitoring phones, devices out of bedrooms, more sleep); data notes on the screen time report, Student well-being, and Bell-to-bell cards, each linking to Concord's Data. v12: October 19, 2026. Apricot action accent on the Join us button and primary actions. v11: October 19, 2026. Alignment tied to the District Strategic Plan 2023-2028: source lines cite and link the plan (initiative 4.4, outcome 2.3), and a second quote adds outcome 4.4 on balance in technology use. v10: October 13, 2026. Added K-8 internet consent guide card below the school-level tabs. v9: Stable filename: version tracked here, not in the filename. Rebuilt around the 2026-27 School Priorities 1-pager (Safety, Efficacy, Alignment): asks framed as requests, school-level one-pagers for family advocacy (elementary and middle linked as PDFs), TAC kept as a soft "Looking ahead" card, survey findings removed. -->
+<!-- itc-at-school, v14, October 19, 2026. AI evidence note on the AI off by default card (Stanford review, New York City pause); "Shouldn't school prepare kids for AI?" answer under the Safety cards. v13: October 19, 2026. 2026 student survey strip under the page heading (parents monitoring phones, devices out of bedrooms, more sleep); data notes on the screen time report, Student well-being, and Bell-to-bell cards, each linking to Concord's Data. v12: October 19, 2026. Apricot action accent on the Join us button and primary actions. v11: October 19, 2026. Alignment tied to the District Strategic Plan 2023-2028: source lines cite and link the plan (initiative 4.4, outcome 2.3), and a second quote adds outcome 4.4 on balance in technology use. v10: October 13, 2026. Added K-8 internet consent guide card below the school-level tabs. v9: Stable filename: version tracked here, not in the filename. Rebuilt around the 2026-27 School Priorities 1-pager (Safety, Efficacy, Alignment): asks framed as requests, school-level one-pagers for family advocacy (elementary and middle linked as PDFs), TAC kept as a soft "Looking ahead" card, survey findings removed. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -207,6 +207,13 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 @media(max-width:900px){.nd-chips{grid-template-columns:1fr 1fr;}}
 @media(max-width:760px){.nd-top{flex-direction:column;align-items:flex-start;gap:14px;}}
 @media(max-width:480px){.nd-chips{grid-template-columns:1fr;}}
+.aifaq{margin-top:18px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--forest);border-radius:var(--r);padding:18px 22px;display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:center;}
+.af-q{font-family:var(--serif);font-size:19px;line-height:1.25;color:var(--forest);}
+.af-q span{display:block;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--plum);margin-bottom:4px;}
+.aifaq p{font-size:13.5px;line-height:1.6;opacity:.9;}
+.aifaq a{font-weight:700;color:var(--plum);text-decoration:underline;}
+.card .aside a{text-decoration:underline;}
+@media(max-width:760px){.aifaq{grid-template-columns:1fr;gap:8px;}}
 </style>
 </head>
 <body>
@@ -305,20 +312,27 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
           <li>Any minimum-use contract terms</li>
         </ul>
         <p style="margin-top:12px;">We also ask for a screen time report by grade, class, and application, updated each term.</p>
-        <div class="dnote">The student survey measures screen time after school, on students' own time, but not during the school day. The superintendent has agreed to look into this year. <a href="itc-survey.html#unmeasured">See what isn't measured</a></div>
+        <p class="aside">Already common in Massachusetts: see the public lists from <a href="https://sdpc.a4l.org/district_listing.php?districtID=409" target="_blank" rel="noopener">Arlington</a>, <a href="https://sdpc.a4l.org/district_listing.php?districtID=646" target="_blank" rel="noopener">Northampton</a>, <a href="https://sdpc.a4l.org/district_listing.php?districtID=408" target="_blank" rel="noopener">Andover</a>, and <a href="https://sdpc.a4l.org/district_listing.php?districtID=558" target="_blank" rel="noopener">Hudson</a>.</p>
+        <div class="dnote">The student survey doesn't measure school-day screen time. The superintendent has agreed to look into it this year. <a href="itc-survey.html#unmeasured">Learn more</a></div>
       </div>
       <div class="card">
         <h3>AI off by default</h3>
         <div class="who">Asked of: Administration and Leadership</div>
         <p>We ask that generative AI features stay turned off for students until each one has been reviewed.</p>
         <p class="aside">Many tools now add AI features through routine updates. Off by default means a new feature reaches students only after someone has looked at it.</p>
+        <div class="dnote">Stanford's March 2026 review of more than 800 papers found no high-quality studies of student AI use in U.S. K-12 classrooms. New York City, the country's largest district, has paused student AI from its youngest grades through 8th grade for 2026-27. <a href="itc-ai-request.html#why">See the evidence</a></div>
       </div>
       <div class="card">
         <h3>Allow-list internet</h3>
         <div class="who">Asked of: Administration and Leadership</div>
         <p>We ask that student devices reach approved sites only, rather than blocking harmful sites one at a time.</p>
         <ul><li>For elementary and middle school devices</li></ul>
+        <div class="dnote">Want an allowlist for your own child now? Our K-8 guide shows how to ask for one through the internet consent form in Aspen. <a href="itc-internet-consent-guide.pdf" target="_blank">Read the guide</a></div>
       </div>
+    </div>
+    <div class="aifaq">
+      <div class="af-q"><span>A question we hear</span>"Shouldn't school prepare kids for AI?"</div>
+      <p>We think the best preparation is the foundation AI can't supply: reading closely, writing clearly, doing math without help, and noticing when an answer doesn't add up. AI amplifies the skills a student already has, and those skills grow best with AI out of the loop, especially in the K-8 years. That's why we ask for AI off by default, reviewed one feature at a time. <a href="https://techwisearlington.org/ai-for-parents/" target="_blank" rel="noopener">More from Tech-Wise Arlington</a></p>
     </div>
   </div>
 </section>
