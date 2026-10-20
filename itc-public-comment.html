@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-public-comment, v2, October 19, 2026. "Planning to speak?" button now goes to the sign-up sheet; email offered as a smaller link. v1: October 19, 2026. Sample public comments for school committee speakers: shape-of-a-comment timeline, the three priority questions with short shared asks, six topic samples with fill-in prompts (name and street address opening), and an open "your own topic" card. Print and copy per sample; #topic web addresses open a specific sample. Not yet linked from the nav or Take Action. -->
+<!-- itc-public-comment, v3, October 19, 2026. New first sample, "Families are doing their part," a note that any sample can be sent as an email to either School Committee, and a Sign up to speak button in the page heading; built on the 2026 student survey; 2026 stress numbers added to the Alignment sample; CCHS phone rule corrected and the middle school vs high school contrast added to the Phones at CCHS sample. v2: October 19, 2026. "Planning to speak?" button now goes to the sign-up sheet; email offered as a smaller link. v1: October 19, 2026. Sample public comments for school committee speakers: shape-of-a-comment timeline, the three priority questions with short shared asks, six topic samples with fill-in prompts (name and street address opening), and an open "your own topic" card. Print and copy per sample; #topic web addresses open a specific sample. Not yet linked from the nav or Take Action. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -183,6 +183,11 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
   .fill{background:none;border-bottom:1px dashed #999;color:#555;}
   .speech p.theask{background:none;border-left:3px solid #000;}
 }
+.nm-btns{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap;}
+@media(max-width:760px){.nm-btns{margin-left:0;}}
+.emailalt{margin-top:14px;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--clay);border-radius:var(--r);padding:12px 16px;font-size:14px;line-height:1.55;}
+.emailalt a{font-weight:700;color:var(--clay-dk);border-bottom:1.5px solid var(--clay);word-break:break-word;}
+.newb{display:inline-block;vertical-align:middle;font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--clay);color:var(--plum);border-radius:999px;padding:2px 7px;margin-left:4px;}
 </style>
 </head>
 <body>
@@ -215,7 +220,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
     <div class="nextmtg" id="nextmtg">
       <div class="datebadge"><span class="m" id="nm-m">Oct</span><span class="d" id="nm-d">21</span></div>
       <div class="txt"><strong id="nm-line">Next meeting: Wednesday, October 21</strong><span id="nm-sub">6:00 pm &middot; CMS Library &middot; in person or on Zoom</span></div>
-      <a class="btn" href="#samples">See the sample comments</a>
+      <div class="nm-btns"><a class="btn" href="itc-public-comment-signup.html">Sign up to speak</a><a class="btn" href="#samples">See the sample comments</a></div>
     </div>
   </div>
 </section>
@@ -248,10 +253,12 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       <span class="eyebrow">Sample comments</span>
       <h2>Pick a topic, then make it yours</h2>
       <p>Each sample has <span class="fill">highlighted spaces</span> for your own story. Print one to bring with you, or copy it into a document and rewrite it as much as you like.</p>
+      <p class="emailalt"><b>Not one for the microphone?</b> Any of these works just as well as an email. Swap the greeting for "Dear School Committee members," keep your story and your ask, and send it to the Concord School Committee at <a href="mailto:concordschoolcommittee@concordps.org">concordschoolcommittee@concordps.org</a> or, for Concord-Carlisle High School, the Concord-Carlisle Regional School Committee at <a href="mailto:concordcarlisleschoolcommittee@concordps.org">concordcarlisleschoolcommittee@concordps.org</a>.</p>
     </div>
 
     <div class="picker">
       <div class="topics" role="tablist" aria-label="Sample comment topics">
+        <button class="topic" role="tab" data-t="doing-part"><span class="tt">Families are doing their part <span class="newb">New</span></span><span class="ts">The 2026 student survey</span></button>
         <button class="topic" role="tab" data-t="safety-online"><span class="tt">Internet safety</span><span class="ts">Approved sites only</span></button>
         <button class="topic" role="tab" data-t="tools-list"><span class="tt">What tools are we using?</span><span class="ts">A public list of EdTech tools</span></button>
         <button class="topic" role="tab" data-t="no-ai"><span class="tt">Generative AI</span><span class="ts">Off by default, Gemini off at CMS</span></button>
@@ -263,6 +270,27 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
       </div>
 
       <div>
+
+        <!-- 0. Families are doing their part (2026 student survey) -->
+        <article class="sample" id="doing-part" role="tabpanel">
+          <div class="s-top">
+            <h3><span class="tag safety">Safety</span><span class="tag alignment">Alignment</span><br>Families are doing their part</h3>
+            <div class="s-tools"><button class="btn sm js-print">Print this one</button><button class="btn sm ghost js-copy">Copy text</button></div>
+          </div>
+          <div class="s-meta">
+            <span><strong>A good fit if</strong> you've made changes with technology at home and want the school day to match, or you're speaking for the first time and want a hopeful message backed by local numbers.</span>
+            <span class="mins">About 2&frac12; minutes</span>
+          </div>
+          <div class="speech">
+            <p>Good evening. My name is <span class="fill">your name</span>, I live at <span class="fill">your street address</span>, and <span class="fill">how you're connected</span>. Thank you for the time you give this community.</p>
+            <p>I want to share some good news from our own students. <span class="fill">A change your family has made at home. For example: this year our phones charge in the kitchen overnight, and my kids are sleeping better for it.</span></p>
+            <p>We're not alone. Every two years, nearly every Concord-Carlisle student in grades 6, 8, and 9 through 12 answers the Emerson Youth Risk Behavior Survey. Between 2024 and 2026, the share of eighth graders whose parents monitor their phone use rose from 58 percent to 71 percent, and the share of sixth graders who keep devices out of the bedroom at night rose from 43 percent to 57 percent. Concord families are doing their part.</p>
+            <p>And it shows. Our district has a goal to cut student stress in half from 2022 levels. Since then, high schoolers reporting high stress from home fell from 36 percent to 19 percent. Stress from schoolwork has barely moved, from 64 percent to 59 percent.</p>
+            <p>The survey only asks about screen time after school, on students' own time. It doesn't ask about screens during the school day. I'm grateful the superintendent has agreed to look into that this year, and I'd like to help.</p>
+            <p class="theask"><b>My ask tonight:</b> that the district follow through this year with a screen time report by grade, class, and application, shared with families each term, so all of us can see the whole school day. Families are doing our part at home. We'd love a partner at school. Thank you.</p>
+          </div>
+          <p class="s-src">Source: Emerson Youth Risk Behavior Survey, Concord-Carlisle students, 2024 and 2026 (<a href="itc-survey.html">Concord's Data</a>). Puts into practice: A full tool inventory and screen time report; Student well-being, on our <a href="itc-at-school.html">2026-27 priorities</a>.</p>
+        </article>
 
         <!-- 1. Internet safety -->
         <article class="sample" id="safety-online" role="tabpanel">
@@ -359,12 +387,12 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
           </div>
           <div class="speech">
             <p>Good evening. My name is <span class="fill">your name</span>, I live at <span class="fill">your street address</span>, and <span class="fill">how you're connected</span>. Thank you for all you do.</p>
-            <p>I came tonight because I read our district's Strategic Plan, and I agree with it. Initiative 4.4 says the district will "partner with parents and community members to identify and engage with best practices for student technology, including social media use." Outcome 2.3 sets a goal of cutting student stress in half from 2022 levels. Those are the right goals.</p>
+            <p>I came tonight because I read our district's Strategic Plan, and I agree with it. Initiative 4.4 says the district will "partner with parents and community members to identify and engage with best practices for student technology, including social media use." Outcome 2.3 sets a goal of cutting student stress in half from 2022 levels. Those are the right goals. The 2026 student survey shows how far we've come at home, where high schoolers' stress fell from 36 percent to 19 percent, and how far we have to go at school, where it barely moved, from 64 percent to 59 percent.</p>
             <p><span class="fill">Why these goals matter to your family. For example: what you've seen technology do to your child's sleep, focus, or mood, or what has helped.</span></p>
             <p>In a community survey of Concord public-school families this spring, 48 of 71 said the district communicates about technology "not well." It's a community snapshot, not a scientific poll, but it tells me there's room to build the partnership the plan describes. The District Technology Committee is the natural place to do it.</p>
             <p class="theask"><b>My ask tonight:</b> that this year, the District Technology Committee post agendas ahead of its meetings, let parent and caregiver representatives add items, publish summaries, set a timeline with clear deliverables, and report regularly to this committee on what was reviewed, decided, and why. And that technology decisions be weighed against the goal of cutting student stress in half. <span class="fill opt">one way you'd be glad to help</span> Thank you for writing such a clear plan. I'd like to help carry it out.</p>
           </div>
-          <p class="s-src">Sources: Concord Public Schools and Concord-Carlisle Regional School District, <a href="https://resources.finalsite.net/images/v1783007215/concordpsorg/uxqldpiobopl9pemg7b3/ConcordCarlisleStrategicPlan2023-2028.pdf" target="_blank" rel="noopener">District Strategic Plan 2023-2028</a>; ITC community survey, April to May 2026 (<a href="itc-survey.html">Concord's Data</a>). Puts into practice: Parent partnership; Student well-being, on our <a href="itc-at-school.html">2026-27 priorities</a>.</p>
+          <p class="s-src">Sources: Concord Public Schools and Concord-Carlisle Regional School District, <a href="https://resources.finalsite.net/images/v1783007215/concordpsorg/uxqldpiobopl9pemg7b3/ConcordCarlisleStrategicPlan2023-2028.pdf" target="_blank" rel="noopener">District Strategic Plan 2023-2028</a>; Emerson Youth Risk Behavior Survey, 2026, and ITC community survey, April to May 2026 (<a href="itc-survey.html">Concord's Data</a>). Puts into practice: Parent partnership; Student well-being, on our <a href="itc-at-school.html">2026-27 priorities</a>.</p>
         </article>
 
         <!-- 6. Bell to bell at CCHS -->
@@ -381,11 +409,12 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
             <p>Good evening. My name is <span class="fill">your name</span>, I live at <span class="fill">your street address</span>, and <span class="fill">how you're connected: my child is a sophomore at CCHS, or, I'm a junior at CCHS</span>. Thank you for having us.</p>
             <p>I'm here about phones during the school day. <span class="fill">What you've seen or heard. For example: my child tells me lunch is quiet because everyone is on their phone.</span></p>
             <p>Most of the conversation about phones is about class time. I want to talk about the rest of the day: lunch, free blocks, and the minutes between classes. Those are the times when friendships are built and connection happens. It's where a student notices a friend having a hard day, joins a new table, or works out a disagreement face to face. It's where teenagers learn how to be members of a community. Those moments are crucial, and students shouldn't spend them buried in a phone.</p>
-            <p>Right now, the policy at CCHS depends largely on the classroom, and it doesn't reach in-between times at all. Secure storage from first bell to last protects all of it, and it means no teacher has to enforce a rule alone. In one recent working paper on U.S. schools that adopted locking pouches, teacher-reported phone use in class fell from 61 percent to 13 percent.</p>
+            <p>Right now at Concord-Carlisle High School, phones only need to be put away during class, and the rule doesn't reach in-between times at all. At the Ellen Garrison Building at Concord Middle School, phones are off and in backpacks all day. The 2026 student survey shows the difference: from 2024 to 2026, the share of sixth graders who felt depressed for two weeks or more was cut in half, from 21 percent to 10 percent. Among high schoolers, it held at 14 percent.</p>
+            <p>Secure storage from first bell to last protects all of it, and it means no teacher has to enforce a rule alone. In one recent working paper on U.S. schools that adopted locking pouches, teacher-reported phone use in class fell from 61 percent to 13 percent.</p>
             <p>Revising the phone policy is already one of this committee's goals. I'd love for Concord to get there in a way that fits our schools, ahead of any state requirement.</p>
             <p class="theask"><b>My ask tonight,</b> and it's one this committee can act on directly: adopt a phone policy with secure storage at all schools, including CCHS, from first bell to last, so lunch, free time, and passing time are protected too. And enforce it consistently in every building. Families can help with communication, logistics, and backing it up at home. Thank you.</p>
           </div>
-          <p class="s-src">Source: Allcott et al. (2026), <a href="https://www.nber.org/papers/w35132" target="_blank" rel="noopener">NBER Working Paper 35132</a> (Working paper.) Puts into practice: Bell-to-bell policy, on our <a href="itc-at-school.html">2026-27 priorities</a>.</p>
+          <p class="s-src">Sources: Emerson Youth Risk Behavior Survey, 2024 and 2026 (<a href="itc-survey.html#rules">Concord's Data</a>); Allcott et al. (2026), <a href="https://www.nber.org/papers/w35132" target="_blank" rel="noopener">NBER Working Paper 35132</a> (Working paper.) Puts into practice: Bell-to-bell policy, on our <a href="itc-at-school.html">2026-27 priorities</a>.</p>
         </article>
 
         <!-- 7. Your own topic -->
