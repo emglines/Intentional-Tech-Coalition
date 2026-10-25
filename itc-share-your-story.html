@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!-- itc-share-your-story, v1, October 25, 2026. Families share tech stories (home and school). Sends to Formspree; Formspree form meaaeaeg. Emily hand-picks anything published; quotes always anonymous. Linked from a story strip on Homepage, At Home, At School, Take Action. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Share Your Story | The Intentional Tech Coalition</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..600;1,9..144,200..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#C0CABF;--sage-dk:#A9B6A6;--forest:#3F5138;--forest-2:#5F6D57;--plum:#463347;--plum-dk:#382839;--ink:#242321;--cream:#E5E0DA;--paper:#F4F1EC;--white:#FBFAF7;--line:rgba(63,81,56,.22);--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--r:4px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.08;}
+a{color:inherit;text-decoration:none;}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--forest-2);}
+.eyebrow::before{content:"";height:1px;width:22px;background:var(--forest-2);opacity:.55;}
+.eyebrow.one::after{display:none;}
+.btn{display:inline-block;border:none;cursor:pointer;font-family:var(--sans);font-weight:600;font-size:13px;border-radius:999px;padding:10px 22px;background:var(--plum);color:var(--paper);text-decoration:none;}
+.btn.ghost{background:transparent;color:var(--forest);border:1.5px solid var(--forest);}
+.wm{display:inline-flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;}
+.wm .the{font-family:var(--serif);font-weight:300;font-size:11px;color:var(--forest-2);line-height:1;letter-spacing:.06em;margin-bottom:1px;}
+.wm .main{font-family:var(--serif);font-weight:400;font-size:17px;color:var(--forest);line-height:1.04;letter-spacing:-.01em;}
+.wm .rule-row{display:flex;align-items:center;gap:7px;margin-top:4px;}
+.wm .rule-row span{font-family:var(--sans);font-size:7.5px;font-weight:600;letter-spacing:.38em;color:var(--forest-2);}
+.wm .rule-row::before,.wm .rule-row::after{content:"";height:1px;width:20px;background:var(--forest-2);opacity:.5;}
+footer .wm .the{color:var(--sage);opacity:.65;}
+footer .wm .main{color:var(--sage);}
+footer .wm .rule-row span{color:var(--sage);opacity:.7;}
+footer .wm .rule-row::before,footer .wm .rule-row::after{background:var(--sage);opacity:.4;}
+header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:960px;margin:0 auto;}
+.menu{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:500;}
+.menu a{color:var(--ink);opacity:.8;}
+.menu a[aria-current]{opacity:1;font-weight:700;color:var(--forest);border-bottom:2px solid var(--forest);padding-bottom:2px;}
+.menu .btn{padding:8px 18px;opacity:1;color:var(--paper);}
+.pagehead{background:var(--sage);padding:56px 0 60px;}
+.pagehead h1{font-size:clamp(30px,5vw,52px);color:var(--plum);margin:16px 0 16px;max-width:640px;}
+.pagehead p.lede{font-size:clamp(15px,2vw,18px);max-width:620px;color:var(--ink);opacity:.9;}
+.block{padding:64px 0;}
+.join-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start;}
+.signup-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:34px 32px;}
+.signup-card h2{font-size:clamp(24px,3.5vw,32px);color:var(--forest);margin-bottom:10px;}
+.signup-card p{font-size:14px;opacity:.85;}
+.field{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
+.field input{flex:1;min-width:200px;font-family:var(--sans);font-size:14px;padding:11px 16px;border:1.5px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);}
+.field input:focus{outline:2px solid var(--forest-2);outline-offset:1px;}
+.placeholder-note{font-size:12px;color:var(--forest-2);margin-top:10px;}
+.expect h3{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--forest-2);font-weight:600;margin-bottom:4px;}
+.expect .row{padding:16px 0;border-top:1px solid var(--line);}
+.expect .row:first-of-type{border-top:none;padding-top:4px;}
+.expect .row h4{font-family:var(--serif);font-weight:400;font-size:18px;color:var(--plum);margin-bottom:4px;}
+.expect .row p{font-size:13.5px;opacity:.85;line-height:1.6;}
+.pledge-strip{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:44px 0;}
+.pledge-strip .inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;}
+.pledge-strip h2{font-size:clamp(22px,3vw,30px);color:var(--forest);max-width:460px;}
+.pledge-strip p{font-size:14px;opacity:.85;max-width:460px;margin-top:8px;}
+.contact h2{font-size:clamp(24px,3.5vw,32px);color:var(--forest);margin:14px 0 10px;}
+.contact p{font-size:15px;opacity:.85;max-width:560px;}
+.contact .email-line{margin-top:18px;font-size:15px;}
+.contact .email-line a{font-weight:600;color:var(--plum);text-decoration:underline;}
+footer{background:var(--ink);color:#cfd3cb;padding:48px 0 32px;}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;}
+footer p{font-size:13px;line-height:1.6;opacity:.8;margin-top:12px;max-width:36ch;}
+footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9aa392;margin-bottom:10px;}
+footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.85;}
+.fineprint{margin-top:22px;padding-top:0;border-top:none;font-size:11px;opacity:.55;}
+@media(max-width:760px){.join-grid{grid-template-columns:1fr;gap:32px;}}
+/* Family / school / community mark */
+.venn{display:block;}
+.venn circle{fill:none;}
+.venn .c-fam{stroke:var(--forest);}
+.venn .c-sch{stroke:var(--plum);}
+.venn .c-com{stroke:var(--sage-dk);}
+.venn text{font-family:var(--serif);font-style:italic;fill:var(--forest-2);text-anchor:middle;dominant-baseline:central;}
+.venn.ondark .c-fam{stroke:var(--sage);}
+.venn.ondark .c-sch{stroke:#C9ADCB;}
+.venn.ondark .c-com{stroke:var(--sage-dk);}
+.venn.ondark text{fill:var(--paper);}
+.venn.dim circle{opacity:.26;}
+.venn.dim .on{opacity:1;}
+.foot-mark{display:flex;justify-content:center;margin-top:34px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);}
+.foot-mark .venn{width:146px;height:146px;}
+@media(max-width:560px){.foot-mark .venn{width:124px;height:124px;}}
+.nav-toggle{display:none;}.hamburger{display:none;}
+@media(max-width:760px){header{position:relative;}.hamburger{display:flex;align-items:center;font-size:22px;line-height:1;cursor:pointer;color:var(--forest);padding:4px 8px;user-select:none;}.menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(192,202,191,.97);flex-direction:column;padding:14px 24px 20px;gap:0;border-bottom:1px solid var(--line);z-index:100;}.menu a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}.menu .btn{display:block;text-align:center;margin-top:14px;border-bottom:none;padding:11px 22px;}.nav-toggle:checked~.menu{display:flex;}}
+/* Apricot accent, used only for actions (Oct 19, 2026) */
+:root{--accent:#E9935E;--accent-ink:#463347;--accent-dk:#925938;--accent-lt:#FBE9DF;}
+.btn.accent{background:var(--accent);color:var(--accent-ink);}
+.menu .btn.accent{color:var(--accent-ink);}
+/* share your story page */
+.st-head{background:var(--sage);padding:56px 0 60px;}
+.st-head h1{font-size:clamp(30px,5vw,50px);color:var(--plum);margin:16px 0 14px;max-width:660px;}
+.st-head .lede{font-size:clamp(15px,2vw,18px);max-width:620px;opacity:.9;}
+.st-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:start;}
+.st-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:32px 30px 28px;}
+.st-card h2{font-size:clamp(22px,3vw,28px);color:var(--forest);margin-bottom:6px;}
+.st-card > p{font-size:14px;opacity:.85;}
+.st-form{display:flex;flex-direction:column;gap:22px;margin-top:24px;}
+.st-form fieldset{border:none;}
+.st-form .q{display:block;font-family:var(--serif);font-size:18px;color:var(--plum);line-height:1.3;margin-bottom:4px;}
+.st-form .hint{display:block;font-size:12.5px;color:var(--forest-2);margin-bottom:8px;line-height:1.45;}
+.st-form .opt{font-family:var(--sans);font-size:12px;font-weight:400;color:var(--forest-2);}
+.st-form textarea,.st-form input[type=text],.st-form input[type=email]{width:100%;font-family:var(--sans);font-size:14px;padding:11px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);line-height:1.5;}
+.st-form textarea{min-height:96px;resize:vertical;}
+.st-form textarea:focus,.st-form input:focus{outline:2px solid var(--forest-2);outline-offset:1px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chips label{position:relative;cursor:pointer;}
+.chips input{position:absolute;opacity:0;pointer-events:none;}
+.chips span{display:inline-block;font-size:13px;font-weight:500;padding:7px 14px;border:1.5px solid var(--line);border-radius:999px;background:var(--paper);}
+.chips input:checked+span{background:var(--forest);border-color:var(--forest);color:var(--paper);}
+.chips input:focus-visible+span{outline:2px solid var(--forest-2);outline-offset:2px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.two label{display:flex;flex-direction:column;gap:5px;font-size:12.5px;font-weight:600;color:var(--forest);}
+.consent{background:var(--accent-lt);border-radius:var(--r);padding:18px 20px;}
+.consent .choice{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin-top:10px;cursor:pointer;line-height:1.45;}
+.consent .choice input{margin-top:3px;accent-color:var(--plum);flex-shrink:0;}
+.st-form .btn{align-self:flex-start;padding:12px 28px;font-size:14px;}
+.gotcha{display:none;}
+.st-thanks{display:none;background:var(--accent-lt);border-radius:var(--r);padding:20px 22px;margin-top:18px;font-size:14px;}
+.st-thanks b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;color:var(--plum);margin-bottom:4px;}
+.st-know{border-top:3px solid var(--plum);background:var(--white);border-radius:var(--r);padding:22px 24px;position:sticky;top:20px;}
+.st-know h3{font-size:19px;color:var(--forest);margin-bottom:6px;}
+.st-know .row{padding:12px 0;border-top:1px solid var(--line);}
+.st-know .row:first-of-type{border-top:none;}
+.st-know h4{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-2);margin-bottom:3px;font-family:var(--sans);}
+.st-know p{font-size:13.5px;line-height:1.5;}
+.st-know a{font-weight:700;color:var(--accent-dk);border-bottom:1.5px solid var(--accent);}
+@media(max-width:760px){.st-grid,.two{grid-template-columns:1fr;}.st-know{position:static;}.st-card{padding:26px 20px 22px;}}
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="nav">
+    <a href="itc-homepage.html" class="wm">
+      <span class="the">The</span>
+      <span class="main">Intentional<br>Tech Coalition</span>
+      <span class="rule-row"><span>CONCORD</span></span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger" aria-label="Open menu">&#9776;</label>
+    <nav class="menu">
+      <a href="itc-at-school.html">At School</a>
+      <a href="itc-at-home.html">At Home</a>
+      <a href="itc-take-action.html">Take Action</a>
+      <a href="itc-survey.html">Concord's Data</a>
+      <a href="itc-resources.html">Resources &amp; Events</a>
+      <a href="itc-join.html" class="btn accent">Join us</a>
+    </nav>
+  </div>
+</header>
+
+
+<section class="st-head">
+  <div class="wrap">
+    <span class="eyebrow one">Share your story</span>
+    <h1>What is technology like in your family's life?</h1>
+    <p class="lede">At home and at school: the wins, the struggles, the questions, the frustrations. We want to hear what's working, what isn't, and what you'd like to see change. Your experience shapes what the coalition works on.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap st-grid">
+    <div class="st-card">
+      <h2>Tell us your story</h2>
+      <p>Every question is optional, so answer as many or as few as you like. A sentence is enough; so is a page.</p>
+      <form class="st-form" id="st-form" action="https://formspree.io/f/meaaeaeg" method="POST">
+        <input type="hidden" name="_subject" value="New story: Share Your Story">
+        <input type="text" name="_gotcha" class="gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <fieldset>
+          <legend class="q">Where does your story take place? <span class="opt">(choose any)</span></legend>
+          <div class="chips">
+            <label><input type="checkbox" name="where" value="At home"><span>At home</span></label>
+            <label><input type="checkbox" name="where" value="At school"><span>At school</span></label>
+            <label><input type="checkbox" name="where" value="Both"><span>Both</span></label>
+          </div>
+        </fieldset>
+
+        <label>
+          <span class="q">What's working?</span>
+          <span class="hint">A rule, a routine, a conversation, a teacher's approach, anything that's gone well.</span>
+          <textarea name="working"></textarea>
+        </label>
+
+        <label>
+          <span class="q">What's been hard?</span>
+          <span class="hint">Struggles, frustrations, worries, or moments that caught you off guard.</span>
+          <textarea name="hard"></textarea>
+        </label>
+
+        <label>
+          <span class="q">What do you want more of or less of, and what questions are on your mind?</span>
+          <span class="hint">Around technology in your child's life, at home or at school. Anything you're unsure about or wish someone would explain is welcome here too.</span>
+          <textarea name="more_less_questions"></textarea>
+        </label>
+
+        <label>
+          <span class="q">What would you like to see from the coalition?</span>
+          <span class="hint">Resources, events, advocacy, conversations: what would help your family?</span>
+          <textarea name="from_coalition"></textarea>
+        </label>
+
+        <fieldset>
+          <legend class="q">Your child's grade level <span class="opt">(optional, choose any)</span></legend>
+          <span class="hint">This gives your story context. It's never published alongside anything that could identify you.</span>
+          <div class="chips">
+            <label><input type="checkbox" name="grades" value="Under 5"><span>Under 5</span></label>
+            <label><input type="checkbox" name="grades" value="K to 2"><span>K to 2</span></label>
+            <label><input type="checkbox" name="grades" value="3 to 5"><span>3 to 5</span></label>
+            <label><input type="checkbox" name="grades" value="6 to 8"><span>6 to 8</span></label>
+            <label><input type="checkbox" name="grades" value="9 to 12"><span>9 to 12</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset aria-labelledby="consent-q"><div class="consent">
+          <span class="q" id="consent-q">May we share part of your story?</span>
+          <span class="hint" style="margin-bottom:0;">Either way, we'll read it and it will help guide our work. If you leave this blank, we'll keep your story private.</span>
+          <label class="choice"><input type="radio" name="permission" value="Yes, may quote anonymously"> <span>Yes, you may quote me anonymously on the website or in coalition materials.</span></label>
+          <label class="choice"><input type="radio" name="permission" value="No, keep private"> <span>No, please keep this private, for the coalition only.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend class="q">Want us to follow up? <span class="opt">(optional)</span></legend>
+          <span class="hint">Leave these blank to stay completely anonymous. Your name is never published.</span>
+          <div class="two">
+            <label>Name<input type="text" name="name" autocomplete="name"></label>
+            <label>Email<input type="email" name="email" autocomplete="email" placeholder="you@email.com"></label>
+          </div>
+        </fieldset>
+
+        <label>
+          <span class="q">What town do you live in? <span class="opt">(optional)</span></span>
+          <span class="hint">This helps us understand where stories are coming from. It's never published with your story.</span>
+          <input type="text" name="town" autocomplete="address-level2" placeholder="For example, Concord" style="max-width:320px;">
+        </label>
+
+        <button class="btn accent" type="submit">Share my story</button>
+      </form>
+      <div class="st-thanks" id="st-thanks"><b>Thank you for sharing.</b>We read every story, and yours will help shape what the coalition focuses on next.</div>
+    </div>
+
+    <aside class="st-know">
+      <h3>How we use your story</h3>
+      <div class="row"><h4>We read every one</h4><p>Every story goes to a member of our leadership team, and only our team sees what you send.</p></div>
+      <div class="row"><h4>Always anonymous</h4><p>If you say yes, we may share short excerpts on our website or in our advocacy. We never include names, and we remove details that could identify a family, child, teacher, or school.</p></div>
+      <div class="row"><h4>A small request</h4><p>Please don't name teachers, staff, or other children. Describe the situation instead. Concord is a small town, and this keeps everyone's privacy intact.</p></div>
+      <div class="row"><h4>Rather talk?</h4><p><a href="mailto:emily@intentionaltechcoalition.org?subject=My%20story">Email us</a> and we'll find a time.</p></div>
+    </aside>
+  </div>
+</section>
+
+<script>
+// Send to Formspree in the background and show the thank-you message on the page
+(function(){
+  var form=document.getElementById('st-form'), thanks=document.getElementById('st-thanks');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var fd=new FormData(form);
+    var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sending...';
+    fetch(form.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); form.style.display='none'; thanks.style.display='block'; thanks.scrollIntoView({behavior:'smooth',block:'center'}); })
+      .catch(function(){ btn.disabled=false; btn.textContent='Share my story'; alert('Sorry, that did not go through. Please try again, or email emily@intentionaltechcoalition.org.'); });
+  });
+})();
+</script>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a href="itc-homepage.html" class="wm">
+          <span class="the">The</span>
+          <span class="main">Intentional<br>Tech Coalition</span>
+          <span class="rule-row"><span>CONCORD</span></span>
+        </a>
+        <p>Led by a team of Concord parents, working in partnership with local families, educators, and schools on intentional, research-informed technology choices.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="itc-at-school.html">At School</a>
+        <a href="itc-at-home.html">At Home</a>
+        <a href="itc-take-action.html">Take Action</a>
+        <a href="itc-survey.html">Concord's Data</a>
+        <a href="itc-resources.html">Resources &amp; Events</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="itc-join.html">Join the coalition</a>
+        <a href="itc-volunteer-roles.html">Volunteer roles</a>
+        <a href="itc-take-action.html#speak">Speak at a meeting</a>
+        <a href="mailto:concordschoolcommittee@concordps.org">Email the school committee</a>
+        <a href="mailto:emily@intentionaltechcoalition.org">Contact us</a>
+      </div>
+    </div>
+    <div class="foot-mark">
+      <svg class="venn ondark" viewBox="0 0 100 100" aria-hidden="true"><circle class="c-fam" cx="33.5" cy="40.5" r="26" stroke-width="2.2"/><circle class="c-sch" cx="66.5" cy="40.5" r="26" stroke-width="2.2"/><circle class="c-com" cx="50" cy="69.1" r="26" stroke-width="2.2"/><text x="25.7" y="36" font-size="7.7">family</text><text x="74.3" y="36" font-size="7.7">school</text><text x="50" y="78.1" font-size="7.7">community</text></svg>
+    </div>
+    <div class="fineprint">© 2026 The Intentional Tech Coalition. A volunteer parent group in Concord, MA.</div>
+  </div>
+</footer>
+
+</body>
+</html>
