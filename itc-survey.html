@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- itc-survey, v10, October 19, 2026. Rebuilt around the 2026 Emerson Youth Risk Behavior Survey compared with 2024: four student-survey headline numbers; jump bar; Concord families are doing their part (2024 vs 2026 cards); stress from home vs schoolwork against the Strategic Plan goal; phone rules at the Ellen Garrison Building at Concord Middle School vs Concord-Carlisle High School; what the survey doesn't measure (checklist) with the 2026-27 priorities and bell to bell; full table by grade and sources. Community survey trimmed to three numbers. Call to action band at the bottom. v9: October 19, 2026, apricot action accent. -->
+<!-- itc-survey, v11, October 25, 2026. New "Test scores" section (MCAS 2019 vs 2026 by school level, what changed in the school day, PISA 2022 and Delgado 2018 research, efficacy ask, Horvath Nov 17 line); removed "The half of the day the survey doesn't measure" section (checklist, survey question, priorities panel, bell to bell), parked in SAVED-SECTIONS-not-live.html; superintendent line moved into the new section. v10: October 19, 2026. Rebuilt around the 2026 Emerson Youth Risk Behavior Survey compared with 2024: four student-survey headline numbers; jump bar; Concord families are doing their part (2024 vs 2026 cards); stress from home vs schoolwork against the Strategic Plan goal; phone rules at the Ellen Garrison Building at Concord Middle School vs Concord-Carlisle High School; what the survey doesn't measure (checklist) with the 2026-27 priorities and bell to bell; full table by grade and sources. Community survey trimmed to three numbers. Call to action band at the bottom. v9: October 19, 2026, apricot action accent. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -277,6 +277,25 @@ a.cta-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.18);}
 @media(max-width:900px){.cta-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:560px){.cta-grid{grid-template-columns:1fr;}}
 @media(max-width:760px){.cmpgrid,.stress,.rules,.twocol,.gap,.callout{grid-template-columns:1fr;}.rule .rk{min-height:0;}.keyrow{margin-top:-8px;}}
+
+/* MCAS test scores (Oct 25, 2026) */
+.mc-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:99px;padding:3px 10px;margin-bottom:10px;}
+.mc-tag.down{background:var(--accent-lt);color:var(--accent-dk);}
+.mc-tag.even{background:var(--sage-lt,#EDF0EC);color:var(--forest);border:1px solid var(--line);}
+.mc-note{font-size:12.5px;line-height:1.5;padding-top:12px;border-top:1px solid var(--line);opacity:.88;}
+.mc-why{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px;}
+.mc-why > div{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;}
+.mc-why h3{font-size:19px;color:var(--forest);margin-bottom:10px;}
+.mc-why p{font-size:13.5px;line-height:1.6;opacity:.9;}
+.mc-why p+p{margin-top:10px;}
+.mc-why .src{font-size:11px;font-style:italic;color:var(--forest-2);margin-top:12px;opacity:1;}
+.mc-why .src a{text-decoration:underline;}
+.mc-bottom{margin-top:16px;background:var(--plum);color:var(--paper);border-radius:var(--r);padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;}
+.mc-bottom p{font-size:15px;line-height:1.55;max-width:640px;}
+.mc-bottom p b{color:var(--white);}
+.mc-event{margin-top:14px;font-size:13px;opacity:.9;}
+.mc-event a{font-weight:700;color:var(--plum);text-decoration:underline;}
+@media(max-width:760px){.mc-why{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -322,7 +341,7 @@ a.cta-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.18);}
     <a href="#home">Families are doing their part</a>
     <a href="#stress">Stress: home vs. school</a>
     <a href="#rules">Phone rules</a>
-    <a href="#unmeasured">What isn't measured</a>
+    <a href="#scores">Test scores</a>
     <a href="#families">Family snapshot</a>
     <a href="#act" class="go">Take action</a>
   </div>
@@ -408,64 +427,35 @@ a.cta-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.18);}
   </div>
 </section>
 
-<section class="block" style="padding-top:0;" id="unmeasured">
+<section class="block" id="scores">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow one">What the survey leaves out</span>
-      <h2>The half of the day the survey doesn't measure</h2>
-      <p>Screens show up all through a student's day. The survey asks about only one part of it: the part families manage.</p>
+      <span class="eyebrow one">State test scores &middot; MCAS, 2019 vs. 2026</span>
+      <h2>Six years on, elementary and high school scores haven't recovered</h2>
+      <p>MCAS is the state's standardized test. Below is the share of Concord students meeting or exceeding expectations in 2026, set beside 2019, the last year before the pandemic on the same test.</p>
     </div>
+    <div class="keyrow"><span><i class="sw y24"></i>2019</span><span><i class="sw y26"></i>2026</span></div>
+    <div class="cmpgrid"><div class="cmpcard"><span class="mc-tag down">Not recovered</span><h3>Elementary</h3><p class="sub">Grades 3 to 5, at Alcott, Thoreau, and Willard</p><div class="m"><div class="lab">English language arts</div><div class="yr" title="2019: 79%"><span class="y">2019</span><span class="t"><span class="f y24" style="width:79.0%;display:block"></span></span><span class="v">79%</span></div><div class="yr" title="2026: 64%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:64.0%;display:block"></span></span><span class="v">64%</span></div></div><div class="m"><div class="lab">Math</div><div class="yr" title="2019: 80%"><span class="y">2019</span><span class="t"><span class="f y24" style="width:80.0%;display:block"></span></span><span class="v">80%</span></div><div class="yr" title="2026: 66%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:66.0%;display:block"></span></span><span class="v">66%</span></div></div><p class="mc-note">15 points below 2019 in English and 14 in math. 2026 is the lowest year on record for this test in both subjects.</p></div><div class="cmpcard"><span class="mc-tag even">Back to 2019</span><h3>Middle school</h3><p class="sub">Grades 6 to 8, at the Ellen Garrison Building at Concord Middle School</p><div class="m"><div class="lab">English language arts</div><div class="yr" title="2019: 73%"><span class="y">2019</span><span class="t"><span class="f y24" style="width:73.0%;display:block"></span></span><span class="v">73%</span></div><div class="yr" title="2026: 72%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:72.0%;display:block"></span></span><span class="v">72%</span></div></div><div class="m"><div class="lab">Math</div><div class="yr" title="2019: 67%"><span class="y">2019</span><span class="t"><span class="f y24" style="width:67.0%;display:block"></span></span><span class="v">67%</span></div><div class="yr" title="2026: 73%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:73.0%;display:block"></span></span><span class="v">73%</span></div></div><p class="mc-note">Back to 2019 levels. But 2019 was already a low bar: middle school scores had fallen from 2017 to 2019.</p></div><div class="cmpcard"><span class="mc-tag down">Not recovered</span><h3>High school</h3><p class="sub">Grade 10, at Concord-Carlisle High School</p><div class="m"><div class="lab">English language arts</div><div class="yr" title="2019: 86%"><span class="y">2019</span><span class="t"><span class="f y24" style="width:86.0%;display:block"></span></span><span class="v">86%</span></div><div class="yr" title="2026: 73%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:73.0%;display:block"></span></span><span class="v">73%</span></div></div><div class="m"><div class="lab">Math</div><div class="yr" title="2019: 88%"><span class="y">2019</span><span class="t"><span class="f y24" style="width:88.0%;display:block"></span></span><span class="v">88%</span></div><div class="yr" title="2026: 81%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:81.0%;display:block"></span></span><span class="v">81%</span></div></div><p class="mc-note">Math settled 7 points below 2019. English held near 85% through 2025, then fell 11 points in 2026 alone.</p></div></div>
 
-    <div class="chk">
-      <div class="chk-h"><span>Where screens show up in a student's day</span><span>Does the survey ask how much?</span></div>
-      <div class="chk-r">
-        <div><b>In class</b><span>Classroom screens, school-issued laptops and tablets</span></div>
-        <span class="st no"><i aria-hidden="true">&#10005;</i>Not asked</span>
+    <div class="mc-why">
+      <div>
+        <h3>What changed in the school day</h3>
+        <p>Concord gave students their own school devices around 2016, well before the pandemic. During remote learning, screen-based schoolwork grew sharply, and it has never been scaled back by design.</p>
+        <p>There are no districtwide guidelines on how much of the day students spend on screens, and no one measures it: the student survey asks only about screen time after school. Each teacher decides. The superintendent has agreed to look into school-day screen time this year. In middle and high school especially, much of students' learning now happens on a screen.</p>
       </div>
-      <div class="chk-r">
-        <div><b>Lunch and between classes</b><span>Phones at Concord-Carlisle High School, where the rule allows them</span></div>
-        <span class="st no"><i aria-hidden="true">&#10005;</i>Not asked</span>
-      </div>
-      <div class="chk-r">
-        <div><b>Homework</b><span>The survey asks how long homework takes, not how much of it is on a school computer</span></div>
-        <span class="st no"><i aria-hidden="true">&#10005;</i>Not asked</span>
-      </div>
-      <div class="chk-r yes">
-        <div><b>After school, on their own</b><span>Phones, TV, games, and social media for non-school activities</span></div>
-        <span class="st ok"><i aria-hidden="true">&#10003;</i>Asked every two years</span>
+      <div>
+        <h3>What the research shows</h3>
+        <p>Across countries in the 2022 PISA international test, students who used devices for learning at school up to an hour a day scored higher in math than students who used none. Students distracted by classmates' devices in math class scored 15 points lower.</p>
+        <p>A review of 54 studies with more than 170,000 readers found people understand what they read better on paper than on a screen, and the gap grew between 2000 and 2017.</p>
+        <p class="src">OECD, <a href="https://www.oecd.org/en/about/news/press-releases/2023/12/decline-in-educational-performance-only-partly-attributable-to-the-covid-19-pandemic.html" target="_blank" rel="noopener">PISA 2022 results</a>; <a href="https://doi.org/10.1016/j.edurev.2018.09.003" target="_blank" rel="noopener">Delgado et al.</a>, Educational Research Review, 2018</p>
       </div>
     </div>
-    <p class="chk-note">Families answer for the last row, and it's improving. The school day is the next part to measure, and the superintendent has agreed to look into it this year.</p>
-
-    <div class="qwrap">
-        <blockquote>"How much time do you spend weekdays after school using computers, television, phones, game consoles, or other visual technology <mark>for non-school related activities</mark>?"</blockquote>
-        <p class="cite">The survey's only screen-time question, as asked in 2024 and 2026</p>
+    <div class="mc-bottom">
+      <p><b>Concord can't yet say whether its screens are helping students learn or getting in the way, because no one is measuring.</b> That's why we ask for a screen time report and evidence before any tool is adopted.</p>
+      <a href="itc-at-school.html#efficacy" class="btn accent">See the Efficacy priorities</a>
     </div>
-
-    <div class="askpanel">
-    <div class="ask-top"><h3>What we're asking</h3><span>Our 2026-27 school priorities</span></div>
-    <div class="prio3">
-      <a class="pc" href="itc-at-school.html#safety">
-        <span class="pk">Safety</span>
-        <span class="pq">Is it safe for our children?</span>
-        <ul><li>A public inventory of every student-facing tool and the data it collects</li><li>Generative AI off by default until reviewed</li><li>School devices that reach approved sites only</li></ul>
-      </a>
-      <a class="pc" href="itc-at-school.html#efficacy">
-        <span class="pk">Efficacy</span>
-        <span class="pq">Does it help students learn?</span>
-        <ul><li>Evidence shared before any student-facing tool is adopted</li><li>Proof from independent research, not the company selling it</li><li>Fewer, better tools by June 2027</li></ul>
-      </a>
-      <a class="pc" href="itc-at-school.html#alignment">
-        <span class="pk">Alignment</span>
-        <span class="pq">Does it reflect our district's own goals?</span>
-        <ul><li>Real partnership with parents on the District Technology Committee</li><li>Technology decisions that support the goal to cut student stress in half</li><li>A parent app that shows screen time on school devices</li></ul>
-      </a>
-    </div>
-    <div class="b2b">
-      <div><b>And bell to bell at every school.</b> Bring Concord-Carlisle High School in line with the elementary schools and the Ellen Garrison Building at Concord Middle School: phones off and away from first bell to last, with secure storage.</div>
-      <a href="itc-at-school.html" class="btn accent">See our school priorities</a>
-    </div>
-    </div>
+    <p class="mc-event">Want to go deeper? Neuroscientist Dr. Jared Cooney Horvath speaks in Concord on Tuesday, November 17. <a href="itc-resources.html#next-event">See the event</a></p>
+    <p class="srcnote">MCAS results from the Massachusetts Department of Elementary and Secondary Education, all students. Elementary and middle figures combine grades, weighted by students tested. Scores reflect many things, including the pandemic itself and, for grade 10, the end of MCAS as a graduation requirement starting in 2025.</p>
   </div>
 </section>
 
