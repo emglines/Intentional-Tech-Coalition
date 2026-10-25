@@ -293,8 +293,14 @@ a.cta-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.18);}
 .mc-bottom{margin-top:16px;background:var(--plum);color:var(--paper);border-radius:var(--r);padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;}
 .mc-bottom p{font-size:15px;line-height:1.55;max-width:640px;}
 .mc-bottom p b{color:var(--white);}
-.mc-event{margin-top:14px;font-size:13px;opacity:.9;}
-.mc-event a{font-weight:700;color:var(--plum);text-decoration:underline;}
+.mc-event{margin-top:14px;background:#2E3E4E;border:1px solid #3A9A9A;border-radius:var(--r);padding:14px 20px;display:flex;align-items:center;gap:16px;color:var(--paper);}
+.mc-event img{flex:none;width:56px;height:56px;object-fit:cover;object-position:top;border-radius:50%;border:2px solid var(--accent);}
+.mc-event .me-txt{flex:1;min-width:0;}
+.mc-event .me-k{display:block;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9FD3D1;margin-bottom:3px;}
+.mc-event p{font-size:14px;line-height:1.45;}
+.mc-event p em{font-family:var(--serif);font-style:italic;}
+.mc-event .btn{flex:none;}
+@media(max-width:620px){.mc-event{flex-wrap:wrap;align-items:flex-start;}.mc-event .me-txt{flex:1 1 calc(100% - 72px);}.mc-event .btn{margin-left:72px;}}
 @media(max-width:760px){.mc-why{grid-template-columns:1fr;}}
 </style>
 </head>
@@ -454,7 +460,11 @@ a.cta-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.18);}
       <p><b>Concord can't yet say whether its screens are helping students learn or getting in the way, because the district isn't measuring.</b> That's why we ask for a screen time report and evidence before any tool is adopted.</p>
       <a href="itc-at-school.html#efficacy" class="btn accent">See the Efficacy priorities</a>
     </div>
-    <p class="mc-event">Want to go deeper? Neuroscientist Dr. Jared Cooney Horvath speaks in Concord on Tuesday, November 17. <a href="itc-resources.html#next-event">See the event</a></p>
+    <div class="mc-event">
+      <img src="itc-horvath-headshot.jpg" alt="Dr. Jared Cooney Horvath" width="56" height="66">
+      <div class="me-txt"><span class="me-k">Free event &middot; Tuesday, November 17 in Concord</span><p>Want to go deeper? Neuroscientist Dr. Jared Cooney Horvath on <em>Your Child&rsquo;s Brain in a Screen-Saturated World</em>.</p></div>
+      <a href="itc-resources.html#next-event" class="btn accent">See the event</a>
+    </div>
     <p class="srcnote">MCAS results from the Massachusetts Department of Elementary and Secondary Education, all students. Elementary and middle figures combine grades, weighted by students tested. Scores reflect many things, including the pandemic itself and, for grade 10, the end of MCAS as a graduation requirement starting in 2025.</p>
   </div>
 </section>
