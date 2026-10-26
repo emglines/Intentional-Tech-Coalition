@@ -416,7 +416,7 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
     <div class="date"><div class="m" id="nx-m">Oct</div><div class="d" id="nx-d">21</div></div>
     <div>
       <h3>Next school committee meeting</h3>
-      <p><span id="nx-line">6:00 pm &middot; CMS Library</span>. Two to three minutes at public comment is enough. Pick one priority, speak from your own experience, or simply come and fill a seat.</p>
+      <p><span id="nx-line">6:00 pm &middot; EGB @ CMS Library</span>. Two to three minutes at public comment is enough. Pick one priority, speak from your own experience, or simply come and fill a seat.</p>
     </div>
     <a href="itc-public-comment-signup.html" class="btn">I'll be there</a>
   </div>
@@ -531,11 +531,11 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
 // Auto-update the next school committee meeting (same list as Take Action)
 (function(){
   var meetings = [
-    { iso: "2026-10-21", m: "Oct", d: "21", time: "6:00 pm", loc: "CMS Library" },
+    { iso: "2026-10-21", m: "Oct", d: "21", time: "6:00 pm", loc: "EGB @ CMS Library" },
     { iso: "2026-11-04", m: "Nov", d: "4",  time: "6:00 pm", loc: "Carlisle Town Hall" },
-    { iso: "2026-11-18", m: "Nov", d: "18", time: "6:00 pm", loc: "CMS Library" },
+    { iso: "2026-11-18", m: "Nov", d: "18", time: "6:00 pm", loc: "EGB @ CMS Library" },
     { iso: "2026-12-02", m: "Dec", d: "2",  time: "6:00 pm", loc: "Ripley" },
-    { iso: "2026-12-16", m: "Dec", d: "16", time: "6:00 pm", loc: "CMS Library" }
+    { iso: "2026-12-16", m: "Dec", d: "16", time: "6:00 pm", loc: "EGB @ CMS Library" }
   ];
   var today = new Date().toISOString().slice(0,10);
   var next = meetings.find(function(x){ return x.iso >= today; });

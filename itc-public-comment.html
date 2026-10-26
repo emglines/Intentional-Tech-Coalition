@@ -246,7 +246,7 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
     <p class="lede">Anyone can speak during public comment at a school committee meeting, for two to three minutes. The samples below are starting points, not scripts. The part that matters most is the part only you can write: what you've seen, and why it brought you to the microphone.</p>
     <div class="nextmtg" id="nextmtg">
       <div class="datebadge"><span class="m" id="nm-m">Oct</span><span class="d" id="nm-d">21</span></div>
-      <div class="txt"><strong id="nm-line">Next meeting: Wednesday, October 21</strong><span id="nm-sub">6:00 pm &middot; CMS Library &middot; in person or on Zoom</span></div>
+      <div class="txt"><strong id="nm-line">Next meeting: Wednesday, October 21</strong><span id="nm-sub">6:00 pm &middot; EGB @ CMS Library &middot; in person or on Zoom</span></div>
       <div class="nm-btns"><a class="btn" href="itc-public-comment-signup.html">Sign up to speak</a><a class="btn" href="#samples">See the sample comments</a></div>
     </div>
   </div>
@@ -541,11 +541,11 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
 // Next school committee meeting (same list as Take Action)
 (function(){
   var meetings = [
-    { iso: "2026-10-21", time: "6:00 pm", loc: "CMS Library" },
+    { iso: "2026-10-21", time: "6:00 pm", loc: "EGB @ CMS Library" },
     { iso: "2026-11-04", time: "6:00 pm", loc: "Carlisle Town Hall" },
-    { iso: "2026-11-18", time: "6:00 pm", loc: "CMS Library" },
+    { iso: "2026-11-18", time: "6:00 pm", loc: "EGB @ CMS Library" },
     { iso: "2026-12-02", time: "6:00 pm", loc: "Ripley" },
-    { iso: "2026-12-16", time: "6:00 pm", loc: "CMS Library" }
+    { iso: "2026-12-16", time: "6:00 pm", loc: "EGB @ CMS Library" }
   ];
   var today = new Date().toISOString().slice(0, 10);
   var next = meetings.find(function(m){ return m.iso >= today; });
