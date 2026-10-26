@@ -54,6 +54,10 @@ header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
 .ring .ctr{font-family:var(--serif);font-size:15px;fill:var(--plum);text-anchor:middle;}
 .ring .lbl{font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.18em;fill:var(--white);}
 .ring .lbl.dk{fill:var(--forest);}
+.ring a circle{transition:stroke-width .15s;}
+.ring a:hover circle,.ring a:focus circle{stroke-width:34;}
+.ring a:focus{outline:none;}
+.ring a:focus-visible circle{stroke:var(--accent);}
 
 /* Why now */
 .whynow{background:var(--paper);padding:48px 0 8px;}
@@ -380,17 +384,23 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
         <a href="itc-edtech-glossary.pdf" class="btn ghost">Glossary of terms</a>
       </div>
     </div>
-    <svg class="ring" viewBox="0 0 200 200" role="img" aria-label="Safety, Efficacy, and Alignment surround Transparency and Partnership">
+    <svg class="ring" viewBox="0 0 200 200" role="group" aria-label="Safety, Efficacy, and Alignment surround Transparency and Partnership">
       <defs>
         <path id="cw" d="M100,26 a74,74 0 1,1 0,148 a74,74 0 1,1 0,-148"/>
         <path id="ccw" d="M100,26 a74,74 0 1,0 0,148 a74,74 0 1,0 0,-148"/>
       </defs>
-      <circle cx="100" cy="100" r="74" fill="none" stroke="var(--forest-2)" stroke-width="30" stroke-dasharray="142 323" transform="rotate(155 100 100)"/>
-      <circle cx="100" cy="100" r="74" fill="none" stroke="var(--lilac)" stroke-width="30" stroke-dasharray="142 323" transform="rotate(-85 100 100)"/>
-      <circle cx="100" cy="100" r="74" fill="none" stroke="var(--cream)" stroke-width="30" stroke-dasharray="142 323" transform="rotate(35 100 100)"/>
-      <text class="lbl" dominant-baseline="central"><textPath href="#cw" startOffset="387.5" text-anchor="middle">SAFETY</textPath></text>
-      <text class="lbl" dominant-baseline="central"><textPath href="#cw" startOffset="77.5" text-anchor="middle">EFFICACY</textPath></text>
-      <text class="lbl dk" dominant-baseline="central"><textPath href="#ccw" startOffset="232.5" text-anchor="middle">ALIGNMENT</textPath></text>
+      <a href="#safety" aria-label="See the Safety priorities">
+        <circle cx="100" cy="100" r="74" fill="none" stroke="var(--forest-2)" stroke-width="30" stroke-dasharray="142 323" transform="rotate(155 100 100)"/>
+        <text class="lbl" dominant-baseline="central"><textPath href="#cw" startOffset="387.5" text-anchor="middle">SAFETY</textPath></text>
+      </a>
+      <a href="#efficacy" aria-label="See the Efficacy priorities">
+        <circle cx="100" cy="100" r="74" fill="none" stroke="var(--lilac)" stroke-width="30" stroke-dasharray="142 323" transform="rotate(-85 100 100)"/>
+        <text class="lbl" dominant-baseline="central"><textPath href="#cw" startOffset="77.5" text-anchor="middle">EFFICACY</textPath></text>
+      </a>
+      <a href="#alignment" aria-label="See the Alignment priorities">
+        <circle cx="100" cy="100" r="74" fill="none" stroke="var(--cream)" stroke-width="30" stroke-dasharray="142 323" transform="rotate(35 100 100)"/>
+        <text class="lbl dk" dominant-baseline="central"><textPath href="#ccw" startOffset="232.5" text-anchor="middle">ALIGNMENT</textPath></text>
+      </a>
       <text class="ctr" x="100" y="96">Transparency</text>
       <text class="ctr" x="100" y="116">and Partnership</text>
     </svg>
