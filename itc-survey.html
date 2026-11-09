@@ -302,6 +302,49 @@ a.cta-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.18);}
 .mc-event .btn{flex:none;}
 @media(max-width:620px){.mc-event{flex-wrap:wrap;align-items:flex-start;}.mc-event .me-txt{flex:1 1 calc(100% - 72px);}.mc-event .btn{margin-left:72px;}}
 @media(max-width:760px){.mc-why{grid-template-columns:1fr;}}
+
+.mc-wide{margin-top:22px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;}
+.mc-wide > h3{font-size:19px;color:var(--forest);margin-bottom:8px;}
+.mc-wide > p{font-size:13.5px;line-height:1.6;opacity:.9;max-width:760px;}
+.mc-wide-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:18px;}
+.mc-wide-grid h4{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);margin-bottom:10px;}
+.mc-wide .src{font-size:11px;font-style:italic;color:var(--forest-2);margin-top:14px;}
+.mc-wide .src a{text-decoration:underline;}
+.pisa-big{display:flex;gap:22px;flex-wrap:wrap;}
+.pisa-big div{flex:1 1 120px;}
+.pisa-big b{display:block;font-family:var(--serif);font-size:34px;line-height:1.05;color:var(--plum);}
+.pisa-big span{font-size:12.5px;line-height:1.45;display:block;margin-top:4px;opacity:.88;}
+@media(max-width:760px){.mc-wide-grid{grid-template-columns:1fr;gap:22px;}}
+
+.hz{background:#2E3E4E;color:var(--paper);border-top:3px solid #3A9A9A;border-bottom:3px solid #3A9A9A;padding:30px 0;outline-offset:-6px;}
+.hz .wrap{display:flex;align-items:center;gap:28px;}
+.hz img{flex:none;width:132px;height:132px;object-fit:cover;object-position:top;border-radius:50%;border:3px solid var(--accent);}
+.hz-txt{flex:1;min-width:0;}
+.hz-k{display:block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9FD3D1;margin-bottom:6px;}
+.hz h2{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.2vw,32px);line-height:1.15;color:#fff;margin-bottom:8px;}
+.hz p{font-size:15px;line-height:1.55;opacity:.92;max-width:680px;}
+.hz .btn{flex:none;font-size:15px;padding:13px 26px;}
+@media(max-width:760px){.hz .wrap{flex-wrap:wrap;gap:18px;}.hz img{width:96px;height:96px;}.hz-txt{flex:1 1 100%;}}
+.part{background:var(--forest);color:var(--paper);padding:44px 0 40px;}
+.part-n{display:block;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
+.part h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.6vw,46px);line-height:1.1;color:#fff;margin-bottom:10px;}
+.part p{font-size:15.5px;line-height:1.55;max-width:640px;opacity:.9;}
+.jump .jsep{flex:none;width:1px;height:22px;background:var(--line);margin:0 8px;}
+.why19{font-size:12px;line-height:1.5;background:var(--paper);border-left:3px solid var(--accent);padding:7px 10px;margin:10px 0 4px;}
+.why19 b{color:var(--forest);}
+.ma-tbl{width:100%;border-collapse:collapse;font-size:13px;}
+.ma-tbl th,.ma-tbl td{padding:6px 4px;border-bottom:1px solid var(--line);text-align:right;}
+.ma-tbl tr:first-child th{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--forest-2);}
+.ma-tbl th:first-child{text-align:left;font-weight:600;}
+.ma-tbl .yrlab{font-size:10.5px;opacity:.6;margin-left:3px;}
+.ma-tbl .chg{font-weight:700;color:var(--accent-dk);}
+.pagehead .lede{font-size:clamp(15px,2vw,18px);max-width:680px;color:var(--ink);}
+.pagehead .lede p{opacity:.9;}
+.lede-list{list-style:none;margin:12px 0 14px;padding:0;}
+.lede-list li{position:relative;padding:0 0 10px 22px;line-height:1.5;opacity:.92;}
+.lede-list li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--plum);}
+.lede-list a b{color:var(--plum);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
+.pisa-callout{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--serif);font-size:clamp(18px,2vw,21px);line-height:1.4;color:var(--plum);}
 </style>
 </head>
 <body>
@@ -357,29 +400,61 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
   <div class="wrap">
     <span class="eyebrow one">Concord's data &middot; Updated for 2026</span>
     <h1>What Concord's data show</h1>
-    <p class="lede">Every two years, the Emerson Youth Risk Behavior Survey reaches nearly every student in grades 6, 8, and 9 through 12, in Concord-Carlisle and other area districts. The 2026 results are in, and set beside 2024 they tell a clear story: Concord families are changing how technology works at home, and students' answers show it on almost every home measure. The school day has not moved the same way. Below are the survey's numbers side by side, and what you can do about the school day.</p>
+    <div class="lede">
+      <p>This page brings together three sources:</p>
+      <ul class="lede-list">
+        <li><a href="#part-survey"><b>The student survey.</b></a> The Emerson Youth Risk Behavior Survey, taken every two years by nearly every Concord-Carlisle student in grades 6, 8, and 9 through 12, shows families changing how technology works at home, and students&rsquo; answers show it on almost every home measure. The school day hasn&rsquo;t moved the same way.</li>
+        <li><a href="#part-scores"><b>State test scores.</b></a> MCAS scores are down at every school level since schools gave every student their own device, and no one is measuring whether classroom screens are helping.</li>
+        <li><a href="#part-families"><b>Our family survey.</b></a> What Concord families are worried about.</li>
+      </ul>
+      <p>Below is each in turn, and what you can do about the school day.</p>
+    </div>
     <div class="specline">
       <div class="spec"><div class="k">19%</div><div class="v">of high schoolers report high stress from home, down from 36% in 2022</div></div>
       <div class="spec"><div class="k">59%</div><div class="v">report high stress from schoolwork, barely changed from 64% in 2022</div></div>
-      <div class="spec"><div class="k">57%</div><div class="v">of sixth graders keep devices out of the bedroom at night, up from 43% in 2024</div></div>
-      <div class="spec"><div class="k">77%</div><div class="v">of high schoolers say phones are allowed outside class, at lunch and between classes</div></div>
+      <div class="spec"><div class="k">64%</div><div class="v">of Concord elementary students met expectations in English on MCAS, down from 80% in 2017</div></div>
+      <div class="spec"><div class="k">90%</div><div class="v">of families in our survey flagged phones or screens during the school day as a concern</div></div>
     </div>
-    <p class="spec-src">Figures from the Emerson Youth Risk Behavior Survey, Concord-Carlisle students.</p>
+    <p class="spec-src">From the Emerson Youth Risk Behavior Survey, Concord-Carlisle students; Massachusetts MCAS results; and the Concord Tech Impressions Survey.</p>
+  </div>
+</section>
+
+<section class="hz" aria-label="Upcoming event">
+  <div class="wrap">
+    <img src="itc-horvath-headshot.jpg" alt="Dr. Jared Cooney Horvath" width="132" height="132">
+    <div class="hz-txt">
+      <span class="hz-k">Free event &middot; Tuesday, November 17 in Concord</span>
+      <h2>Your Child&rsquo;s Brain in a Screen-Saturated World</h2>
+      <p>An evening with neuroscientist Dr. Jared Cooney Horvath, Harvard educator and author of <em>The Digital Delusion</em>, who testified before the U.S. Senate this year on how screens affect children&rsquo;s learning. Clear, research-backed insight into how your child&rsquo;s brain grows and learns, with practical strategies for home and school, kindergarten through high school.</p>
+    </div>
+    <a href="itc-resources.html#next-event" class="btn accent">Save your seat</a>
   </div>
 </section>
 
 <nav class="jump" aria-label="Jump to a section">
   <div class="wrap">
-    <span class="jl">Jump to</span>
-    <a href="#home">Families are doing their part</a>
-    <a href="#stress">Stress: home vs. school</a>
+    <span class="jl">Student survey</span>
+    <a href="#home">At home</a>
+    <a href="#stress">Stress</a>
     <a href="#rules">Phone rules</a>
-    <a href="#scores">Test scores</a>
-    <a href="#families">Family snapshot</a>
+    <span class="jsep" aria-hidden="true"></span>
+    <span class="jl">Test scores</span>
+    <a href="#scores">Concord</a>
+    <a href="#context">Compared</a>
+    <span class="jsep" aria-hidden="true"></span>
+    <a href="#families">Family survey</a>
     <a href="#act" class="go">Take action</a>
   </div>
 </nav>
 
+
+<section class="part" id="part-survey">
+  <div class="wrap">
+    <span class="part-n">Part 1 of 3</span>
+    <h2>The student survey</h2>
+    <p>How students say technology fits into their lives, at home and at school. Emerson Youth Risk Behavior Survey, 2024 and 2026, grades 6, 8, and high school.</p>
+  </div>
+</section>
 
 <section class="block" id="home">
   <div class="wrap">
@@ -460,42 +535,6 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
   </div>
 </section>
 
-<section class="block" id="scores">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow one">State test scores &middot; MCAS, 2019 vs. 2026</span>
-      <h2>Elementary and high school scores are still below pre-pandemic levels</h2>
-      <p>MCAS is the state's standardized test. Below is the share of Concord students meeting or exceeding expectations in 2026, set beside 2019, the last year before the pandemic on the same test.</p>
-    </div>
-    <div class="keyrow"><span><i class="sw y24"></i>2019</span><span><i class="sw y26"></i>2026</span></div>
-    <div class="cmpgrid"><div class="cmpcard"><span class="mc-tag down">Not recovered</span><h3>Elementary</h3><p class="sub">Grades 3 to 5, at Alcott, Thoreau, and Willard</p><div class="m"><div class="lab">English language arts</div><div class="yr" title="2019: 79%"><span class="y">2019</span><span class="t"><span class="f y24" style="width:79.0%;display:block"></span></span><span class="v">79%</span></div><div class="yr" title="2026: 64%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:64.0%;display:block"></span></span><span class="v">64%</span></div></div><div class="m"><div class="lab">Math</div><div class="yr" title="2019: 80%"><span class="y">2019</span><span class="t"><span class="f y24" style="width:80.0%;display:block"></span></span><span class="v">80%</span></div><div class="yr" title="2026: 66%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:66.0%;display:block"></span></span><span class="v">66%</span></div></div><p class="mc-note">15 points below 2019 in English and 14 in math. 2026 is the lowest year on record for this test in both subjects.</p></div><div class="cmpcard"><span class="mc-tag even">Back to 2019</span><h3>Middle school</h3><p class="sub">Grades 6 to 8, at the Ellen Garrison Building at Concord Middle School</p><div class="m"><div class="lab">English language arts</div><div class="yr" title="2019: 73%"><span class="y">2019</span><span class="t"><span class="f y24" style="width:73.0%;display:block"></span></span><span class="v">73%</span></div><div class="yr" title="2026: 72%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:72.0%;display:block"></span></span><span class="v">72%</span></div></div><div class="m"><div class="lab">Math</div><div class="yr" title="2019: 67%"><span class="y">2019</span><span class="t"><span class="f y24" style="width:67.0%;display:block"></span></span><span class="v">67%</span></div><div class="yr" title="2026: 73%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:73.0%;display:block"></span></span><span class="v">73%</span></div></div><p class="mc-note">Back to 2019 levels. But 2019 was already a low bar: middle school scores had fallen from 2017 to 2019.</p></div><div class="cmpcard"><span class="mc-tag down">Not recovered</span><h3>High school</h3><p class="sub">Grade 10, at Concord-Carlisle High School</p><div class="m"><div class="lab">English language arts</div><div class="yr" title="2019: 86%"><span class="y">2019</span><span class="t"><span class="f y24" style="width:86.0%;display:block"></span></span><span class="v">86%</span></div><div class="yr" title="2026: 73%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:73.0%;display:block"></span></span><span class="v">73%</span></div></div><div class="m"><div class="lab">Math</div><div class="yr" title="2019: 88%"><span class="y">2019</span><span class="t"><span class="f y24" style="width:88.0%;display:block"></span></span><span class="v">88%</span></div><div class="yr" title="2026: 81%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:81.0%;display:block"></span></span><span class="v">81%</span></div></div><p class="mc-note">Math settled 7 points below 2019. English held near 85% through 2025, then fell 11 points in 2026 alone.</p></div></div>
-
-    <div class="mc-why">
-      <div>
-        <h3>What changed in the school day</h3>
-        <p>Concord gave students their own school devices around 2016, well before the pandemic. During remote learning, screen-based schoolwork grew sharply, and it has never been scaled back by design.</p>
-        <p>There are no districtwide guidelines on how much of the day students spend on screens, and the district doesn't measure it: the student survey asks only about screen time after school. Each teacher decides. The superintendent has agreed to look into school-day screen time this year. In middle and high school especially, much of students' learning now happens on a screen.</p>
-      </div>
-      <div>
-        <h3>What the research shows</h3>
-        <p>Across countries in the 2022 PISA international test, students who used devices for learning at school up to an hour a day scored higher in math than students who used none. Students distracted by classmates' devices in math class scored 15 points lower.</p>
-        <p>A review of 54 studies with more than 170,000 readers found people understand what they read better on paper than on a screen, and the gap grew between 2000 and 2017.</p>
-        <p class="src">OECD, <a href="https://www.oecd.org/en/about/news/press-releases/2023/12/decline-in-educational-performance-only-partly-attributable-to-the-covid-19-pandemic.html" target="_blank" rel="noopener">PISA 2022 results</a>; <a href="https://doi.org/10.1016/j.edurev.2018.09.003" target="_blank" rel="noopener">Delgado et al.</a>, Educational Research Review, 2018</p>
-      </div>
-    </div>
-    <div class="mc-bottom">
-      <p><b>Concord can't yet say whether its screens are helping students learn or getting in the way, because the district isn't measuring.</b> That's why we ask for a screen time report and evidence before any tool is adopted.</p>
-      <a href="itc-at-school.html#efficacy" class="btn accent">See the Efficacy priorities</a>
-    </div>
-    <div class="mc-event">
-      <img src="itc-horvath-headshot.jpg" alt="Dr. Jared Cooney Horvath" width="56" height="66">
-      <div class="me-txt"><span class="me-k">Free event &middot; Tuesday, November 17 in Concord</span><p>Want to go deeper? Neuroscientist Dr. Jared Cooney Horvath on <em>Your Child&rsquo;s Brain in a Screen-Saturated World</em>.</p></div>
-      <a href="itc-resources.html#next-event" class="btn accent">See the event</a>
-    </div>
-    <p class="srcnote">MCAS results from the Massachusetts Department of Elementary and Secondary Education, all students. Elementary and middle figures combine grades, weighted by students tested. Scores reflect many things, including the pandemic itself and, for grade 10, the end of MCAS as a graduation requirement starting in 2025.</p>
-  </div>
-</section>
-
 <section class="block" id="alltable" style="padding-top:0;">
   <div class="wrap">
     <details class="fulllist">
@@ -536,7 +575,76 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
   </div>
 </section>
 
-<section class="block" style="padding-top:0;" id="families">
+<section class="part" id="part-scores">
+  <div class="wrap">
+    <span class="part-n">Part 2 of 3</span>
+    <h2>State test scores</h2>
+    <p>How Concord students are doing in English and math, and how that compares with the state and the world. MCAS, 2017 to 2026.</p>
+  </div>
+</section>
+
+<section class="block" id="scores">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow one">State test scores &middot; MCAS, then and now</span>
+      <h2>Scores are down at every school level since schools implemented a 1:1 device policy</h2>
+      <p>MCAS is the state's standardized test. Below is the share of Concord students meeting or exceeding expectations in 2026, set beside the first year students took today&rsquo;s version of the test: 2017 for grades 3 to 8, and 2019 for grade 10.</p>
+    </div>
+    <div class="keyrow"><span><i class="sw y24"></i>First year of today&rsquo;s test</span><span><i class="sw y26"></i>2026</span></div>
+    <div class="cmpgrid"><div class="cmpcard"><span class="mc-tag down">Below 2017</span><h3>Elementary</h3><p class="sub">Grades 3 to 5, at Alcott, Thoreau, and Willard</p><div class="m"><div class="lab">English language arts</div><div class="yr" title="2017: 80%"><span class="y">2017</span><span class="t"><span class="f y24" style="width:80.0%;display:block"></span></span><span class="v">80%</span></div><div class="yr" title="2026: 64%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:64.0%;display:block"></span></span><span class="v">64%</span></div></div><div class="m"><div class="lab">Math</div><div class="yr" title="2017: 80%"><span class="y">2017</span><span class="t"><span class="f y24" style="width:80.0%;display:block"></span></span><span class="v">80%</span></div><div class="yr" title="2026: 66%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:66.0%;display:block"></span></span><span class="v">66%</span></div></div><p class="mc-note">16 points below 2017 in English and 14 in math. 2026 is the lowest year on record for this test in both subjects.</p></div><div class="cmpcard"><span class="mc-tag down">Below 2017</span><h3>Middle school</h3><p class="sub">Grades 6 to 8, at the Ellen Garrison Building at Concord Middle School</p><div class="m"><div class="lab">English language arts</div><div class="yr" title="2017: 80%"><span class="y">2017</span><span class="t"><span class="f y24" style="width:80.0%;display:block"></span></span><span class="v">80%</span></div><div class="yr" title="2026: 72%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:72.0%;display:block"></span></span><span class="v">72%</span></div></div><div class="m"><div class="lab">Math</div><div class="yr" title="2017: 78%"><span class="y">2017</span><span class="t"><span class="f y24" style="width:78.0%;display:block"></span></span><span class="v">78%</span></div><div class="yr" title="2026: 73%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:73.0%;display:block"></span></span><span class="v">73%</span></div></div><p class="mc-note">8 points below 2017 in English and 5 in math. Both subjects fell about 7 points in a single year, 2017 to 2018, before the pandemic, while statewide scores held steady. Neither has climbed back to 2017 since.</p></div><div class="cmpcard"><span class="mc-tag down">Below 2019</span><h3>High school</h3><p class="sub">Grade 10, at Concord-Carlisle High School</p><p class="why19"><b>Why 2019, not 2017?</b> Grade 10 first took today&rsquo;s version of MCAS in 2019. Earlier grade 10 scores come from an older test and can&rsquo;t be compared fairly.</p><div class="m"><div class="lab">English language arts</div><div class="yr" title="2019: 86%"><span class="y">2019</span><span class="t"><span class="f y24" style="width:86.0%;display:block"></span></span><span class="v">86%</span></div><div class="yr" title="2026: 73%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:73.0%;display:block"></span></span><span class="v">73%</span></div></div><div class="m"><div class="lab">Math</div><div class="yr" title="2019: 88%"><span class="y">2019</span><span class="t"><span class="f y24" style="width:88.0%;display:block"></span></span><span class="v">88%</span></div><div class="yr" title="2026: 81%"><span class="y">2026</span><span class="t"><span class="f y26" style="width:81.0%;display:block"></span></span><span class="v">81%</span></div></div><p class="mc-note">Math settled 7 points below 2019. English held near 85% through 2025, then fell 11 points in 2026 alone.</p></div></div>
+
+    <div class="mc-wide" id="context">
+      <h3>It&rsquo;s not just Concord</h3>
+      <p>Scores have dropped across Massachusetts and across the OECD (the Organisation for Economic Co-operation and Development), a group of mostly wealthy countries, including the U.S., that runs PISA, the international test given to 15-year-olds. The pandemic is part of the story, but international scores were already falling before 2020. A decline this widespread is exactly why every district should check whether its classroom technology is helping.</p>
+      <div class="mc-wide-grid">
+        <div>
+          <h4>Massachusetts &middot; All students, then and now</h4>
+          <table class="ma-tbl"><tr><th></th><th>First year</th><th>2026</th><th>Change</th></tr><tr><th>Elementary English</th><td>48% <span class="yrlab">2017</span></td><td>39%</td><td class="chg">&minus;9</td></tr><tr><th>Elementary math</th><td>48% <span class="yrlab">2017</span></td><td>42%</td><td class="chg">&minus;6</td></tr><tr><th>Middle school English</th><td>50% <span class="yrlab">2017</span></td><td>41%</td><td class="chg">&minus;9</td></tr><tr><th>Middle school math</th><td>48% <span class="yrlab">2017</span></td><td>41%</td><td class="chg">&minus;7</td></tr><tr><th>Grade 10 English</th><td>61% <span class="yrlab">2019</span></td><td>45%</td><td class="chg">&minus;16</td></tr><tr><th>Grade 10 math</th><td>59% <span class="yrlab">2019</span></td><td>44%</td><td class="chg">&minus;15</td></tr></table>
+          <p class="mc-note">Down at every level statewide too. Since 2017, Concord&rsquo;s elementary scores fell further than the state&rsquo;s, its middle school about as much, and its high school less.</p>
+        </div>
+        <div>
+          <h4>OECD countries &middot; Age 15, 2015 vs. 2025</h4>
+          <div class="pisa-big">
+            <div><b>&minus;28</b><span>points in reading, about a year and a half of learning</span></div>
+            <div><b>&minus;22</b><span>points in math, just over a year of learning</span></div>
+          </div>
+          <p class="pisa-callout">On PISA, 2025 brought the lowest average reading and math scores ever recorded across OECD countries.</p>
+        </div>
+      </div>
+      <p class="src">Massachusetts Department of Elementary and Secondary Education, MCAS achievement results, 2017 to 2026, and <a href="https://www.mass.gov/news/massachusetts-releases-2026-mcas-results-highlighting-areas-of-progress-and-new-supports-for-students" target="_blank" rel="noopener">2026 MCAS release</a>; OECD, <a href="https://www.oecd.org/en/about/news/press-releases/2026/09/pisa-2025-students-reading-and-mathematics-performance-declined-sharply-across-the-oecd.html" target="_blank" rel="noopener">PISA 2025 results</a> and <a href="https://www.oecd.org/en/about/news/press-releases/2023/12/decline-in-educational-performance-only-partly-attributable-to-the-covid-19-pandemic.html" target="_blank" rel="noopener">PISA 2022 results</a></p>
+    </div>
+
+    <div class="mc-why">
+      <div>
+        <h3>What changed in the school day</h3>
+        <p>Concord gave students their own school devices around 2016, well before the pandemic. During remote learning, screen-based schoolwork grew sharply, and it has never been scaled back by design.</p>
+        <p>There are no districtwide guidelines on how much of the day students spend on screens, and the district doesn't measure it: the student survey asks only about screen time after school. Each teacher decides. The superintendent has agreed to look into school-day screen time this year. In middle and high school especially, much of students' learning now happens on a screen.</p>
+      </div>
+      <div id="research">
+        <h3>What the research shows</h3>
+        <p>In 2023, Sweden&rsquo;s Karolinska Institute, one of the country&rsquo;s leading medical universities, told the government there is &ldquo;clear scientific evidence that digital tools impair rather than enhance student learning.&rdquo; Sweden has since set aside well over $100 million to put printed textbooks back in classrooms and is bringing back handwriting practice.</p>
+        <p>A Stanford-led review of 119 studies of reading programs for kindergarten to grade 5 found gains on average, but results varied widely from one product to the next. That&rsquo;s why each tool needs its own evidence.</p>
+        <p>A review of 54 studies with more than 170,000 readers found people understand what they read better on paper than on a screen, and the gap grew between 2000 and 2017.</p>
+        <p class="src"><a href="https://www.news4jax.com/news/world/2023/09/10/sweden-brings-more-books-and-handwriting-practice-back-to-its-tech-heavy-schools/" target="_blank" rel="noopener">Associated Press</a>, September 2023; <a href="https://acceleratelearning.stanford.edu/story/new-study-explores-what-makes-digital-learning-products-more-or-less-effective/" target="_blank" rel="noopener">Silverman et al.</a>, Review of Educational Research, 2024; <a href="https://doi.org/10.1016/j.edurev.2018.09.003" target="_blank" rel="noopener">Delgado et al.</a>, Educational Research Review, 2018</p>
+      </div>
+    </div>
+    <div class="mc-bottom">
+      <p><b>Concord can't yet say whether its screens are helping students learn or getting in the way, because the district isn't measuring.</b> That's why we ask for a screen time report and evidence before any tool is adopted.</p>
+      <a href="itc-at-school.html#efficacy" class="btn accent">See the Efficacy priorities</a>
+    </div>
+    <p class="srcnote">MCAS results from the Massachusetts Department of Elementary and Secondary Education, all students. Elementary and middle figures combine grades, weighted by students tested. Grades 3 to 8 first took today&rsquo;s version of MCAS in 2017, and grade 10 in 2019; earlier scores come from an older test and don&rsquo;t compare fairly. Scores reflect many things, including the pandemic itself and, for grade 10, the end of MCAS as a graduation requirement starting in 2025.</p>
+  </div>
+</section>
+
+<section class="part" id="part-families">
+  <div class="wrap">
+    <span class="part-n">Part 3 of 3</span>
+    <h2>Our family survey</h2>
+    <p>What Concord parents told us about technology in their children&rsquo;s schools. Concord Tech Impressions Survey, spring 2026.</p>
+  </div>
+</section>
+
+<section class="block" id="families">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow one">A snapshot from Concord families</span>
