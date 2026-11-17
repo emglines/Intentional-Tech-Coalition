@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!-- itc-petition, v2, November 16, 2026. Sign-on page for "Three urgent steps we're asking the districts to take" (renamed again Nov 17; formerly "Three Requests...") to Superintendent Dr. Laurie Hunter (Letter_Technology_v9; renamed Nov 17). Letter text is between the LETTER TEXT comments. Signatures go to Formspree form mqpqpvpq (paid plan, 2000/month). File name kept as itc-petition.html because the printed QR code points here. QR code: itc-petition-qr.png / .svg points to https://intentionaltechcoalition.org/itc-petition.html. Not yet linked from other pages. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Urgent Steps We're Asking the Districts to Take | The Intentional Tech Coalition</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..600;1,9..144,200..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#C0CABF;--sage-dk:#A9B6A6;--forest:#3F5138;--forest-2:#5F6D57;--plum:#463347;--plum-dk:#382839;--ink:#242321;--cream:#E5E0DA;--paper:#F4F1EC;--white:#FBFAF7;--line:rgba(63,81,56,.22);--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--r:4px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.08;}
+a{color:inherit;text-decoration:none;}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--forest-2);}
+.eyebrow::before{content:"";height:1px;width:22px;background:var(--forest-2);opacity:.55;}
+.eyebrow.one::after{display:none;}
+.btn{display:inline-block;border:none;cursor:pointer;font-family:var(--sans);font-weight:600;font-size:13px;border-radius:999px;padding:10px 22px;background:var(--plum);color:var(--paper);text-decoration:none;}
+.btn.ghost{background:transparent;color:var(--forest);border:1.5px solid var(--forest);}
+.wm{display:inline-flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;}
+.wm .the{font-family:var(--serif);font-weight:300;font-size:11px;color:var(--forest-2);line-height:1;letter-spacing:.06em;margin-bottom:1px;}
+.wm .main{font-family:var(--serif);font-weight:400;font-size:17px;color:var(--forest);line-height:1.04;letter-spacing:-.01em;}
+.wm .rule-row{display:flex;align-items:center;gap:7px;margin-top:4px;}
+.wm .rule-row span{font-family:var(--sans);font-size:7.5px;font-weight:600;letter-spacing:.38em;color:var(--forest-2);}
+.wm .rule-row::before,.wm .rule-row::after{content:"";height:1px;width:20px;background:var(--forest-2);opacity:.5;}
+footer .wm .the{color:var(--sage);opacity:.65;}
+footer .wm .main{color:var(--sage);}
+footer .wm .rule-row span{color:var(--sage);opacity:.7;}
+footer .wm .rule-row::before,footer .wm .rule-row::after{background:var(--sage);opacity:.4;}
+header{background:rgba(192,202,191,.97);border-bottom:1px solid var(--line);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:960px;margin:0 auto;}
+.menu{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:500;}
+.menu a{color:var(--ink);opacity:.8;}
+.menu a[aria-current]{opacity:1;font-weight:700;color:var(--forest);border-bottom:2px solid var(--forest);padding-bottom:2px;}
+.menu .btn{padding:8px 18px;opacity:1;color:var(--paper);}
+.pagehead{background:var(--sage);padding:56px 0 60px;}
+.pagehead h1{font-size:clamp(30px,5vw,52px);color:var(--plum);margin:16px 0 16px;max-width:640px;}
+.pagehead p.lede{font-size:clamp(15px,2vw,18px);max-width:620px;color:var(--ink);opacity:.9;}
+.block{padding:64px 0;}
+.join-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start;}
+.signup-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:34px 32px;}
+.signup-card h2{font-size:clamp(24px,3.5vw,32px);color:var(--forest);margin-bottom:10px;}
+.signup-card p{font-size:14px;opacity:.85;}
+.field{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
+.field input{flex:1;min-width:200px;font-family:var(--sans);font-size:14px;padding:11px 16px;border:1.5px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);}
+.field input:focus{outline:2px solid var(--forest-2);outline-offset:1px;}
+.placeholder-note{font-size:12px;color:var(--forest-2);margin-top:10px;}
+.expect h3{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--forest-2);font-weight:600;margin-bottom:4px;}
+.expect .row{padding:16px 0;border-top:1px solid var(--line);}
+.expect .row:first-of-type{border-top:none;padding-top:4px;}
+.expect .row h4{font-family:var(--serif);font-weight:400;font-size:18px;color:var(--plum);margin-bottom:4px;}
+.expect .row p{font-size:13.5px;opacity:.85;line-height:1.6;}
+.pledge-strip{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:44px 0;}
+.pledge-strip .inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;}
+.pledge-strip h2{font-size:clamp(22px,3vw,30px);color:var(--forest);max-width:460px;}
+.pledge-strip p{font-size:14px;opacity:.85;max-width:460px;margin-top:8px;}
+.contact h2{font-size:clamp(24px,3.5vw,32px);color:var(--forest);margin:14px 0 10px;}
+.contact p{font-size:15px;opacity:.85;max-width:560px;}
+.contact .email-line{margin-top:18px;font-size:15px;}
+.contact .email-line a{font-weight:600;color:var(--plum);text-decoration:underline;}
+footer{background:var(--ink);color:#cfd3cb;padding:48px 0 32px;}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;}
+footer p{font-size:13px;line-height:1.6;opacity:.8;margin-top:12px;max-width:36ch;}
+footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9aa392;margin-bottom:10px;}
+footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.85;}
+.fineprint{margin-top:22px;padding-top:0;border-top:none;font-size:11px;opacity:.55;}
+@media(max-width:760px){.join-grid{grid-template-columns:1fr;gap:32px;}}
+/* Family / school / community mark */
+.venn{display:block;}
+.venn circle{fill:none;}
+.venn .c-fam{stroke:var(--forest);}
+.venn .c-sch{stroke:var(--plum);}
+.venn .c-com{stroke:var(--sage-dk);}
+.venn text{font-family:var(--serif);font-style:italic;fill:var(--forest-2);text-anchor:middle;dominant-baseline:central;}
+.venn.ondark .c-fam{stroke:var(--sage);}
+.venn.ondark .c-sch{stroke:#C9ADCB;}
+.venn.ondark .c-com{stroke:var(--sage-dk);}
+.venn.ondark text{fill:var(--paper);}
+.venn.dim circle{opacity:.26;}
+.venn.dim .on{opacity:1;}
+.foot-mark{display:flex;justify-content:center;margin-top:34px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);}
+.foot-mark .venn{width:146px;height:146px;}
+@media(max-width:560px){.foot-mark .venn{width:124px;height:124px;}}
+.nav-toggle{display:none;}.hamburger{display:none;}
+@media(max-width:760px){header{position:relative;}.hamburger{display:flex;align-items:center;font-size:22px;line-height:1;cursor:pointer;color:var(--forest);padding:4px 8px;user-select:none;}.menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(192,202,191,.97);flex-direction:column;padding:14px 24px 20px;gap:0;border-bottom:1px solid var(--line);z-index:100;}.menu a{display:block;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;}.menu .btn{display:block;text-align:center;margin-top:14px;border-bottom:none;padding:11px 22px;}.nav-toggle:checked~.menu{display:flex;}}
+/* Apricot accent, used only for actions (Oct 19, 2026) */
+:root{--accent:#E9935E;--accent-ink:#463347;--accent-dk:#925938;--accent-lt:#FBE9DF;}
+.btn.accent{background:var(--accent);color:var(--accent-ink);}
+.menu .btn.accent{color:var(--accent-ink);}
+/* petition page */
+.pt-head{background:var(--sage);padding:56px 0 60px;}
+.pt-head h1{font-size:clamp(30px,5vw,50px);color:var(--plum);margin:16px 0 14px;max-width:700px;}
+.pt-head .lede{font-size:clamp(15px,2vw,18px);max-width:640px;opacity:.9;}
+.pt-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start;}
+.pt-text{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:32px 30px 26px;}
+.pt-text .to{font-family:var(--serif);font-size:22px;color:var(--forest);line-height:1.2;}
+.pt-text .sub{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--forest-2);margin-top:4px;}
+.pt-text .intro{font-size:15px;margin-top:16px;}
+.asks{list-style:none;margin-top:16px;counter-reset:ask;}
+.asks li{counter-increment:ask;border-top:1px solid var(--line);padding:14px 0;}
+.asks li:last-child{border-bottom:1px solid var(--line);}
+.asks .ask{display:flex;gap:12px;font-weight:700;font-size:15px;line-height:1.45;color:var(--ink);}
+.asks .ask::before{content:counter(ask);flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--forest);color:var(--paper);font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:-1px;}
+.asks details{margin:8px 0 0 38px;}
+.asks summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--plum);list-style:none;}
+.asks summary::-webkit-details-marker{display:none;}
+.asks summary::before{content:"+ ";}
+.asks details[open] summary::before{content:"\2212  ";}
+.asks details p{font-size:14px;line-height:1.6;margin-top:8px;opacity:.9;}
+.asks a.ref{color:var(--plum);text-decoration:underline;text-underline-offset:2px;}
+.pt-text .thanks-line{font-size:15px;margin-top:18px;}
+.pt-card{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--r);padding:28px 26px 24px;position:sticky;top:20px;}
+.pt-card h2{font-size:clamp(22px,3vw,28px);color:var(--forest);margin-bottom:6px;}
+.pt-card > p{font-size:14px;opacity:.85;}
+.pt-form{display:flex;flex-direction:column;gap:18px;margin-top:20px;}
+.pt-form fieldset{border:none;}
+.pt-form .q{display:block;font-size:12.5px;font-weight:600;color:var(--forest);margin-bottom:6px;}
+.pt-form .hint{display:block;font-size:12.5px;color:var(--forest-2);margin:-2px 0 8px;line-height:1.45;}
+.pt-form input[type=text],.pt-form input[type=email]{width:100%;font-family:var(--sans);font-size:14px;padding:11px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);}
+.pt-form input:focus{outline:2px solid var(--forest-2);outline-offset:1px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.two label,.pt-form .one{display:flex;flex-direction:column;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chips label{position:relative;cursor:pointer;}
+.chips input{position:absolute;opacity:0;pointer-events:none;}
+.chips span{display:inline-block;font-size:13px;font-weight:500;padding:7px 14px;border:1.5px solid var(--line);border-radius:999px;background:var(--paper);}
+.chips input:checked+span{background:var(--forest);border-color:var(--forest);color:var(--paper);}
+.chips input:focus-visible+span{outline:2px solid var(--forest-2);outline-offset:2px;}
+.pt-err{display:none;font-size:13px;color:#9b2c2c;margin-top:8px;}
+.pt-form .btn{align-self:stretch;padding:13px 28px;font-size:15px;text-align:center;}
+.pt-privacy{font-size:12.5px;color:var(--forest-2);line-height:1.5;}
+.gotcha{display:none;}
+.pt-thanks{display:none;background:var(--accent-lt);border-radius:var(--r);padding:20px 22px;margin-top:18px;font-size:14px;}
+.pt-thanks b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;color:var(--plum);margin-bottom:4px;}
+.pt-thanks .share{margin-top:12px;}
+.pt-thanks .share a{font-weight:700;color:var(--accent-dk);border-bottom:1.5px solid var(--accent);}
+@media(max-width:860px){.pt-grid{grid-template-columns:1fr;}.pt-card{position:static;}}
+@media(max-width:560px){.two{grid-template-columns:1fr;}.pt-text,.pt-card{padding:24px 20px 20px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="itc-homepage.html" class="wm">
+      <span class="the">The</span>
+      <span class="main">Intentional<br>Tech Coalition</span>
+      <span class="rule-row"><span>CONCORD</span></span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger" aria-label="Open menu">&#9776;</label>
+    <nav class="menu">
+      <a href="itc-at-school.html">At School</a>
+      <a href="itc-at-home.html">At Home</a>
+      <a href="itc-take-action.html">Take Action</a>
+      <a href="itc-survey.html">Concord's Data</a>
+      <a href="itc-resources.html">Resources &amp; Events</a>
+      <a href="itc-join.html" class="btn accent">Join us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pt-head">
+  <div class="wrap">
+    <span class="eyebrow one">From Concord and Carlisle families</span>
+    <h1>Three urgent steps we're asking the districts to take</h1>
+    <p class="lede">We're asking Superintendent Dr. Laurie Hunter to take these steps while the Instructional and District (Community) Technology Committees continue their work. Add your name to stand with other families.</p>
+    <p style="margin-top:22px;"><a class="btn accent" href="#sign">Add your name</a></p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap pt-grid">
+
+    <!-- ===== LETTER TEXT (matches Letter_Technology_v9): edit the wording here ===== -->
+    <article class="pt-text">
+      <p class="to">Three urgent steps we're asking the districts to take</p>
+      <p class="sub">From Concord and Carlisle families to Superintendent Dr. Laurie Hunter</p>
+      <p class="intro">We, the undersigned Concord Public Schools and Concord-Carlisle Regional School District families, respectfully ask the districts to take these steps while the Instructional and District (Community) Technology Committees continue their work:</p>
+      <ol class="asks">
+        <li>
+          <div class="ask">Move internet filtering on K-8 school-issued devices to an allowlist model by January 2027.</div>
+          <details><summary>Why we're asking</summary>
+            <p>A blocklist can only stop known sites, and new sites and features appear every day. With an allowlist, students would reach only websites approved for instructional use, and teachers would have a simple, timely way to request additions. An allowlist keeps children safer by limiting where they can go online. It rightly moves responsibility for staying safe online away from students and onto the systems around them. It also protects students without monitoring their activity, avoiding the kind of surveillance that can fall hardest on students who are already vulnerable. It also gives teachers a focused, predictable environment and builds on the internet safety policy the district already maintains as an E-rate recipient. Sudbury Public Schools is moving its K-8 devices to an allowlist now and will have it in place by December 2. A mid-year change is both possible and necessary.</p>
+          </details>
+        </li>
+        <li>
+          <div class="ask">Turn off generative AI for K-8 students by January 2027, and keep it off by default.</div>
+          <details><summary>Why we're asking</summary>
+            <p>Vendors can add AI features to tools after the district has approved them, including tools already in classrooms. Keeping any student-facing generative AI feature off until it has been reviewed through the district's process gives the Instructional and District (Community) Technology Committees time to do their work and keeps young children's learning focused. Nearby districts have taken this step, including Lexington, Cambridge (which enables generative AI only for high school students), and Malden. In November, Google announced that its own generative AI tools will be off by default for K-12 student accounts starting early next year. A district default covers every vendor's tools and can take effect now.</p>
+          </details>
+        </li>
+        <li>
+          <div class="ask">Complete and publish a K-12 EdTech and AI audit by March 2027.</div>
+          <details><summary>Why we're asking</summary>
+            <p>Following the models of <a class="ref" href="https://drive.google.com/drive/folders/1pNp0hTVUjlCxKX1YhdG0KLaGxEo4zuQL" target="_blank" rel="noopener">Cambridge Public Schools</a> and the <a class="ref" href="https://luke-callahan.com/balancing-screens-and-learning-a-multi-district-analysis-of-active-student-device-use-and-implications-for-schools-and-families/" target="_blank" rel="noopener">Groton-Dunstable Regional School District</a>, the audit would report how much time students spend on school-issued devices for school each day by grade, both during the school day and for homework and other school-assigned work outside school. It would show how that time divides between instructional and non-instructional use and which tools and categories of tools, including generative AI, account for it. Cambridge combined device usage data with classroom observations, teacher surveys, and student focus groups. Groton-Dunstable published median daily device use for each grade and a breakdown by type of application.</p>
+            <p>The audit would include a public inventory of every student-facing tool in use. More than 50 Massachusetts districts, including <a class="ref" href="https://sdpc.a4l.org/district_listing.php?districtID=575" target="_blank" rel="noopener">Lexington</a>, <a class="ref" href="https://sdpc.a4l.org/district_listing.php?districtID=761" target="_blank" rel="noopener">Wayland</a>, and <a class="ref" href="https://sdpc.a4l.org/district_listing.php?districtID=770" target="_blank" rel="noopener">Westford</a>, already publish their inventories through the Student Data Privacy Consortium, listing each tool's purpose, the grades and subjects that use it, the student data it collects, and its signed data privacy agreement. Each district's inventory would follow the same format, mark which tools are currently in use, and note any minimum-use contract terms.</p>
+          </details>
+        </li>
+      </ol>
+      <p class="thanks-line">Thank you for your leadership and your partnership with Concord and Carlisle families.</p>
+    </article>
+    <!-- ===== END LETTER TEXT ===== -->
+
+    <aside class="pt-card" id="sign">
+      <h2>Add your name</h2>
+      <p>For families of Concord Public Schools and Concord-Carlisle High School students.</p>
+      <form class="pt-form" id="pt-form" novalidate>
+        <input type="text" name="_gotcha" class="gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="two">
+          <label><span class="q">First name</span><input type="text" name="first_name" autocomplete="given-name" required></label>
+          <label><span class="q">Last name</span><input type="text" name="last_name" autocomplete="family-name" required></label>
+        </div>
+        <label class="one"><span class="q">Email</span><input type="email" name="email" autocomplete="email" placeholder="you@email.com" required></label>
+        <fieldset>
+          <legend class="q">Your child's school <span style="font-weight:400;">(choose all that apply)</span></legend>
+          <div class="chips">
+            <label><input type="checkbox" name="schools" value="Willard"><span>Willard</span></label>
+            <label><input type="checkbox" name="schools" value="Alcott"><span>Alcott</span></label>
+            <label><input type="checkbox" name="schools" value="Thoreau"><span>Thoreau</span></label>
+            <label><input type="checkbox" name="schools" value="Concord Middle School"><span>Concord Middle School</span></label>
+            <label><input type="checkbox" name="schools" value="CCHS"><span>CCHS</span></label>
+            <label><input type="checkbox" name="schools" value="Other"><span>Other</span></label>
+          </div>
+        </fieldset>
+        <p class="pt-err" id="pt-err" role="alert"></p>
+        <button class="btn accent" type="submit">Add my name</button>
+        <p class="pt-privacy">Your name and your child's school will be included in the requests we deliver to Dr. Hunter. Your email stays with the coalition. We'll use it only to let you know when the requests are delivered and how the district responds.</p>
+      </form>
+      <div class="pt-thanks" id="pt-thanks" tabindex="-1"><b>Thank you for signing.</b>Your name has been added. We'll let you know when the requests are delivered.
+        <p class="share">The more families who sign, the stronger our request. <a href="#" id="pt-share">Share this page</a></p>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<script>
+/* Where signatures are sent: a Formspree form (its own form, separate from
+   the site's other forms). Paste the form's address below, e.g.
+   "https://formspree.io/f/abcdwxyz". Until then, the button explains that
+   signing isn't open yet. */
+var PETITION_FORM = "https://formspree.io/f/mqpqpvpq";
+
+(function(){
+  var form=document.getElementById('pt-form'), thanks=document.getElementById('pt-thanks'), err=document.getElementById('pt-err');
+  var btn=form.querySelector('button[type=submit]');
+  function showErr(msg){ err.textContent=msg; err.style.display='block'; }
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    err.style.display='none';
+    if(form._gotcha.value) return;
+    var first=form.first_name.value.trim(), last=form.last_name.value.trim(), email=form.email.value.trim();
+    var schools=[].slice.call(form.querySelectorAll('input[name=schools]:checked')).map(function(c){return c.value;});
+    if(!first||!last) return showErr('Please add your first and last name.');
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showErr('Please check your email address.');
+    if(!schools.length) return showErr("Please choose your child's school.");
+    if(!PETITION_FORM) return showErr("Signing isn't open quite yet. Please check back soon, or email emily@intentionaltechcoalition.org.");
+
+    // Schools are sent as one line ("Willard, Concord Middle School") so each signer is one row in the export
+    var data={_subject:'New signature: Three urgent steps for Dr. Hunter', first_name:first, last_name:last, email:email, schools:schools.join(', ')};
+
+    btn.disabled=true; btn.textContent='Sending...';
+    fetch(PETITION_FORM,{method:'POST',body:JSON.stringify(data),headers:{'Content-Type':'application/json','Accept':'application/json'}})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); form.style.display='none'; thanks.style.display='block'; thanks.focus(); thanks.scrollIntoView({behavior:'smooth',block:'center'}); })
+      .catch(function(){ btn.disabled=false; btn.textContent='Add my name'; showErr('Sorry, that did not go through. Please try again, or email emily@intentionaltechcoalition.org.'); });
+  });
+
+  document.getElementById('pt-share').addEventListener('click',function(e){
+    e.preventDefault();
+    var url='https://intentionaltechcoalition.org/itc-petition.html';
+    if(navigator.share){ navigator.share({title:'Three urgent steps we\'re asking the districts to take',url:url}).catch(function(){}); }
+    else if(navigator.clipboard){ navigator.clipboard.writeText(url).then(function(){ e.target.textContent='Link copied'; }); }
+    else { window.prompt('Copy this link:',url); }
+  });
+})();
+</script>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a href="itc-homepage.html" class="wm">
+          <span class="the">The</span>
+          <span class="main">Intentional<br>Tech Coalition</span>
+          <span class="rule-row"><span>CONCORD</span></span>
+        </a>
+        <p>Led by a team of Concord parents, working in partnership with local families, educators, and schools on intentional, research-informed technology choices.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="itc-at-school.html">At School</a>
+        <a href="itc-at-home.html">At Home</a>
+        <a href="itc-take-action.html">Take Action</a>
+        <a href="itc-survey.html">Concord's Data</a>
+        <a href="itc-resources.html">Resources &amp; Events</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="itc-join.html">Join the coalition</a>
+        <a href="itc-volunteer-roles.html">Volunteer roles</a>
+        <a href="itc-take-action.html#speak">Speak at a meeting</a>
+        <a href="mailto:concordschoolcommittee@concordps.org">Email the school committee</a>
+        <a href="mailto:emily@intentionaltechcoalition.org">Contact us</a>
+      </div>
+    </div>
+    <div class="foot-mark">
+      <svg class="venn ondark" viewBox="0 0 100 100" aria-hidden="true"><circle class="c-fam" cx="33.5" cy="40.5" r="26" stroke-width="2.2"/><circle class="c-sch" cx="66.5" cy="40.5" r="26" stroke-width="2.2"/><circle class="c-com" cx="50" cy="69.1" r="26" stroke-width="2.2"/><text x="25.7" y="36" font-size="7.7">family</text><text x="74.3" y="36" font-size="7.7">school</text><text x="50" y="78.1" font-size="7.7">community</text></svg>
+    </div>
+    <div class="fineprint">© 2026 The Intentional Tech Coalition. A volunteer parent group in Concord, MA.</div>
+  </div>
+</footer>
+
+</body>
+</html>
