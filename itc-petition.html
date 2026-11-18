@@ -118,6 +118,9 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 .asks details[open] summary::before{content:"\2212  ";}
 .asks details p{font-size:14px;line-height:1.6;margin-top:8px;opacity:.9;}
 .asks a.ref{color:var(--plum);text-decoration:underline;text-underline-offset:2px;}
+.pt-partner{grid-column:1/-1;background:var(--white);border:1px solid var(--line);border-left:3px solid var(--forest);border-radius:var(--r);padding:16px 22px;}
+.pt-partner-k{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-2);margin-bottom:4px;}
+.pt-partner p{font-size:15px;max-width:760px;margin:0;}
 .pt-text .thanks-line{font-size:15px;margin-top:18px;}
 .pt-card{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--r);padding:28px 26px 24px;position:sticky;top:20px;}
 .pt-card h2{font-size:clamp(22px,3vw,28px);color:var(--forest);margin-bottom:6px;}
@@ -175,7 +178,7 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
   <div class="wrap">
     <span class="eyebrow one">From Concord and Carlisle families</span>
     <h1>Three urgent steps we're asking the districts to take</h1>
-    <p class="lede">We're asking Superintendent Dr. Laurie Hunter to take these steps while the Instructional and District (Community) Technology Committees continue their work. Add your name to stand with other families.</p>
+    <p class="lede">The districts have formed technology committees and invited parents to the table. These three near-term steps can protect students now while the committees do their work. Add your name to show your support.</p>
     <p style="margin-top:22px;"><a class="btn accent" href="#sign">Add your name</a></p>
   </div>
 </section>
@@ -183,10 +186,15 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 <section class="block">
   <div class="wrap pt-grid">
 
+    <div class="pt-partner">
+      <span class="pt-partner-k">In partnership</span>
+      <p>This letter is offered in partnership. We kept the requests to near-term steps that fit within the process the districts have set in place, so the committees have the time they need to do this work well.</p>
+    </div>
+
     <!-- ===== LETTER TEXT (matches Letter_Technology_v9): edit the wording here ===== -->
     <article class="pt-text">
       <p class="to">Three urgent steps we're asking the districts to take</p>
-      <p class="sub">From Concord and Carlisle families to Superintendent Dr. Laurie Hunter</p>
+      <p class="sub">From Concord and Carlisle families</p>
       <p class="intro">We, the undersigned Concord Public Schools and Concord-Carlisle Regional School District families, respectfully ask the districts to take these steps while the Instructional and District (Community) Technology Committees continue their work:</p>
       <ol class="asks">
         <li>
@@ -236,10 +244,10 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
         </fieldset>
         <p class="pt-err" id="pt-err" role="alert"></p>
         <button class="btn accent" type="submit">Add my name</button>
-        <p class="pt-privacy">Your name and your child's school will be included in the requests we deliver to Dr. Hunter. Your email stays with the coalition. We'll use it only to let you know when the requests are delivered and how the district responds.</p>
+        <p class="pt-privacy">Your name and your child's school will be included in the requests we deliver to the districts. Your email stays with the coalition. We'll use it only to let you know when the requests are delivered and to share next steps.</p>
       </form>
       <div class="pt-thanks" id="pt-thanks" tabindex="-1"><b>Thank you for signing.</b>Your name has been added. We'll let you know when the requests are delivered.
-        <p class="share">The more families who sign, the stronger our request. <a href="#" id="pt-share">Share this page</a></p>
+        <p class="share">The more families who add their names, the clearer the picture for the committees. <a href="#" id="pt-share">Share this page</a></p>
       </div>
     </aside>
 
@@ -270,7 +278,7 @@ var PETITION_FORM = "https://formspree.io/f/mqpqpvpq";
     if(!PETITION_FORM) return showErr("Signing isn't open quite yet. Please check back soon, or email emily@intentionaltechcoalition.org.");
 
     // Schools are sent as one line ("Willard, Concord Middle School") so each signer is one row in the export
-    var data={_subject:'New signature: Three urgent steps for Dr. Hunter', first_name:first, last_name:last, email:email, schools:schools.join(', ')};
+    var data={_subject:'New signature: Three urgent steps', first_name:first, last_name:last, email:email, schools:schools.join(', ')};
 
     btn.disabled=true; btn.textContent='Sending...';
     fetch(PETITION_FORM,{method:'POST',body:JSON.stringify(data),headers:{'Content-Type':'application/json','Accept':'application/json'}})
