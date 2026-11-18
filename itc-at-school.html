@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Nov 18, 2026: Horvath event pieces retired; "Three urgent steps" banner (ubar) links to itc-petition.html; CMS AI request removed sitewide. -->
 <!-- itc-at-school, v16, October 25, 2026. Removed the "same three questions work in any classroom" section (saved locally in SAVED-SECTIONS-not-live.html). EdTech and AI / Phones/Watches topic switch under the page heading (sticky; EdTech default; #phones opens the other side). New Personal devices section: K-8 and CCHS rules, why storage, device-free free time at CCHS with 2024 to 2026 belonging figures, Massachusetts bill status (storage not required), open-campus examples (Cambridge Rindge and Latin, Park City), and two parent letters to CCHS leadership behind a button. v15: October 25, 2026. Removed the Technology Advisory Committee card and CMS pledge band (saved locally in SAVED-SECTIONS-not-live.html, not published). v14: October 19, 2026. AI evidence note on the AI off by default card (Stanford review, New York City pause); "Shouldn't school prepare kids for AI?" answer under the Safety cards. v13: October 19, 2026. 2026 student survey strip under the page heading (parents monitoring phones, devices out of bedrooms, more sleep); data notes on the screen time report, Student well-being, and Bell-to-bell cards, each linking to Concord's Data. v12: October 19, 2026. Apricot action accent on the Join us button and primary actions. v11: October 19, 2026. Alignment tied to the District Strategic Plan 2023-2028: source lines cite and link the plan (initiative 4.4, outcome 2.3), and a second quote adds outcome 4.4 on balance in technology use. v10: October 13, 2026. Added K-8 internet consent guide card below the school-level tabs. v9: Stable filename: version tracked here, not in the filename. Rebuilt around the 2026-27 School Priorities 1-pager (Safety, Efficacy, Alignment): asks framed as requests, school-level one-pagers for family advocacy (elementary and middle linked as PDFs), TAC kept as a soft "Looking ahead" card, survey findings removed. -->
 <html lang="en">
 <head>
@@ -340,34 +341,51 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 .ph-free .grp h4{font-family:var(--serif);font-weight:500;font-size:19px;color:var(--white);margin-bottom:8px;}
 @media(max-width:820px){.ph-free .grp{grid-template-columns:1fr;gap:18px;}}
 </style>
+<style>
+/* Three urgent steps banner (Nov 18, 2026; replaced the Horvath event banner). Not on itc-petition.html. */
+.ubar{background:#3F5138;color:#F4F1EC;border-bottom:2px solid #E9935E;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:13px;line-height:1.4;position:relative;}
+.ubar-in{max-width:1200px;margin:0 auto;padding:9px 48px 9px 24px;display:flex;align-items:center;justify-content:center;gap:6px 14px;flex-wrap:wrap;text-align:center;}
+.ubar-k{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#F6C9A9;white-space:nowrap;}
+.ubar-t strong{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:14.5px;color:#fff;}
+.ubar-a{display:inline-block;background:#E9935E;color:#463347;font-weight:700;font-size:12px;border-radius:999px;padding:5px 14px;text-decoration:none;white-space:nowrap;}
+.ubar-a:hover{background:#F0A673;}
+.ubar-x{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:#C0CABF;font-size:20px;line-height:1;cursor:pointer;padding:4px 8px;}
+.ubar[hidden]{display:none;}
+@media(max-width:620px){.ubar-w{display:none;}.ubar-in{padding:8px 40px 8px 16px;}}
+</style>
+<style>
+/* Three urgent steps block (Nov 18, 2026) */
+.urg{background:var(--accent-lt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:44px 0;}
+.urg-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.urg h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,34px);color:var(--plum);line-height:1.12;margin:12px 0 10px;}
+.urg p{font-size:15px;opacity:.9;max-width:480px;}
+.urg .acts{margin-top:20px;}
+.urg .acts .btn{padding:12px 26px;font-size:14px;}
+.urg ol{list-style:none;counter-reset:u;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:6px 22px;margin:0;}
+.urg li{counter-increment:u;display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line);font-weight:600;font-size:14.5px;line-height:1.4;}
+.urg li:first-child{border-top:none;}
+.urg li::before{content:counter(u);flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--forest);color:var(--paper);font-size:12px;display:flex;align-items:center;justify-content:center;}
+.urg li small{display:block;font-weight:500;font-size:12px;color:var(--accent-dk);letter-spacing:.04em;margin-top:2px;}
+.urg.box{border:1px solid var(--line);border-radius:var(--r);padding:30px 32px;margin:0 0 28px;}
+@media(max-width:760px){.urg-grid{grid-template-columns:1fr;gap:24px;}.urg.box{padding:24px 20px;}}
+.urg-tag{display:inline-block;margin:2px 0 10px;font-size:11.5px;font-weight:700;color:var(--accent-dk);background:var(--accent-lt);border-radius:999px;padding:4px 11px;text-decoration:none;}
+.urg-tag:hover{background:#F6D3BC;}
+</style>
 </head>
 <body>
-<!-- Horvath event banner (Oct 25, 2026): hides itself after Nov 17; not on Resources, which leads with the event -->
-<style>
-.evbar{background:#2E3E4E;color:#F4F1EC;border-bottom:2px solid #3A9A9A;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:13px;line-height:1.4;position:relative;}
-.evbar-in{max-width:1200px;margin:0 auto;padding:9px 48px 9px 24px;display:flex;align-items:center;justify-content:center;gap:6px 14px;flex-wrap:wrap;text-align:center;}
-.evbar-k{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9FD3D1;white-space:nowrap;}
-.evbar-t strong{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:14.5px;color:#fff;}
-.evbar-t em{font-family:'Fraunces',Georgia,serif;font-style:italic;}
-.evbar-a{display:inline-block;background:#E9935E;color:#463347;font-weight:700;font-size:12px;border-radius:999px;padding:5px 14px;text-decoration:none;white-space:nowrap;}
-.evbar-a:hover{background:#F0A673;}
-.evbar-x{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:#9FD3D1;font-size:20px;line-height:1;cursor:pointer;padding:4px 8px;}
-.evbar[hidden]{display:none;}
-@media(max-width:620px){.evbar-w{display:none;}.evbar-in{padding:8px 40px 8px 16px;}}
-</style>
-<div class="evbar" id="evbar" role="region" aria-label="Upcoming event">
-  <div class="evbar-in">
-    <span class="evbar-k">Tue, Nov 17 in Concord</span>
-    <span class="evbar-t"><strong>What are screens doing to your child&rsquo;s brain?</strong> Hear it from Dr. Jared Cooney Horvath, neuroscientist and Harvard educator.</span>
-    <a class="evbar-a" href="itc-resources.html#next-event">Save your seat</a>
+<!-- Three urgent steps banner (Nov 18, 2026) -->
+<div class="ubar" id="ubar" role="region" aria-label="Add your name">
+  <div class="ubar-in">
+    <span class="ubar-k">Add your name</span>
+    <span class="ubar-t"><strong>Three urgent steps we're asking the districts to take</strong><span class="ubar-w"> for K-8 internet filtering, AI, and a K-12 EdTech audit.</span></span>
+    <a class="ubar-a" href="itc-petition.html">Add your name</a>
   </div>
-  <button type="button" class="evbar-x" aria-label="Hide this announcement">&times;</button>
+  <button type="button" class="ubar-x" aria-label="Hide this announcement">&times;</button>
 </div>
 <script>
-(function(){var b=document.getElementById('evbar');if(!b)return;
-if(new Date()>=new Date('2026-11-18T00:00:00-05:00')){b.parentNode.removeChild(b);return;}
-try{if(sessionStorage.getItem('itc-evbar-hidden')){b.hidden=true;}}catch(e){}
-b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;try{sessionStorage.setItem('itc-evbar-hidden','1');}catch(e){}});})();
+(function(){var b=document.getElementById('ubar');if(!b)return;
+try{if(sessionStorage.getItem('itc-ubar-hidden')){b.hidden=true;}}catch(e){}
+b.querySelector('.ubar-x').addEventListener('click',function(){b.hidden=true;try{sessionStorage.setItem('itc-ubar-hidden','1');}catch(e){}});})();
 </script>
 
 
@@ -433,6 +451,24 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
   </div>
 </section>
 
+<section class="urg" id="urgent">
+  <div class="wrap urg-grid">
+    <div>
+      <span class="eyebrow one">Three asks that can't wait</span>
+      <h2>Three urgent steps we're asking the districts to take</h2>
+      <p>Three of the Safety asks on this page are urgent. Families are asking Superintendent Dr. Laurie Hunter to act on them this school year, while the technology committees continue their work.</p>
+      <div class="acts"><a class="btn accent" href="itc-petition.html">Add your name</a></div>
+    </div>
+    <div>
+      <ol>
+          <li><span>Allowlist internet filtering on K-8 school-issued devices<small>By January 2027</small></span></li>
+          <li><span>Generative AI turned off by default for K-8 students<small>By January 2027</small></span></li>
+          <li><span>A K-12 EdTech and AI audit, published<small>By March 2027</small></span></li>
+        </ol>
+    </div>
+  </div>
+</section>
+
 <nav class="topics" aria-label="Choose a topic">
   <div class="wrap inner">
     <span class="lbl">Two kinds of tech at school</span>
@@ -472,6 +508,7 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
     <div class="cards">
       <div class="card">
         <h3>A full tool inventory and screen time report</h3>
+        <a class="urg-tag" href="itc-petition.html" title="Asked for by March 2027">Urgent step &middot; Add your name</a>
         <div class="who">Asked of: Administration and Leadership</div>
         <p>We ask the district to publish an inventory of each student-facing EdTech tool, listing:</p>
         <ul>
@@ -485,6 +522,7 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
       </div>
       <div class="card">
         <h3>AI off by default</h3>
+        <a class="urg-tag" href="itc-petition.html" title="Asked for by January 2027">Urgent step &middot; Add your name</a>
         <div class="who">Asked of: Administration and Leadership</div>
         <p>We ask that generative AI features stay turned off for students until each one has been reviewed.</p>
         <p class="aside">Many tools now add AI features through routine updates. Off by default means a new feature reaches students only after someone has looked at it.</p>
@@ -492,6 +530,7 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
       </div>
       <div class="card">
         <h3>Allow-list internet</h3>
+        <a class="urg-tag" href="itc-petition.html" title="Asked for by January 2027">Urgent step &middot; Add your name</a>
         <div class="who">Asked of: Administration and Leadership</div>
         <p>We ask that student devices reach approved sites only, rather than blocking harmful sites one at a time.</p>
         <ul><li>For elementary and middle school devices</li></ul>

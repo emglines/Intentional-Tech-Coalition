@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Nov 18, 2026: Horvath event pieces retired; "Three urgent steps" banner (ubar) links to itc-petition.html; CMS AI request removed sitewide. -->
 <!-- itc-take-action, v17, October 19, 2026. 2026 student survey strip under the page heading; "new talking point" on the Speak at public comment card; "Want a number to bring?" stress figures in the first-time speaker tips. v16: October 19, 2026. Removed duplicate page heading left above the .ph-grid hero. v15: October 19, 2026. Tips band retitled "First time speaking at a school committee meeting?" with a four-tip overview, a short arrival note, and links to sample comments and sign-up. v14: October 19, 2026. "Jump to" box beside the intro (From home, In the community, Volunteer with us, Sample public comments); public comment item links to the sample comments page; the seven-tip list is replaced by a short band with See sample comments and Sign up to speak buttons. v13: October 19, 2026. October 19, 2026. Apricot action accent on the Join us button and primary actions. v12: October 19, 2026. Upcoming event line now points to the Nov 17 Horvath event. v11: October 13, 2026. Removed Safety and CMS tags from From home items. v10: October 13, 2026. Aligned to 2026-27 priorities: "Write to school leaders" leads From home and links to the school-level one-pagers (fixes dead #write link); AI request moved to third, Urgent tag replaced by Safety tags; lede links priorities; public comment tip links the 1-pager. v9: October 1, 2026. Stable filename: version tracked here, not in the filename. Reorganized from the time-based "Ways to help" rail (Five minutes / Half an hour / An evening / Ongoing) into three audience buckets: From home, In the community, Volunteer with us. The featured three-card strip is gone; the AI request and CMS communication pledge now sit as weighted items inside From home, carrying small Urgent and CMS tags instead of full cards. Shape the Year Survey removed from this page and from the footer. Public comment keeps its #speak anchor and the auto-updating #sc-next-date-line. Footer blurb de-personalized and Volunteer roles added to Connect. -->
 <html lang="en">
 <head>
@@ -140,34 +141,51 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 .story-strip h2{font-family:var(--serif);font-weight:400;font-size:clamp(22px,3vw,30px);line-height:1.15;color:var(--plum);max-width:520px;}
 .story-strip p{font-size:14px;opacity:.85;max-width:520px;margin-top:8px;}
 </style>
+<style>
+/* Three urgent steps banner (Nov 18, 2026; replaced the Horvath event banner). Not on itc-petition.html. */
+.ubar{background:#3F5138;color:#F4F1EC;border-bottom:2px solid #E9935E;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:13px;line-height:1.4;position:relative;}
+.ubar-in{max-width:1200px;margin:0 auto;padding:9px 48px 9px 24px;display:flex;align-items:center;justify-content:center;gap:6px 14px;flex-wrap:wrap;text-align:center;}
+.ubar-k{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#F6C9A9;white-space:nowrap;}
+.ubar-t strong{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:14.5px;color:#fff;}
+.ubar-a{display:inline-block;background:#E9935E;color:#463347;font-weight:700;font-size:12px;border-radius:999px;padding:5px 14px;text-decoration:none;white-space:nowrap;}
+.ubar-a:hover{background:#F0A673;}
+.ubar-x{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:#C0CABF;font-size:20px;line-height:1;cursor:pointer;padding:4px 8px;}
+.ubar[hidden]{display:none;}
+@media(max-width:620px){.ubar-w{display:none;}.ubar-in{padding:8px 40px 8px 16px;}}
+</style>
+<style>
+/* Three urgent steps block (Nov 18, 2026) */
+.urg{background:var(--accent-lt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:44px 0;}
+.urg-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.urg h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,34px);color:var(--plum);line-height:1.12;margin:12px 0 10px;}
+.urg p{font-size:15px;opacity:.9;max-width:480px;}
+.urg .acts{margin-top:20px;}
+.urg .acts .btn{padding:12px 26px;font-size:14px;}
+.urg ol{list-style:none;counter-reset:u;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:6px 22px;margin:0;}
+.urg li{counter-increment:u;display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line);font-weight:600;font-size:14.5px;line-height:1.4;}
+.urg li:first-child{border-top:none;}
+.urg li::before{content:counter(u);flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--forest);color:var(--paper);font-size:12px;display:flex;align-items:center;justify-content:center;}
+.urg li small{display:block;font-weight:500;font-size:12px;color:var(--accent-dk);letter-spacing:.04em;margin-top:2px;}
+.urg.box{border:1px solid var(--line);border-radius:var(--r);padding:30px 32px;margin:0 0 28px;}
+@media(max-width:760px){.urg-grid{grid-template-columns:1fr;gap:24px;}.urg.box{padding:24px 20px;}}
+.urg-tag{display:inline-block;margin:2px 0 10px;font-size:11.5px;font-weight:700;color:var(--accent-dk);background:var(--accent-lt);border-radius:999px;padding:4px 11px;text-decoration:none;}
+.urg-tag:hover{background:#F6D3BC;}
+</style>
 </head>
 <body>
-<!-- Horvath event banner (Oct 25, 2026): hides itself after Nov 17; not on Resources, which leads with the event -->
-<style>
-.evbar{background:#2E3E4E;color:#F4F1EC;border-bottom:2px solid #3A9A9A;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:13px;line-height:1.4;position:relative;}
-.evbar-in{max-width:1200px;margin:0 auto;padding:9px 48px 9px 24px;display:flex;align-items:center;justify-content:center;gap:6px 14px;flex-wrap:wrap;text-align:center;}
-.evbar-k{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9FD3D1;white-space:nowrap;}
-.evbar-t strong{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:14.5px;color:#fff;}
-.evbar-t em{font-family:'Fraunces',Georgia,serif;font-style:italic;}
-.evbar-a{display:inline-block;background:#E9935E;color:#463347;font-weight:700;font-size:12px;border-radius:999px;padding:5px 14px;text-decoration:none;white-space:nowrap;}
-.evbar-a:hover{background:#F0A673;}
-.evbar-x{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:#9FD3D1;font-size:20px;line-height:1;cursor:pointer;padding:4px 8px;}
-.evbar[hidden]{display:none;}
-@media(max-width:620px){.evbar-w{display:none;}.evbar-in{padding:8px 40px 8px 16px;}}
-</style>
-<div class="evbar" id="evbar" role="region" aria-label="Upcoming event">
-  <div class="evbar-in">
-    <span class="evbar-k">Tue, Nov 17 in Concord</span>
-    <span class="evbar-t"><strong>What are screens doing to your child&rsquo;s brain?</strong> Hear it from Dr. Jared Cooney Horvath, neuroscientist and Harvard educator.</span>
-    <a class="evbar-a" href="itc-resources.html#next-event">Save your seat</a>
+<!-- Three urgent steps banner (Nov 18, 2026) -->
+<div class="ubar" id="ubar" role="region" aria-label="Add your name">
+  <div class="ubar-in">
+    <span class="ubar-k">Add your name</span>
+    <span class="ubar-t"><strong>Three urgent steps we're asking the districts to take</strong><span class="ubar-w"> for K-8 internet filtering, AI, and a K-12 EdTech audit.</span></span>
+    <a class="ubar-a" href="itc-petition.html">Add your name</a>
   </div>
-  <button type="button" class="evbar-x" aria-label="Hide this announcement">&times;</button>
+  <button type="button" class="ubar-x" aria-label="Hide this announcement">&times;</button>
 </div>
 <script>
-(function(){var b=document.getElementById('evbar');if(!b)return;
-if(new Date()>=new Date('2026-11-18T00:00:00-05:00')){b.parentNode.removeChild(b);return;}
-try{if(sessionStorage.getItem('itc-evbar-hidden')){b.hidden=true;}}catch(e){}
-b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;try{sessionStorage.setItem('itc-evbar-hidden','1');}catch(e){}});})();
+(function(){var b=document.getElementById('ubar');if(!b)return;
+try{if(sessionStorage.getItem('itc-ubar-hidden')){b.hidden=true;}}catch(e){}
+b.querySelector('.ubar-x').addEventListener('click',function(){b.hidden=true;try{sessionStorage.setItem('itc-ubar-hidden','1');}catch(e){}});})();
 </script>
 
 
@@ -228,6 +246,23 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
       <p>Three places to put your energy. Some take a minute, others take the year.</p>
     </div>
 
+    <div class="urg box" id="urgent">
+      <div class="urg-grid">
+        <div>
+          <span class="eyebrow one">Start here &middot; 1 minute</span>
+          <h2>Three urgent steps we're asking the districts to take</h2>
+          <p>Our most important ask right now. Add your name, then pass it to another Concord or Carlisle family.</p>
+          <div class="acts"><a class="btn accent" href="itc-petition.html">Add your name</a></div>
+        </div>
+        <div>
+          <ol>
+          <li><span>Allowlist internet filtering on K-8 school-issued devices<small>By January 2027</small></span></li>
+          <li><span>Generative AI turned off by default for K-8 students<small>By January 2027</small></span></li>
+          <li><span>A K-12 EdTech and AI audit, published<small>By March 2027</small></span></li>
+        </ol>
+        </div>
+      </div>
+    </div>
     <div class="ways-grid">
 
       <div class="ways-col" id="from-home">
@@ -244,8 +279,8 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
           <p>Our K-8 guide walks through the Aspen form, with email templates for asking for guardrails.</p>
         </div>
         <div class="way">
-          <a class="t" href="itc-ai-request.html">Sign the AI request</a>
-          <p>Pause student-facing generative AI on all school-issued devices for middle schoolers.</p>
+          <a class="t" href="itc-petition.html">Add your name to three urgent steps</a>
+          <p>Allowlist internet filtering and AI off for K-8, plus a K-12 EdTech and AI audit.</p>
         </div>
         <div class="way">
           <a class="t" href="https://docs.google.com/forms/d/e/1FAIpQLScg3ufVW7tq8G-fKrdv3LXkvI2f0A65VjYRbcBgdlyEHEaMRQ/viewform?usp=header" target="_blank" rel="noopener">Sign the communication pledge</a>
@@ -263,15 +298,14 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
           <h3>In the community</h3>
         </div>
         <div class="way">
-          <a class="t" href="itc-resources.html#next-event">Come to an upcoming event</a>
-          <p>Free and open to everyone. Come with your questions, and leave with practical tools for home and school.</p>
-          <p class="date">Nov 17 &middot; Dr. Jared Cooney Horvath in Concord</p>
+          <a class="t" href="itc-at-home.html#gatherings">Come to an upcoming event</a>
+          <p>Free and open to everyone. We're planning more gatherings this school year. Join the coalition to hear about each one.</p>
         </div>
         <div class="way" id="speak">
           <a class="t" href="itc-public-comment-signup.html">Speak at public comment</a>
           <p>The most direct way to be heard. We coordinate so families show up together.</p>
-          <p class="newpt"><b>New talking point:</b> families are doing their part at home, and the school day hasn't caught up. <a href="itc-survey.html">See the numbers</a></p>
-          <p class="date" id="sc-next-date-line"><strong>Next: Oct 7</strong> &middot; 6:00 pm &middot; Ripley</p>
+          <p class="newpt"><b>New talking point:</b> ask the districts to take our three urgent steps for K-8 internet filtering, AI, and a K-12 EdTech audit. <a href="itc-petition.html">See the three steps</a></p>
+          <p class="date" id="sc-next-date-line"><strong>Next: Dec 2</strong> &middot; 6:00 pm &middot; Ripley</p>
           <a class="sub" href="itc-public-comment.html#samples">Sample comments and tips &rarr;</a>
         </div>
         <div class="way">

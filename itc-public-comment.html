@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Nov 18, 2026: Horvath event pieces retired; "Three urgent steps" banner (ubar) links to itc-petition.html; CMS AI request removed sitewide. -->
 <!-- itc-public-comment, v3, October 19, 2026. New first sample, "Families are doing their part," a note that any sample can be sent as an email to either School Committee, and a Sign up to speak button in the page heading; built on the 2026 student survey; 2026 stress numbers added to the Alignment sample; CCHS phone rule corrected and the middle school vs high school contrast added to the Phones at CCHS sample. v2: October 19, 2026. "Planning to speak?" button now goes to the sign-up sheet; email offered as a smaller link. v1: October 19, 2026. Sample public comments for school committee speakers: shape-of-a-comment timeline, the three priority questions with short shared asks, six topic samples with fill-in prompts (name and street address opening), and an open "your own topic" card. Print and copy per sample; #topic web addresses open a specific sample. Not yet linked from the nav or Take Action. -->
 <html lang="en">
 <head>
@@ -189,34 +190,38 @@ footer a{display:block;color:#cfd3cb;font-size:13px;margin-bottom:7px;opacity:.8
 .emailalt a{font-weight:700;color:var(--clay-dk);border-bottom:1.5px solid var(--clay);word-break:break-word;}
 .newb{display:inline-block;vertical-align:middle;font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--clay);color:var(--plum);border-radius:999px;padding:2px 7px;margin-left:4px;}
 </style>
+<style>
+/* Three urgent steps banner (Nov 18, 2026; replaced the Horvath event banner). Not on itc-petition.html. */
+.ubar{background:#3F5138;color:#F4F1EC;border-bottom:2px solid #E9935E;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:13px;line-height:1.4;position:relative;}
+.ubar-in{max-width:1200px;margin:0 auto;padding:9px 48px 9px 24px;display:flex;align-items:center;justify-content:center;gap:6px 14px;flex-wrap:wrap;text-align:center;}
+.ubar-k{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#F6C9A9;white-space:nowrap;}
+.ubar-t strong{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:14.5px;color:#fff;}
+.ubar-a{display:inline-block;background:#E9935E;color:#463347;font-weight:700;font-size:12px;border-radius:999px;padding:5px 14px;text-decoration:none;white-space:nowrap;}
+.ubar-a:hover{background:#F0A673;}
+.ubar-x{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:#C0CABF;font-size:20px;line-height:1;cursor:pointer;padding:4px 8px;}
+.ubar[hidden]{display:none;}
+@media(max-width:620px){.ubar-w{display:none;}.ubar-in{padding:8px 40px 8px 16px;}}
+</style>
+<style>
+.pc-urg{background:var(--accent-lt);border-radius:var(--r);padding:18px 22px;}
+.pc-urg p{font-size:14.5px;margin-bottom:8px;}
+.pc-urg ul{margin:0 0 10px 18px;font-size:14px;line-height:1.6;}
+</style>
 </head>
 <body>
-<!-- Horvath event banner (Oct 25, 2026): hides itself after Nov 17; not on Resources, which leads with the event -->
-<style>
-.evbar{background:#2E3E4E;color:#F4F1EC;border-bottom:2px solid #3A9A9A;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:13px;line-height:1.4;position:relative;}
-.evbar-in{max-width:1200px;margin:0 auto;padding:9px 48px 9px 24px;display:flex;align-items:center;justify-content:center;gap:6px 14px;flex-wrap:wrap;text-align:center;}
-.evbar-k{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9FD3D1;white-space:nowrap;}
-.evbar-t strong{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:14.5px;color:#fff;}
-.evbar-t em{font-family:'Fraunces',Georgia,serif;font-style:italic;}
-.evbar-a{display:inline-block;background:#E9935E;color:#463347;font-weight:700;font-size:12px;border-radius:999px;padding:5px 14px;text-decoration:none;white-space:nowrap;}
-.evbar-a:hover{background:#F0A673;}
-.evbar-x{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:#9FD3D1;font-size:20px;line-height:1;cursor:pointer;padding:4px 8px;}
-.evbar[hidden]{display:none;}
-@media(max-width:620px){.evbar-w{display:none;}.evbar-in{padding:8px 40px 8px 16px;}}
-</style>
-<div class="evbar" id="evbar" role="region" aria-label="Upcoming event">
-  <div class="evbar-in">
-    <span class="evbar-k">Tue, Nov 17 in Concord</span>
-    <span class="evbar-t"><strong>What are screens doing to your child&rsquo;s brain?</strong> Hear it from Dr. Jared Cooney Horvath, neuroscientist and Harvard educator.</span>
-    <a class="evbar-a" href="itc-resources.html#next-event">Save your seat</a>
+<!-- Three urgent steps banner (Nov 18, 2026) -->
+<div class="ubar" id="ubar" role="region" aria-label="Add your name">
+  <div class="ubar-in">
+    <span class="ubar-k">Add your name</span>
+    <span class="ubar-t"><strong>Three urgent steps we're asking the districts to take</strong><span class="ubar-w"> for K-8 internet filtering, AI, and a K-12 EdTech audit.</span></span>
+    <a class="ubar-a" href="itc-petition.html">Add your name</a>
   </div>
-  <button type="button" class="evbar-x" aria-label="Hide this announcement">&times;</button>
+  <button type="button" class="ubar-x" aria-label="Hide this announcement">&times;</button>
 </div>
 <script>
-(function(){var b=document.getElementById('evbar');if(!b)return;
-if(new Date()>=new Date('2026-11-18T00:00:00-05:00')){b.parentNode.removeChild(b);return;}
-try{if(sessionStorage.getItem('itc-evbar-hidden')){b.hidden=true;}}catch(e){}
-b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;try{sessionStorage.setItem('itc-evbar-hidden','1');}catch(e){}});})();
+(function(){var b=document.getElementById('ubar');if(!b)return;
+try{if(sessionStorage.getItem('itc-ubar-hidden')){b.hidden=true;}}catch(e){}
+b.querySelector('.ubar-x').addEventListener('click',function(){b.hidden=true;try{sessionStorage.setItem('itc-ubar-hidden','1');}catch(e){}});})();
 </script>
 
 <header>
@@ -245,8 +250,8 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
     <h1>Share what brought you here</h1>
     <p class="lede">Anyone can speak during public comment at a school committee meeting, for two to three minutes. The samples below are starting points, not scripts. The part that matters most is the part only you can write: what you've seen, and why it brought you to the microphone.</p>
     <div class="nextmtg" id="nextmtg">
-      <div class="datebadge"><span class="m" id="nm-m">Oct</span><span class="d" id="nm-d">21</span></div>
-      <div class="txt"><strong id="nm-line">Next meeting: Wednesday, October 21</strong><span id="nm-sub">6:00 pm &middot; EGB @ CMS Library &middot; in person or on Zoom</span></div>
+      <div class="datebadge"><span class="m" id="nm-m">Dec</span><span class="d" id="nm-d">2</span></div>
+      <div class="txt"><strong id="nm-line">Next meeting: Wednesday, December 2</strong><span id="nm-sub">6:00 pm &middot; Ripley &middot; in person or on Zoom</span></div>
       <div class="nm-btns"><a class="btn" href="itc-public-comment-signup.html">Sign up to speak</a><a class="btn" href="#samples">See the sample comments</a></div>
     </div>
   </div>
@@ -271,6 +276,18 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
       </div>
       <a class="more" href="itc-at-school.html">Read the full priorities</a>
     </div>
+    <div class="row">
+      <span class="eyebrow">Most urgent right now</span>
+      <div class="pc-urg">
+        <p><b>Three urgent steps we're asking the districts to take.</b> Any of these makes a strong closing ask:</p>
+        <ul>
+          <li>Allowlist internet filtering on K-8 school-issued devices by January 2027</li>
+          <li>Generative AI turned off by default for K-8 students by January 2027</li>
+          <li>A K-12 EdTech and AI audit, published by March 2027</li>
+        </ul>
+        <a class="more" href="itc-petition.html">Add your name to the three steps</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -288,7 +305,7 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
         <button class="topic" role="tab" data-t="doing-part"><span class="tt">Families are doing their part <span class="newb">New</span></span><span class="ts">The 2026 student survey</span></button>
         <button class="topic" role="tab" data-t="safety-online"><span class="tt">Internet safety</span><span class="ts">Approved sites only</span></button>
         <button class="topic" role="tab" data-t="tools-list"><span class="tt">What tools are we using?</span><span class="ts">A public list of EdTech tools</span></button>
-        <button class="topic" role="tab" data-t="no-ai"><span class="tt">Generative AI</span><span class="ts">Off by default, Gemini off at EGB @ CMS</span></button>
+        <button class="topic" role="tab" data-t="no-ai"><span class="tt">Generative AI</span><span class="ts">Off by default for K-8</span></button>
         <button class="topic" role="tab" data-t="efficacy"><span class="tt">Does it help kids learn?</span><span class="ts">Evidence before adoption</span></button>
         <button class="topic" role="tab" data-t="alignment"><span class="tt">Our district's own goals</span><span class="ts">Partnership and well-being</span></button>
         <button class="topic" role="tab" data-t="bell"><span class="tt">Phones at CCHS</span><span class="ts">Bell-to-bell, secure storage</span></button>
@@ -368,7 +385,7 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
             <div class="s-tools"><button class="btn sm js-print">Print this one</button><button class="btn sm ghost js-copy">Copy text</button></div>
           </div>
           <div class="s-meta">
-            <span><strong>A good fit if</strong> you have a middle schooler, you signed the AI request, or you work with AI and have concerns about it for kids.</span>
+            <span><strong>A good fit if</strong> you have a child in K-8, you added your name to our three urgent steps, or you work with AI and have concerns about it for kids.</span>
             <span class="mins">About 2&frac12; minutes</span>
           </div>
           <div class="speech">
@@ -376,9 +393,9 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
             <p>Starting in August, Google began expanding Gemini in Google Classroom to students of all ages by default, including on devices issued to Ellen Garrison Building at Concord Middle School students. <span class="fill">How you found out, and how it felt. For example: I learned about it from my child, not from the school.</span></p>
             <p>I don't think this is anyone's fault. AI features increasingly arrive through routine software updates, inside tools students already use. Nobody in this room decided to give twelve-year-olds a chatbot. It arrived on its own. That's why I think the answer is a default, rather than a debate about each feature after it lands.</p>
             <p>The early research gives me pause. In a 2025 study published in PNAS, high school students who practiced math with unrestricted access to GPT-4 later scored 17 percent lower on an exam taken without it. <span class="fill opt">what you've noticed about how your child learns best</span> At this age, working through a hard problem is the learning.</p>
-            <p class="theask"><b>My ask tonight:</b> that generative AI features stay turned off for students until each one has been reviewed, and, as an immediate step, that Gemini be removed from Ellen Garrison Building at Concord Middle School devices while that review is underway. When AI use does resume, I'd ask for a simple, well-publicized opt-out with no penalty to students. Thank you for the care you bring to this.</p>
+            <p class="theask"><b>My ask tonight:</b> that generative AI be turned off for K-8 students by January 2027, and stay off by default until each feature has been reviewed. When AI use does resume, I'd ask for a simple, well-publicized opt-out with no penalty to students. Thank you for the care you bring to this.</p>
           </div>
-          <p class="s-src">Source: Bastani et al. (2025), <a href="https://www.pnas.org/doi/10.1073/pnas.2422633122" target="_blank" rel="noopener">PNAS</a>. Field experiment in high school math classes. Puts into practice: AI off by default, on our <a href="itc-at-school.html">2026-27 priorities</a>, and the <a href="itc-ai-request.html">AI request</a>.</p>
+          <p class="s-src">Source: Bastani et al. (2025), <a href="https://www.pnas.org/doi/10.1073/pnas.2422633122" target="_blank" rel="noopener">PNAS</a>. Field experiment in high school math classes. Puts into practice: AI off by default, on our <a href="itc-at-school.html">2026-27 priorities</a>, and our <a href="itc-petition.html">three urgent steps</a>.</p>
         </article>
 
         <!-- 4. EdTech efficacy -->

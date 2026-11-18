@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Nov 18, 2026: Horvath event pieces retired; "Three urgent steps" banner (ubar) links to itc-petition.html; CMS AI request removed sitewide. -->
 <!-- itc-survey, v11, October 25, 2026. New "Test scores" section (MCAS 2019 vs 2026 by school level, what changed in the school day, PISA 2022 and Delgado 2018 research, efficacy ask, Horvath Nov 17 line); removed "The half of the day the survey doesn't measure" section (checklist, survey question, priorities panel, bell to bell), parked in SAVED-SECTIONS-not-live.html; superintendent line moved into the new section. v10: October 19, 2026. Rebuilt around the 2026 Emerson Youth Risk Behavior Survey compared with 2024: four student-survey headline numbers; jump bar; Concord families are doing their part (2024 vs 2026 cards); stress from home vs schoolwork against the Strategic Plan goal; phone rules at the Ellen Garrison Building at Concord Middle School vs Concord-Carlisle High School; what the survey doesn't measure (checklist) with the 2026-27 priorities and bell to bell; full table by grade and sources. Community survey trimmed to three numbers. Call to action band at the bottom. v9: October 19, 2026, apricot action accent. -->
 <html lang="en">
 <head>
@@ -346,34 +347,33 @@ a.cta-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.18);}
 .lede-list a b{color:var(--plum);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
 .pisa-callout{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--serif);font-size:clamp(18px,2vw,21px);line-height:1.4;color:var(--plum);}
 </style>
+<style>
+/* Three urgent steps banner (Nov 18, 2026; replaced the Horvath event banner). Not on itc-petition.html. */
+.ubar{background:#3F5138;color:#F4F1EC;border-bottom:2px solid #E9935E;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:13px;line-height:1.4;position:relative;}
+.ubar-in{max-width:1200px;margin:0 auto;padding:9px 48px 9px 24px;display:flex;align-items:center;justify-content:center;gap:6px 14px;flex-wrap:wrap;text-align:center;}
+.ubar-k{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#F6C9A9;white-space:nowrap;}
+.ubar-t strong{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:14.5px;color:#fff;}
+.ubar-a{display:inline-block;background:#E9935E;color:#463347;font-weight:700;font-size:12px;border-radius:999px;padding:5px 14px;text-decoration:none;white-space:nowrap;}
+.ubar-a:hover{background:#F0A673;}
+.ubar-x{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:#C0CABF;font-size:20px;line-height:1;cursor:pointer;padding:4px 8px;}
+.ubar[hidden]{display:none;}
+@media(max-width:620px){.ubar-w{display:none;}.ubar-in{padding:8px 40px 8px 16px;}}
+</style>
 </head>
 <body>
-<!-- Horvath event banner (Oct 25, 2026): hides itself after Nov 17; not on Resources, which leads with the event -->
-<style>
-.evbar{background:#2E3E4E;color:#F4F1EC;border-bottom:2px solid #3A9A9A;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:13px;line-height:1.4;position:relative;}
-.evbar-in{max-width:1200px;margin:0 auto;padding:9px 48px 9px 24px;display:flex;align-items:center;justify-content:center;gap:6px 14px;flex-wrap:wrap;text-align:center;}
-.evbar-k{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9FD3D1;white-space:nowrap;}
-.evbar-t strong{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:14.5px;color:#fff;}
-.evbar-t em{font-family:'Fraunces',Georgia,serif;font-style:italic;}
-.evbar-a{display:inline-block;background:#E9935E;color:#463347;font-weight:700;font-size:12px;border-radius:999px;padding:5px 14px;text-decoration:none;white-space:nowrap;}
-.evbar-a:hover{background:#F0A673;}
-.evbar-x{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:#9FD3D1;font-size:20px;line-height:1;cursor:pointer;padding:4px 8px;}
-.evbar[hidden]{display:none;}
-@media(max-width:620px){.evbar-w{display:none;}.evbar-in{padding:8px 40px 8px 16px;}}
-</style>
-<div class="evbar" id="evbar" role="region" aria-label="Upcoming event">
-  <div class="evbar-in">
-    <span class="evbar-k">Tue, Nov 17 in Concord</span>
-    <span class="evbar-t"><strong>What are screens doing to your child&rsquo;s brain?</strong> Hear it from Dr. Jared Cooney Horvath, neuroscientist and Harvard educator.</span>
-    <a class="evbar-a" href="itc-resources.html#next-event">Save your seat</a>
+<!-- Three urgent steps banner (Nov 18, 2026) -->
+<div class="ubar" id="ubar" role="region" aria-label="Add your name">
+  <div class="ubar-in">
+    <span class="ubar-k">Add your name</span>
+    <span class="ubar-t"><strong>Three urgent steps we're asking the districts to take</strong><span class="ubar-w"> for K-8 internet filtering, AI, and a K-12 EdTech audit.</span></span>
+    <a class="ubar-a" href="itc-petition.html">Add your name</a>
   </div>
-  <button type="button" class="evbar-x" aria-label="Hide this announcement">&times;</button>
+  <button type="button" class="ubar-x" aria-label="Hide this announcement">&times;</button>
 </div>
 <script>
-(function(){var b=document.getElementById('evbar');if(!b)return;
-if(new Date()>=new Date('2026-11-18T00:00:00-05:00')){b.parentNode.removeChild(b);return;}
-try{if(sessionStorage.getItem('itc-evbar-hidden')){b.hidden=true;}}catch(e){}
-b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;try{sessionStorage.setItem('itc-evbar-hidden','1');}catch(e){}});})();
+(function(){var b=document.getElementById('ubar');if(!b)return;
+try{if(sessionStorage.getItem('itc-ubar-hidden')){b.hidden=true;}}catch(e){}
+b.querySelector('.ubar-x').addEventListener('click',function(){b.hidden=true;try{sessionStorage.setItem('itc-ubar-hidden','1');}catch(e){}});})();
 </script>
 
 <header>
@@ -416,18 +416,6 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
       <div class="spec"><div class="k">90%</div><div class="v">of families in our survey flagged phones or screens during the school day as a concern</div></div>
     </div>
     <p class="spec-src">From the Emerson Youth Risk Behavior Survey, Concord-Carlisle students; Massachusetts MCAS results; and the Concord Tech Impressions Survey.</p>
-  </div>
-</section>
-
-<section class="hz" aria-label="Upcoming event">
-  <div class="wrap">
-    <img src="itc-horvath-headshot.jpg" alt="Dr. Jared Cooney Horvath" width="132" height="132">
-    <div class="hz-txt">
-      <span class="hz-k">Free event &middot; Tuesday, November 17 in Concord</span>
-      <h2>Your Child&rsquo;s Brain in a Screen-Saturated World</h2>
-      <p>An evening with neuroscientist Dr. Jared Cooney Horvath, Harvard educator and author of <em>The Digital Delusion</em>, who testified before the U.S. Senate this year on how screens affect children&rsquo;s learning. Clear, research-backed insight into how your child&rsquo;s brain grows and learns, with practical strategies for home and school, kindergarten through high school.</p>
-    </div>
-    <a href="itc-resources.html#next-event" class="btn accent">Save your seat</a>
   </div>
 </section>
 
@@ -680,11 +668,11 @@ b.querySelector('.evbar-x').addEventListener('click',function(){b.hidden=true;tr
         <p>Short, specific asks for your child's classroom, each with the research behind it and a sample message you can send as is.</p>
         <span class="go-row"><a class="go" href="itc-elementary-asks.pdf" target="_blank">Elementary asks</a><a class="go" href="itc-middle-asks.pdf" target="_blank">Middle school asks</a><a class="go" href="itc-high-school-asks.pdf" target="_blank">High school asks</a></span>
       </div>
-      <a class="cta-card" href="itc-ai-request.html">
-        <span class="tag">Middle school</span>
-        <h3>Sign the AI request</h3>
-        <p>Ask the district to pause student-facing generative AI on all school-issued devices for middle schoolers.</p>
-        <span class="go">Sign the request</span>
+      <a class="cta-card" href="itc-petition.html">
+        <span class="tag">Grades K-12</span>
+        <h3>Add your name to three urgent steps</h3>
+        <p>Allowlist internet filtering and generative AI off for K-8 by January 2027, and a K-12 EdTech and AI audit by March 2027.</p>
+        <span class="go">Add your name</span>
       </a>
       <a class="cta-card" href="itc-public-comment.html">
         <span class="tag">All grades</span>
